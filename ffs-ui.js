@@ -9,13 +9,27 @@
     const currentScript = document.currentScript;
     const scriptPath = currentScript ? currentScript.src : '';
     const basePath = scriptPath.substring(0, scriptPath.lastIndexOf('/') + 1);
-    const debugMode = currentScript && currentScript.getAttribute('mode') === 'debug';
 
-    const config = {
+    // 从当前 script 标签的 data-* 属性读取配置
+    const dataset = currentScript ? { ...currentScript.dataset } : {};
+    const datasetConfig = {};
+    for (const [key, value] of Object.entries(dataset)) {
+        // 转换布尔值字符串为布尔类型
+        if (value === 'true') datasetConfig[key] = true;
+        else if (value === 'false') datasetConfig[key] = false;
+        else datasetConfig[key] = value;
+    }
+    // data-base => baseUrl
+    if (datasetConfig.base !== undefined) {
+        datasetConfig.baseUrl = datasetConfig.base;
+        delete datasetConfig.base;
+    }
+
+    const config = Object.assign({
         baseUrl: basePath,
         autoload: true,
-        debug: debugMode
-    };
+        debug: currentScript && currentScript.getAttribute('mode') === 'debug'
+    }, datasetConfig);
 
     if (config.debug) {
         console.log('FFS-UI 初始化开始，调试模式已开启');
