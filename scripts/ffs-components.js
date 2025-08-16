@@ -217,6 +217,13 @@
                 return;
             }
 
+            if (component.loaded) {
+                if (window.FFS.debug.isEnabled()) {
+                    window.FFS.debug.log(`组件 ${name} 已缓存，跳过加载`);
+                }
+                return;
+            }
+
             try {
                 if (component.css) {
                     await window.FFS.resourceLoader.loadCSS(component.css);
@@ -224,6 +231,8 @@
                 if (component.js) {
                     await window.FFS.resourceLoader.loadJS(component.js);
                 }
+
+                component.loaded = true;
 
                 if (window.FFS.debug.isEnabled()) {
                     window.FFS.debug.log(`组件 ${name} 加载成功`);
@@ -257,7 +266,7 @@
                 console.warn(`组件 ${name} 已存在，将被覆盖`);
             }
 
-            this.registry[name] = config;
+            this.registry[name] = { ...config, loaded: false };
 
             if (window.FFS.debug.isEnabled()) {
                 window.FFS.debug.log(`组件 ${name} 已注册`);
@@ -280,6 +289,10 @@
         init() {
             this._initialized = true;
             window.FFS._componentsInitialized = true;
+
+            Object.values(this.registry).forEach(c => {
+                c.loaded = false;
+            });
 
             if (window.FFS.debug.isEnabled()) {
                 window.FFS.debug.log('组件系统初始化完成');
