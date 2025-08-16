@@ -227,6 +227,7 @@
                 }
 
                 await Promise.all(tasks);
+                component.loaded = true;
 
                 if (window.FFS.debug.isEnabled()) {
                     window.FFS.debug.log(`组件 ${name} 加载成功`);
