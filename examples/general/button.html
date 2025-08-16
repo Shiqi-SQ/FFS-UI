@@ -11,7 +11,11 @@
 
     <!-- 依赖：jQuery + FFS 入口（自动加载组件资源） -->
     <script src="../../assets/jquery/3.7.1.min.js"></script>
-    <script src="../../ffs-ui.js" mode="debug"></script>
+    <!-- 可以通过 data-base、data-autoload、data-debug 等属性配置 FFS-UI -->
+    <script src="../../ffs-ui.js"
+            data-base="../../"
+            data-autoload="true"
+            data-debug="true"></script>
 
     <style>
         /* 仅用于演示页的悬浮主题切换按钮外观 */
@@ -34,6 +38,8 @@
 <body>
     <div class="container">
         <h1>按钮组件</h1>
+        <p>通过在引入 FFS-UI 的 <code>&lt;script&gt;</code> 标签上添加
+            <code>data-base</code>、<code>data-autoload</code>、<code>data-debug</code> 等属性可以自定义配置。</p>
 
         <!-- 基础按钮 -->
         <section>
