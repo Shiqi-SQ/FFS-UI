@@ -218,12 +218,15 @@
             }
 
             try {
+                const tasks = [];
                 if (component.css) {
-                    await window.FFS.resourceLoader.loadCSS(component.css);
+                    tasks.push(window.FFS.resourceLoader.loadCSS(component.css));
                 }
                 if (component.js) {
-                    await window.FFS.resourceLoader.loadJS(component.js);
+                    tasks.push(window.FFS.resourceLoader.loadJS(component.js));
                 }
+
+                await Promise.all(tasks);
 
                 if (window.FFS.debug.isEnabled()) {
                     window.FFS.debug.log(`组件 ${name} 加载成功`);
