@@ -238,6 +238,60 @@
         version: '1.0.0'
     };
 
+    let componentObserver;
+
+    function collectComponentClasses(node, set) {
+        if (node.nodeType !== Node.ELEMENT_NODE) return;
+        const elements = [node, ...node.querySelectorAll('[class*="ffs-"]')];
+        for (const el of elements) {
+            for (const cls of el.classList) {
+                if (cls.startsWith('ffs-')) {
+                    const name = cls.slice(4);
+                    if (window.FFS.components.registry[name]) set.add(name);
+                }
+            }
+        }
+    }
+
+    function startComponentObserver() {
+        if (componentObserver) return;
+        componentObserver = new MutationObserver(mutations => {
+            const toLoad = new Set();
+            for (const m of mutations) {
+                if (m.type === 'childList') {
+                    m.addedNodes.forEach(n => collectComponentClasses(n, toLoad));
+                } else if (m.type === 'attributes' && m.attributeName === 'class') {
+                    collectComponentClasses(m.target, toLoad);
+                }
+            }
+            if (toLoad.size && window.FFS.components && window.FFS.components.loadComponents) {
+                window.FFS.components.loadComponents([...toLoad]);
+            }
+        });
+        componentObserver.observe(document.body, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['class']
+        });
+    }
+
+    function stopComponentObserver() {
+        if (componentObserver) {
+            componentObserver.disconnect();
+            componentObserver = null;
+        }
+    }
+
+    window.FFS.componentObserver = {
+        start: startComponentObserver,
+        stop: stopComponentObserver
+    };
+
+    window.FFS.ready(() => {
+        if (config.autoload) startComponentObserver();
+    });
+
     if (document.readyState !== 'loading') init();
     else document.addEventListener('DOMContentLoaded', init);
 })();
