@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 面包屑导航组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>面包屑导航组件</h1>
+
+        <!-- 基础面包屑 -->
+        <section>
+            <h2>基础面包屑</h2>
+            <div class="demo-box">
+                <nav class="ffs-breadcrumb">
+                    <a href="#" class="ffs-breadcrumb-item">首页</a>
+                    <span class="ffs-breadcrumb-separator">/</span>
+                    <a href="#" class="ffs-breadcrumb-item">产品</a>
+                    <span class="ffs-breadcrumb-separator">/</span>
+                    <a href="#" class="ffs-breadcrumb-item">电子产品</a>
+                    <span class="ffs-breadcrumb-separator">/</span>
+                    <span class="ffs-breadcrumb-item active">手机</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- 带图标 -->
+        <section>
+            <h2>带图标</h2>
+            <div class="demo-box">
+                <nav class="ffs-breadcrumb">
+                    <a href="#" class="ffs-breadcrumb-item">
+                        <i class="fas fa-home ffs-breadcrumb-item-icon"></i>
+                        首页
+                    </a>
+                    <span class="ffs-breadcrumb-separator">/</span>
+                    <a href="#" class="ffs-breadcrumb-item">
+                        <i class="fas fa-folder ffs-breadcrumb-item-icon"></i>
+                        文档
+                    </a>
+                    <span class="ffs-breadcrumb-separator">/</span>
+                    <a href="#" class="ffs-breadcrumb-item">
+                        <i class="fas fa-file-alt ffs-breadcrumb-item-icon"></i>
+                        指南
+                    </a>
+                    <span class="ffs-breadcrumb-separator">/</span>
+                    <span class="ffs-breadcrumb-item active">
+                        <i class="fas fa-book ffs-breadcrumb-item-icon"></i>
+                        入门教程
+                    </span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- 带下拉菜单 -->
+        <section>
+            <h2>带下拉菜单</h2>
+            <div class="demo-box">
+                <nav class="ffs-breadcrumb">
+                    <a href="#" class="ffs-breadcrumb-item">首页</a>
+                    <span class="ffs-breadcrumb-separator">/</span>
+                    <div class="ffs-breadcrumb-dropdown">
+                        <a href="#" class="ffs-breadcrumb-item">
+                            产品
+                            <i class="fas fa-chevron-down" style="margin-left: 4px; font-size: 12px;"></i>
+                        </a>
+                        <div class="ffs-breadcrumb-dropdown-content">
+                            <a href="#" class="ffs-breadcrumb-dropdown-item">电子产品</a>
+                            <a href="#" class="ffs-breadcrumb-dropdown-item">服装</a>
+                            <a href="#" class="ffs-breadcrumb-dropdown-item">食品</a>
+                        </div>
+                    </div>
+                    <span class="ffs-breadcrumb-separator">/</span>
+                    <a href="#" class="ffs-breadcrumb-item">电子产品</a>
+                    <span class="ffs-breadcrumb-separator">/</span>
+                    <span class="ffs-breadcrumb-item active">手机</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- 自定义分隔符 -->
+        <section>
+            <h2>自定义分隔符</h2>
+            <div class="demo-box">
+                <nav class="ffs-breadcrumb ffs-breadcrumb-custom-separator">
+                    <a href="#" class="ffs-breadcrumb-item">首页</a>
+                    <span class="ffs-breadcrumb-separator">></span>
+                    <a href="#" class="ffs-breadcrumb-item">产品</a>
+                    <span class="ffs-breadcrumb-separator">></span>
+                    <a href="#" class="ffs-breadcrumb-item">电子产品</a>
+                    <span class="ffs-breadcrumb-separator">></span>
+                    <span class="ffs-breadcrumb-item active">手机</span>
+                </nav>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+    </style>
+</body>
+</html> 

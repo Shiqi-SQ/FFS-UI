@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 地图组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>地图组件</h1>
+
+        <!-- 地理地图 -->
+        <section>
+            <h2>地理地图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-geomap">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">中国地图</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-geomap-content">
+                        <canvas id="geomapChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热力地图 -->
+        <section>
+            <h2>热力地图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-heatmap">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">访问热力分布</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-heatmap-content">
+                        <canvas id="heatmapChart"></canvas>
+                        <div class="ffs-chart-heatmap-legend">
+                            <div class="ffs-chart-heatmap-legend-item">
+                                <span class="ffs-chart-heatmap-legend-color" style="background: rgba(24, 144, 255, 0.2);"></span>
+                                <span>低</span>
+                            </div>
+                            <div class="ffs-chart-heatmap-legend-item">
+                                <span class="ffs-chart-heatmap-legend-color" style="background: rgba(24, 144, 255, 0.6);"></span>
+                                <span>中</span>
+                            </div>
+                            <div class="ffs-chart-heatmap-legend-item">
+                                <span class="ffs-chart-heatmap-legend-color" style="background: rgba(24, 144, 255, 1);"></span>
+                                <span>高</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 点状地图 -->
+        <section>
+            <h2>点状地图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-pointmap">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">城市分布</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-pointmap-content">
+                        <canvas id="pointmapChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 路线地图 -->
+        <section>
+            <h2>路线地图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-routemap">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">配送路线</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-routemap-content">
+                        <canvas id="routemapChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+            min-height: 500px;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/china-map-geojson"></script>
+    <script>
+        // 地理地图
+        const geomapCtx = document.getElementById('geomapChart').getContext('2d');
+        new Chart(geomapCtx, {
+            type: 'choropleth',
+            data: {
+                labels: ['北京', '上海', '广州', '深圳'],
+                datasets: [{
+                    data: [
+                        {feature: 'beijing', value: 100},
+                        {feature: 'shanghai', value: 80},
+                        {feature: 'guangzhou', value: 60},
+                        {feature: 'shenzhen', value: 40}
+                    ],
+                    backgroundColor: 'rgba(24, 144, 255, 0.6)',
+                    borderColor: '#1890ff',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                showOutline: true,
+                showGraticule: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // 热力地图
+        const heatmapCtx = document.getElementById('heatmapChart').getContext('2d');
+        new Chart(heatmapCtx, {
+            type: 'heatmap',
+            data: {
+                datasets: [{
+                    data: [
+                        {x: 116.4, y: 39.9, v: 100},
+                        {x: 121.4, y: 31.2, v: 80},
+                        {x: 113.2, y: 23.1, v: 60},
+                        {x: 114.0, y: 22.5, v: 40}
+                    ],
+                    backgroundColor(context) {
+                        const value = context.dataset.data[context.dataIndex].v;
+                        const alpha = value / 100;
+                        return `rgba(24, 144, 255, ${alpha})`;
+                    }
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // 点状地图
+        const pointmapCtx = document.getElementById('pointmapChart').getContext('2d');
+        new Chart(pointmapCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: '城市',
+                    data: [
+                        {x: 116.4, y: 39.9, r: 10},
+                        {x: 121.4, y: 31.2, r: 8},
+                        {x: 113.2, y: 23.1, r: 6},
+                        {x: 114.0, y: 22.5, r: 4}
+                    ],
+                    backgroundColor: '#1890ff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // 路线地图
+        const routemapCtx = document.getElementById('routemapChart').getContext('2d');
+        new Chart(routemapCtx, {
+            type: 'line',
+            data: {
+                labels: ['北京', '上海', '广州', '深圳'],
+                datasets: [{
+                    data: [
+                        {x: 116.4, y: 39.9},
+                        {x: 121.4, y: 31.2},
+                        {x: 113.2, y: 23.1},
+                        {x: 114.0, y: 22.5}
+                    ],
+                    borderColor: '#1890ff',
+                    backgroundColor: 'rgba(24, 144, 255, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

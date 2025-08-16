@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 高级选择器组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>高级选择器组件</h1>
+
+        <!-- 级联选择 -->
+        <section>
+            <h2>级联选择</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-cascader">
+                        <div class="ffs-cascader-picker">
+                            <div class="ffs-cascader-label">请选择省市区</div>
+                            <i class="fas fa-chevron-down ffs-cascader-arrow"></i>
+                        </div>
+                        <div class="ffs-cascader-menu">
+                            <div class="ffs-cascader-menu-item">
+                                <div class="ffs-cascader-menu-list">
+                                    <div class="ffs-cascader-menu-option">浙江省</div>
+                                    <div class="ffs-cascader-menu-option">江苏省</div>
+                                </div>
+                            </div>
+                            <div class="ffs-cascader-menu-item">
+                                <div class="ffs-cascader-menu-list">
+                                    <div class="ffs-cascader-menu-option">杭州市</div>
+                                    <div class="ffs-cascader-menu-option">宁波市</div>
+                                </div>
+                            </div>
+                            <div class="ffs-cascader-menu-item">
+                                <div class="ffs-cascader-menu-list">
+                                    <div class="ffs-cascader-menu-option">西湖区</div>
+                                    <div class="ffs-cascader-menu-option">滨江区</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 树选择 -->
+        <section>
+            <h2>树选择</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-treeselect">
+                        <div class="ffs-treeselect-picker">
+                            <div class="ffs-treeselect-label">请选择部门</div>
+                            <i class="fas fa-chevron-down ffs-treeselect-arrow"></i>
+                        </div>
+                        <div class="ffs-treeselect-dropdown">
+                            <div class="ffs-treeselect-search">
+                                <input type="text" class="ffs-treeselect-search-input" placeholder="搜索部门...">
+                            </div>
+                            <div class="ffs-treeselect-tree">
+                                <div class="ffs-treeselect-tree-node">
+                                    <i class="fas fa-folder"></i> 技术部
+                                    <div class="ffs-treeselect-tree-node-children">
+                                        <div class="ffs-treeselect-tree-node">
+                                            <i class="fas fa-folder"></i> 前端组
+                                        </div>
+                                        <div class="ffs-treeselect-tree-node">
+                                            <i class="fas fa-folder"></i> 后端组
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ffs-treeselect-tree-node">
+                                    <i class="fas fa-folder"></i> 产品部
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 穿梭框 -->
+        <section>
+            <h2>穿梭框</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-transfer">
+                        <div class="ffs-transfer-panel">
+                            <div class="ffs-transfer-panel-header">
+                                <div class="ffs-transfer-panel-title">源列表</div>
+                            </div>
+                            <div class="ffs-transfer-panel-search">
+                                <input type="text" class="ffs-transfer-panel-search-input" placeholder="搜索...">
+                            </div>
+                            <div class="ffs-transfer-panel-body">
+                                <div class="ffs-transfer-panel-item">选项一</div>
+                                <div class="ffs-transfer-panel-item">选项二</div>
+                                <div class="ffs-transfer-panel-item">选项三</div>
+                                <div class="ffs-transfer-panel-item">选项四</div>
+                            </div>
+                            <div class="ffs-transfer-panel-footer">
+                                <span>共 4 项</span>
+                            </div>
+                        </div>
+                        <div class="ffs-transfer-operations">
+                            <button class="ffs-transfer-operation-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <button class="ffs-transfer-operation-btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                        </div>
+                        <div class="ffs-transfer-panel">
+                            <div class="ffs-transfer-panel-header">
+                                <div class="ffs-transfer-panel-title">目标列表</div>
+                            </div>
+                            <div class="ffs-transfer-panel-search">
+                                <input type="text" class="ffs-transfer-panel-search-input" placeholder="搜索...">
+                            </div>
+                            <div class="ffs-transfer-panel-body">
+                                <div class="ffs-transfer-panel-item">选项五</div>
+                                <div class="ffs-transfer-panel-item">选项六</div>
+                            </div>
+                            <div class="ffs-transfer-panel-footer">
+                                <span>共 2 项</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 多语言选择 -->
+        <section>
+            <h2>多语言选择</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-langselect">
+                        <div class="ffs-langselect-picker">
+                            <div class="ffs-langselect-label">
+                                <div class="ffs-langselect-flag">
+                                    <img src="https://flagcdn.com/24x18/cn.png" alt="中文">
+                                </div>
+                                <span>中文</span>
+                            </div>
+                            <i class="fas fa-chevron-down ffs-langselect-arrow"></i>
+                        </div>
+                        <div class="ffs-langselect-dropdown">
+                            <div class="ffs-langselect-options">
+                                <div class="ffs-langselect-option">
+                                    <div class="ffs-langselect-flag">
+                                        <img src="https://flagcdn.com/24x18/cn.png" alt="中文">
+                                    </div>
+                                    <span>中文</span>
+                                </div>
+                                <div class="ffs-langselect-option">
+                                    <div class="ffs-langselect-flag">
+                                        <img src="https://flagcdn.com/24x18/us.png" alt="English">
+                                    </div>
+                                    <span>English</span>
+                                </div>
+                                <div class="ffs-langselect-option">
+                                    <div class="ffs-langselect-flag">
+                                        <img src="https://flagcdn.com/24x18/jp.png" alt="日本語">
+                                    </div>
+                                    <span>日本語</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 地址选择器 -->
+        <section>
+            <h2>地址选择器</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-addressselect">
+                        <div class="ffs-addressselect-picker">
+                            <div class="ffs-addressselect-label">请选择地址</div>
+                            <i class="fas fa-chevron-down ffs-addressselect-arrow"></i>
+                        </div>
+                        <div class="ffs-addressselect-dropdown">
+                            <div class="ffs-addressselect-tabs">
+                                <div class="ffs-addressselect-tab ffs-addressselect-tab-active">省份</div>
+                                <div class="ffs-addressselect-tab">城市</div>
+                                <div class="ffs-addressselect-tab">区县</div>
+                            </div>
+                            <div class="ffs-addressselect-content">
+                                <div class="ffs-addressselect-search">
+                                    <input type="text" class="ffs-addressselect-search-input" placeholder="搜索地址...">
+                                </div>
+                                <div class="ffs-addressselect-list">
+                                    <div class="ffs-addressselect-item">浙江省</div>
+                                    <div class="ffs-addressselect-item">江苏省</div>
+                                    <div class="ffs-addressselect-item">广东省</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        .demo-item {
+            margin-bottom: 20px;
+            width: 300px;
+        }
+
+        .demo-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 级联选择交互
+        document.querySelectorAll('.ffs-cascader').forEach(cascader => {
+            const picker = cascader.querySelector('.ffs-cascader-picker');
+            const menu = cascader.querySelector('.ffs-cascader-menu');
+            const options = cascader.querySelectorAll('.ffs-cascader-menu-option');
+            const label = cascader.querySelector('.ffs-cascader-label');
+
+            picker.addEventListener('click', () => {
+                cascader.classList.toggle('ffs-cascader-open');
+            });
+
+            options.forEach(option => {
+                option.addEventListener('click', () => {
+                    const menuItem = option.closest('.ffs-cascader-menu-item');
+                    const nextMenuItem = menuItem.nextElementSibling;
+                    
+                    if (nextMenuItem) {
+                        // 更新选中状态
+                        menuItem.querySelectorAll('.ffs-cascader-menu-option').forEach(opt => {
+                            opt.classList.remove('ffs-cascader-menu-option-selected');
+                        });
+                        option.classList.add('ffs-cascader-menu-option-selected');
+                        
+                        // 显示下一级菜单
+                        nextMenuItem.style.display = 'block';
+                        
+                        // 更新标签显示
+                        label.textContent = option.textContent;
+                    } else {
+                        // 最后一级，关闭菜单
+                        cascader.classList.remove('ffs-cascader-open');
+                    }
+                });
+            });
+        });
+
+        // 树选择交互
+        document.querySelectorAll('.ffs-treeselect').forEach(treeselect => {
+            const picker = treeselect.querySelector('.ffs-treeselect-picker');
+            const dropdown = treeselect.querySelector('.ffs-treeselect-dropdown');
+            const nodes = treeselect.querySelectorAll('.ffs-treeselect-tree-node');
+            const label = treeselect.querySelector('.ffs-treeselect-label');
+
+            picker.addEventListener('click', () => {
+                treeselect.classList.toggle('ffs-treeselect-open');
+            });
+
+            nodes.forEach(node => {
+                node.addEventListener('click', () => {
+                    if (node.querySelector('.ffs-treeselect-tree-node-children')) {
+                        // 展开/收起子节点
+                        node.classList.toggle('ffs-treeselect-tree-node-expanded');
+                    } else {
+                        // 选中节点
+                        nodes.forEach(n => n.classList.remove('ffs-treeselect-tree-node-selected'));
+                        node.classList.add('ffs-treeselect-tree-node-selected');
+                        label.textContent = node.textContent.trim();
+                        treeselect.classList.remove('ffs-treeselect-open');
+                    }
+                });
+            });
+        });
+
+        // 穿梭框交互
+        document.querySelectorAll('.ffs-transfer').forEach(transfer => {
+            const sourceItems = transfer.querySelector('.ffs-transfer-panel:first-child .ffs-transfer-panel-body').children;
+            const targetItems = transfer.querySelector('.ffs-transfer-panel:last-child .ffs-transfer-panel-body').children;
+            const rightBtn = transfer.querySelector('.ffs-transfer-operation-btn:first-child');
+            const leftBtn = transfer.querySelector('.ffs-transfer-operation-btn:last-child');
+
+            // 选择项
+            Array.from(sourceItems).forEach(item => {
+                item.addEventListener('click', () => {
+                    item.classList.toggle('ffs-transfer-panel-item-selected');
+                });
+            });
+
+            Array.from(targetItems).forEach(item => {
+                item.addEventListener('click', () => {
+                    item.classList.toggle('ffs-transfer-panel-item-selected');
+                });
+            });
+
+            // 移动按钮
+            rightBtn.addEventListener('click', () => {
+                const selectedItems = transfer.querySelector('.ffs-transfer-panel:first-child .ffs-transfer-panel-item-selected');
+                if (selectedItems) {
+                    const targetBody = transfer.querySelector('.ffs-transfer-panel:last-child .ffs-transfer-panel-body');
+                    targetBody.appendChild(selectedItems);
+                    selectedItems.classList.remove('ffs-transfer-panel-item-selected');
+                }
+            });
+
+            leftBtn.addEventListener('click', () => {
+                const selectedItems = transfer.querySelector('.ffs-transfer-panel:last-child .ffs-transfer-panel-item-selected');
+                if (selectedItems) {
+                    const sourceBody = transfer.querySelector('.ffs-transfer-panel:first-child .ffs-transfer-panel-body');
+                    sourceBody.appendChild(selectedItems);
+                    selectedItems.classList.remove('ffs-transfer-panel-item-selected');
+                }
+            });
+        });
+
+        // 多语言选择交互
+        document.querySelectorAll('.ffs-langselect').forEach(langselect => {
+            const picker = langselect.querySelector('.ffs-langselect-picker');
+            const dropdown = langselect.querySelector('.ffs-langselect-dropdown');
+            const options = langselect.querySelectorAll('.ffs-langselect-option');
+            const label = langselect.querySelector('.ffs-langselect-label');
+
+            picker.addEventListener('click', () => {
+                langselect.classList.toggle('ffs-langselect-open');
+            });
+
+            options.forEach(option => {
+                option.addEventListener('click', () => {
+                    options.forEach(opt => opt.classList.remove('ffs-langselect-option-selected'));
+                    option.classList.add('ffs-langselect-option-selected');
+                    label.innerHTML = option.innerHTML;
+                    langselect.classList.remove('ffs-langselect-open');
+                });
+            });
+        });
+
+        // 地址选择器交互
+        document.querySelectorAll('.ffs-addressselect').forEach(addressselect => {
+            const picker = addressselect.querySelector('.ffs-addressselect-picker');
+            const dropdown = addressselect.querySelector('.ffs-addressselect-dropdown');
+            const tabs = addressselect.querySelectorAll('.ffs-addressselect-tab');
+            const items = addressselect.querySelectorAll('.ffs-addressselect-item');
+            const label = addressselect.querySelector('.ffs-addressselect-label');
+
+            picker.addEventListener('click', () => {
+                addressselect.classList.toggle('ffs-addressselect-open');
+            });
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('ffs-addressselect-tab-active'));
+                    tab.classList.add('ffs-addressselect-tab-active');
+                });
+            });
+
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    items.forEach(i => i.classList.remove('ffs-addressselect-item-selected'));
+                    item.classList.add('ffs-addressselect-item-selected');
+                    label.textContent = item.textContent;
+                    addressselect.classList.remove('ffs-addressselect-open');
+                });
+            });
+        });
+
+        // 点击外部关闭下拉框
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.ffs-cascader, .ffs-treeselect, .ffs-langselect, .ffs-addressselect')) {
+                document.querySelectorAll('.ffs-cascader-open, .ffs-treeselect-open, .ffs-langselect-open, .ffs-addressselect-open').forEach(el => {
+                    el.classList.remove('ffs-cascader-open', 'ffs-treeselect-open', 'ffs-langselect-open', 'ffs-addressselect-open');
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

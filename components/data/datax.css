@@ -1,0 +1,577 @@
+/* 统计数值 */
+.ffs-statistic {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ffs-statistic-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-right: 16px;
+    font-size: 24px;
+    color: var(--primary-color);
+    background: var(--primary-color-light);
+}
+
+.ffs-statistic-content {
+    flex: 1;
+}
+
+.ffs-statistic-title {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+    margin-bottom: 4px;
+}
+
+.ffs-statistic-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.ffs-statistic-footer {
+    font-size: 12px;
+    color: var(--text-color-secondary);
+    margin-top: 4px;
+}
+
+/* 描述列表 */
+.ffs-descriptions {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--background-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ffs-descriptions-item {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-descriptions-item:last-child {
+    border-bottom: none;
+}
+
+.ffs-descriptions-label {
+    width: 120px;
+    padding: 16px;
+    background: var(--background-color-secondary);
+    color: var(--text-color-secondary);
+    font-weight: 500;
+}
+
+.ffs-descriptions-content {
+    flex: 1;
+    padding: 16px;
+    color: var(--text-color);
+}
+
+/* 时间轴 */
+.ffs-timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.ffs-timeline::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-color);
+}
+
+.ffs-timeline-item {
+    position: relative;
+    padding-left: 48px;
+    margin-bottom: 24px;
+}
+
+.ffs-timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.ffs-timeline-dot {
+    position: absolute;
+    left: 12px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 2px solid var(--background-color);
+}
+
+.ffs-timeline-content {
+    background: var(--background-color);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ffs-timeline-time {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+    margin-bottom: 8px;
+}
+
+.ffs-timeline-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.ffs-timeline-text {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+    line-height: 1.6;
+}
+
+/* 日历 */
+.ffs-calendar {
+    width: 100%;
+    background: var(--background-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ffs-calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-calendar-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.ffs-calendar-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-calendar-nav-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-calendar-nav-btn:hover {
+    background: var(--background-color-hover);
+}
+
+.ffs-calendar-body {
+    padding: 16px;
+}
+
+.ffs-calendar-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.ffs-calendar-weekday {
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+.ffs-calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.ffs-calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-calendar-day:hover {
+    background: var(--background-color-hover);
+}
+
+.ffs-calendar-day.today {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.ffs-calendar-day.selected {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.ffs-calendar-day.disabled {
+    color: var(--text-color-disabled);
+    cursor: not-allowed;
+}
+
+/* 图片预览 */
+.ffs-image-preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    z-index: 1000;
+}
+
+.ffs-image-preview.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ffs-image-preview-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.ffs-image-preview-img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.ffs-image-preview-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.ffs-image-preview-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.ffs-image-preview-prev {
+    left: 20px;
+}
+
+.ffs-image-preview-next {
+    right: 20px;
+}
+
+/* 图片裁剪 */
+.ffs-image-crop {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: var(--background-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ffs-image-crop-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.ffs-image-crop-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.ffs-image-crop-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.ffs-image-crop-area {
+    position: absolute;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
+}
+
+.ffs-image-crop-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border: 1px solid var(--primary-color);
+}
+
+.ffs-image-crop-handle.nw { top: -5px; left: -5px; cursor: nw-resize; }
+.ffs-image-crop-handle.ne { top: -5px; right: -5px; cursor: ne-resize; }
+.ffs-image-crop-handle.sw { bottom: -5px; left: -5px; cursor: sw-resize; }
+.ffs-image-crop-handle.se { bottom: -5px; right: -5px; cursor: se-resize; }
+
+/* 视频播放器 */
+.ffs-video-player {
+    width: 100%;
+    background: var(--background-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ffs-video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 */
+    background: #000;
+}
+
+.ffs-video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ffs-video-controls {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background: var(--background-color-secondary);
+}
+
+.ffs-video-progress {
+    flex: 1;
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+.ffs-video-progress-bar {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: width 0.1s linear;
+}
+
+.ffs-video-time {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+.ffs-video-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-video-button {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-video-button:hover {
+    background: var(--background-color-hover);
+}
+
+/* 代码编辑器 */
+.ffs-code-editor {
+    width: 100%;
+    background: var(--background-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ffs-code-header {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: var(--background-color-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-code-title {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+.ffs-code-actions {
+    margin-left: auto;
+}
+
+.ffs-code-button {
+    padding: 4px 8px;
+    font-size: 12px;
+    color: var(--text-color);
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-code-button:hover {
+    background: var(--background-color-hover);
+}
+
+.ffs-code-content {
+    position: relative;
+    height: 300px;
+}
+
+.ffs-code-editor-textarea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-color);
+    background: transparent;
+    border: none;
+    resize: none;
+    outline: none;
+    tab-size: 4;
+}
+
+.ffs-code-editor-textarea:focus {
+    outline: none;
+}
+
+.ffs-code-line-numbers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 16px 8px;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-color-secondary);
+    user-select: none;
+    text-align: right;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ffs-statistic {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ffs-statistic-icon {
+        margin: 0 0 16px;
+    }
+
+    .ffs-descriptions-item {
+        flex-direction: column;
+    }
+
+    .ffs-descriptions-label {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .ffs-descriptions-content {
+        padding: 8px;
+    }
+
+    .ffs-timeline::before {
+        left: 12px;
+    }
+
+    .ffs-timeline-item {
+        padding-left: 36px;
+    }
+
+    .ffs-timeline-dot {
+        left: 8px;
+    }
+
+    .ffs-calendar-week,
+    .ffs-calendar-days {
+        gap: 4px;
+    }
+
+    .ffs-calendar-day {
+        font-size: 12px;
+    }
+
+    .ffs-image-preview-nav {
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+    }
+
+    .ffs-image-preview-prev {
+        left: 10px;
+    }
+
+    .ffs-image-preview-next {
+        right: 10px;
+    }
+
+    .ffs-video-controls {
+        flex-wrap: wrap;
+    }
+
+    .ffs-video-progress {
+        order: -1;
+        width: 100%;
+        margin: 8px 0;
+    }
+} 

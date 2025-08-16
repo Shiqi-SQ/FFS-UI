@@ -1,0 +1,271 @@
+/* 基础详情 */
+.ffs-pro-detail {
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+
+.ffs-pro-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-pro-detail-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.ffs-pro-detail-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-pro-detail-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.ffs-pro-detail-item {
+    display: flex;
+    gap: 16px;
+}
+
+.ffs-pro-detail-item-label {
+    width: 100px;
+    color: var(--text-color-secondary);
+    font-size: 14px;
+}
+
+.ffs-pro-detail-item-value {
+    flex: 1;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+/* 高级详情 */
+.ffs-pro-detail-advanced {
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+
+.ffs-pro-detail-advanced-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-pro-detail-advanced-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.ffs-pro-detail-advanced-tabs {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-pro-detail-advanced-tab {
+    padding: 12px 0;
+    color: var(--text-color-secondary);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.ffs-pro-detail-advanced-tab:hover {
+    color: var(--primary-color);
+}
+
+.ffs-pro-detail-advanced-tab.active {
+    color: var(--primary-color);
+}
+
+.ffs-pro-detail-advanced-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+.ffs-pro-detail-advanced-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.ffs-pro-detail-advanced-section {
+    margin-bottom: 32px;
+}
+
+.ffs-pro-detail-advanced-section:last-child {
+    margin-bottom: 0;
+}
+
+.ffs-pro-detail-advanced-section-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* 模态框详情 */
+.ffs-pro-detail-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.ffs-pro-detail-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ffs-pro-detail-modal-content {
+    background: var(--background-color);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: translateY(20px);
+    transition: all 0.3s;
+}
+
+.ffs-pro-detail-modal.active .ffs-pro-detail-modal-content {
+    transform: translateY(0);
+}
+
+.ffs-pro-detail-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-pro-detail-modal-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.ffs-pro-detail-modal-close {
+    color: var(--text-color-secondary);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-pro-detail-modal-close:hover {
+    color: var(--text-color);
+}
+
+.ffs-pro-detail-modal-body {
+    padding: 24px;
+}
+
+/* 抽屉式详情 */
+.ffs-pro-detail-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 90%;
+    max-width: 600px;
+    background: var(--background-color);
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+.ffs-pro-detail-drawer.active {
+    transform: translateX(0);
+}
+
+.ffs-pro-detail-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-pro-detail-drawer-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.ffs-pro-detail-drawer-close {
+    color: var(--text-color-secondary);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-pro-detail-drawer-close:hover {
+    color: var(--text-color);
+}
+
+.ffs-pro-detail-drawer-body {
+    padding: 24px;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ffs-pro-detail-content,
+    .ffs-pro-detail-advanced-content {
+        grid-template-columns: 1fr;
+    }
+
+    .ffs-pro-detail-item {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .ffs-pro-detail-item-label {
+        width: auto;
+    }
+
+    .ffs-pro-detail-advanced-tabs {
+        overflow-x: auto;
+        padding-bottom: 8px;
+    }
+
+    .ffs-pro-detail-modal-content,
+    .ffs-pro-detail-drawer {
+        width: 100%;
+        max-width: none;
+    }
+} 

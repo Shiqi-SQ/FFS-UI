@@ -1,0 +1,271 @@
+/* 漏斗图样式 */
+.ffs-chart-funnel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.ffs-chart-funnel-content {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 48px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ffs-chart-funnel-item {
+    position: relative;
+    width: 80%;
+    margin: 8px 0;
+    transition: all 0.3s;
+}
+
+.ffs-chart-funnel-item:hover {
+    transform: scale(1.02);
+}
+
+.ffs-chart-funnel-label {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-color);
+    font-size: 14px;
+    text-align: center;
+    pointer-events: none;
+}
+
+/* 热力图样式 */
+.ffs-chart-heatmap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.ffs-chart-heatmap-content {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 48px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ffs-chart-heatmap-cell {
+    position: relative;
+    transition: all 0.3s;
+}
+
+.ffs-chart-heatmap-cell:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.ffs-chart-heatmap-tooltip {
+    position: absolute;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: var(--text-color);
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 仪表盘样式 */
+.ffs-chart-gauge {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.ffs-chart-gauge-content {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 48px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ffs-chart-gauge-value {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.ffs-chart-gauge-label {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+/* K线图样式 */
+.ffs-chart-candlestick {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.ffs-chart-candlestick-content {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 48px);
+}
+
+.ffs-chart-candlestick-tooltip {
+    position: absolute;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: var(--text-color);
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 水波图样式 */
+.ffs-chart-liquid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.ffs-chart-liquid-content {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 48px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ffs-chart-liquid-wave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.ffs-chart-liquid-value {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.ffs-chart-liquid-label {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+/* 树图样式 */
+.ffs-chart-treemap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.ffs-chart-treemap-content {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 48px);
+}
+
+.ffs-chart-treemap-item {
+    position: relative;
+    transition: all 0.3s;
+}
+
+.ffs-chart-treemap-item:hover {
+    transform: scale(1.02);
+    z-index: 1;
+}
+
+.ffs-chart-treemap-label {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    color: var(--text-color);
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.ffs-chart-treemap-value {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    color: var(--text-color);
+    font-size: 12px;
+    pointer-events: none;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ffs-chart-funnel-item {
+        width: 90%;
+    }
+
+    .ffs-chart-gauge-value,
+    .ffs-chart-liquid-value {
+        font-size: 20px;
+    }
+
+    .ffs-chart-treemap-label,
+    .ffs-chart-treemap-value {
+        font-size: 10px;
+    }
+}

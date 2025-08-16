@@ -1,0 +1,165 @@
+/* 基础标签页 */
+.ffs-tabs {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-tabs-nav {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: -1px;
+}
+
+.ffs-tabs-tab {
+    padding: 12px 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-tabs-tab:hover {
+    color: var(--primary-color);
+}
+
+.ffs-tabs-tab.active {
+    color: var(--primary-color);
+    background: var(--background-color);
+    border-color: var(--border-color);
+}
+
+.ffs-tabs-content {
+    padding: 20px 0;
+}
+
+.ffs-tabs-pane {
+    display: none;
+}
+
+.ffs-tabs-pane.active {
+    display: block;
+}
+
+/* 卡片式页签 */
+.ffs-tabs-card {
+    background: var(--background-color-secondary);
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.ffs-tabs-card .ffs-tabs-nav {
+    background: var(--background-color);
+    padding: 8px 8px 0;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: 0;
+}
+
+.ffs-tabs-card .ffs-tabs-tab {
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    margin-bottom: -1px;
+}
+
+.ffs-tabs-card .ffs-tabs-tab.active {
+    background: var(--background-color);
+    border-bottom: 1px solid var(--background-color);
+}
+
+.ffs-tabs-card .ffs-tabs-content {
+    background: var(--background-color);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+/* 可关闭页签 */
+.ffs-tabs-tab-close {
+    margin-left: 8px;
+    font-size: 12px;
+    color: var(--text-color-secondary);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-tabs-tab-close:hover {
+    color: var(--error-color);
+}
+
+/* 可拖拽页签 */
+.ffs-tabs-tab.dragging {
+    opacity: 0.5;
+    cursor: move;
+}
+
+.ffs-tabs-tab.drag-over {
+    border-left: 2px solid var(--primary-color);
+}
+
+/* 自定义页签 */
+.ffs-tabs-custom {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ffs-tabs-custom .ffs-tabs-nav {
+    flex: 1;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.ffs-tabs-custom .ffs-tabs-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.ffs-tabs-custom .ffs-tabs-tab {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.ffs-tabs-custom .ffs-tabs-tab-icon {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.ffs-tabs-custom .ffs-tabs-tab-badge {
+    margin-left: 8px;
+    padding: 2px 6px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.ffs-tabs-custom .ffs-tabs-extra {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ffs-tabs-nav {
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .ffs-tabs-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .ffs-tabs-tab {
+        white-space: nowrap;
+    }
+
+    .ffs-tabs-custom .ffs-tabs-extra {
+        display: none;
+    }
+} 

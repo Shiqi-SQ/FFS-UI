@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 高级表格组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 添加 jQuery 引用 -->
+    <script src="../../assets/jquery/jquery.min.js"></script>
+    <script src="../../ffs-ui.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>高级表格组件</h1>
+
+        <!-- 查询表格 -->
+        <section>
+            <h2>查询表格</h2>
+            <div class="demo-box">
+                <div class="ffs-pro-table">
+                    <div class="ffs-pro-table-header">
+                        <h3 class="ffs-pro-table-title">用户列表</h3>
+                        <div class="ffs-pro-table-search">
+                            <div class="ffs-pro-table-search-item">
+                                <input type="text" class="ffs-input" placeholder="用户名" name="username">
+                            </div>
+                            <div class="ffs-pro-table-search-item">
+                                <select class="ffs-select" name="status">
+                                    <option value="">状态</option>
+                                    <option value="active">活跃</option>
+                                    <option value="inactive">未活跃</option>
+                                </select>
+                            </div>
+                            <div class="ffs-pro-table-search-item">
+                                <input type="date" class="ffs-input" name="date">
+                            </div>
+                            <!-- 添加搜索和重置按钮 -->
+                            <div class="ffs-pro-table-search-item">
+                                <button class="ffs-button ffs-pro-table-search-btn">搜索</button>
+                                <button class="ffs-button ffs-button-text ffs-pro-table-reset-btn">重置</button>
+                            </div>
+                        </div>
+                        <div class="ffs-pro-table-toolbar">
+                            <div class="ffs-pro-table-toolbar-left">
+                                <button class="ffs-button">
+                                    <i class="fas fa-plus"></i> 新建
+                                </button>
+                                <button class="ffs-button ffs-pro-table-delete-btn" disabled>
+                                    <i class="fas fa-trash"></i> 删除
+                                </button>
+                            </div>
+                            <div class="ffs-pro-table-toolbar-right">
+                                <button class="ffs-button ffs-pro-table-export-btn">
+                                    <i class="fas fa-download"></i> 导出
+                                </button>
+                                <button class="ffs-button ffs-pro-table-setting-btn">
+                                    <i class="fas fa-cog"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ffs-pro-table-content">
+                        <table class="ffs-table">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" class="ffs-pro-table-select-all"></th>
+                                    <th>用户名</th>
+                                    <th>邮箱</th>
+                                    <th>状态</th>
+                                    <th>创建时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-id="1">
+                                    <td><input type="checkbox" class="ffs-pro-table-select-row"></td>
+                                    <td>admin</td>
+                                    <td>admin@example.com</td>
+                                    <td><span class="ffs-tag ffs-tag-success">活跃</span></td>
+                                    <td>2024-01-01</td>
+                                    <td>
+                                        <button class="ffs-button ffs-button-text">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="ffs-button ffs-button-text">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr data-id="2">
+                                    <td><input type="checkbox" class="ffs-pro-table-select-row"></td>
+                                    <td>user</td>
+                                    <td>user@example.com</td>
+                                    <td><span class="ffs-tag ffs-tag-warning">未活跃</span></td>
+                                    <td>2024-01-02</td>
+                                    <td>
+                                        <button class="ffs-button ffs-button-text">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="ffs-button ffs-button-text">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="ffs-pro-table-footer">
+                        <div class="ffs-pagination">
+                            <a href="#" class="ffs-pagination-item disabled">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                            <a href="#" class="ffs-pagination-item active">1</a>
+                            <a href="#" class="ffs-pagination-item">2</a>
+                            <a href="#" class="ffs-pagination-item">3</a>
+                            <span class="ffs-pagination-item">...</span>
+                            <a href="#" class="ffs-pagination-item">10</a>
+                            <a href="#" class="ffs-pagination-item">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </div>
+                        <div class="ffs-pagination-jump">
+                            <span class="ffs-pagination-jump-text">跳至</span>
+                            <input type="number" class="ffs-pagination-jump-input" min="1" max="10" value="1">
+                            <span class="ffs-pagination-jump-text">页</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 标准列表 -->
+        <section>
+            <h2>标准列表</h2>
+            <div class="demo-box">
+                <div class="ffs-pro-list">
+                    <div class="ffs-pro-list-item">
+                        <div class="ffs-pro-list-item-content">
+                            <h3 class="ffs-pro-list-item-title">列表标题</h3>
+                            <p class="ffs-pro-list-item-description">这是一段描述文本，可以包含多行内容。</p>
+                        </div>
+                        <div class="ffs-pro-list-item-extra">
+                            <button class="ffs-button ffs-button-text">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="ffs-button ffs-button-text">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-pro-list-item">
+                        <div class="ffs-pro-list-item-content">
+                            <h3 class="ffs-pro-list-item-title">列表标题</h3>
+                            <p class="ffs-pro-list-item-description">这是一段描述文本，可以包含多行内容。</p>
+                        </div>
+                        <div class="ffs-pro-list-item-extra">
+                            <button class="ffs-button ffs-button-text">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="ffs-button ffs-button-text">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 卡片列表 -->
+        <section>
+            <h2>卡片列表</h2>
+            <div class="demo-box">
+                <div class="ffs-pro-card-list selectable">
+                    <div class="ffs-pro-card" data-id="1">
+                        <img src="https://via.placeholder.com/300x200" alt="封面" class="ffs-pro-card-cover">
+                        <div class="ffs-pro-card-content">
+                            <h3 class="ffs-pro-card-title">卡片标题</h3>
+                            <p class="ffs-pro-card-description">这是一段描述文本，可以包含多行内容。</p>
+                            <div class="ffs-pro-card-footer">
+                                <span class="ffs-tag ffs-tag-primary">标签</span>
+                                <button class="ffs-button ffs-button-text ffs-pro-card-action">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ffs-pro-card" data-id="2">
+                        <img src="https://via.placeholder.com/300x200" alt="封面" class="ffs-pro-card-cover">
+                        <div class="ffs-pro-card-content">
+                            <h3 class="ffs-pro-card-title">卡片标题</h3>
+                            <p class="ffs-pro-card-description">这是一段描述文本，可以包含多行内容。</p>
+                            <div class="ffs-pro-card-footer">
+                                <span class="ffs-tag ffs-tag-primary">标签</span>
+                                <button class="ffs-button ffs-button-text ffs-pro-card-action">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 搜索列表 -->
+        <section>
+            <h2>搜索列表</h2>
+            <div class="demo-box">
+                <div class="ffs-pro-search-list">
+                    <div class="ffs-pro-search-list-header">
+                        <div class="ffs-pro-search-list-search">
+                            <div class="ffs-pro-search-list-search-item">
+                                <input type="text" class="ffs-input" placeholder="搜索" name="keyword">
+                            </div>
+                            <div class="ffs-pro-search-list-search-item">
+                                <select class="ffs-select" name="category">
+                                    <option value="">全部</option>
+                                    <option value="option1">选项1</option>
+                                    <option value="option2">选项2</option>
+                                </select>
+                            </div>
+                            <!-- 添加搜索和重置按钮 -->
+                            <div class="ffs-pro-search-list-search-item">
+                                <button class="ffs-button ffs-pro-search-list-search-btn">搜索</button>
+                                <button class="ffs-button ffs-button-text ffs-pro-search-list-reset-btn">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ffs-pro-search-list-content">
+                        <div class="ffs-pro-search-list-item">
+                            <div class="ffs-pro-search-list-item-content">
+                                <h3 class="ffs-pro-search-list-item-title">搜索结果标题</h3>
+                                <p class="ffs-pro-search-list-item-description">这是一段描述文本，可以包含多行内容。</p>
+                            </div>
+                            <div class="ffs-pro-search-list-item-extra">
+                                <button class="ffs-button ffs-button-text">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="ffs-button ffs-button-text">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="ffs-pro-search-list-item">
+                            <div class="ffs-pro-search-list-item-content">
+                                <h3 class="ffs-pro-search-list-item-title">搜索结果标题</h3>
+                                <p class="ffs-pro-search-list-item-description">这是一段描述文本，可以包含多行内容。</p>
+                            </div>
+                            <div class="ffs-pro-search-list-item-extra">
+                                <button class="ffs-button ffs-button-text">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="ffs-button ffs-button-text">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 树形表格 -->
+        <section>
+            <h2>树形表格</h2>
+            <div class="demo-box">
+                <div class="ffs-pro-tree-table">
+                    <div class="ffs-pro-tree-table-header">
+                        <h3 class="ffs-pro-table-title">部门列表</h3>
+                    </div>
+                    <div class="ffs-pro-tree-table-content">
+                        <div class="ffs-pro-tree-table-row" data-id="1">
+                            <div class="ffs-pro-tree-table-cell">
+                                <div class="ffs-pro-tree-table-cell-content">
+                                    <div class="ffs-pro-tree-table-cell-expand">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </div>
+                                    <span>总公司</span>
+                                </div>
+                            </div>
+                            <div class="ffs-pro-tree-table-cell">100人</div>
+                            <div class="ffs-pro-tree-table-cell">张三</div>
+                            <div class="ffs-pro-tree-table-cell">
+                                <button class="ffs-button ffs-button-text">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="ffs-button ffs-button-text">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="ffs-pro-tree-table-row" data-id="2" data-parent="1" style="display: none;">
+                            <div class="ffs-pro-tree-table-cell">
+                                <div class="ffs-pro-tree-table-cell-content">
+                                    <div class="ffs-pro-tree-table-cell-indent"></div>
+                                    <div class="ffs-pro-tree-table-cell-expand">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </div>
+                                    <span>技术部</span>
+                                </div>
+                            </div>
+                            <div class="ffs-pro-tree-table-cell">40人</div>
+                            <div class="ffs-pro-tree-table-cell">李四</div>
+                            <div class="ffs-pro-tree-table-cell">
+                                <button class="ffs-button ffs-button-text">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="ffs-button ffs-button-text">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="ffs-pro-tree-table-row" data-id="3" data-parent="2" style="display: none;">
+                            <div class="ffs-pro-tree-table-cell">
+                                <div class="ffs-pro-tree-table-cell-content">
+                                    <div class="ffs-pro-tree-table-cell-indent"></div>
+                                    <div class="ffs-pro-tree-table-cell-indent"></div>
+                                    <div class="ffs-pro-tree-table-cell-expand">
+                                        <i class="fas fa-minus"></i>
+                                    </div>
+                                    <span>前端组</span>
+                                </div>
+                            </div>
+                            <div class="ffs-pro-tree-table-cell">20人</div>
+                            <div class="ffs-pro-tree-table-cell">王五</div>
+                            <div class="ffs-pro-tree-table-cell">
+                                <button class="ffs-button ffs-button-text">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="ffs-button ffs-button-text">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="ffs-pro-tree-table-row" data-id="4" data-parent="1" style="display: none;">
+                            <div class="ffs-pro-tree-table-cell">
+                                <div class="ffs-pro-tree-table-cell-content">
+                                    <div class="ffs-pro-tree-table-cell-indent"></div>
+                                    <div class="ffs-pro-tree-table-cell-expand">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </div>
+                                    <span>市场部</span>
+                                </div>
+                            </div>
+                            <div class="ffs-pro-tree-table-cell">30人</div>
+                            <div class="ffs-pro-tree-table-cell">赵六</div>
+                            <div class="ffs-pro-tree-table-cell">
+                                <button class="ffs-button ffs-button-text">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="ffs-button ffs-button-text">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 可拖拽表格 -->
+        <section>
+            <h2>可拖拽表格</h2>
+            <div class="demo-box">
+                <div class="ffs-pro-drag-table">
+                    <div class="ffs-pro-drag-table-header">
+                        <h3 class="ffs-pro-table-title">任务列表</h3>
+                        <div class="ffs-pro-table-toolbar">
+                            <div class="ffs-pro-table-toolbar-left">
+                                <button class="ffs-button">
+                                    <i class="fas fa-plus"></i> 新建
+                                </button>
+                            </div>
+                            <div class="ffs-pro-table-toolbar-right">
+                                <button class="ffs-button ffs-pro-drag-table-save-btn">
+                                    <i class="fas fa-save"></i> 保存排序
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ffs-pro-drag-table-content">
+                        <table class="ffs-table">
+                            <thead>
+                                <tr>
+                                    <th width="50"></th>
+                                    <th>任务名称</th>
+                                    <th>优先级</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody class="ffs-pro-drag-table-body">
+                                <tr class="ffs-pro-drag-table-row" data-id="1">
+                                    <td>
+                                        <div class="ffs-pro-drag-table-handle">
+                                            <i class="fas fa-grip-vertical"></i>
+                                        </div>
+                                    </td>
+                                    <td>完成首页设计</td>
+                                    <td><span class="ffs-tag ffs-tag-danger">高</span></td>
+                                    <td><span class="ffs-tag ffs-tag-warning">进行中</span></td>
+                                    <td>
+                                        <button class="ffs-button ffs-button-text">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="ffs-button ffs-button-text">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="ffs-pro-drag-table-row" data-id="2">
+                                    <td>
+                                        <div class="ffs-pro-drag-table-handle">
+                                            <i class="fas fa-grip-vertical"></i>
+                                        </div>
+                                    </td>
+                                    <td>优化性能</td>
+                                    <td><span class="ffs-tag ffs-tag-warning">中</span></td>
+                                    <td><span class="ffs-tag ffs-tag-success">已完成</span></td>
+                                    <td>
+                                        <button class="ffs-button ffs-button-text">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="ffs-button ffs-button-text">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="ffs-pro-drag-table-row" data-id="3">
+                                    <td>
+                                        <div class="ffs-pro-drag-table-handle">
+                                            <i class="fas fa-grip-vertical"></i>
+                                        </div>
+                                    </td>
+                                    <td>修复BUG</td>
+                                    <td><span class="ffs-tag ffs-tag-primary">低</span></td>
+                                    <td><span class="ffs-tag ffs-tag-warning">进行中</span></td>
+                                    <td>
+                                        <button class="ffs-button ffs-button-text">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="ffs-button ffs-button-text">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        /* 示例页面样式，实际使用时可以删除 */
+        :root {
+            --primary-color: #4a6cf7;
+            --secondary-color: #6c757d;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --background-color: #f8f9fa;
+            --background-color-light: #ffffff;
+            --text-color: #333333;
+            --text-color-light: #6c757d;
+            --border-color: #dee2e6;
+            --hover-color: #e9ecef;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            // 表格全选功能
+            $('.ffs-pro-table-select-all').on('change', function () {
+                const isChecked = $(this).prop('checked');
+                const $table = $(this).closest('.ffs-table');
+                const $rowCheckboxes = $table.find('.ffs-pro-table-select-row');
+
+                $rowCheckboxes.prop('checked', isChecked);
+
+                // 更新删除按钮状态
+                updateDeleteButtonState($table);
+            });
+
+            // 表格行选择
+            $(document).on('change', '.ffs-pro-table-select-row', function () {
+                const $table = $(this).closest('.ffs-table');
+                const $allCheckbox = $table.find('.ffs-pro-table-select-all');
+                const $rowCheckboxes = $table.find('.ffs-pro-table-select-row');
+                const checkedCount = $rowCheckboxes.filter(':checked').length;
+
+                // 更新全选框状态
+                if (checkedCount === 0) {
+                    $allCheckbox.prop('checked', false);
+                    $allCheckbox.prop('indeterminate', false);
+                } else if (checkedCount === $rowCheckboxes.length) {
+                    $allCheckbox.prop('checked', true);
+                    $allCheckbox.prop('indeterminate', false);
+                } else {
+                    $allCheckbox.prop('checked', false);
+                    $allCheckbox.prop('indeterminate', true);
+                }
+
+                // 更新删除按钮状态
+                updateDeleteButtonState($table);
+            });
+
+            // 更新删除按钮状态
+            function updateDeleteButtonState($table) {
+                const $deleteBtn = $table.closest('.ffs-pro-table').find('.ffs-pro-table-delete-btn');
+                const hasChecked = $table.find('.ffs-pro-table-select-row:checked').length > 0;
+
+                $deleteBtn.prop('disabled', !hasChecked);
+            }
+
+            // 表格搜索
+            $('.ffs-pro-table-search-btn').on('click', function () {
+                const $search = $(this).closest('.ffs-pro-table-search');
+                const searchData = {};
+
+                // 收集搜索条件
+                $search.find('input, select').each(function () {
+                    const name = $(this).attr('name');
+                    const value = $(this).val();
+
+                    if (name && value) {
+                        searchData[name] = value;
+                    }
+                });
+
+                // 模拟搜索请求
+                console.log('搜索条件:', searchData);
+                alert('搜索功能已触发，请查看控制台');
+            });
+
+            // 表格重置
+            $('.ffs-pro-table-reset-btn').on('click', function () {
+                const $search = $(this).closest('.ffs-pro-table-search');
+
+                $search.find('input, select').each(function () {
+                    $(this).val('');
+                });
+            });
+
+            // 表格导出
+            $('.ffs-pro-table-export-btn').on('click', function () {
+                    const $table = $(this).closest('.ffs-pro-table').find('.ffs-table');
+                    const headers = [];
+                    const data = [];
+
+                    // 获取表头
+                    $table.find('thead th').each(function () {
+                        if ($(this).text()) {
+                            headers.push($(this).text());
+                        }
+                    });
+
+                    // 获取数据
+                    $table.find('tbody tr').each(function () {
+                            const rowData = [];
+                            $(this).find('td').each(function (index) {
+                                // 跳过第一列（复选框）
+                                if (index === 0 && $(this).find('input[type="checkbox"]')
+                                    .length > 0) {
+                                    return;
+                                }
+
+                                // 获取单元格文本
+                                let cellText = $(this).text().trim();
+
+                                // 如果单元格包含标签，则获取标签文本
+                                if ($(this).find('.ffs-tag').length > 0) {
+                                    cellText = $(this).find('.ffs-tag').text().trim();
+                                }
+
+                                // 如果单元格包含按钮，则跳过
+                                if ($(this).find('.ffs-button').length > 0) {
+                                    return;
+                                }
+
+                                rowData.push(cellText);
+                            });
+
+                            if (rowData.length > 0) {
+                                data.push(rowData);
+                            });
+                    });
+
+                // 模拟导出功能
+                console.table(data); alert('导出功能已触发，请查看控制台');
+            });
+
+        // 树形表格展开/折叠
+        $(document).on('click', '.ffs-pro-tree-table-cell-expand', function () {
+            const $row = $(this).closest('.ffs-pro-tree-table-row');
+            const rowId = $row.data('id');
+            const $icon = $(this).find('i');
+
+            // 切换图标
+            if ($icon.hasClass('fa-chevron-right')) {
+                $icon.removeClass('fa-chevron-right').addClass('fa-chevron-down');
+
+                // 显示子节点
+                $(`.ffs-pro-tree-table-row[data-parent="${rowId}"]`).show();
+            } else {
+                $icon.removeClass('fa-chevron-down').addClass('fa-chevron-right');
+
+                // 隐藏子节点及其所有子节点
+                hideChildren(rowId);
+            }
+        });
+
+        // 递归隐藏子节点
+        function hideChildren(parentId) {
+            const $children = $(`.ffs-pro-tree-table-row[data-parent="${parentId}"]`);
+
+            $children.each(function () {
+                const childId = $(this).data('id');
+                $(this).hide();
+
+                // 将展开图标重置为右箭头
+                $(this).find('.ffs-pro-tree-table-cell-expand i')
+                    .removeClass('fa-chevron-down')
+                    .addClass('fa-chevron-right');
+
+                // 递归隐藏子节点的子节点
+                hideChildren(childId);
+            });
+        }
+
+        // 卡片列表选择
+        $('.ffs-pro-card').on('click', function () {
+            const $card = $(this);
+            const $cardList = $card.closest('.ffs-pro-card-list');
+
+            if ($cardList.hasClass('selectable')) {
+                if ($cardList.hasClass('multiple')) {
+                    // 多选模式
+                    $card.toggleClass('selected');
+                } else {
+                    // 单选模式
+                    $cardList.find('.ffs-pro-card').removeClass('selected');
+                    $card.addClass('selected');
+                }
+            }
+        });
+
+        // 卡片操作按钮
+        $('.ffs-pro-card-action').on('click', function (e) {
+            e.stopPropagation(); // 阻止事件冒泡，避免触发卡片选择
+
+            const $btn = $(this);
+            const $card = $btn.closest('.ffs-pro-card');
+            const cardId = $card.data('id');
+
+            // 模拟操作菜单
+            alert(`卡片 ${cardId} 的操作菜单`);
+        });
+
+        // 搜索列表搜索
+        $('.ffs-pro-search-list-search-btn').on('click', function () {
+            const $search = $(this).closest('.ffs-pro-search-list-search');
+            const searchData = {};
+
+            // 收集搜索条件
+            $search.find('input, select').each(function () {
+                const name = $(this).attr('name');
+                const value = $(this).val();
+
+                if (name && value) {
+                    searchData[name] = value;
+                }
+            });
+
+            // 模拟搜索请求
+            console.log('搜索条件:', searchData);
+            alert('搜索功能已触发，请查看控制台');
+        });
+
+        // 搜索列表重置
+        $('.ffs-pro-search-list-reset-btn').on('click', function () {
+            const $search = $(this).closest('.ffs-pro-search-list-search');
+
+            $search.find('input, select').each(function () {
+                $(this).val('');
+            });
+        });
+
+        // 可拖拽表格功能
+        // 注意：实际使用时需要引入拖拽库，如 SortableJS 或 jQuery UI
+        $('.ffs-pro-drag-table-save-btn').on('click', function () {
+            const $table = $(this).closest('.ffs-pro-drag-table');
+            const $rows = $table.find('.ffs-pro-drag-table-row');
+            const orderData = [];
+
+            $rows.each(function (index) {
+                orderData.push({
+                    id: $(this).data('id'),
+                    order: index + 1
+                });
+            });
+
+            // 模拟保存排序请求
+            console.log('排序数据:', orderData);
+            alert('排序已保存，请查看控制台');
+        });
+
+        // 模拟拖拽功能（实际项目中应使用专业拖拽库）
+        $('.ffs-pro-drag-table-handle').on('mousedown', function () {
+            alert('在实际项目中，这里应该使用专业的拖拽库，如 SortableJS 或 jQuery UI');
+        });
+        });
+    </script>
+</body>
+
+</html>

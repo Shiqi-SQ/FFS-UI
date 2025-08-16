@@ -1,0 +1,101 @@
+/* FFS UI 默认主题 - 颜色系统 */
+
+:root {
+    /* 主色系 */
+    --ffs-primary-color: #BDF801;           /* 主色 */
+    --ffs-primary-color-light: #F2FFCC;     /* 主色浅色背景 */
+    --ffs-primary-color-hover: #D1FF33;     /* 主色悬停 */
+    --ffs-primary-color-active: #A6D800;    /* 主色激活 */
+    --ffs-primary-color-outline: rgba(189, 248, 1, 0.2);  /* 主色描边 */
+
+    /* 功能色系 */
+    --ffs-success-color: #52c41a;           /* 成功色 */
+    --ffs-success-color-light: #f6ffed;     /* 成功色浅色背景 */
+    --ffs-success-color-hover: #73d13d;     /* 成功色悬停 */
+    --ffs-success-color-active: #389e0d;    /* 成功色激活 */
+
+    --ffs-warning-color: #faad14;
+    --ffs-warning-color-light: #fffbe6;     /* 警告色浅色背景 */
+    --ffs-warning-color-hover: #ffc53d;     /* 警告色悬停 */
+    --ffs-warning-color-active: #d48806;    /* 警告色激活 */
+
+    --ffs-error-color: #ff4d4f;             /* 错误色 */
+    --ffs-error-color-light: #fff2f0;       /* 错误色浅色背景 */
+    --ffs-error-color-hover: #ff7875;       /* 错误色悬停 */
+    --ffs-error-color-active: #d9363e;      /* 错误色激活 */
+
+    /* 中性色系 */
+    --ffs-text-color: rgba(0, 0, 0, 0.85);  /* 主要文字 */
+    --ffs-text-color-secondary: rgba(0, 0, 0, 0.65);  /* 次要文字 */
+    --ffs-text-color-disabled: rgba(0, 0, 0, 0.25);   /* 禁用文字 */
+
+    --ffs-border-color: #d9d9d9;            /* 边框颜色 */
+    --ffs-border-color-split: #f0f0f0;      /* 分割线颜色 */
+
+    --ffs-background-color: #ffffff;        /* 背景色 */
+    --ffs-background-color-light: #fafafa;  /* 浅色背景 */
+    --ffs-background-color-hover: #f5f5f5;  /* 悬停背景 */
+    --ffs-background-color-active: #e6e6e6; /* 激活背景 */
+    --ffs-background-color-disabled: #f5f5f5; /* 禁用背景 */
+
+    /* 阴影 */
+    --ffs-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);  /* 基础阴影 */
+    --ffs-box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);  /* 浅色阴影 */
+    --ffs-box-shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.2);   /* 深色阴影 */
+
+    /* 圆角 */
+    --ffs-border-radius: 4px;               /* 基础圆角 */
+    --ffs-border-radius-sm: 2px;            /* 小圆角 */
+    --ffs-border-radius-lg: 8px;            /* 大圆角 */
+    --ffs-border-radius-circle: 50%;        /* 圆形 */
+
+    /* 间距 */
+    --ffs-spacing-xs: 4px;                  /* 极小间距 */
+    --ffs-spacing-sm: 8px;                  /* 小间距 */
+    --ffs-spacing-md: 16px;                 /* 中间距 */
+    --ffs-spacing-lg: 24px;                 /* 大间距 */
+    --ffs-spacing-xl: 32px;                 /* 极大间距 */
+
+    /* 字体 */
+    --ffs-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --ffs-font-size-base: 14px;             /* 基础字号 */
+    --ffs-font-size-sm: 12px;               /* 小字号 */
+    --ffs-font-size-lg: 16px;               /* 大字号 */
+    --ffs-font-size-xl: 20px;               /* 极大字号 */
+
+    /* 动画 */
+    --ffs-animation-duration: 0.3s;         /* 动画时长 */
+    --ffs-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);  /* 动画曲线 */
+
+    /* 组件专用变量 */
+    --ffs-line-height-base: 1.5715;
+    --ffs-line-height-lg: 1.8;
+    --ffs-line-height-sm: 1.4;
+
+    --ffs-padding-xs: 4px;
+    --ffs-padding-sm: 8px;
+    --ffs-padding-md: 12px;
+    --ffs-padding-lg: 16px;
+    --ffs-padding-xl: 24px;
+    --ffs-padding-xxl: 32px;
+
+    --ffs-animation-duration-base: 0.2s;
+    --ffs-animation-duration-slow: 0.3s;
+    --ffs-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    /* 阴影 */
+    --ffs-shadow-color: rgba(189, 248, 1, 0.15);  /* 主色调的阴影 */
+    --ffs-shadow-1-down: 0 2px 8px var(--ffs-shadow-color);
+    --ffs-shadow-2-down: 0 4px 12px var(--ffs-shadow-color);
+    --ffs-shadow-3-down: 0 6px 16px var(--ffs-shadow-color);
+    --ffs-shadow-4-down: 0 8px 24px var(--ffs-shadow-color);
+
+    /* 层级 */
+    --ffs-zindex-dropdown: 1000;
+    --ffs-zindex-sticky: 1020;
+    --ffs-zindex-fixed: 1030;
+    --ffs-zindex-modal-backdrop: 1040;
+    --ffs-zindex-modal: 1050;
+    --ffs-zindex-popover: 1060;
+    --ffs-zindex-tooltip: 1070;
+}

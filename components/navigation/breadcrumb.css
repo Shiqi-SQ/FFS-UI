@@ -1,0 +1,102 @@
+/* 基础面包屑 */
+.ffs-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 0;
+}
+
+.ffs-breadcrumb-item {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.ffs-breadcrumb-item:hover {
+    color: var(--primary-color);
+}
+
+.ffs-breadcrumb-item.active {
+    color: var(--text-color-secondary);
+    cursor: default;
+}
+
+.ffs-breadcrumb-item.active:hover {
+    color: var(--text-color-secondary);
+}
+
+.ffs-breadcrumb-separator {
+    color: var(--text-color-secondary);
+    margin: 0 4px;
+}
+
+/* 带图标 */
+.ffs-breadcrumb-item-icon {
+    margin-right: 4px;
+    font-size: 16px;
+}
+
+/* 带下拉菜单 */
+.ffs-breadcrumb-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.ffs-breadcrumb-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.ffs-breadcrumb-dropdown:hover .ffs-breadcrumb-dropdown-content {
+    display: block;
+}
+
+.ffs-breadcrumb-dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.ffs-breadcrumb-dropdown-item:hover {
+    background: var(--background-color-hover);
+    color: var(--primary-color);
+}
+
+.ffs-breadcrumb-dropdown-item.active {
+    background: var(--background-color-hover);
+    color: var(--primary-color);
+}
+
+/* 自定义分隔符 */
+.ffs-breadcrumb-custom-separator .ffs-breadcrumb-separator {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ffs-breadcrumb {
+        font-size: 14px;
+    }
+
+    .ffs-breadcrumb-item-icon {
+        font-size: 14px;
+    }
+
+    .ffs-breadcrumb-dropdown-content {
+        min-width: 140px;
+    }
+} 

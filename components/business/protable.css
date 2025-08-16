@@ -1,0 +1,310 @@
+/* 查询表格 */
+.ffs-pro-table {
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ffs-pro-table-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-pro-table-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 16px;
+}
+
+.ffs-pro-table-search {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.ffs-pro-table-search-item {
+    flex: 1;
+    min-width: 200px;
+}
+
+.ffs-pro-table-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.ffs-pro-table-toolbar-left {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-pro-table-toolbar-right {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-pro-table-content {
+    padding: 0 24px;
+}
+
+.ffs-pro-table-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 标准列表 */
+.ffs-pro-list {
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ffs-pro-list-item {
+    display: flex;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s;
+}
+
+.ffs-pro-list-item:hover {
+    background: var(--background-color-hover);
+}
+
+.ffs-pro-list-item:last-child {
+    border-bottom: none;
+}
+
+.ffs-pro-list-item-content {
+    flex: 1;
+}
+
+.ffs-pro-list-item-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.ffs-pro-list-item-description {
+    color: var(--text-color-secondary);
+    font-size: 14px;
+}
+
+.ffs-pro-list-item-extra {
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 卡片列表 */
+.ffs-pro-card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    padding: 24px;
+}
+
+.ffs-pro-card {
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.ffs-pro-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ffs-pro-card-cover {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.ffs-pro-card-content {
+    padding: 16px;
+}
+
+.ffs-pro-card-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.ffs-pro-card-description {
+    color: var(--text-color-secondary);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.ffs-pro-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px 16px;
+}
+
+/* 搜索列表 */
+.ffs-pro-search-list {
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ffs-pro-search-list-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-pro-search-list-search {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.ffs-pro-search-list-search-item {
+    flex: 1;
+    min-width: 200px;
+}
+
+.ffs-pro-search-list-content {
+    padding: 0 24px;
+}
+
+.ffs-pro-search-list-item {
+    display: flex;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-pro-search-list-item:last-child {
+    border-bottom: none;
+}
+
+.ffs-pro-search-list-item-content {
+    flex: 1;
+}
+
+.ffs-pro-search-list-item-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.ffs-pro-search-list-item-description {
+    color: var(--text-color-secondary);
+    font-size: 14px;
+}
+
+.ffs-pro-search-list-item-extra {
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 树形表格 */
+.ffs-pro-tree-table {
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ffs-pro-tree-table-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-pro-tree-table-content {
+    padding: 0 24px;
+}
+
+.ffs-pro-tree-table-row {
+    display: flex;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-pro-tree-table-row:last-child {
+    border-bottom: none;
+}
+
+.ffs-pro-tree-table-cell {
+    flex: 1;
+    padding: 0 8px;
+}
+
+.ffs-pro-tree-table-cell:first-child {
+    padding-left: 0;
+}
+
+.ffs-pro-tree-table-cell:last-child {
+    padding-right: 0;
+}
+
+.ffs-pro-tree-table-cell-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ffs-pro-tree-table-cell-expand {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-pro-tree-table-cell-expand:hover {
+    color: var(--primary-color);
+}
+
+.ffs-pro-tree-table-cell-expanded {
+    transform: rotate(90deg);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ffs-pro-table-search-item {
+        min-width: 100%;
+    }
+
+    .ffs-pro-table-toolbar {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .ffs-pro-table-toolbar-left,
+    .ffs-pro-table-toolbar-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .ffs-pro-card-list {
+        grid-template-columns: 1fr;
+    }
+
+    .ffs-pro-search-list-item {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .ffs-pro-search-list-item-extra {
+        margin-left: 0;
+        justify-content: flex-end;
+    }
+} 

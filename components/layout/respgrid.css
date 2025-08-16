@@ -1,0 +1,128 @@
+/* 栅格容器 */
+.ffs-grid {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+}
+
+/* 栅格列数 */
+.ffs-grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.ffs-grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.ffs-grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.ffs-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+.ffs-grid-cols-5 { grid-template-columns: repeat(5, 1fr); }
+.ffs-grid-cols-6 { grid-template-columns: repeat(6, 1fr); }
+
+/* 栅格行数 */
+.ffs-grid-rows-1 { grid-template-rows: repeat(1, 1fr); }
+.ffs-grid-rows-2 { grid-template-rows: repeat(2, 1fr); }
+.ffs-grid-rows-3 { grid-template-rows: repeat(3, 1fr); }
+.ffs-grid-rows-4 { grid-template-rows: repeat(4, 1fr); }
+.ffs-grid-rows-5 { grid-template-rows: repeat(5, 1fr); }
+.ffs-grid-rows-6 { grid-template-rows: repeat(6, 1fr); }
+
+/* 栅格间距 */
+.ffs-gap-0 { gap: 0; }
+.ffs-gap-1 { gap: 4px; }
+.ffs-gap-2 { gap: 8px; }
+.ffs-gap-3 { gap: 12px; }
+.ffs-gap-4 { gap: 16px; }
+.ffs-gap-5 { gap: 20px; }
+.ffs-gap-6 { gap: 24px; }
+.ffs-gap-8 { gap: 32px; }
+.ffs-gap-10 { gap: 40px; }
+.ffs-gap-12 { gap: 48px; }
+.ffs-gap-16 { gap: 64px; }
+
+/* 栅格项 */
+.ffs-grid-item {
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 响应式断点 */
+@media (max-width: 1200px) {
+    .ffs-grid-cols-6 { grid-template-columns: repeat(5, 1fr); }
+}
+
+@media (max-width: 992px) {
+    .ffs-grid-cols-5 { grid-template-columns: repeat(4, 1fr); }
+    .ffs-grid-cols-6 { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .ffs-grid-cols-4 { grid-template-columns: repeat(3, 1fr); }
+    .ffs-grid-cols-5 { grid-template-columns: repeat(3, 1fr); }
+    .ffs-grid-cols-6 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 576px) {
+    .ffs-grid-cols-3 { grid-template-columns: repeat(2, 1fr); }
+    .ffs-grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
+    .ffs-grid-cols-5 { grid-template-columns: repeat(2, 1fr); }
+    .ffs-grid-cols-6 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 320px) {
+    .ffs-grid-cols-2 { grid-template-columns: repeat(1, 1fr); }
+    .ffs-grid-cols-3 { grid-template-columns: repeat(1, 1fr); }
+    .ffs-grid-cols-4 { grid-template-columns: repeat(1, 1fr); }
+    .ffs-grid-cols-5 { grid-template-columns: repeat(1, 1fr); }
+    .ffs-grid-cols-6 { grid-template-columns: repeat(1, 1fr); }
+}
+
+/* 栅格项跨列 */
+.ffs-col-span-2 { grid-column: span 2; }
+.ffs-col-span-3 { grid-column: span 3; }
+.ffs-col-span-4 { grid-column: span 4; }
+.ffs-col-span-5 { grid-column: span 5; }
+.ffs-col-span-6 { grid-column: span 6; }
+
+/* 栅格项跨行 */
+.ffs-row-span-2 { grid-row: span 2; }
+.ffs-row-span-3 { grid-row: span 3; }
+.ffs-row-span-4 { grid-row: span 4; }
+.ffs-row-span-5 { grid-row: span 5; }
+.ffs-row-span-6 { grid-row: span 6; }
+
+/* 栅格项起始位置 */
+.ffs-col-start-2 { grid-column-start: 2; }
+.ffs-col-start-3 { grid-column-start: 3; }
+.ffs-col-start-4 { grid-column-start: 4; }
+.ffs-col-start-5 { grid-column-start: 5; }
+.ffs-col-start-6 { grid-column-start: 6; }
+
+.ffs-row-start-2 { grid-row-start: 2; }
+.ffs-row-start-3 { grid-row-start: 3; }
+.ffs-row-start-4 { grid-row-start: 4; }
+.ffs-row-start-5 { grid-row-start: 5; }
+.ffs-row-start-6 { grid-row-start: 6; }
+
+/* 栅格对齐方式 */
+.ffs-grid-start { justify-items: start; }
+.ffs-grid-center { justify-items: center; }
+.ffs-grid-end { justify-items: end; }
+.ffs-grid-stretch { justify-items: stretch; }
+
+.ffs-grid-items-start { align-items: start; }
+.ffs-grid-items-center { align-items: center; }
+.ffs-grid-items-end { align-items: end; }
+.ffs-grid-items-stretch { align-items: stretch; }
+
+/* 栅格内容对齐 */
+.ffs-grid-content-start { justify-content: start; }
+.ffs-grid-content-center { justify-content: center; }
+.ffs-grid-content-end { justify-content: end; }
+.ffs-grid-content-between { justify-content: space-between; }
+.ffs-grid-content-around { justify-content: space-around; }
+.ffs-grid-content-evenly { justify-content: space-evenly; }
+
+/* 自动填充和自动适应 */
+.ffs-grid-auto-fill { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.ffs-grid-auto-fit { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); } 

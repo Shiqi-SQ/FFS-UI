@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 固定布局</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>固定布局</h1>
+
+        <!-- 固定头部 -->
+        <section>
+            <h2>固定头部</h2>
+            <div class="demo-box">
+                <div class="ffs-fixed-header ffs-fixed-height-sm">
+                    <div class="ffs-flex ffs-items-center ffs-justify-between">
+                        <div>Logo</div>
+                        <div>导航菜单</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 固定底部 -->
+        <section>
+            <h2>固定底部</h2>
+            <div class="demo-box">
+                <div class="ffs-fixed-footer ffs-fixed-height-sm">
+                    <div class="ffs-flex ffs-items-center ffs-justify-between">
+                        <div>版权信息</div>
+                        <div>底部导航</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 固定侧边栏 -->
+        <section>
+            <h2>固定侧边栏</h2>
+            <div class="demo-box">
+                <div class="ffs-fixed-sidebar ffs-fixed-sidebar-left ffs-fixed-width-md">
+                    <div class="ffs-flex ffs-flex-col">
+                        <div class="ffs-flex-item">菜单项1</div>
+                        <div class="ffs-flex-item">菜单项2</div>
+                        <div class="ffs-flex-item">菜单项3</div>
+                    </div>
+                </div>
+                <div class="ffs-fixed-sidebar ffs-fixed-sidebar-right ffs-fixed-width-md">
+                    <div class="ffs-flex ffs-flex-col">
+                        <div class="ffs-flex-item">侧边栏1</div>
+                        <div class="ffs-flex-item">侧边栏2</div>
+                        <div class="ffs-flex-item">侧边栏3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 固定内容区 -->
+        <section>
+            <h2>固定内容区</h2>
+            <div class="demo-box">
+                <div class="ffs-fixed-content">
+                    <div class="ffs-flex ffs-flex-col">
+                        <div class="ffs-flex-item">内容1</div>
+                        <div class="ffs-flex-item">内容2</div>
+                        <div class="ffs-flex-item">内容3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 固定元素 -->
+        <section>
+            <h2>固定元素</h2>
+            <div class="demo-box">
+                <div class="ffs-fixed-element ffs-fixed-width-sm ffs-fixed-height-sm">
+                    <div class="ffs-flex ffs-items-center ffs-justify-center">
+                        固定元素
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 固定定位 -->
+        <section>
+            <h2>固定定位</h2>
+            <div class="demo-box">
+                <div class="ffs-fixed-element ffs-fixed-top ffs-fixed-right ffs-fixed-width-sm">
+                    <div class="ffs-flex ffs-items-center ffs-justify-center">
+                        顶部固定
+                    </div>
+                </div>
+                <div class="ffs-fixed-element ffs-fixed-bottom ffs-fixed-left ffs-fixed-width-sm">
+                    <div class="ffs-flex ffs-items-center ffs-justify-center">
+                        底部固定
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 固定尺寸 -->
+        <section>
+            <h2>固定尺寸</h2>
+            <div class="demo-box">
+                <div class="ffs-fixed-element ffs-fixed-width-sm">
+                    <div class="ffs-flex ffs-items-center ffs-justify-center">
+                        小尺寸
+                    </div>
+                </div>
+                <div class="ffs-fixed-element ffs-fixed-width-md">
+                    <div class="ffs-flex ffs-items-center ffs-justify-center">
+                        中等尺寸
+                    </div>
+                </div>
+                <div class="ffs-fixed-element ffs-fixed-width-lg">
+                    <div class="ffs-flex ffs-items-center ffs-justify-center">
+                        大尺寸
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 固定遮罩 -->
+        <section>
+            <h2>固定遮罩</h2>
+            <div class="demo-box">
+                <div class="ffs-fixed-mask">
+                    <div class="ffs-fixed-element ffs-fixed-width-md ffs-fixed-height-md">
+                        <div class="ffs-flex ffs-items-center ffs-justify-center">
+                            带遮罩的弹窗
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 固定动画 -->
+        <section>
+            <h2>固定动画</h2>
+            <div class="demo-box">
+                <div class="ffs-fixed-element ffs-fixed-slide ffs-fixed-slide-left">
+                    <div class="ffs-flex ffs-items-center ffs-justify-center">
+                        左侧滑入
+                    </div>
+                </div>
+                <div class="ffs-fixed-element ffs-fixed-slide ffs-fixed-slide-right">
+                    <div class="ffs-flex ffs-items-center ffs-justify-center">
+                        右侧滑入
+                    </div>
+                </div>
+                <div class="ffs-fixed-element ffs-fixed-slide ffs-fixed-slide-up">
+                    <div class="ffs-flex ffs-items-center ffs-justify-center">
+                        上侧滑入
+                    </div>
+                </div>
+                <div class="ffs-fixed-element ffs-fixed-slide ffs-fixed-slide-down">
+                    <div class="ffs-flex ffs-items-center ffs-justify-center">
+                        下侧滑入
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            position: relative;
+            min-height: 300px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+            min-height: 200px;
+            position: relative;
+        }
+
+        .ffs-fixed-element {
+            font-size: 18px;
+            color: var(--text-color);
+        }
+    </style>
+</body>
+</html> 

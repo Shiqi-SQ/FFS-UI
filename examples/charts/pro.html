@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 高级图表组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>高级图表组件</h1>
+
+        <!-- 漏斗图 -->
+        <section>
+            <h2>漏斗图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-funnel">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">销售漏斗</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-funnel-content">
+                        <canvas id="funnelChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热力图 -->
+        <section>
+            <h2>热力图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-heatmap">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">访问热力分布</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-heatmap-content">
+                        <canvas id="heatmapChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 仪表盘 -->
+        <section>
+            <h2>仪表盘</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-gauge">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">完成率</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-gauge-content">
+                        <canvas id="gaugeChart"></canvas>
+                        <div class="ffs-chart-gauge-value">75%</div>
+                        <div class="ffs-chart-gauge-label">目标完成率</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- K线图 -->
+        <section>
+            <h2>K线图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-candlestick">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">股票走势</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-candlestick-content">
+                        <canvas id="candlestickChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 水波图 -->
+        <section>
+            <h2>水波图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-liquid">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">进度展示</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-liquid-content">
+                        <canvas id="liquidChart"></canvas>
+                        <div class="ffs-chart-liquid-value">85%</div>
+                        <div class="ffs-chart-liquid-label">完成进度</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 树图 -->
+        <section>
+            <h2>树图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-treemap">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">销售分布</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-treemap-content">
+                        <canvas id="treemapChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+            min-height: 400px;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-treemap@2.3.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-gauge@2.0.0"></script>
+    <script>
+        // 漏斗图
+        const funnelCtx = document.getElementById('funnelChart').getContext('2d');
+        new Chart(funnelCtx, {
+            type: 'bar',
+            data: {
+                labels: ['访问', '咨询', '意向', '成交'],
+                datasets: [{
+                    data: [100, 80, 60, 40],
+                    backgroundColor: ['#1890ff', '#52c41a', '#faad14', '#f5222d']
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // 热力图
+        const heatmapCtx = document.getElementById('heatmapChart').getContext('2d');
+        new Chart(heatmapCtx, {
+            type: 'matrix',
+            data: {
+                datasets: [{
+                    data: [
+                        {x: 0, y: 0, v: 10},
+                        {x: 1, y: 0, v: 20},
+                        {x: 2, y: 0, v: 30},
+                        {x: 0, y: 1, v: 40},
+                        {x: 1, y: 1, v: 50},
+                        {x: 2, y: 1, v: 60}
+                    ],
+                    backgroundColor(context) {
+                        const value = context.dataset.data[context.dataIndex].v;
+                        const alpha = value / 60;
+                        return `rgba(24, 144, 255, ${alpha})`;
+                    }
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        type: 'linear',
+                        offset: true,
+                        min: 0,
+                        max: 2
+                    },
+                    y: {
+                        type: 'linear',
+                        offset: true,
+                        min: 0,
+                        max: 1
+                    }
+                }
+            }
+        });
+
+        // 仪表盘
+        const gaugeCtx = document.getElementById('gaugeChart').getContext('2d');
+        new Chart(gaugeCtx, {
+            type: 'gauge',
+            data: {
+                datasets: [{
+                    value: 75,
+                    backgroundColor: ['#1890ff', '#f0f0f0'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '80%',
+                rotation: -90,
+                circumference: 180,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // K线图
+        const candlestickCtx = document.getElementById('candlestickChart').getContext('2d');
+        new Chart(candlestickCtx, {
+            type: 'candlestick',
+            data: {
+                labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+                datasets: [{
+                    label: '股票价格',
+                    data: [
+                        {o: 100, h: 105, l: 95, c: 102},
+                        {o: 102, h: 108, l: 100, c: 105},
+                        {o: 105, h: 110, l: 100, c: 98},
+                        {o: 98, h: 103, l: 95, c: 100},
+                        {o: 100, h: 106, l: 98, c: 104},
+                        {o: 104, h: 109, l: 102, c: 107}
+                    ],
+                    color: {
+                        up: '#52c41a',
+                        down: '#f5222d',
+                        unchanged: '#1890ff'
+                    }
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // 水波图
+        const liquidCtx = document.getElementById('liquidChart').getContext('2d');
+        new Chart(liquidCtx, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [85, 15],
+                    backgroundColor: ['#1890ff', '#f0f0f0'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '80%',
+                rotation: -90,
+                circumference: 180,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // 树图
+        const treemapCtx = document.getElementById('treemapChart').getContext('2d');
+        new Chart(treemapCtx, {
+            type: 'treemap',
+            data: {
+                datasets: [{
+                    tree: [
+                        {id: 'A', value: 100, backgroundColor: '#1890ff'},
+                        {id: 'B', value: 80, backgroundColor: '#52c41a'},
+                        {id: 'C', value: 60, backgroundColor: '#faad14'},
+                        {id: 'D', value: 40, backgroundColor: '#f5222d'}
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

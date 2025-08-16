@@ -1,0 +1,293 @@
+/* FFS UI 暗色主题 - 颜色系统 */
+
+:root {
+    /* 主色系 */
+    --ffs-primary-color: #D1FF33;           /* 暗色模式下主色调亮一些 */
+    --ffs-primary-color-light: #2A3000;     /* 暗色模式下的主色浅色背景 */
+    --ffs-primary-color-hover: #BDF801;     /* 暗色模式下的主色悬停 */
+    --ffs-primary-color-active: #A6D800;    /* 暗色模式下的主色激活 */
+    --ffs-primary-color-outline: rgba(189, 248, 1, 0.2);  /* 主色描边 */
+
+    /* 功能色系 */
+    --ffs-success-color: #49aa19;           /* 成功色 */
+    --ffs-success-color-light: #162312;     /* 成功色浅色背景 */
+    --ffs-success-color-hover: #73d13d;     /* 成功色悬停 */
+    --ffs-success-color-active: #389e0d;    /* 成功色激活 */
+
+    --ffs-warning-color: #d89614;           /* 警告色 */
+    --ffs-warning-color-light: #2b2111;     /* 警告色浅色背景 */
+    --ffs-warning-color-hover: #ffc53d;     /* 警告色悬停 */
+    --ffs-warning-color-active: #d48806;    /* 警告色激活 */
+
+    --ffs-error-color: #d32029;             /* 错误色 */
+    --ffs-error-color-light: #2a1215;       /* 错误色浅色背景 */
+    --ffs-error-color-hover: #ff7875;       /* 错误色悬停 */
+    --ffs-error-color-active: #d9363e;      /* 错误色激活 */
+
+    /* 中性色系 */
+    --ffs-text-color: rgba(255, 255, 255, 0.85);  /* 主要文字 */
+    --ffs-text-color-secondary: rgba(255, 255, 255, 0.45);  /* 次要文字 */
+    --ffs-text-color-disabled: rgba(255, 255, 255, 0.25);   /* 禁用文字 */
+
+    --ffs-border-color: #434343;            /* 边框颜色 */
+    --ffs-border-color-split: #303030;      /* 分割线颜色 */
+
+    --ffs-background-color: #141414;        /* 背景色 */
+    --ffs-background-color-light: #1f1f1f;  /* 浅色背景 */
+    --ffs-background-color-hover: #1f1f1f;  /* 悬停背景 */
+    --ffs-background-color-active: #1f1f1f; /* 激活背景 */
+    --ffs-background-color-disabled: #1f1f1f; /* 禁用背景 */
+
+    /* 阴影 */
+    --ffs-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);  /* 基础阴影 */
+    --ffs-box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.35);  /* 浅色阴影 */
+    --ffs-box-shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.5);   /* 深色阴影 */
+
+    /* 圆角 */
+    --ffs-border-radius: 4px;               /* 基础圆角 */
+    --ffs-border-radius-sm: 2px;            /* 小圆角 */
+    --ffs-border-radius-lg: 8px;            /* 大圆角 */
+    --ffs-border-radius-circle: 50%;        /* 圆形 */
+
+    /* 间距 */
+    --ffs-spacing-xs: 4px;                  /* 极小间距 */
+    --ffs-spacing-sm: 8px;                  /* 小间距 */
+    --ffs-spacing-md: 16px;                 /* 中间距 */
+    --ffs-spacing-lg: 24px;                 /* 大间距 */
+    --ffs-spacing-xl: 32px;                 /* 极大间距 */
+
+    /* 字体 */
+    --ffs-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --ffs-font-size-base: 14px;             /* 基础字号 */
+    --ffs-font-size-sm: 12px;               /* 小字号 */
+    --ffs-font-size-lg: 16px;               /* 大字号 */
+    --ffs-font-size-xl: 20px;               /* 极大字号 */
+
+    /* 动画 */
+    --ffs-animation-duration: 0.3s;         /* 动画时长 */
+    --ffs-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);  /* 动画曲线 */
+
+    /* 组件专用变量 */
+    --ffs-line-height-base: 1.5715;
+    --ffs-line-height-lg: 1.8;
+    --ffs-line-height-sm: 1.4;
+
+    --ffs-padding-xs: 4px;
+    --ffs-padding-sm: 8px;
+    --ffs-padding-md: 12px;
+    --ffs-padding-lg: 16px;
+    --ffs-padding-xl: 24px;
+    --ffs-padding-xxl: 32px;
+
+    --ffs-animation-duration-base: 0.2s;
+    --ffs-animation-duration-slow: 0.3s;
+    --ffs-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    /* 阴影 */
+    --ffs-shadow-color: rgba(0, 0, 0, 0.45);  /* 暗色主题下的阴影颜色 */
+    --ffs-shadow-1-down: 0 2px 8px var(--ffs-shadow-color);
+    --ffs-shadow-2-down: 0 4px 12px var(--ffs-shadow-color);
+    --ffs-shadow-3-down: 0 6px 16px var(--ffs-shadow-color);
+    --ffs-shadow-4-down: 0 8px 24px var(--ffs-shadow-color);
+
+    /* 层级 */
+    --ffs-zindex-dropdown: 1000;
+    --ffs-zindex-sticky: 1020;
+    --ffs-zindex-fixed: 1030;
+    --ffs-zindex-modal-backdrop: 1040;
+    --ffs-zindex-modal: 1050;
+    --ffs-zindex-popover: 1060;
+    --ffs-zindex-tooltip: 1070;
+}
+
+/* 暗色主题下的全局样式调整 */
+body {
+    background-color: var(--ffs-background-color);
+    color: var(--ffs-text-color);
+}
+
+/* 按钮样式调整 */
+.ffs-button {
+    background-color: var(--ffs-background-color-light);
+    border-color: var(--ffs-border-color);
+    color: var(--ffs-text-color);
+}
+
+.ffs-button-primary {
+    background-color: var(--ffs-primary-color);
+    border-color: var(--ffs-primary-color);
+    color: #000000;
+}
+
+.ffs-button-primary:hover {
+    background-color: var(--ffs-primary-color-hover);
+    border-color: var(--ffs-primary-color-hover);
+}
+
+.ffs-button-secondary {
+    background-color: transparent;
+    border-color: var(--ffs-primary-color);
+    color: var(--ffs-primary-color);
+}
+
+.ffs-button-secondary:hover {
+    border-color: var(--ffs-primary-color-hover);
+    color: var(--ffs-primary-color-hover);
+}
+
+.ffs-button-text {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--ffs-text-color);
+}
+
+.ffs-button-text:hover {
+    color: var(--ffs-primary-color);
+}
+
+.ffs-button-link {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--ffs-primary-color);
+}
+
+.ffs-button-link:hover {
+    color: var(--ffs-primary-color-hover);
+}
+
+.ffs-button-dashed {
+    background-color: transparent;
+    border-color: var(--ffs-border-color);
+    border-style: dashed;
+    color: var(--ffs-text-color);
+}
+
+.ffs-button-dashed:hover {
+    border-color: var(--ffs-primary-color);
+    color: var(--ffs-primary-color);
+}
+
+/* 输入框样式调整 */
+.ffs-input {
+    background-color: var(--ffs-background-color-light);
+    border-color: var(--ffs-border-color);
+    color: var(--ffs-text-color);
+}
+
+.ffs-input:focus {
+    border-color: var(--ffs-primary-color);
+    box-shadow: 0 0 0 2px var(--ffs-primary-color-outline);
+}
+
+/* 卡片样式调整 */
+.ffs-card {
+    background-color: var(--ffs-background-color-light);
+    border-color: var(--ffs-border-color);
+}
+
+.ffs-card-header {
+    border-bottom-color: var(--ffs-border-color-split);
+}
+
+/* 表格样式调整 */
+.ffs-table {
+    background-color: var(--ffs-background-color-light);
+    color: var(--ffs-text-color);
+}
+
+.ffs-table th {
+    background-color: var(--ffs-background-color);
+    border-bottom-color: var(--ffs-border-color-split);
+}
+
+.ffs-table td {
+    border-bottom-color: var(--ffs-border-color-split);
+}
+
+.ffs-table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--ffs-background-color);
+}
+
+.ffs-table-hover tbody tr:hover {
+    background-color: var(--ffs-background-color-hover);
+}
+
+/* 导航样式调整 */
+.ffs-nav {
+    background-color: var(--ffs-background-color-light);
+}
+
+.ffs-nav-item {
+    color: var(--ffs-text-color-secondary);
+}
+
+.ffs-nav-item:hover,
+.ffs-nav-item.active {
+    color: var(--ffs-primary-color);
+}
+
+/* 标签页样式调整 */
+.ffs-tabs {
+    border-bottom-color: var(--ffs-border-color-split);
+}
+
+.ffs-tab-item {
+    color: var(--ffs-text-color-secondary);
+}
+
+.ffs-tab-item:hover,
+.ffs-tab-item.active {
+    color: var(--ffs-primary-color);
+}
+
+.ffs-tab-item.active {
+    border-bottom-color: var(--ffs-primary-color);
+}
+
+/* 模态框样式调整 */
+.ffs-modal {
+    background-color: var(--ffs-background-color-light);
+    border-color: var(--ffs-border-color);
+}
+
+.ffs-modal-header {
+    border-bottom-color: var(--ffs-border-color-split);
+}
+
+.ffs-modal-footer {
+    border-top-color: var(--ffs-border-color-split);
+}
+
+/* 下拉菜单样式调整 */
+.ffs-dropdown-menu {
+    background-color: var(--ffs-background-color-light);
+    border-color: var(--ffs-border-color);
+    box-shadow: var(--ffs-box-shadow);
+}
+
+.ffs-dropdown-item {
+    color: var(--ffs-text-color);
+}
+
+.ffs-dropdown-item:hover {
+    background-color: var(--ffs-background-color-hover);
+}
+
+/* 滚动条样式调整 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--ffs-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--ffs-border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--ffs-border-color-split);
+}

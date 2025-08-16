@@ -1,0 +1,249 @@
+/* 标题样式 */
+.ffs-h1, .ffs-h2, .ffs-h3, .ffs-h4, .ffs-h5, .ffs-h6 {
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-color);
+}
+
+.ffs-h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.ffs-h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.ffs-h3 {
+    font-size: 1.75em;
+    margin-bottom: 0.5em;
+}
+
+.ffs-h4 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.ffs-h5 {
+    font-size: 1.25em;
+    margin-bottom: 0.5em;
+}
+
+.ffs-h6 {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+/* 文本样式 */
+.ffs-text {
+    margin: 0;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.ffs-text-primary {
+    color: var(--primary-color);
+}
+
+.ffs-text-success {
+    color: var(--success-color);
+}
+
+.ffs-text-warning {
+    color: var(--warning-color);
+}
+
+.ffs-text-error {
+    color: var(--error-color);
+}
+
+.ffs-text-secondary {
+    color: var(--text-secondary);
+}
+
+.ffs-text-disabled {
+    color: var(--text-disabled);
+}
+
+/* 段落样式 */
+.ffs-paragraph {
+    margin: 0 0 1em;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.ffs-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+/* 可复制文本 */
+.ffs-copyable {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding-right: 1.5em;
+}
+
+.ffs-copyable::after {
+    content: '复制';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.875em;
+    color: var(--text-secondary);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.ffs-copyable:hover::after {
+    opacity: 1;
+}
+
+.ffs-copyable.copied::after {
+    content: '已复制';
+    color: var(--success-color);
+}
+
+/* 可编辑文本 */
+.ffs-editable {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.25em 0.5em;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.ffs-editable:hover {
+    background-color: var(--hover-color);
+}
+
+.ffs-editable.editing {
+    background-color: var(--background-color);
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.ffs-editable input {
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+}
+
+/* 省略文本 */
+.ffs-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ffs-ellipsis-multi {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 代码块 */
+.ffs-code {
+    display: inline-block;
+    padding: 0.2em 0.4em;
+    background-color: var(--code-background);
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.875em;
+    color: var(--code-color);
+}
+
+.ffs-code-block {
+    display: block;
+    padding: 1em;
+    background-color: var(--code-background);
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.875em;
+    color: var(--code-color);
+    overflow-x: auto;
+    margin: 1em 0;
+}
+
+.ffs-code-block pre {
+    margin: 0;
+    white-space: pre;
+}
+
+/* 文本对齐 */
+.ffs-text-left {
+    text-align: left;
+}
+
+.ffs-text-center {
+    text-align: center;
+}
+
+.ffs-text-right {
+    text-align: right;
+}
+
+/* 文本装饰 */
+.ffs-text-underline {
+    text-decoration: underline;
+}
+
+.ffs-text-overline {
+    text-decoration: overline;
+}
+
+.ffs-text-line-through {
+    text-decoration: line-through;
+}
+
+/* 文本大小 */
+.ffs-text-sm {
+    font-size: 0.875em;
+}
+
+.ffs-text-lg {
+    font-size: 1.25em;
+}
+
+.ffs-text-xl {
+    font-size: 1.5em;
+}
+
+/* 文本粗细 */
+.ffs-text-light {
+    font-weight: 300;
+}
+
+.ffs-text-normal {
+    font-weight: 400;
+}
+
+.ffs-text-medium {
+    font-weight: 500;
+}
+
+.ffs-text-bold {
+    font-weight: 600;
+}
+
+/* 文本间距 */
+.ffs-text-spacing-sm {
+    letter-spacing: 0.5px;
+}
+
+.ffs-text-spacing-md {
+    letter-spacing: 1px;
+}
+
+.ffs-text-spacing-lg {
+    letter-spacing: 2px;
+} 

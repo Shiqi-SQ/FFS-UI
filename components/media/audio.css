@@ -1,0 +1,278 @@
+/* 音频容器 */
+.ffs-audio {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+/* 音频播放器 */
+.ffs-audio-player {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 播放/暂停按钮 */
+.ffs-audio-play {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.ffs-audio-play:hover {
+    transform: scale(1.1);
+}
+
+.ffs-audio-play i {
+    font-size: 18px;
+}
+
+/* 音频信息 */
+.ffs-audio-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.ffs-audio-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ffs-audio-artist {
+    font-size: 12px;
+    color: var(--text-color-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 进度条 */
+.ffs-audio-progress {
+    width: 100%;
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 10px 0;
+    position: relative;
+}
+
+.ffs-audio-progress-bar {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 2px;
+    width: 0;
+    position: relative;
+}
+
+.ffs-audio-progress-bar::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ffs-audio-progress:hover .ffs-audio-progress-bar::after {
+    opacity: 1;
+}
+
+/* 时间显示 */
+.ffs-audio-time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-color-secondary);
+}
+
+/* 音量控制 */
+.ffs-audio-volume {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ffs-audio-volume i {
+    color: var(--text-color-secondary);
+    cursor: pointer;
+}
+
+.ffs-audio-volume-slider {
+    width: 80px;
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.ffs-audio-volume-bar {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 2px;
+    width: 100%;
+}
+
+/* 音频录制 */
+.ffs-audio-recorder {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.ffs-audio-record {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--error-color);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.ffs-audio-record:hover {
+    transform: scale(1.1);
+}
+
+.ffs-audio-record.recording {
+    animation: pulse 1.5s infinite;
+}
+
+.ffs-audio-record i {
+    font-size: 18px;
+}
+
+/* 语音识别 */
+.ffs-audio-speech {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.ffs-audio-speech-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+.ffs-audio-speech-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.ffs-audio-speech-button:hover {
+    transform: scale(1.1);
+}
+
+.ffs-audio-speech-button i {
+    font-size: 18px;
+}
+
+.ffs-audio-speech-button.listening {
+    animation: pulse 1.5s infinite;
+}
+
+/* 音频波形 */
+.ffs-audio-waveform {
+    height: 60px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.ffs-audio-waveform canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* 音频列表 */
+.ffs-audio-list {
+    margin-top: 10px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+}
+
+.ffs-audio-list-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.ffs-audio-list-item:hover {
+    background: var(--hover-color);
+}
+
+.ffs-audio-list-item.active {
+    background: var(--primary-color-light);
+}
+
+/* 动画 */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .ffs-audio {
+        max-width: 100%;
+    }
+
+    .ffs-audio-volume-slider {
+        width: 60px;
+    }
+} 

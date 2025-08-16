@@ -1,0 +1,288 @@
+/* 分步表单 */
+.ffs-pro-step-form {
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+
+.ffs-pro-step-form-header {
+    margin-bottom: 32px;
+}
+
+.ffs-pro-step-form-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    position: relative;
+}
+
+.ffs-pro-step-form-steps::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--border-color);
+    z-index: 1;
+}
+
+.ffs-pro-step-form-step {
+    position: relative;
+    z-index: 2;
+    background: var(--background-color);
+    padding: 0 16px;
+}
+
+.ffs-pro-step-form-step-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--background-color);
+    border: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+    transition: all 0.3s;
+}
+
+.ffs-pro-step-form-step.active .ffs-pro-step-form-step-icon {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.ffs-pro-step-form-step.completed .ffs-pro-step-form-step-icon {
+    background: var(--success-color);
+    border-color: var(--success-color);
+    color: white;
+}
+
+.ffs-pro-step-form-step-title {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+    text-align: center;
+}
+
+.ffs-pro-step-form-step.active .ffs-pro-step-form-step-title {
+    color: var(--primary-color);
+}
+
+.ffs-pro-step-form-step.completed .ffs-pro-step-form-step-title {
+    color: var(--success-color);
+}
+
+.ffs-pro-step-form-content {
+    margin-bottom: 24px;
+}
+
+.ffs-pro-step-form-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* 高级搜索 */
+.ffs-pro-search-form {
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+
+.ffs-pro-search-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.ffs-pro-search-form-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.ffs-pro-search-form-collapse {
+    color: var(--text-color-secondary);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-pro-search-form-collapse:hover {
+    color: var(--primary-color);
+}
+
+.ffs-pro-search-form-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.ffs-pro-search-form-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* 登录注册 */
+.ffs-pro-auth-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+}
+
+.ffs-pro-auth-form-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.ffs-pro-auth-form-logo {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+}
+
+.ffs-pro-auth-form-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.ffs-pro-auth-form-subtitle {
+    color: var(--text-color-secondary);
+    font-size: 14px;
+}
+
+.ffs-pro-auth-form-content {
+    margin-bottom: 24px;
+}
+
+.ffs-pro-auth-form-footer {
+    text-align: center;
+}
+
+.ffs-pro-auth-form-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.ffs-pro-auth-form-link:hover {
+    text-decoration: underline;
+}
+
+/* 分组表单 */
+.ffs-pro-group-form {
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+
+.ffs-pro-group-form-group {
+    margin-bottom: 32px;
+}
+
+.ffs-pro-group-form-group:last-child {
+    margin-bottom: 0;
+}
+
+.ffs-pro-group-form-group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-pro-group-form-group-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.ffs-pro-group-form-group-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+/* 动态表单 */
+.ffs-pro-dynamic-form {
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+
+.ffs-pro-dynamic-form-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.ffs-pro-dynamic-form-item:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-pro-dynamic-form-item-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.ffs-pro-dynamic-form-item-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ffs-pro-dynamic-form-add {
+    margin-top: 16px;
+    text-align: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ffs-pro-step-form-steps {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .ffs-pro-step-form-steps::before {
+        display: none;
+    }
+
+    .ffs-pro-search-form-content,
+    .ffs-pro-group-form-group-content,
+    .ffs-pro-dynamic-form-item-content {
+        grid-template-columns: 1fr;
+    }
+
+    .ffs-pro-dynamic-form-item {
+        flex-direction: column;
+    }
+
+    .ffs-pro-dynamic-form-item-actions {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}

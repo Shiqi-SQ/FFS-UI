@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 布局组件</title>
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>布局组件</h1>
+
+        <!-- 基础布局 -->
+        <section>
+            <h2>基础布局</h2>
+            <div class="demo-box">
+                <div class="ffs-layout" style="height: 200px;">
+                    <div class="ffs-layout-header" style="height: 50px; padding: 10px;">头部</div>
+                    <div class="ffs-layout-content">内容区域</div>
+                    <div class="ffs-layout-footer" style="height: 50px; padding: 10px;">底部</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 顶部-侧边布局 -->
+        <section>
+            <h2>顶部-侧边布局</h2>
+            <div class="demo-box">
+                <div class="ffs-layout-top-side" style="height: 300px;">
+                    <div class="ffs-layout-header" style="padding: 10px;">头部</div>
+                    <div class="ffs-layout-container">
+                        <div class="ffs-layout-sidebar" style="padding: 10px;">侧边栏</div>
+                        <div class="ffs-layout-main">主内容区域</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 侧边布局 -->
+        <section>
+            <h2>侧边布局</h2>
+            <div class="demo-box">
+                <div class="ffs-layout-side" style="height: 300px;">
+                    <div class="ffs-layout-sidebar" style="padding: 10px;">侧边栏</div>
+                    <div class="ffs-layout-main">主内容区域</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 自适应布局 -->
+        <section>
+            <h2>自适应布局</h2>
+            <div class="demo-box">
+                <div class="ffs-layout-adaptive">
+                    <div class="ffs-layout-adaptive-item">项目1</div>
+                    <div class="ffs-layout-adaptive-item">项目2</div>
+                    <div class="ffs-layout-adaptive-item">项目3</div>
+                    <div class="ffs-layout-adaptive-item">项目4</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flex布局 -->
+        <section>
+            <h2>Flex布局</h2>
+            <div class="demo-box">
+                <div class="ffs-flex ffs-flex-between ffs-flex-middle" style="height: 100px; background: var(--background-color);">
+                    <div>左侧</div>
+                    <div>中间</div>
+                    <div>右侧</div>
+                </div>
+                <div class="ffs-flex ffs-flex-column ffs-flex-center" style="height: 100px; background: var(--background-color); margin-top: 20px;">
+                    <div>上</div>
+                    <div>中</div>
+                    <div>下</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flex项目 -->
+        <section>
+            <h2>Flex项目</h2>
+            <div class="demo-box">
+                <div class="ffs-flex" style="height: 100px; background: var(--background-color);">
+                    <div class="ffs-flex-item">自适应宽度</div>
+                    <div class="ffs-flex-item-auto">固定宽度</div>
+                    <div class="ffs-flex-item-none">不伸缩</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 响应式布局 -->
+        <section>
+            <h2>响应式布局</h2>
+            <div class="demo-box">
+                <div class="ffs-layout-responsive">
+                    <div style="background: var(--background-color); padding: 20px; border-radius: 8px;">响应式项目1</div>
+                    <div style="background: var(--background-color); padding: 20px; border-radius: 8px;">响应式项目2</div>
+                    <div style="background: var(--background-color); padding: 20px; border-radius: 8px;">响应式项目3</div>
+                    <div style="background: var(--background-color); padding: 20px; border-radius: 8px;">响应式项目4</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 布局间距 -->
+        <section>
+            <h2>布局间距</h2>
+            <div class="demo-box">
+                <div class="ffs-flex ffs-layout-gap-sm">
+                    <div style="background: var(--background-color); padding: 10px;">小间距</div>
+                    <div style="background: var(--background-color); padding: 10px;">小间距</div>
+                </div>
+                <div class="ffs-flex ffs-layout-gap-md" style="margin-top: 20px;">
+                    <div style="background: var(--background-color); padding: 10px;">中间距</div>
+                    <div style="background: var(--background-color); padding: 10px;">中间距</div>
+                </div>
+                <div class="ffs-flex ffs-layout-gap-lg" style="margin-top: 20px;">
+                    <div style="background: var(--background-color); padding: 10px;">大间距</div>
+                    <div style="background: var(--background-color); padding: 10px;">大间距</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 布局容器 -->
+        <section>
+            <h2>布局容器</h2>
+            <div class="demo-box">
+                <div class="ffs-container" style="background: var(--background-color); padding: 20px;">默认容器</div>
+                <div class="ffs-container-sm" style="background: var(--background-color); padding: 20px; margin-top: 20px;">小容器</div>
+                <div class="ffs-container-lg" style="background: var(--background-color); padding: 20px; margin-top: 20px;">大容器</div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        .demo-box > div {
+            margin-bottom: 20px;
+        }
+
+        .demo-box > div:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 响应式侧边栏切换
+        const toggleSidebar = () => {
+            const sidebar = document.querySelector('.ffs-layout-sidebar');
+            const mask = document.querySelector('.ffs-layout-mask');
+            sidebar.classList.toggle('show');
+            mask.classList.toggle('show');
+        };
+
+        // 添加遮罩层
+        const mask = document.createElement('div');
+        mask.className = 'ffs-layout-mask';
+        document.body.appendChild(mask);
+
+        // 点击遮罩层关闭侧边栏
+        mask.addEventListener('click', () => {
+            const sidebar = document.querySelector('.ffs-layout-sidebar');
+            sidebar.classList.remove('show');
+            mask.classList.remove('show');
+        });
+    </script>
+</body>
+</html> 

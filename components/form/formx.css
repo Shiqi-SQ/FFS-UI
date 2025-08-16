@@ -1,0 +1,608 @@
+/* 单选框组 */
+.ffs-radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.ffs-radio {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.ffs-radio-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.ffs-radio-checked {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    margin-right: 8px;
+    transition: all 0.3s;
+}
+
+.ffs-radio-checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.ffs-radio-input:checked + .ffs-radio-checked {
+    border-color: var(--primary-color);
+}
+
+.ffs-radio-input:checked + .ffs-radio-checked::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.ffs-radio-label {
+    color: var(--text-color);
+}
+
+.ffs-radio-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.ffs-radio-disabled .ffs-radio-checked {
+    background-color: var(--disabled-color);
+    border-color: var(--disabled-color);
+}
+
+/* 复选框组 */
+.ffs-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.ffs-checkbox {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.ffs-checkbox-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.ffs-checkbox-checked {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    margin-right: 8px;
+    transition: all 0.3s;
+}
+
+.ffs-checkbox-checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: transform 0.3s;
+}
+
+.ffs-checkbox-input:checked + .ffs-checkbox-checked {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+}
+
+.ffs-checkbox-input:checked + .ffs-checkbox-checked::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.ffs-checkbox-label {
+    color: var(--text-color);
+}
+
+.ffs-checkbox-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.ffs-checkbox-disabled .ffs-checkbox-checked {
+    background-color: var(--disabled-color);
+    border-color: var(--disabled-color);
+}
+
+/* 开关 */
+.ffs-switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.ffs-switch-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.ffs-switch-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--border-color);
+    border-radius: 11px;
+    transition: all 0.3s;
+}
+
+.ffs-switch-handle {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.ffs-switch-input:checked + .ffs-switch-track {
+    background-color: var(--primary-color);
+}
+
+.ffs-switch-input:checked + .ffs-switch-track .ffs-switch-handle {
+    transform: translateX(22px);
+}
+
+.ffs-switch-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.ffs-switch-disabled .ffs-switch-track {
+    background-color: var(--disabled-color);
+}
+
+/* 滑动输入条 */
+.ffs-slider {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    padding: 5px 0;
+}
+
+.ffs-slider-track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--border-color);
+    border-radius: 2px;
+    transform: translateY(-50%);
+}
+
+.ffs-slider-progress {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transform: translateY(-50%);
+}
+
+.ffs-slider-handle {
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-slider-handle:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.ffs-slider-handle:active {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.ffs-slider-disabled {
+    opacity: 0.5;
+}
+
+.ffs-slider-disabled .ffs-slider-handle {
+    cursor: not-allowed;
+}
+
+.ffs-slider-mark {
+    position: absolute;
+    top: 50%;
+    width: 2px;
+    height: 8px;
+    background-color: var(--border-color);
+    transform: translate(-50%, -50%);
+}
+
+.ffs-slider-mark-label {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: var(--text-color-secondary);
+}
+
+/* 评分 */
+.ffs-rate {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.ffs-rate-star {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: var(--border-color);
+    transition: all 0.3s;
+}
+
+.ffs-rate-star::before {
+    content: '\f005';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.ffs-rate-star:hover,
+.ffs-rate-star:hover ~ .ffs-rate-star,
+.ffs-rate-star.active,
+.ffs-rate-star.active ~ .ffs-rate-star {
+    color: var(--primary-color);
+}
+
+.ffs-rate-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* 颜色选择器 */
+.ffs-colorpicker {
+    position: relative;
+    display: inline-block;
+}
+
+.ffs-colorpicker-picker {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    padding: 4px 11px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-colorpicker-picker:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-colorpicker-picker:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+.ffs-colorpicker-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    margin-right: 8px;
+}
+
+.ffs-colorpicker-label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ffs-colorpicker-arrow {
+    margin-left: 8px;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-colorpicker-open .ffs-colorpicker-arrow {
+    transform: rotate(180deg);
+}
+
+.ffs-colorpicker-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    padding: 12px;
+}
+
+.ffs-colorpicker-open .ffs-colorpicker-dropdown {
+    display: block;
+}
+
+.ffs-colorpicker-palette {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 4px;
+    margin-bottom: 12px;
+}
+
+.ffs-colorpicker-color-item {
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-colorpicker-color-item:hover {
+    transform: scale(1.2);
+}
+
+.ffs-colorpicker-color-item-selected {
+    border: 2px solid var(--primary-color);
+}
+
+.ffs-colorpicker-input {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ffs-colorpicker-input input {
+    flex: 1;
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+}
+
+.ffs-colorpicker-input input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+/* 动态表单 */
+.ffs-dynamic-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ffs-dynamic-form-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+}
+
+.ffs-dynamic-form-item:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-dynamic-form-item-handle {
+    display: flex;
+    align-items: center;
+    color: var(--text-color-secondary);
+    cursor: move;
+}
+
+.ffs-dynamic-form-item-content {
+    flex: 1;
+}
+
+.ffs-dynamic-form-item-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-dynamic-form-item-action {
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-dynamic-form-item-action:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.ffs-dynamic-form-item-action-danger:hover {
+    border-color: var(--error-color);
+    color: var(--error-color);
+}
+
+.ffs-dynamic-form-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    border: 1px dashed var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-dynamic-form-add:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* 表单验证 */
+.ffs-form-item {
+    margin-bottom: 16px;
+}
+
+.ffs-form-item-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.ffs-form-item-label-required::before {
+    content: '*';
+    color: var(--error-color);
+    margin-right: 4px;
+}
+
+.ffs-form-item-control {
+    position: relative;
+}
+
+.ffs-form-item-error {
+    margin-top: 4px;
+    color: var(--error-color);
+    font-size: 12px;
+}
+
+.ffs-form-item-success {
+    margin-top: 4px;
+    color: var(--success-color);
+    font-size: 12px;
+}
+
+.ffs-form-item-warning {
+    margin-top: 4px;
+    color: var(--warning-color);
+    font-size: 12px;
+}
+
+.ffs-form-item-help {
+    margin-top: 4px;
+    color: var(--text-color-secondary);
+    font-size: 12px;
+}
+
+/* 自定义校验 */
+.ffs-form-item-validate {
+    position: relative;
+}
+
+.ffs-form-item-validate-status {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}
+
+.ffs-form-item-validate-status-success {
+    color: var(--success-color);
+}
+
+.ffs-form-item-validate-status-error {
+    color: var(--error-color);
+}
+
+.ffs-form-item-validate-status-warning {
+    color: var(--warning-color);
+}
+
+.ffs-form-item-validate-status-loading {
+    color: var(--primary-color);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+.ffs-form-item-validate-status-show {
+    display: block;
+}
+
+.ffs-form-item-validate-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    padding: 4px 8px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+}
+
+.ffs-form-item-validate-tooltip-show {
+    display: block;
+}
+
+.ffs-form-item-validate-tooltip-error {
+    border-color: var(--error-color);
+    color: var(--error-color);
+}
+
+.ffs-form-item-validate-tooltip-success {
+    border-color: var(--success-color);
+    color: var(--success-color);
+}
+
+.ffs-form-item-validate-tooltip-warning {
+    border-color: var(--warning-color);
+    color: var(--warning-color);
+} 

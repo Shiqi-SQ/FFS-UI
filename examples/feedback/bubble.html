@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 气泡提示组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>气泡提示组件</h1>
+
+        <!-- 文字提示 -->
+        <section>
+            <h2>文字提示</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-tooltip ffs-tooltip-top">
+                        <button class="ffs-button">上方提示</button>
+                        <div class="ffs-tooltip-content">这是一个上方提示</div>
+                    </div>
+                    <div class="ffs-tooltip ffs-tooltip-bottom">
+                        <button class="ffs-button">下方提示</button>
+                        <div class="ffs-tooltip-content">这是一个下方提示</div>
+                    </div>
+                    <div class="ffs-tooltip ffs-tooltip-left">
+                        <button class="ffs-button">左侧提示</button>
+                        <div class="ffs-tooltip-content">这是一个左侧提示</div>
+                    </div>
+                    <div class="ffs-tooltip ffs-tooltip-right">
+                        <button class="ffs-button">右侧提示</button>
+                        <div class="ffs-tooltip-content">这是一个右侧提示</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 气泡确认框 -->
+        <section>
+            <h2>气泡确认框</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-popconfirm">
+                        <button class="ffs-button" onclick="togglePopconfirm(this)">删除确认</button>
+                        <div class="ffs-popconfirm-content">
+                            <div class="ffs-popconfirm-title">确认删除</div>
+                            <div class="ffs-popconfirm-message">确定要删除这条记录吗？此操作不可恢复。</div>
+                            <div class="ffs-popconfirm-buttons">
+                                <button class="ffs-button" onclick="handleConfirm(this)">确定</button>
+                                <button class="ffs-button" onclick="handleCancel(this)">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 操作反馈 -->
+        <section>
+            <h2>操作反馈</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-feedback">
+                        <button class="ffs-button" onclick="showFeedback(this)">点击反馈</button>
+                        <div class="ffs-feedback-content">操作成功！</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 上下文菜单 -->
+        <section>
+            <h2>上下文菜单</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-contextmenu" id="contextMenu">
+                        <div class="ffs-contextmenu-item">
+                            <i class="fas fa-edit"></i>
+                            <span>编辑</span>
+                        </div>
+                        <div class="ffs-contextmenu-item">
+                            <i class="fas fa-copy"></i>
+                            <span>复制</span>
+                        </div>
+                        <div class="ffs-contextmenu-divider"></div>
+                        <div class="ffs-contextmenu-item">
+                            <i class="fas fa-trash"></i>
+                            <span>删除</span>
+                        </div>
+                        <div class="ffs-contextmenu-item disabled">
+                            <i class="fas fa-ban"></i>
+                            <span>禁用</span>
+                        </div>
+                    </div>
+                    <button class="ffs-button" onclick="showContextMenu(event)">右键菜单</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        .demo-item {
+            margin-bottom: 20px;
+            width: 100%;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .demo-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 气泡确认框
+        function togglePopconfirm(button) {
+            const content = button.parentElement.querySelector('.ffs-popconfirm-content');
+            content.classList.toggle('show');
+        }
+
+        function handleConfirm(button) {
+            const content = button.closest('.ffs-popconfirm-content');
+            content.classList.remove('show');
+            alert('已确认删除');
+        }
+
+        function handleCancel(button) {
+            const content = button.closest('.ffs-popconfirm-content');
+            content.classList.remove('show');
+        }
+
+        // 操作反馈
+        function showFeedback(button) {
+            const feedback = button.parentElement;
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 2000);
+        }
+
+        // 上下文菜单
+        function showContextMenu(event) {
+            event.preventDefault();
+            const menu = document.getElementById('contextMenu');
+            menu.style.left = event.clientX + 'px';
+            menu.style.top = event.clientY + 'px';
+            menu.classList.add('show');
+
+            // 点击其他地方关闭菜单
+            const closeMenu = (e) => {
+                if (!menu.contains(e.target)) {
+                    menu.classList.remove('show');
+                }
+            };
+            document.addEventListener('click', closeMenu, { once: true });
+        }
+
+        // 点击菜单项
+        document.querySelectorAll('.ffs-contextmenu-item:not(.disabled)').forEach(item => {
+            item.addEventListener('click', () => {
+                const menu = item.closest('.ffs-contextmenu');
+                menu.classList.remove('show');
+                alert('点击了：' + item.querySelector('span').textContent);
+            });
+        });
+    </script>
+</body>
+</html> 

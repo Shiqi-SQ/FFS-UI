@@ -1,0 +1,238 @@
+/* 拖拽排序样式 */
+.ffs-drag-sort {
+    position: relative;
+    width: 100%;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.ffs-drag-sort-item {
+    position: relative;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: move;
+    transition: all 0.3s;
+}
+
+.ffs-drag-sort-item:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-drag-sort-item.dragging {
+    opacity: 0.5;
+    background: var(--primary-color-light);
+    border-color: var(--primary-color);
+}
+
+.ffs-drag-sort-handle {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-color-secondary);
+    cursor: move;
+}
+
+/* 拖拽列表样式 */
+.ffs-drag-list {
+    position: relative;
+    width: 100%;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.ffs-drag-list-container {
+    display: flex;
+    gap: 16px;
+}
+
+.ffs-drag-list-column {
+    flex: 1;
+    min-width: 200px;
+    background: var(--background-color-light);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 12px;
+}
+
+.ffs-drag-list-column-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-drag-list-item {
+    padding: 12px;
+    margin-bottom: 8px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: move;
+    transition: all 0.3s;
+}
+
+.ffs-drag-list-item:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-drag-list-item.dragging {
+    opacity: 0.5;
+    background: var(--primary-color-light);
+    border-color: var(--primary-color);
+}
+
+/* 拖拽表格样式 */
+.ffs-drag-table {
+    position: relative;
+    width: 100%;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+    overflow-x: auto;
+}
+
+.ffs-drag-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ffs-drag-table th,
+.ffs-drag-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-drag-table th {
+    background: var(--background-color-light);
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.ffs-drag-table tr {
+    cursor: move;
+    transition: all 0.3s;
+}
+
+.ffs-drag-table tr:hover {
+    background: var(--background-color-light);
+}
+
+.ffs-drag-table tr.dragging {
+    opacity: 0.5;
+    background: var(--primary-color-light);
+}
+
+/* 拖拽上传样式 */
+.ffs-drag-upload {
+    position: relative;
+    width: 100%;
+    background: var(--background-color);
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 32px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.ffs-drag-upload:hover,
+.ffs-drag-upload.dragover {
+    border-color: var(--primary-color);
+    background: var(--primary-color-light);
+}
+
+.ffs-drag-upload-icon {
+    font-size: 48px;
+    color: var(--text-color-secondary);
+    margin-bottom: 16px;
+}
+
+.ffs-drag-upload-text {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.ffs-drag-upload-hint {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+.ffs-drag-upload-list {
+    margin-top: 16px;
+    text-align: left;
+}
+
+.ffs-drag-upload-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin-bottom: 8px;
+    background: var(--background-color-light);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.ffs-drag-upload-item-icon {
+    margin-right: 8px;
+    color: var(--text-color-secondary);
+}
+
+.ffs-drag-upload-item-name {
+    flex: 1;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.ffs-drag-upload-item-size {
+    font-size: 12px;
+    color: var(--text-color-secondary);
+    margin-right: 8px;
+}
+
+.ffs-drag-upload-item-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-drag-upload-item-action {
+    color: var(--text-color-secondary);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-drag-upload-item-action:hover {
+    color: var(--primary-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ffs-drag-list-container {
+        flex-direction: column;
+    }
+
+    .ffs-drag-list-column {
+        min-width: 100%;
+    }
+
+    .ffs-drag-table {
+        padding: 8px;
+    }
+
+    .ffs-drag-table th,
+    .ffs-drag-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+} 

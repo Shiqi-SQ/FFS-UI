@@ -1,0 +1,178 @@
+/* 点击涟漪效果 */
+.ffs-ripple {
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.ffs-ripple::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, var(--primary-color-light) 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform var(--animation-duration) var(--animation-timing-function), 
+                opacity var(--animation-duration) var(--animation-timing-function);
+}
+
+.ffs-ripple:active::after {
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
+}
+
+/* 悬浮效果 */
+.ffs-hover {
+    transition: all var(--animation-duration) var(--animation-timing-function);
+    will-change: transform, box-shadow;
+}
+
+.ffs-hover--scale:hover {
+    transform: scale(1.05);
+}
+
+.ffs-hover--lift:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow);
+}
+
+.ffs-hover--glow:hover {
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+.ffs-hover--border {
+    position: relative;
+}
+
+.ffs-hover--border::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--animation-duration) var(--animation-timing-function);
+}
+
+.ffs-hover--border:hover::before {
+    width: 100%;
+}
+
+/* 页面切换动画 */
+.ffs-page-transition {
+    position: relative;
+    overflow: hidden;
+    will-change: transform, opacity;
+}
+
+.ffs-page-transition__page {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all var(--animation-duration) var(--animation-timing-function);
+}
+
+.ffs-page-transition__page--active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.ffs-page-transition__page--exit {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+/* 交互按钮 */
+.ffs-button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--primary-color);
+    color: var(--text-color-light);
+    cursor: pointer;
+    transition: all var(--animation-duration) var(--animation-timing-function);
+    will-change: transform, background-color;
+}
+
+.ffs-button:hover {
+    background: var(--primary-color-hover);
+    transform: translateY(-2px);
+}
+
+.ffs-button:active {
+    background: var(--primary-color-active);
+    transform: translateY(0);
+}
+
+/* 交互卡片 */
+.ffs-card {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-lg);
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    transition: all var(--animation-duration) var(--animation-timing-function);
+    will-change: transform, box-shadow, border-color;
+}
+
+.ffs-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--box-shadow);
+    transform: translateY(-3px);
+}
+
+/* 交互列表项 */
+.ffs-list-item {
+    padding: var(--spacing-sm);
+    margin: var(--spacing-xs) 0;
+    border-radius: var(--border-radius);
+    transition: all var(--animation-duration) var(--animation-timing-function);
+    will-change: transform, background-color;
+}
+
+.ffs-list-item:hover {
+    background: var(--background-color-hover);
+    transform: translateX(var(--spacing-xs));
+}
+
+/* 交互图片 */
+.ffs-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    will-change: transform;
+}
+
+.ffs-image__img {
+    width: 100%;
+    height: auto;
+    transition: transform var(--animation-duration) var(--animation-timing-function);
+}
+
+.ffs-image:hover .ffs-image__img {
+    transform: scale(1.1);
+}
+
+.ffs-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity var(--animation-duration) var(--animation-timing-function);
+}
+
+.ffs-image:hover::after {
+    opacity: 1;
+}

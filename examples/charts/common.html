@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 图表组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>图表组件</h1>
+
+        <!-- 折线图 -->
+        <section>
+            <h2>折线图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-line">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">销售趋势</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-content">
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                    <div class="ffs-chart-legend">
+                        <div class="ffs-chart-legend-item">
+                            <span class="ffs-chart-legend-color" style="background: #1890ff;"></span>
+                            <span>销售额</span>
+                        </div>
+                        <div class="ffs-chart-legend-item">
+                            <span class="ffs-chart-legend-color" style="background: #52c41a;"></span>
+                            <span>利润</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 面积图 -->
+        <section>
+            <h2>面积图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-area">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">访问量统计</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-content">
+                        <canvas id="areaChart"></canvas>
+                    </div>
+                    <div class="ffs-chart-legend">
+                        <div class="ffs-chart-legend-item">
+                            <span class="ffs-chart-legend-color" style="background: #1890ff;"></span>
+                            <span>访问量</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 柱状图 -->
+        <section>
+            <h2>柱状图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-bar">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">销售分布</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-content">
+                        <canvas id="barChart"></canvas>
+                    </div>
+                    <div class="ffs-chart-legend">
+                        <div class="ffs-chart-legend-item">
+                            <span class="ffs-chart-legend-color" style="background: #1890ff;"></span>
+                            <span>销售额</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 条形图 -->
+        <section>
+            <h2>条形图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-horizontal-bar">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">产品销量</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-content">
+                        <canvas id="horizontalBarChart"></canvas>
+                    </div>
+                    <div class="ffs-chart-legend">
+                        <div class="ffs-chart-legend-item">
+                            <span class="ffs-chart-legend-color" style="background: #1890ff;"></span>
+                            <span>销量</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 饼图 -->
+        <section>
+            <h2>饼图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-pie">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">销售占比</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-content">
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                    <div class="ffs-chart-legend">
+                        <div class="ffs-chart-legend-item">
+                            <span class="ffs-chart-legend-color" style="background: #1890ff;"></span>
+                            <span>产品A</span>
+                        </div>
+                        <div class="ffs-chart-legend-item">
+                            <span class="ffs-chart-legend-color" style="background: #52c41a;"></span>
+                            <span>产品B</span>
+                        </div>
+                        <div class="ffs-chart-legend-item">
+                            <span class="ffs-chart-legend-color" style="background: #faad14;"></span>
+                            <span>产品C</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 散点图 -->
+        <section>
+            <h2>散点图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-scatter">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">相关性分析</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-content">
+                        <canvas id="scatterChart"></canvas>
+                    </div>
+                    <div class="ffs-chart-legend">
+                        <div class="ffs-chart-legend-item">
+                            <span class="ffs-chart-legend-color" style="background: #1890ff;"></span>
+                            <span>数据点</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 雷达图 -->
+        <section>
+            <h2>雷达图</h2>
+            <div class="demo-box">
+                <div class="ffs-chart ffs-chart-radar">
+                    <div class="ffs-chart-header">
+                        <h3 class="ffs-chart-title">能力评估</h3>
+                        <div class="ffs-chart-actions">
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-download"></i> 导出
+                            </button>
+                            <button class="ffs-chart-action-btn">
+                                <i class="fas fa-sync"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-chart-content">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                    <div class="ffs-chart-legend">
+                        <div class="ffs-chart-legend-item">
+                            <span class="ffs-chart-legend-color" style="background: #1890ff;"></span>
+                            <span>当前能力</span>
+                        </div>
+                        <div class="ffs-chart-legend-item">
+                            <span class="ffs-chart-legend-color" style="background: #52c41a;"></span>
+                            <span>目标能力</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+            min-height: 400px;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // 折线图
+        const lineCtx = document.getElementById('lineChart').getContext('2d');
+        new Chart(lineCtx, {
+            type: 'line',
+            data: {
+                labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+                datasets: [{
+                    label: '销售额',
+                    data: [65, 59, 80, 81, 56, 55],
+                    borderColor: '#1890ff',
+                    tension: 0.4
+                }, {
+                    label: '利润',
+                    data: [28, 48, 40, 19, 86, 27],
+                    borderColor: '#52c41a',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // 面积图
+        const areaCtx = document.getElementById('areaChart').getContext('2d');
+        new Chart(areaCtx, {
+            type: 'line',
+            data: {
+                labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+                datasets: [{
+                    label: '访问量',
+                    data: [65, 59, 80, 81, 56, 55],
+                    borderColor: '#1890ff',
+                    backgroundColor: 'rgba(24, 144, 255, 0.2)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // 柱状图
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: ['产品A', '产品B', '产品C', '产品D', '产品E'],
+                datasets: [{
+                    label: '销售额',
+                    data: [65, 59, 80, 81, 56],
+                    backgroundColor: '#1890ff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // 条形图
+        const horizontalBarCtx = document.getElementById('horizontalBarChart').getContext('2d');
+        new Chart(horizontalBarCtx, {
+            type: 'bar',
+            data: {
+                labels: ['产品A', '产品B', '产品C', '产品D', '产品E'],
+                datasets: [{
+                    label: '销量',
+                    data: [65, 59, 80, 81, 56],
+                    backgroundColor: '#1890ff'
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // 饼图
+        const pieCtx = document.getElementById('pieChart').getContext('2d');
+        new Chart(pieCtx, {
+            type: 'pie',
+            data: {
+                labels: ['产品A', '产品B', '产品C'],
+                datasets: [{
+                    data: [300, 200, 100],
+                    backgroundColor: ['#1890ff', '#52c41a', '#faad14']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // 散点图
+        const scatterCtx = document.getElementById('scatterChart').getContext('2d');
+        new Chart(scatterCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: '数据点',
+                    data: [
+                        {x: 10, y: 20},
+                        {x: 15, y: 30},
+                        {x: 20, y: 40},
+                        {x: 25, y: 50},
+                        {x: 30, y: 60}
+                    ],
+                    backgroundColor: '#1890ff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // 雷达图
+        const radarCtx = document.getElementById('radarChart').getContext('2d');
+        new Chart(radarCtx, {
+            type: 'radar',
+            data: {
+                labels: ['技术', '沟通', '领导力', '创新', '执行力', '学习能力'],
+                datasets: [{
+                    label: '当前能力',
+                    data: [65, 59, 80, 81, 56, 55],
+                    borderColor: '#1890ff',
+                    backgroundColor: 'rgba(24, 144, 255, 0.2)',
+                    fill: true
+                }, {
+                    label: '目标能力',
+                    data: [85, 79, 90, 91, 76, 75],
+                    borderColor: '#52c41a',
+                    backgroundColor: 'rgba(82, 196, 26, 0.2)',
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html> 

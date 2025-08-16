@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 输入框组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>输入框组件</h1>
+
+        <!-- 基础输入框 -->
+        <section>
+            <h2>基础输入框</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <input type="text" class="ffs-input" placeholder="请输入内容">
+                </div>
+                <div class="demo-item">
+                    <input type="text" class="ffs-input" value="禁用状态" disabled>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文本域 -->
+        <section>
+            <h2>文本域</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <textarea class="ffs-textarea" placeholder="请输入多行文本"></textarea>
+                </div>
+                <div class="demo-item">
+                    <textarea class="ffs-textarea" disabled>禁用状态的文本域</textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- 搜索框 -->
+        <section>
+            <h2>搜索框</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-input-search">
+                        <input type="text" class="ffs-input" placeholder="搜索...">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 密码框 -->
+        <section>
+            <h2>密码框</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-input-password">
+                        <input type="password" class="ffs-input" placeholder="请输入密码">
+                        <span class="ffs-input-password-toggle">
+                            <i class="fas fa-eye"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 带图标输入框 -->
+        <section>
+            <h2>带图标输入框</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-input-with-icon">
+                        <i class="fas fa-user ffs-input-icon"></i>
+                        <input type="text" class="ffs-input" placeholder="用户名">
+                    </div>
+                </div>
+                <div class="demo-item">
+                    <div class="ffs-input-with-icon">
+                        <i class="fas fa-envelope ffs-input-icon"></i>
+                        <input type="email" class="ffs-input" placeholder="邮箱">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 带清除按钮 -->
+        <section>
+            <h2>带清除按钮</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-input-clearable">
+                        <input type="text" class="ffs-input" placeholder="可清除的输入框" value="示例文本">
+                        <span class="ffs-input-clear">
+                            <i class="fas fa-times"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 数字输入框 -->
+        <section>
+            <h2>数字输入框</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-input-number">
+                        <input type="number" class="ffs-input" value="0" min="0" max="100">
+                        <div class="ffs-input-number-controls">
+                            <div class="ffs-input-number-up">
+                                <i class="fas fa-chevron-up"></i>
+                            </div>
+                            <div class="ffs-input-number-down">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 带格式化 -->
+        <section>
+            <h2>带格式化</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-input-formatted">
+                        <input type="text" class="ffs-input" placeholder="请输入金额">
+                        <span class="ffs-input-format">元</span>
+                    </div>
+                </div>
+                <div class="demo-item">
+                    <div class="ffs-input-formatted">
+                        <input type="text" class="ffs-input" placeholder="请输入百分比">
+                        <span class="ffs-input-format">%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 自动完成 -->
+        <section>
+            <h2>自动完成</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-input-autocomplete">
+                        <input type="text" class="ffs-input" placeholder="输入搜索关键词">
+                        <div class="ffs-input-suggestions">
+                            <div class="ffs-input-suggestion-item">建议项1</div>
+                            <div class="ffs-input-suggestion-item">建议项2</div>
+                            <div class="ffs-input-suggestion-item">建议项3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 输入框大小 -->
+        <section>
+            <h2>输入框大小</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <input type="text" class="ffs-input ffs-input-sm" placeholder="小尺寸">
+                </div>
+                <div class="demo-item">
+                    <input type="text" class="ffs-input" placeholder="默认尺寸">
+                </div>
+                <div class="demo-item">
+                    <input type="text" class="ffs-input ffs-input-lg" placeholder="大尺寸">
+                </div>
+            </div>
+        </section>
+
+        <!-- 输入框状态 -->
+        <section>
+            <h2>输入框状态</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <input type="text" class="ffs-input ffs-input-success" placeholder="成功状态">
+                </div>
+                <div class="demo-item">
+                    <input type="text" class="ffs-input ffs-input-warning" placeholder="警告状态">
+                </div>
+                <div class="demo-item">
+                    <input type="text" class="ffs-input ffs-input-error" placeholder="错误状态">
+                </div>
+            </div>
+        </section>
+
+        <!-- 输入框组 -->
+        <section>
+            <h2>输入框组</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-input-group">
+                        <input type="text" class="ffs-input" placeholder="用户名">
+                        <input type="text" class="ffs-input" placeholder="域名">
+                        <input type="text" class="ffs-input" placeholder="后缀">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        .demo-item {
+            margin-bottom: 20px;
+            width: 300px;
+        }
+
+        .demo-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 密码框切换显示/隐藏
+        document.querySelectorAll('.ffs-input-password-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const input = toggle.parentElement.querySelector('input');
+                const icon = toggle.querySelector('i');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+            });
+        });
+
+        // 清除按钮
+        document.querySelectorAll('.ffs-input-clear').forEach(clear => {
+            clear.addEventListener('click', () => {
+                const input = clear.parentElement.querySelector('input');
+                input.value = '';
+            });
+        });
+
+        // 数字输入框
+        document.querySelectorAll('.ffs-input-number-up').forEach(up => {
+            up.addEventListener('click', () => {
+                const input = up.parentElement.parentElement.querySelector('input');
+                const value = parseInt(input.value) || 0;
+                input.value = Math.min(value + 1, parseInt(input.max) || 100);
+            });
+        });
+
+        document.querySelectorAll('.ffs-input-number-down').forEach(down => {
+            down.addEventListener('click', () => {
+                const input = down.parentElement.parentElement.querySelector('input');
+                const value = parseInt(input.value) || 0;
+                input.value = Math.max(value - 1, parseInt(input.min) || 0);
+            });
+        });
+
+        // 自动完成
+        const autocompleteInput = document.querySelector('.ffs-input-autocomplete input');
+        const suggestions = document.querySelector('.ffs-input-suggestions');
+        const items = document.querySelectorAll('.ffs-input-suggestion-item');
+
+        autocompleteInput.addEventListener('focus', () => {
+            suggestions.classList.add('show');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.ffs-input-autocomplete')) {
+                suggestions.classList.remove('show');
+            }
+        });
+
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                autocompleteInput.value = item.textContent;
+                suggestions.classList.remove('show');
+            });
+
+            item.addEventListener('mouseenter', () => {
+                items.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 音频组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>音频组件</h1>
+
+        <!-- 基础音频播放器 -->
+        <section>
+            <h2>基础音频播放器</h2>
+            <div class="demo-box">
+                <div class="ffs-audio">
+                    <div class="ffs-audio-player">
+                        <button class="ffs-audio-play" onclick="togglePlay(this)">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="ffs-audio-info">
+                            <div class="ffs-audio-title">示例音频标题</div>
+                            <div class="ffs-audio-artist">艺术家名称</div>
+                        </div>
+                    </div>
+                    <div class="ffs-audio-progress" onclick="seekAudio(this)">
+                        <div class="ffs-audio-progress-bar"></div>
+                    </div>
+                    <div class="ffs-audio-time">
+                        <span class="current-time">00:00</span>
+                        <span class="duration">00:00</span>
+                    </div>
+                    <div class="ffs-audio-volume">
+                        <i class="fas fa-volume-up"></i>
+                        <div class="ffs-audio-volume-slider" onclick="adjustVolume(this)">
+                            <div class="ffs-audio-volume-bar"></div>
+                        </div>
+                    </div>
+                    <audio src="https://www.w3school.com.cn/i/horse.ogg" ontimeupdate="updateProgress(this)"></audio>
+                </div>
+            </div>
+        </section>
+
+        <!-- 音频录制 -->
+        <section>
+            <h2>音频录制</h2>
+            <div class="demo-box">
+                <div class="ffs-audio">
+                    <div class="ffs-audio-recorder">
+                        <button class="ffs-audio-record" onclick="toggleRecord(this)">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <div class="ffs-audio-waveform">
+                            <canvas id="waveform"></canvas>
+                        </div>
+                    </div>
+                    <div class="ffs-audio-list" id="recordingsList"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 语音识别 -->
+        <section>
+            <h2>语音识别</h2>
+            <div class="demo-box">
+                <div class="ffs-audio">
+                    <div class="ffs-audio-speech">
+                        <input type="text" class="ffs-audio-speech-input" placeholder="点击麦克风开始语音输入...">
+                        <button class="ffs-audio-speech-button" onclick="toggleSpeech(this)">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+    </style>
+
+    <script>
+        // 播放/暂停
+        function togglePlay(button) {
+            const audio = button.closest('.ffs-audio').querySelector('audio');
+            if (audio.paused) {
+                audio.play();
+                button.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                audio.pause();
+                button.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        }
+
+        // 进度条控制
+        function seekAudio(progress) {
+            const audio = progress.closest('.ffs-audio').querySelector('audio');
+            const rect = progress.getBoundingClientRect();
+            const pos = (event.clientX - rect.left) / progress.offsetWidth;
+            audio.currentTime = pos * audio.duration;
+        }
+
+        // 音量控制
+        function adjustVolume(volume) {
+            const audio = volume.closest('.ffs-audio').querySelector('audio');
+            const rect = volume.getBoundingClientRect();
+            const pos = (event.clientX - rect.left) / volume.offsetWidth;
+            audio.volume = pos;
+            volume.querySelector('.ffs-audio-volume-bar').style.width = pos * 100 + '%';
+        }
+
+        // 更新进度
+        function updateProgress(audio) {
+            const container = audio.closest('.ffs-audio');
+            const progressBar = container.querySelector('.ffs-audio-progress-bar');
+            const currentTime = container.querySelector('.current-time');
+            const duration = container.querySelector('.duration');
+            
+            progressBar.style.width = (audio.currentTime / audio.duration) * 100 + '%';
+            currentTime.textContent = formatTime(audio.currentTime);
+            duration.textContent = formatTime(audio.duration);
+        }
+
+        // 格式化时间
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            seconds = Math.floor(seconds % 60);
+            return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // 音频录制
+        let mediaRecorder;
+        let audioChunks = [];
+        let isRecording = false;
+
+        async function toggleRecord(button) {
+            if (!isRecording) {
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    mediaRecorder = new MediaRecorder(stream);
+                    audioChunks = [];
+
+                    mediaRecorder.ondataavailable = (event) => {
+                        audioChunks.push(event.data);
+                    };
+
+                    mediaRecorder.onstop = () => {
+                        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                        const audioUrl = URL.createObjectURL(audioBlob);
+                        addRecordingToList(audioUrl);
+                    };
+
+                    mediaRecorder.start();
+                    isRecording = true;
+                    button.classList.add('recording');
+                    button.innerHTML = '<i class="fas fa-stop"></i>';
+                } catch (error) {
+                    console.error('无法访问麦克风:', error);
+                }
+            } else {
+                mediaRecorder.stop();
+                isRecording = false;
+                button.classList.remove('recording');
+                button.innerHTML = '<i class="fas fa-microphone"></i>';
+            }
+        }
+
+        // 添加录音到列表
+        function addRecordingToList(audioUrl) {
+            const list = document.getElementById('recordingsList');
+            const item = document.createElement('div');
+            item.className = 'ffs-audio-list-item';
+            item.innerHTML = `
+                <audio src="${audioUrl}" controls></audio>
+            `;
+            list.appendChild(item);
+        }
+
+        // 语音识别
+        let recognition;
+        let isListening = false;
+
+        function toggleSpeech(button) {
+            if (!isListening) {
+                if ('webkitSpeechRecognition' in window) {
+                    recognition = new webkitSpeechRecognition();
+                    recognition.continuous = true;
+                    recognition.interimResults = true;
+                    recognition.lang = 'zh-CN';
+
+                    recognition.onresult = (event) => {
+                        const input = button.closest('.ffs-audio-speech').querySelector('.ffs-audio-speech-input');
+                        let finalTranscript = '';
+                        for (let i = event.resultIndex; i < event.results.length; i++) {
+                            if (event.results[i].isFinal) {
+                                finalTranscript += event.results[i][0].transcript;
+                            }
+                        }
+                        input.value = finalTranscript;
+                    };
+
+                    recognition.start();
+                    isListening = true;
+                    button.classList.add('listening');
+                    button.innerHTML = '<i class="fas fa-stop"></i>';
+                } else {
+                    alert('您的浏览器不支持语音识别功能');
+                }
+            } else {
+                recognition.stop();
+                isListening = false;
+                button.classList.remove('listening');
+                button.innerHTML = '<i class="fas fa-microphone"></i>';
+            }
+        }
+    </script>
+</body>
+</html> 

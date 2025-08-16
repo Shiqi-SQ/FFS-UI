@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 通知组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>通知组件</h1>
+
+        <!-- 全局通知 -->
+        <section>
+            <h2>全局通知</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <button class="ffs-button" onclick="showMessage()">消息提示</button>
+                    <button class="ffs-button" onclick="showLoading()">加载提示</button>
+                    <button class="ffs-button" onclick="showProgress()">进度提示</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 状态提示 -->
+        <section>
+            <h2>状态提示</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <button class="ffs-button" onclick="showSuccess()">成功提示</button>
+                    <button class="ffs-button" onclick="showWarning()">警告提示</button>
+                    <button class="ffs-button" onclick="showError()">错误提示</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 通知容器 -->
+    <div class="ffs-notice-container" id="noticeContainer"></div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        .demo-item {
+            margin-bottom: 20px;
+            width: 100%;
+            display: flex;
+            gap: 16px;
+        }
+
+        .demo-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 创建通知
+        function createNotice(options) {
+            const container = document.getElementById('noticeContainer');
+            const notice = document.createElement('div');
+            notice.className = 'ffs-notice';
+            
+            // 设置通知类型
+            if (options.type) {
+                notice.classList.add(`ffs-notice-${options.type}`);
+            }
+            
+            // 创建通知内容
+            notice.innerHTML = `
+                <div class="ffs-notice-icon">
+                    <i class="fas ${options.icon || 'fa-info-circle'}"></i>
+                </div>
+                <div class="ffs-notice-content">
+                    ${options.title ? `<div class="ffs-notice-title">${options.title}</div>` : ''}
+                    <div class="ffs-notice-message">${options.message}</div>
+                    ${options.progress ? `
+                        <div class="ffs-notice-progress">
+                            <div class="ffs-notice-progress-bar">
+                                <div class="ffs-notice-progress-inner" style="width: ${options.progress}%"></div>
+                            </div>
+                        </div>
+                    ` : ''}
+                </div>
+                <div class="ffs-notice-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            `;
+            
+            // 添加到容器
+            container.appendChild(notice);
+            
+            // 显示通知
+            setTimeout(() => notice.classList.add('show'), 0);
+            
+            // 绑定关闭事件
+            const closeBtn = notice.querySelector('.ffs-notice-close');
+            closeBtn.addEventListener('click', () => closeNotice(notice));
+            
+            // 自动关闭
+            if (options.duration !== 0) {
+                setTimeout(() => closeNotice(notice), options.duration || 3000);
+            }
+            
+            return notice;
+        }
+
+        // 关闭通知
+        function closeNotice(notice) {
+            notice.classList.remove('show');
+            notice.classList.add('hide');
+            setTimeout(() => notice.remove(), 300);
+        }
+
+        // 消息提示
+        function showMessage() {
+            createNotice({
+                type: 'message',
+                icon: 'fa-info-circle',
+                title: '消息提示',
+                message: '这是一条消息提示，3秒后自动关闭。',
+                duration: 3000
+            });
+        }
+
+        // 加载提示
+        function showLoading() {
+            const notice = createNotice({
+                type: 'loading',
+                icon: 'fa-spinner',
+                title: '加载中',
+                message: '正在处理您的请求，请稍候...',
+                duration: 0
+            });
+            
+            // 5秒后关闭
+            setTimeout(() => closeNotice(notice), 5000);
+        }
+
+        // 进度提示
+        function showProgress() {
+            const notice = createNotice({
+                type: 'message',
+                icon: 'fa-upload',
+                title: '上传进度',
+                message: '正在上传文件...',
+                progress: 0,
+                duration: 0
+            });
+            
+            // 模拟上传进度
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                const progressBar = notice.querySelector('.ffs-notice-progress-inner');
+                progressBar.style.width = `${progress}%`;
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => closeNotice(notice), 1000);
+                }
+            }, 500);
+        }
+
+        // 成功提示
+        function showSuccess() {
+            createNotice({
+                type: 'success',
+                icon: 'fa-check-circle',
+                title: '操作成功',
+                message: '您的操作已经成功完成。',
+                duration: 3000
+            });
+        }
+
+        // 警告提示
+        function showWarning() {
+            createNotice({
+                type: 'warning',
+                icon: 'fa-exclamation-triangle',
+                title: '警告提示',
+                message: '请注意，这是一个警告信息。',
+                duration: 3000
+            });
+        }
+
+        // 错误提示
+        function showError() {
+            createNotice({
+                type: 'error',
+                icon: 'fa-times-circle',
+                title: '操作失败',
+                message: '抱歉，操作未能完成。',
+                duration: 3000
+            });
+        }
+    </script>
+</body>
+</html> 

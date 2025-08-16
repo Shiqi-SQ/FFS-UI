@@ -1,0 +1,123 @@
+/* 弹性容器 */
+.ffs-flex {
+    display: flex;
+    width: 100%;
+}
+
+/* 弹性方向 */
+.ffs-flex-row { flex-direction: row; }
+.ffs-flex-row-reverse { flex-direction: row-reverse; }
+.ffs-flex-col { flex-direction: column; }
+.ffs-flex-col-reverse { flex-direction: column-reverse; }
+
+/* 弹性换行 */
+.ffs-flex-wrap { flex-wrap: wrap; }
+.ffs-flex-nowrap { flex-wrap: nowrap; }
+.ffs-flex-wrap-reverse { flex-wrap: wrap-reverse; }
+
+/* 主轴对齐 */
+.ffs-justify-start { justify-content: flex-start; }
+.ffs-justify-end { justify-content: flex-end; }
+.ffs-justify-center { justify-content: center; }
+.ffs-justify-between { justify-content: space-between; }
+.ffs-justify-around { justify-content: space-around; }
+.ffs-justify-evenly { justify-content: space-evenly; }
+
+/* 交叉轴对齐 */
+.ffs-items-start { align-items: flex-start; }
+.ffs-items-end { align-items: flex-end; }
+.ffs-items-center { align-items: center; }
+.ffs-items-baseline { align-items: baseline; }
+.ffs-items-stretch { align-items: stretch; }
+
+/* 多行对齐 */
+.ffs-content-start { align-content: flex-start; }
+.ffs-content-end { align-content: flex-end; }
+.ffs-content-center { align-content: center; }
+.ffs-content-between { align-content: space-between; }
+.ffs-content-around { align-content: space-around; }
+.ffs-content-stretch { align-content: stretch; }
+
+/* 弹性项 */
+.ffs-flex-item {
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 弹性项伸缩 */
+.ffs-flex-1 { flex: 1; }
+.ffs-flex-2 { flex: 2; }
+.ffs-flex-3 { flex: 3; }
+.ffs-flex-4 { flex: 4; }
+.ffs-flex-5 { flex: 5; }
+.ffs-flex-6 { flex: 6; }
+
+/* 弹性项不伸缩 */
+.ffs-flex-none { flex: none; }
+.ffs-flex-auto { flex: auto; }
+
+/* 弹性项顺序 */
+.ffs-order-1 { order: 1; }
+.ffs-order-2 { order: 2; }
+.ffs-order-3 { order: 3; }
+.ffs-order-4 { order: 4; }
+.ffs-order-5 { order: 5; }
+.ffs-order-6 { order: 6; }
+
+/* 弹性项对齐 */
+.ffs-self-start { align-self: flex-start; }
+.ffs-self-end { align-self: flex-end; }
+.ffs-self-center { align-self: center; }
+.ffs-self-baseline { align-self: baseline; }
+.ffs-self-stretch { align-self: stretch; }
+
+/* 弹性项基准值 */
+.ffs-basis-0 { flex-basis: 0; }
+.ffs-basis-auto { flex-basis: auto; }
+.ffs-basis-full { flex-basis: 100%; }
+
+/* 响应式断点 */
+@media (max-width: 1200px) {
+    .ffs-flex-wrap {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .ffs-flex-wrap {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ffs-flex-wrap {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .ffs-flex-wrap {
+        gap: 5px;
+    }
+}
+
+/* 弹性布局间距 */
+.ffs-gap-0 { gap: 0; }
+.ffs-gap-1 { gap: 4px; }
+.ffs-gap-2 { gap: 8px; }
+.ffs-gap-3 { gap: 12px; }
+.ffs-gap-4 { gap: 16px; }
+.ffs-gap-5 { gap: 20px; }
+.ffs-gap-6 { gap: 24px; }
+.ffs-gap-8 { gap: 32px; }
+.ffs-gap-10 { gap: 40px; }
+.ffs-gap-12 { gap: 48px; }
+.ffs-gap-16 { gap: 64px; } 

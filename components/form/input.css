@@ -1,0 +1,320 @@
+/* 基础输入框 */
+.ffs-input {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+    padding: 4px 11px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.ffs-input:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+    outline: none;
+}
+
+.ffs-input:disabled {
+    color: var(--text-disabled);
+    background-color: var(--disabled-color);
+    border-color: var(--border-color);
+    cursor: not-allowed;
+}
+
+/* 文本域 */
+.ffs-textarea {
+    display: block;
+    width: 100%;
+    min-height: 100px;
+    padding: 8px 11px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s;
+    resize: vertical;
+}
+
+.ffs-textarea:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+    outline: none;
+}
+
+.ffs-textarea:disabled {
+    color: var(--text-disabled);
+    background-color: var(--disabled-color);
+    border-color: var(--border-color);
+    cursor: not-allowed;
+}
+
+/* 搜索框 */
+.ffs-input-search {
+    position: relative;
+}
+
+.ffs-input-search .ffs-input {
+    padding-left: 30px;
+}
+
+.ffs-input-search::before {
+    content: '\f002';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+/* 密码框 */
+.ffs-input-password {
+    position: relative;
+}
+
+.ffs-input-password .ffs-input {
+    padding-right: 30px;
+}
+
+.ffs-input-password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    cursor: pointer;
+    user-select: none;
+}
+
+/* 带图标输入框 */
+.ffs-input-with-icon {
+    position: relative;
+}
+
+.ffs-input-with-icon .ffs-input {
+    padding-left: 30px;
+}
+
+.ffs-input-with-icon .ffs-input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+/* 带清除按钮 */
+.ffs-input-clearable {
+    position: relative;
+}
+
+.ffs-input-clearable .ffs-input {
+    padding-right: 30px;
+}
+
+.ffs-input-clearable .ffs-input-clear {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.ffs-input-clearable:hover .ffs-input-clear {
+    opacity: 1;
+}
+
+/* 数字输入框 */
+.ffs-input-number {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+}
+
+.ffs-input-number .ffs-input {
+    width: 100%;
+    text-align: center;
+}
+
+.ffs-input-number-controls {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4px;
+}
+
+.ffs-input-number-up,
+.ffs-input-number-down {
+    width: 24px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    background: var(--background-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-input-number-up {
+    border-radius: 4px 4px 0 0;
+    border-bottom: none;
+}
+
+.ffs-input-number-down {
+    border-radius: 0 0 4px 4px;
+}
+
+.ffs-input-number-up:hover,
+.ffs-input-number-down:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* 带格式化 */
+.ffs-input-formatted {
+    position: relative;
+}
+
+.ffs-input-formatted .ffs-input {
+    padding-right: 30px;
+}
+
+.ffs-input-formatted .ffs-input-format {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* 自动完成 */
+.ffs-input-autocomplete {
+    position: relative;
+}
+
+.ffs-input-autocomplete .ffs-input-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 4px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+}
+
+.ffs-input-autocomplete .ffs-input-suggestions.show {
+    display: block;
+}
+
+.ffs-input-autocomplete .ffs-input-suggestion-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-input-autocomplete .ffs-input-suggestion-item:hover {
+    background: var(--hover-color);
+}
+
+.ffs-input-autocomplete .ffs-input-suggestion-item.active {
+    background: var(--primary-color-light);
+    color: var(--primary-color);
+}
+
+/* 输入框大小 */
+.ffs-input-sm {
+    height: 24px;
+    font-size: 12px;
+}
+
+.ffs-input-lg {
+    height: 40px;
+    font-size: 16px;
+}
+
+/* 输入框状态 */
+.ffs-input-success {
+    border-color: var(--success-color);
+}
+
+.ffs-input-success:focus {
+    box-shadow: 0 0 0 2px var(--success-color-light);
+}
+
+.ffs-input-warning {
+    border-color: var(--warning-color);
+}
+
+.ffs-input-warning:focus {
+    box-shadow: 0 0 0 2px var(--warning-color-light);
+}
+
+.ffs-input-error {
+    border-color: var(--error-color);
+}
+
+.ffs-input-error:focus {
+    box-shadow: 0 0 0 2px var(--error-color-light);
+}
+
+/* 输入框组 */
+.ffs-input-group {
+    display: flex;
+    align-items: stretch;
+}
+
+.ffs-input-group .ffs-input {
+    border-radius: 0;
+}
+
+.ffs-input-group .ffs-input:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.ffs-input-group .ffs-input:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.ffs-input-group .ffs-input:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+
+.ffs-input-group .ffs-input:not(:last-child) {
+    border-right: none;
+}
+
+.ffs-input-group .ffs-input:hover,
+.ffs-input-group .ffs-input:focus {
+    z-index: 1;
+    position: relative;
+}
+
+.ffs-input-group .ffs-input:hover + .ffs-input,
+.ffs-input-group .ffs-input:focus + .ffs-input {
+    border-left-color: var(--primary-color);
+} 

@@ -1,0 +1,154 @@
+/* 文本复制样式 */
+.ffs-copy-text {
+    position: relative;
+    display: inline-block;
+    padding: 8px 12px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-copy-text:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-copy-text .ffs-copy-icon {
+    margin-right: 8px;
+    color: var(--text-color-secondary);
+}
+
+.ffs-copy-text .ffs-copy-tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background: var(--background-color-dark);
+    color: var(--text-color-light);
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.ffs-copy-text:hover .ffs-copy-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 富文本复制样式 */
+.ffs-copy-richtext {
+    position: relative;
+    padding: 16px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.ffs-copy-richtext-content {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.ffs-copy-richtext-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+}
+
+.ffs-copy-richtext-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    background: var(--background-color-light);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-copy-richtext-btn:hover {
+    background: var(--primary-color-light);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.ffs-copy-richtext-btn .ffs-copy-icon {
+    margin-right: 6px;
+}
+
+/* 剪贴板样式 */
+.ffs-clipboard {
+    position: relative;
+    display: inline-block;
+}
+
+.ffs-clipboard-input {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+}
+
+.ffs-clipboard-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-clipboard-btn:hover {
+    background: var(--primary-color-light);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.ffs-clipboard-btn .ffs-copy-icon {
+    margin-right: 8px;
+}
+
+.ffs-clipboard-success {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background: var(--success-color);
+    color: var(--text-color-light);
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.ffs-clipboard-success.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ffs-copy-text,
+    .ffs-copy-richtext,
+    .ffs-clipboard-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .ffs-copy-richtext-actions {
+        flex-direction: column;
+    }
+
+    .ffs-copy-richtext-btn {
+        justify-content: center;
+    }
+} 

@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 日期选择器组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>日期选择器组件</h1>
+
+        <!-- 日期选择器 -->
+        <section>
+            <h2>日期选择器</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-datepicker">
+                        <div class="ffs-datepicker-picker">
+                            <div class="ffs-datepicker-label">请选择日期</div>
+                            <i class="fas fa-chevron-down ffs-datepicker-arrow"></i>
+                        </div>
+                        <div class="ffs-datepicker-dropdown">
+                            <div class="ffs-datepicker-header">
+                                <div class="ffs-datepicker-title">2024年3月</div>
+                                <div class="ffs-datepicker-nav">
+                                    <button class="ffs-datepicker-nav-btn">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="ffs-datepicker-nav-btn">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="ffs-datepicker-body">
+                                <div class="ffs-datepicker-weekday">日</div>
+                                <div class="ffs-datepicker-weekday">一</div>
+                                <div class="ffs-datepicker-weekday">二</div>
+                                <div class="ffs-datepicker-weekday">三</div>
+                                <div class="ffs-datepicker-weekday">四</div>
+                                <div class="ffs-datepicker-weekday">五</div>
+                                <div class="ffs-datepicker-weekday">六</div>
+                                <div class="ffs-datepicker-day ffs-datepicker-day-other-month">25</div>
+                                <div class="ffs-datepicker-day ffs-datepicker-day-other-month">26</div>
+                                <div class="ffs-datepicker-day ffs-datepicker-day-other-month">27</div>
+                                <div class="ffs-datepicker-day ffs-datepicker-day-other-month">28</div>
+                                <div class="ffs-datepicker-day ffs-datepicker-day-other-month">29</div>
+                                <div class="ffs-datepicker-day">1</div>
+                                <div class="ffs-datepicker-day">2</div>
+                                <div class="ffs-datepicker-day">3</div>
+                                <div class="ffs-datepicker-day">4</div>
+                                <div class="ffs-datepicker-day">5</div>
+                                <div class="ffs-datepicker-day">6</div>
+                                <div class="ffs-datepicker-day">7</div>
+                                <div class="ffs-datepicker-day">8</div>
+                                <div class="ffs-datepicker-day">9</div>
+                                <div class="ffs-datepicker-day">10</div>
+                                <div class="ffs-datepicker-day">11</div>
+                                <div class="ffs-datepicker-day">12</div>
+                                <div class="ffs-datepicker-day">13</div>
+                                <div class="ffs-datepicker-day">14</div>
+                                <div class="ffs-datepicker-day">15</div>
+                                <div class="ffs-datepicker-day">16</div>
+                                <div class="ffs-datepicker-day">17</div>
+                                <div class="ffs-datepicker-day">18</div>
+                                <div class="ffs-datepicker-day">19</div>
+                                <div class="ffs-datepicker-day">20</div>
+                                <div class="ffs-datepicker-day">21</div>
+                                <div class="ffs-datepicker-day">22</div>
+                                <div class="ffs-datepicker-day">23</div>
+                                <div class="ffs-datepicker-day">24</div>
+                                <div class="ffs-datepicker-day">25</div>
+                                <div class="ffs-datepicker-day">26</div>
+                                <div class="ffs-datepicker-day">27</div>
+                                <div class="ffs-datepicker-day">28</div>
+                                <div class="ffs-datepicker-day">29</div>
+                                <div class="ffs-datepicker-day">30</div>
+                                <div class="ffs-datepicker-day">31</div>
+                                <div class="ffs-datepicker-day ffs-datepicker-day-other-month">1</div>
+                                <div class="ffs-datepicker-day ffs-datepicker-day-other-month">2</div>
+                                <div class="ffs-datepicker-day ffs-datepicker-day-other-month">3</div>
+                                <div class="ffs-datepicker-day ffs-datepicker-day-other-month">4</div>
+                                <div class="ffs-datepicker-day ffs-datepicker-day-other-month">5</div>
+                                <div class="ffs-datepicker-day ffs-datepicker-day-other-month">6</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 时间选择器 -->
+        <section>
+            <h2>时间选择器</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-timepicker">
+                        <div class="ffs-timepicker-picker">
+                            <div class="ffs-timepicker-label">请选择时间</div>
+                            <i class="fas fa-chevron-down ffs-timepicker-arrow"></i>
+                        </div>
+                        <div class="ffs-timepicker-dropdown">
+                            <div class="ffs-timepicker-body">
+                                <div class="ffs-timepicker-column">
+                                    <div class="ffs-timepicker-item">00</div>
+                                    <div class="ffs-timepicker-item">01</div>
+                                    <div class="ffs-timepicker-item">02</div>
+                                    <div class="ffs-timepicker-item">03</div>
+                                    <div class="ffs-timepicker-item">04</div>
+                                    <div class="ffs-timepicker-item">05</div>
+                                    <div class="ffs-timepicker-item">06</div>
+                                    <div class="ffs-timepicker-item">07</div>
+                                    <div class="ffs-timepicker-item">08</div>
+                                    <div class="ffs-timepicker-item">09</div>
+                                    <div class="ffs-timepicker-item">10</div>
+                                    <div class="ffs-timepicker-item">11</div>
+                                    <div class="ffs-timepicker-item">12</div>
+                                    <div class="ffs-timepicker-item">13</div>
+                                    <div class="ffs-timepicker-item">14</div>
+                                    <div class="ffs-timepicker-item">15</div>
+                                    <div class="ffs-timepicker-item">16</div>
+                                    <div class="ffs-timepicker-item">17</div>
+                                    <div class="ffs-timepicker-item">18</div>
+                                    <div class="ffs-timepicker-item">19</div>
+                                    <div class="ffs-timepicker-item">20</div>
+                                    <div class="ffs-timepicker-item">21</div>
+                                    <div class="ffs-timepicker-item">22</div>
+                                    <div class="ffs-timepicker-item">23</div>
+                                </div>
+                                <div class="ffs-timepicker-column">
+                                    <div class="ffs-timepicker-item">00</div>
+                                    <div class="ffs-timepicker-item">15</div>
+                                    <div class="ffs-timepicker-item">30</div>
+                                    <div class="ffs-timepicker-item">45</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 日期时间选择器 -->
+        <section>
+            <h2>日期时间选择器</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-datetimepicker">
+                        <div class="ffs-datetimepicker-picker">
+                            <div class="ffs-datetimepicker-label">请选择日期时间</div>
+                            <i class="fas fa-chevron-down ffs-datetimepicker-arrow"></i>
+                        </div>
+                        <div class="ffs-datetimepicker-dropdown">
+                            <div class="ffs-datetimepicker-tabs">
+                                <div class="ffs-datetimepicker-tab ffs-datetimepicker-tab-active">日期</div>
+                                <div class="ffs-datetimepicker-tab">时间</div>
+                            </div>
+                            <div class="ffs-datetimepicker-content ffs-datetimepicker-content-active">
+                                <div class="ffs-datepicker-header">
+                                    <div class="ffs-datepicker-title">2024年3月</div>
+                                    <div class="ffs-datepicker-nav">
+                                        <button class="ffs-datepicker-nav-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="ffs-datepicker-nav-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="ffs-datepicker-body">
+                                    <div class="ffs-datepicker-weekday">日</div>
+                                    <div class="ffs-datepicker-weekday">一</div>
+                                    <div class="ffs-datepicker-weekday">二</div>
+                                    <div class="ffs-datepicker-weekday">三</div>
+                                    <div class="ffs-datepicker-weekday">四</div>
+                                    <div class="ffs-datepicker-weekday">五</div>
+                                    <div class="ffs-datepicker-weekday">六</div>
+                                    <div class="ffs-datepicker-day ffs-datepicker-day-other-month">25</div>
+                                    <div class="ffs-datepicker-day ffs-datepicker-day-other-month">26</div>
+                                    <div class="ffs-datepicker-day ffs-datepicker-day-other-month">27</div>
+                                    <div class="ffs-datepicker-day ffs-datepicker-day-other-month">28</div>
+                                    <div class="ffs-datepicker-day ffs-datepicker-day-other-month">29</div>
+                                    <div class="ffs-datepicker-day">1</div>
+                                    <div class="ffs-datepicker-day">2</div>
+                                    <div class="ffs-datepicker-day">3</div>
+                                    <div class="ffs-datepicker-day">4</div>
+                                    <div class="ffs-datepicker-day">5</div>
+                                    <div class="ffs-datepicker-day">6</div>
+                                    <div class="ffs-datepicker-day">7</div>
+                                    <div class="ffs-datepicker-day">8</div>
+                                    <div class="ffs-datepicker-day">9</div>
+                                    <div class="ffs-datepicker-day">10</div>
+                                    <div class="ffs-datepicker-day">11</div>
+                                    <div class="ffs-datepicker-day">12</div>
+                                    <div class="ffs-datepicker-day">13</div>
+                                    <div class="ffs-datepicker-day">14</div>
+                                    <div class="ffs-datepicker-day">15</div>
+                                    <div class="ffs-datepicker-day">16</div>
+                                    <div class="ffs-datepicker-day">17</div>
+                                    <div class="ffs-datepicker-day">18</div>
+                                    <div class="ffs-datepicker-day">19</div>
+                                    <div class="ffs-datepicker-day">20</div>
+                                    <div class="ffs-datepicker-day">21</div>
+                                    <div class="ffs-datepicker-day">22</div>
+                                    <div class="ffs-datepicker-day">23</div>
+                                    <div class="ffs-datepicker-day">24</div>
+                                    <div class="ffs-datepicker-day">25</div>
+                                    <div class="ffs-datepicker-day">26</div>
+                                    <div class="ffs-datepicker-day">27</div>
+                                    <div class="ffs-datepicker-day">28</div>
+                                    <div class="ffs-datepicker-day">29</div>
+                                    <div class="ffs-datepicker-day">30</div>
+                                    <div class="ffs-datepicker-day">31</div>
+                                    <div class="ffs-datepicker-day ffs-datepicker-day-other-month">1</div>
+                                    <div class="ffs-datepicker-day ffs-datepicker-day-other-month">2</div>
+                                    <div class="ffs-datepicker-day ffs-datepicker-day-other-month">3</div>
+                                    <div class="ffs-datepicker-day ffs-datepicker-day-other-month">4</div>
+                                    <div class="ffs-datepicker-day ffs-datepicker-day-other-month">5</div>
+                                    <div class="ffs-datepicker-day ffs-datepicker-day-other-month">6</div>
+                                </div>
+                            </div>
+                            <div class="ffs-datetimepicker-content">
+                                <div class="ffs-timepicker-body">
+                                    <div class="ffs-timepicker-column">
+                                        <div class="ffs-timepicker-item">00</div>
+                                        <div class="ffs-timepicker-item">01</div>
+                                        <div class="ffs-timepicker-item">02</div>
+                                        <div class="ffs-timepicker-item">03</div>
+                                        <div class="ffs-timepicker-item">04</div>
+                                        <div class="ffs-timepicker-item">05</div>
+                                        <div class="ffs-timepicker-item">06</div>
+                                        <div class="ffs-timepicker-item">07</div>
+                                        <div class="ffs-timepicker-item">08</div>
+                                        <div class="ffs-timepicker-item">09</div>
+                                        <div class="ffs-timepicker-item">10</div>
+                                        <div class="ffs-timepicker-item">11</div>
+                                        <div class="ffs-timepicker-item">12</div>
+                                        <div class="ffs-timepicker-item">13</div>
+                                        <div class="ffs-timepicker-item">14</div>
+                                        <div class="ffs-timepicker-item">15</div>
+                                        <div class="ffs-timepicker-item">16</div>
+                                        <div class="ffs-timepicker-item">17</div>
+                                        <div class="ffs-timepicker-item">18</div>
+                                        <div class="ffs-timepicker-item">19</div>
+                                        <div class="ffs-timepicker-item">20</div>
+                                        <div class="ffs-timepicker-item">21</div>
+                                        <div class="ffs-timepicker-item">22</div>
+                                        <div class="ffs-timepicker-item">23</div>
+                                    </div>
+                                    <div class="ffs-timepicker-column">
+                                        <div class="ffs-timepicker-item">00</div>
+                                        <div class="ffs-timepicker-item">15</div>
+                                        <div class="ffs-timepicker-item">30</div>
+                                        <div class="ffs-timepicker-item">45</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 周选择器 -->
+        <section>
+            <h2>周选择器</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-weekpicker">
+                        <div class="ffs-weekpicker-picker">
+                            <div class="ffs-weekpicker-label">请选择周</div>
+                            <i class="fas fa-chevron-down ffs-weekpicker-arrow"></i>
+                        </div>
+                        <div class="ffs-weekpicker-dropdown">
+                            <div class="ffs-weekpicker-header">
+                                <div class="ffs-weekpicker-title">2024年3月</div>
+                                <div class="ffs-weekpicker-nav">
+                                    <button class="ffs-weekpicker-nav-btn">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="ffs-weekpicker-nav-btn">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="ffs-weekpicker-body">
+                                <div class="ffs-weekpicker-weekday">日</div>
+                                <div class="ffs-weekpicker-weekday">一</div>
+                                <div class="ffs-weekpicker-weekday">二</div>
+                                <div class="ffs-weekpicker-weekday">三</div>
+                                <div class="ffs-weekpicker-weekday">四</div>
+                                <div class="ffs-weekpicker-weekday">五</div>
+                                <div class="ffs-weekpicker-weekday">六</div>
+                                <div class="ffs-weekpicker-day ffs-weekpicker-day-other-month">25</div>
+                                <div class="ffs-weekpicker-day ffs-weekpicker-day-other-month">26</div>
+                                <div class="ffs-weekpicker-day ffs-weekpicker-day-other-month">27</div>
+                                <div class="ffs-weekpicker-day ffs-weekpicker-day-other-month">28</div>
+                                <div class="ffs-weekpicker-day ffs-weekpicker-day-other-month">29</div>
+                                <div class="ffs-weekpicker-day">1</div>
+                                <div class="ffs-weekpicker-day">2</div>
+                                <div class="ffs-weekpicker-day">3</div>
+                                <div class="ffs-weekpicker-day">4</div>
+                                <div class="ffs-weekpicker-day">5</div>
+                                <div class="ffs-weekpicker-day">6</div>
+                                <div class="ffs-weekpicker-day">7</div>
+                                <div class="ffs-weekpicker-day">8</div>
+                                <div class="ffs-weekpicker-day">9</div>
+                                <div class="ffs-weekpicker-day">10</div>
+                                <div class="ffs-weekpicker-day">11</div>
+                                <div class="ffs-weekpicker-day">12</div>
+                                <div class="ffs-weekpicker-day">13</div>
+                                <div class="ffs-weekpicker-day">14</div>
+                                <div class="ffs-weekpicker-day">15</div>
+                                <div class="ffs-weekpicker-day">16</div>
+                                <div class="ffs-weekpicker-day">17</div>
+                                <div class="ffs-weekpicker-day">18</div>
+                                <div class="ffs-weekpicker-day">19</div>
+                                <div class="ffs-weekpicker-day">20</div>
+                                <div class="ffs-weekpicker-day">21</div>
+                                <div class="ffs-weekpicker-day">22</div>
+                                <div class="ffs-weekpicker-day">23</div>
+                                <div class="ffs-weekpicker-day">24</div>
+                                <div class="ffs-weekpicker-day">25</div>
+                                <div class="ffs-weekpicker-day">26</div>
+                                <div class="ffs-weekpicker-day">27</div>
+                                <div class="ffs-weekpicker-day">28</div>
+                                <div class="ffs-weekpicker-day">29</div>
+                                <div class="ffs-weekpicker-day">30</div>
+                                <div class="ffs-weekpicker-day">31</div>
+                                <div class="ffs-weekpicker-day ffs-weekpicker-day-other-month">1</div>
+                                <div class="ffs-weekpicker-day ffs-weekpicker-day-other-month">2</div>
+                                <div class="ffs-weekpicker-day ffs-weekpicker-day-other-month">3</div>
+                                <div class="ffs-weekpicker-day ffs-weekpicker-day-other-month">4</div>
+                                <div class="ffs-weekpicker-day ffs-weekpicker-day-other-month">5</div>
+                                <div class="ffs-weekpicker-day ffs-weekpicker-day-other-month">6</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 月选择器 -->
+        <section>
+            <h2>月选择器</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-monthpicker">
+                        <div class="ffs-monthpicker-picker">
+                            <div class="ffs-monthpicker-label">请选择月份</div>
+                            <i class="fas fa-chevron-down ffs-monthpicker-arrow"></i>
+                        </div>
+                        <div class="ffs-monthpicker-dropdown">
+                            <div class="ffs-monthpicker-header">
+                                <div class="ffs-monthpicker-title">2024年</div>
+                                <div class="ffs-monthpicker-nav">
+                                    <button class="ffs-monthpicker-nav-btn">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="ffs-monthpicker-nav-btn">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="ffs-monthpicker-body">
+                                <div class="ffs-monthpicker-month">1月</div>
+                                <div class="ffs-monthpicker-month">2月</div>
+                                <div class="ffs-monthpicker-month">3月</div>
+                                <div class="ffs-monthpicker-month">4月</div>
+                                <div class="ffs-monthpicker-month">5月</div>
+                                <div class="ffs-monthpicker-month">6月</div>
+                                <div class="ffs-monthpicker-month">7月</div>
+                                <div class="ffs-monthpicker-month">8月</div>
+                                <div class="ffs-monthpicker-month">9月</div>
+                                <div class="ffs-monthpicker-month">10月</div>
+                                <div class="ffs-monthpicker-month">11月</div>
+                                <div class="ffs-monthpicker-month">12月</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 季度选择器 -->
+        <section>
+            <h2>季度选择器</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-quarterpicker">
+                        <div class="ffs-quarterpicker-picker">
+                            <div class="ffs-quarterpicker-label">请选择季度</div>
+                            <i class="fas fa-chevron-down ffs-quarterpicker-arrow"></i>
+                        </div>
+                        <div class="ffs-quarterpicker-dropdown">
+                            <div class="ffs-quarterpicker-header">
+                                <div class="ffs-quarterpicker-title">2024年</div>
+                                <div class="ffs-quarterpicker-nav">
+                                    <button class="ffs-quarterpicker-nav-btn">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="ffs-quarterpicker-nav-btn">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="ffs-quarterpicker-body">
+                                <div class="ffs-quarterpicker-quarter">第一季度</div>
+                                <div class="ffs-quarterpicker-quarter">第二季度</div>
+                                <div class="ffs-quarterpicker-quarter">第三季度</div>
+                                <div class="ffs-quarterpicker-quarter">第四季度</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 年选择器 -->
+        <section>
+            <h2>年选择器</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-yearpicker">
+                        <div class="ffs-yearpicker-picker">
+                            <div class="ffs-yearpicker-label">请选择年份</div>
+                            <i class="fas fa-chevron-down ffs-yearpicker-arrow"></i>
+                        </div>
+                        <div class="ffs-yearpicker-dropdown">
+                            <div class="ffs-yearpicker-header">
+                                <div class="ffs-yearpicker-title">2020-2029</div>
+                                <div class="ffs-yearpicker-nav">
+                                    <button class="ffs-yearpicker-nav-btn">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="ffs-yearpicker-nav-btn">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="ffs-yearpicker-body">
+                                <div class="ffs-yearpicker-year">2020</div>
+                                <div class="ffs-yearpicker-year">2021</div>
+                                <div class="ffs-yearpicker-year">2022</div>
+                                <div class="ffs-yearpicker-year">2023</div>
+                                <div class="ffs-yearpicker-year">2024</div>
+                                <div class="ffs-yearpicker-year">2025</div>
+                                <div class="ffs-yearpicker-year">2026</div>
+                                <div class="ffs-yearpicker-year">2027</div>
+                                <div class="ffs-yearpicker-year">2028</div>
+                                <div class="ffs-yearpicker-year">2029</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 日期范围选择器 -->
+        <section>
+            <h2>日期范围选择器</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-daterangepicker">
+                        <div class="ffs-daterangepicker-picker">
+                            <div class="ffs-daterangepicker-label">请选择日期范围</div>
+                            <i class="fas fa-chevron-down ffs-daterangepicker-arrow"></i>
+                        </div>
+                        <div class="ffs-daterangepicker-dropdown">
+                            <div class="ffs-daterangepicker-calendar">
+                                <div class="ffs-daterangepicker-calendar-header">
+                                    <div class="ffs-daterangepicker-calendar-title">2024年3月</div>
+                                    <div class="ffs-daterangepicker-calendar-nav">
+                                        <button class="ffs-daterangepicker-calendar-nav-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="ffs-daterangepicker-calendar-nav-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="ffs-daterangepicker-calendar-body">
+                                    <div class="ffs-daterangepicker-calendar-weekday">日</div>
+                                    <div class="ffs-daterangepicker-calendar-weekday">一</div>
+                                    <div class="ffs-daterangepicker-calendar-weekday">二</div>
+                                    <div class="ffs-daterangepicker-calendar-weekday">三</div>
+                                    <div class="ffs-daterangepicker-calendar-weekday">四</div>
+                                    <div class="ffs-daterangepicker-calendar-weekday">五</div>
+                                    <div class="ffs-daterangepicker-calendar-weekday">六</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">25</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">26</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">27</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">28</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">29</div>
+                                    <div class="ffs-daterangepicker-calendar-day">1</div>
+                                    <div class="ffs-daterangepicker-calendar-day">2</div>
+                                    <div class="ffs-daterangepicker-calendar-day">3</div>
+                                    <div class="ffs-daterangepicker-calendar-day">4</div>
+                                    <div class="ffs-daterangepicker-calendar-day">5</div>
+                                    <div class="ffs-daterangepicker-calendar-day">6</div>
+                                    <div class="ffs-daterangepicker-calendar-day">7</div>
+                                    <div class="ffs-daterangepicker-calendar-day">8</div>
+                                    <div class="ffs-daterangepicker-calendar-day">9</div>
+                                    <div class="ffs-daterangepicker-calendar-day">10</div>
+                                    <div class="ffs-daterangepicker-calendar-day">11</div>
+                                    <div class="ffs-daterangepicker-calendar-day">12</div>
+                                    <div class="ffs-daterangepicker-calendar-day">13</div>
+                                    <div class="ffs-daterangepicker-calendar-day">14</div>
+                                    <div class="ffs-daterangepicker-calendar-day">15</div>
+                                    <div class="ffs-daterangepicker-calendar-day">16</div>
+                                    <div class="ffs-daterangepicker-calendar-day">17</div>
+                                    <div class="ffs-daterangepicker-calendar-day">18</div>
+                                    <div class="ffs-daterangepicker-calendar-day">19</div>
+                                    <div class="ffs-daterangepicker-calendar-day">20</div>
+                                    <div class="ffs-daterangepicker-calendar-day">21</div>
+                                    <div class="ffs-daterangepicker-calendar-day">22</div>
+                                    <div class="ffs-daterangepicker-calendar-day">23</div>
+                                    <div class="ffs-daterangepicker-calendar-day">24</div>
+                                    <div class="ffs-daterangepicker-calendar-day">25</div>
+                                    <div class="ffs-daterangepicker-calendar-day">26</div>
+                                    <div class="ffs-daterangepicker-calendar-day">27</div>
+                                    <div class="ffs-daterangepicker-calendar-day">28</div>
+                                    <div class="ffs-daterangepicker-calendar-day">29</div>
+                                    <div class="ffs-daterangepicker-calendar-day">30</div>
+                                    <div class="ffs-daterangepicker-calendar-day">31</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">1</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">2</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">3</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">4</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">5</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">6</div>
+                                </div>
+                            </div>
+                            <div class="ffs-daterangepicker-calendar">
+                                <div class="ffs-daterangepicker-calendar-header">
+                                    <div class="ffs-daterangepicker-calendar-title">2024年4月</div>
+                                    <div class="ffs-daterangepicker-calendar-nav">
+                                        <button class="ffs-daterangepicker-calendar-nav-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="ffs-daterangepicker-calendar-nav-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="ffs-daterangepicker-calendar-body">
+                                    <div class="ffs-daterangepicker-calendar-weekday">日</div>
+                                    <div class="ffs-daterangepicker-calendar-weekday">一</div>
+                                    <div class="ffs-daterangepicker-calendar-weekday">二</div>
+                                    <div class="ffs-daterangepicker-calendar-weekday">三</div>
+                                    <div class="ffs-daterangepicker-calendar-weekday">四</div>
+                                    <div class="ffs-daterangepicker-calendar-weekday">五</div>
+                                    <div class="ffs-daterangepicker-calendar-weekday">六</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">31</div>
+                                    <div class="ffs-daterangepicker-calendar-day">1</div>
+                                    <div class="ffs-daterangepicker-calendar-day">2</div>
+                                    <div class="ffs-daterangepicker-calendar-day">3</div>
+                                    <div class="ffs-daterangepicker-calendar-day">4</div>
+                                    <div class="ffs-daterangepicker-calendar-day">5</div>
+                                    <div class="ffs-daterangepicker-calendar-day">6</div>
+                                    <div class="ffs-daterangepicker-calendar-day">7</div>
+                                    <div class="ffs-daterangepicker-calendar-day">8</div>
+                                    <div class="ffs-daterangepicker-calendar-day">9</div>
+                                    <div class="ffs-daterangepicker-calendar-day">10</div>
+                                    <div class="ffs-daterangepicker-calendar-day">11</div>
+                                    <div class="ffs-daterangepicker-calendar-day">12</div>
+                                    <div class="ffs-daterangepicker-calendar-day">13</div>
+                                    <div class="ffs-daterangepicker-calendar-day">14</div>
+                                    <div class="ffs-daterangepicker-calendar-day">15</div>
+                                    <div class="ffs-daterangepicker-calendar-day">16</div>
+                                    <div class="ffs-daterangepicker-calendar-day">17</div>
+                                    <div class="ffs-daterangepicker-calendar-day">18</div>
+                                    <div class="ffs-daterangepicker-calendar-day">19</div>
+                                    <div class="ffs-daterangepicker-calendar-day">20</div>
+                                    <div class="ffs-daterangepicker-calendar-day">21</div>
+                                    <div class="ffs-daterangepicker-calendar-day">22</div>
+                                    <div class="ffs-daterangepicker-calendar-day">23</div>
+                                    <div class="ffs-daterangepicker-calendar-day">24</div>
+                                    <div class="ffs-daterangepicker-calendar-day">25</div>
+                                    <div class="ffs-daterangepicker-calendar-day">26</div>
+                                    <div class="ffs-daterangepicker-calendar-day">27</div>
+                                    <div class="ffs-daterangepicker-calendar-day">28</div>
+                                    <div class="ffs-daterangepicker-calendar-day">29</div>
+                                    <div class="ffs-daterangepicker-calendar-day">30</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">1</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">2</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">3</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">4</div>
+                                    <div class="ffs-daterangepicker-calendar-day ffs-daterangepicker-calendar-day-other-month">5</div>
+                                </div>
+                            </div>
+                            <div class="ffs-daterangepicker-footer">
+                                <button class="ffs-daterangepicker-btn">取消</button>
+                                <button class="ffs-daterangepicker-btn ffs-daterangepicker-btn-primary">确定</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        .demo-item {
+            margin-bottom: 20px;
+            width: 300px;
+        }
+
+        .demo-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 日期选择器交互
+        document.querySelectorAll('.ffs-datepicker').forEach(datepicker => {
+            const picker = datepicker.querySelector('.ffs-datepicker-picker');
+            const dropdown = datepicker.querySelector('.ffs-datepicker-dropdown');
+            const days = datepicker.querySelectorAll('.ffs-datepicker-day');
+            const label = datepicker.querySelector('.ffs-datepicker-label');
+            const prevBtn = datepicker.querySelector('.ffs-datepicker-nav-btn:first-child');
+            const nextBtn = datepicker.querySelector('.ffs-datepicker-nav-btn:last-child');
+
+            picker.addEventListener('click', () => {
+                datepicker.classList.toggle('ffs-datepicker-open');
+            });
+
+            days.forEach(day => {
+                if (!day.classList.contains('ffs-datepicker-day-other-month')) {
+                    day.addEventListener('click', () => {
+                        days.forEach(d => d.classList.remove('ffs-datepicker-day-selected'));
+                        day.classList.add('ffs-datepicker-day-selected');
+                        label.textContent = day.textContent;
+                        datepicker.classList.remove('ffs-datepicker-open');
+                    });
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                // 切换到上个月
+            });
+
+            nextBtn.addEventListener('click', () => {
+                // 切换到下个月
+            });
+        });
+
+        // 时间选择器交互
+        document.querySelectorAll('.ffs-timepicker').forEach(timepicker => {
+            const picker = timepicker.querySelector('.ffs-timepicker-picker');
+            const dropdown = timepicker.querySelector('.ffs-timepicker-dropdown');
+            const items = timepicker.querySelectorAll('.ffs-timepicker-item');
+            const label = timepicker.querySelector('.ffs-timepicker-label');
+
+            picker.addEventListener('click', () => {
+                timepicker.classList.toggle('ffs-timepicker-open');
+            });
+
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    items.forEach(i => i.classList.remove('ffs-timepicker-item-selected'));
+                    item.classList.add('ffs-timepicker-item-selected');
+                    label.textContent = item.textContent;
+                    timepicker.classList.remove('ffs-timepicker-open');
+                });
+            });
+        });
+
+        // 日期时间选择器交互
+        document.querySelectorAll('.ffs-datetimepicker').forEach(datetimepicker => {
+            const picker = datetimepicker.querySelector('.ffs-datetimepicker-picker');
+            const dropdown = datetimepicker.querySelector('.ffs-datetimepicker-dropdown');
+            const tabs = datetimepicker.querySelectorAll('.ffs-datetimepicker-tab');
+            const contents = datetimepicker.querySelectorAll('.ffs-datetimepicker-content');
+            const label = datetimepicker.querySelector('.ffs-datetimepicker-label');
+
+            picker.addEventListener('click', () => {
+                datetimepicker.classList.toggle('ffs-datetimepicker-open');
+            });
+
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('ffs-datetimepicker-tab-active'));
+                    contents.forEach(c => c.classList.remove('ffs-datetimepicker-content-active'));
+                    tab.classList.add('ffs-datetimepicker-tab-active');
+                    contents[index].classList.add('ffs-datetimepicker-content-active');
+                });
+            });
+        });
+
+        // 周选择器交互
+        document.querySelectorAll('.ffs-weekpicker').forEach(weekpicker => {
+            const picker = weekpicker.querySelector('.ffs-weekpicker-picker');
+            const dropdown = weekpicker.querySelector('.ffs-weekpicker-dropdown');
+            const days = weekpicker.querySelectorAll('.ffs-weekpicker-day');
+            const label = weekpicker.querySelector('.ffs-weekpicker-label');
+            const prevBtn = weekpicker.querySelector('.ffs-weekpicker-nav-btn:first-child');
+            const nextBtn = weekpicker.querySelector('.ffs-weekpicker-nav-btn:last-child');
+
+            picker.addEventListener('click', () => {
+                weekpicker.classList.toggle('ffs-weekpicker-open');
+            });
+
+            days.forEach(day => {
+                if (!day.classList.contains('ffs-weekpicker-day-other-month')) {
+                    day.addEventListener('click', () => {
+                        days.forEach(d => d.classList.remove('ffs-weekpicker-day-selected'));
+                        day.classList.add('ffs-weekpicker-day-selected');
+                        label.textContent = day.textContent;
+                        weekpicker.classList.remove('ffs-weekpicker-open');
+                    });
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                // 切换到上一周
+            });
+
+            nextBtn.addEventListener('click', () => {
+                // 切换到下一周
+            });
+        });
+
+        // 月选择器交互
+        document.querySelectorAll('.ffs-monthpicker').forEach(monthpicker => {
+            const picker = monthpicker.querySelector('.ffs-monthpicker-picker');
+            const dropdown = monthpicker.querySelector('.ffs-monthpicker-dropdown');
+            const months = monthpicker.querySelectorAll('.ffs-monthpicker-month');
+            const label = monthpicker.querySelector('.ffs-monthpicker-label');
+            const prevBtn = monthpicker.querySelector('.ffs-monthpicker-nav-btn:first-child');
+            const nextBtn = monthpicker.querySelector('.ffs-monthpicker-nav-btn:last-child');
+
+            picker.addEventListener('click', () => {
+                monthpicker.classList.toggle('ffs-monthpicker-open');
+            });
+
+            months.forEach(month => {
+                month.addEventListener('click', () => {
+                    months.forEach(m => m.classList.remove('ffs-monthpicker-month-selected'));
+                    month.classList.add('ffs-monthpicker-month-selected');
+                    label.textContent = month.textContent;
+                    monthpicker.classList.remove('ffs-monthpicker-open');
+                });
+            });
+
+            prevBtn.addEventListener('click', () => {
+                // 切换到上一年
+            });
+
+            nextBtn.addEventListener('click', () => {
+                // 切换到下一年
+            });
+        });
+
+        // 季度选择器交互
+        document.querySelectorAll('.ffs-quarterpicker').forEach(quarterpicker => {
+            const picker = quarterpicker.querySelector('.ffs-quarterpicker-picker');
+            const dropdown = quarterpicker.querySelector('.ffs-quarterpicker-dropdown');
+            const quarters = quarterpicker.querySelectorAll('.ffs-quarterpicker-quarter');
+            const label = quarterpicker.querySelector('.ffs-quarterpicker-label');
+            const prevBtn = quarterpicker.querySelector('.ffs-quarterpicker-nav-btn:first-child');
+            const nextBtn = quarterpicker.querySelector('.ffs-quarterpicker-nav-btn:last-child');
+
+            picker.addEventListener('click', () => {
+                quarterpicker.classList.toggle('ffs-quarterpicker-open');
+            });
+
+            quarters.forEach(quarter => {
+                quarter.addEventListener('click', () => {
+                    quarters.forEach(q => q.classList.remove('ffs-quarterpicker-quarter-selected'));
+                    quarter.classList.add('ffs-quarterpicker-quarter-selected');
+                    label.textContent = quarter.textContent;
+                    quarterpicker.classList.remove('ffs-quarterpicker-open');
+                });
+            });
+
+            prevBtn.addEventListener('click', () => {
+                // 切换到上一年
+            });
+
+            nextBtn.addEventListener('click', () => {
+                // 切换到下一年
+            });
+        });
+
+        // 年选择器交互
+        document.querySelectorAll('.ffs-yearpicker').forEach(yearpicker => {
+            const picker = yearpicker.querySelector('.ffs-yearpicker-picker');
+            const dropdown = yearpicker.querySelector('.ffs-yearpicker-dropdown');
+            const years = yearpicker.querySelectorAll('.ffs-yearpicker-year');
+            const label = yearpicker.querySelector('.ffs-yearpicker-label');
+            const prevBtn = yearpicker.querySelector('.ffs-yearpicker-nav-btn:first-child');
+            const nextBtn = yearpicker.querySelector('.ffs-yearpicker-nav-btn:last-child');
+
+            picker.addEventListener('click', () => {
+                yearpicker.classList.toggle('ffs-yearpicker-open');
+            });
+
+            years.forEach(year => {
+                year.addEventListener('click', () => {
+                    years.forEach(y => y.classList.remove('ffs-yearpicker-year-selected'));
+                    year.classList.add('ffs-yearpicker-year-selected');
+                    label.textContent = year.textContent;
+                    yearpicker.classList.remove('ffs-yearpicker-open');
+                });
+            });
+
+            prevBtn.addEventListener('click', () => {
+                // 切换到上一个十年
+            });
+
+            nextBtn.addEventListener('click', () => {
+                // 切换到下一个十年
+            });
+        });
+
+        // 日期范围选择器交互
+        document.querySelectorAll('.ffs-daterangepicker').forEach(daterangepicker => {
+            const picker = daterangepicker.querySelector('.ffs-daterangepicker-picker');
+            const dropdown = daterangepicker.querySelector('.ffs-daterangepicker-dropdown');
+            const days = daterangepicker.querySelectorAll('.ffs-daterangepicker-calendar-day');
+            const label = daterangepicker.querySelector('.ffs-daterangepicker-label');
+            const cancelBtn = daterangepicker.querySelector('.ffs-daterangepicker-btn:first-child');
+            const confirmBtn = daterangepicker.querySelector('.ffs-daterangepicker-btn:last-child');
+
+            picker.addEventListener('click', () => {
+                daterangepicker.classList.toggle('ffs-daterangepicker-open');
+            });
+
+            days.forEach(day => {
+                if (!day.classList.contains('ffs-daterangepicker-calendar-day-other-month')) {
+                    day.addEventListener('click', () => {
+                        days.forEach(d => {
+                            d.classList.remove('ffs-daterangepicker-calendar-day-selected');
+                            d.classList.remove('ffs-daterangepicker-calendar-day-in-range');
+                            d.classList.remove('ffs-daterangepicker-calendar-day-range-start');
+                            d.classList.remove('ffs-daterangepicker-calendar-day-range-end');
+                        });
+                        day.classList.add('ffs-daterangepicker-calendar-day-selected');
+                        label.textContent = day.textContent;
+                    });
+                }
+            });
+
+            cancelBtn.addEventListener('click', () => {
+                daterangepicker.classList.remove('ffs-daterangepicker-open');
+            });
+
+            confirmBtn.addEventListener('click', () => {
+                daterangepicker.classList.remove('ffs-daterangepicker-open');
+            });
+        });
+
+        // 点击外部关闭下拉框
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.ffs-datepicker, .ffs-timepicker, .ffs-datetimepicker, .ffs-weekpicker, .ffs-monthpicker, .ffs-quarterpicker, .ffs-yearpicker, .ffs-daterangepicker')) {
+                document.querySelectorAll('.ffs-datepicker-open, .ffs-timepicker-open, .ffs-datetimepicker-open, .ffs-weekpicker-open, .ffs-monthpicker-open, .ffs-quarterpicker-open, .ffs-yearpicker-open, .ffs-daterangepicker-open').forEach(el => {
+                    el.classList.remove('ffs-datepicker-open', 'ffs-timepicker-open', 'ffs-datetimepicker-open', 'ffs-weekpicker-open', 'ffs-monthpicker-open', 'ffs-quarterpicker-open', 'ffs-yearpicker-open', 'ffs-daterangepicker-open');
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>按钮组件 - FFS UI</title>
+
+    <!-- 示例页基础样式（保留你的） -->
+    <link rel="stylesheet" href="../assets/demo-page.css">
+
+    <!-- 依赖：jQuery + FFS 入口（自动加载组件资源） -->
+    <script src="../../assets/jquery/3.7.1.min.js"></script>
+    <script src="../../ffs-ui.js" mode="debug"></script>
+
+    <style>
+        /* 仅用于演示页的悬浮主题切换按钮外观 */
+        .theme-toggle-fixed {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 48px;
+            height: 48px;
+            z-index: 1000;
+        }
+
+        /* 将图标按钮改为圆角矩形（覆盖默认的圆形） */
+        .theme-toggle-fixed .ffs-button-icon {
+            border-radius: 8px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>按钮组件</h1>
+
+        <!-- 基础按钮 -->
+        <section>
+            <h2>基础按钮</h2>
+            <div class="demo-box">
+                <div class="demo-desc">基础按钮用于常规操作，有多种样式可选。</div>
+
+                <button class="ffs-button ffs-button-primary">主按钮</button>
+                <button class="ffs-button ffs-button-secondary">次按钮</button>
+                <button class="ffs-button ffs-button-dashed">虚线按钮</button>
+                <button class="ffs-button ffs-button-text">文本按钮</button>
+                <button class="ffs-button ffs-button-link">链接按钮</button>
+
+                <div class="demo-code">
+                    <pre>&lt;button class="ffs-button ffs-button-primary"&gt;主按钮&lt;/button&gt;
+&lt;button class="ffs-button ffs-button-secondary"&gt;次按钮&lt;/button&gt;
+&lt;button class="ffs-button ffs-button-dashed"&gt;虚线按钮&lt;/button&gt;
+&lt;button class="ffs-button ffs-button-text"&gt;文本按钮&lt;/button&gt;
+&lt;button class="ffs-button ffs-button-link"&gt;链接按钮&lt;/button&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- 按钮尺寸 -->
+        <section>
+            <h2>按钮尺寸</h2>
+            <div class="demo-box">
+                <div class="demo-desc">按钮有三种尺寸：小、默认、大。</div>
+
+                <button class="ffs-button ffs-button-primary ffs-button-sm">小按钮</button>
+                <button class="ffs-button ffs-button-primary">默认按钮</button>
+                <button class="ffs-button ffs-button-primary ffs-button-lg">大按钮</button>
+
+                <div class="demo-code">
+                    <pre>&lt;button class="ffs-button ffs-button-primary ffs-button-sm"&gt;小按钮&lt;/button&gt;
+&lt;button class="ffs-button ffs-button-primary"&gt;默认按钮&lt;/button&gt;
+&lt;button class="ffs-button ffs-button-primary ffs-button-lg"&gt;大按钮&lt;/button&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- 按钮状态 -->
+        <section>
+            <h2>按钮状态</h2>
+            <div class="demo-box">
+                <div class="demo-desc">按钮有正常和禁用两种状态。</div>
+
+                <button class="ffs-button ffs-button-primary">正常状态</button>
+                <button class="ffs-button ffs-button-primary" disabled>禁用状态</button>
+
+                <div class="demo-code">
+                    <pre>&lt;button class="ffs-button ffs-button-primary"&gt;正常状态&lt;/button&gt;
+&lt;button class="ffs-button ffs-button-primary" disabled&gt;禁用状态&lt;/button&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- 加载状态（使用 CSS spinner） -->
+        <section>
+            <h2>加载状态</h2>
+            <div class="demo-box">
+                <div class="demo-desc">按钮可以显示加载状态，防止重复点击。</div>
+
+                <button class="ffs-button ffs-button-primary ffs-button-loading">
+                    <span class="ffs-button-spinner" aria-hidden="true"></span> 加载中
+                </button>
+                <button class="ffs-button ffs-button-secondary ffs-button-loading">
+                    <span class="ffs-button-spinner" aria-hidden="true"></span> 加载中
+                </button>
+
+                <div class="demo-code">
+                    <pre>&lt;button class="ffs-button ffs-button-primary ffs-button-loading"&gt;
+  &lt;span class="ffs-button-spinner" aria-hidden="true"&gt;&lt;/span&gt; 加载中
+&lt;/button&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- 图标按钮（无外部库：用 Emoji/字符演示） -->
+        <section>
+            <h2>图标按钮</h2>
+            <div class="demo-box">
+                <div class="demo-desc">按钮可以只包含图标，用于节省空间。</div>
+
+                <button class="ffs-button ffs-button-icon ffs-button-primary" aria-label="搜索">🔍</button>
+                <button class="ffs-button ffs-button-icon ffs-button-secondary" aria-label="编辑">✏️</button>
+                <button class="ffs-button ffs-button-icon ffs-button-dashed" aria-label="分享">↗️</button>
+                <button class="ffs-button ffs-button-icon ffs-button-text" aria-label="删除">🗑️</button>
+
+                <div class="demo-code">
+                    <pre>&lt;button class="ffs-button ffs-button-icon ffs-button-primary" aria-label="搜索"&gt;🔍&lt;/button&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- 按钮组 -->
+        <section>
+            <h2>按钮组</h2>
+            <div class="demo-box">
+                <div class="demo-desc">按钮组可以将相关按钮组合在一起。</div>
+
+                <div class="ffs-button-group" style="margin-bottom:16px">
+                    <button class="ffs-button ffs-button-primary">左</button>
+                    <button class="ffs-button ffs-button-primary">中</button>
+                    <button class="ffs-button ffs-button-primary">右</button>
+                </div>
+
+                <div class="ffs-button-group">
+                    <button class="ffs-button ffs-button-secondary">左</button>
+                    <button class="ffs-button ffs-button-secondary">中</button>
+                    <button class="ffs-button ffs-button-secondary">右</button>
+                </div>
+
+                <div class="demo-code">
+                    <pre>&lt;div class="ffs-button-group"&gt;
+  &lt;button class="ffs-button ffs-button-primary"&gt;左&lt;/button&gt;
+  &lt;button class="ffs-button ffs-button-primary"&gt;中&lt;/button&gt;
+  &lt;button class="ffs-button ffs-button-primary"&gt;右&lt;/button&gt;
+&lt;/div&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- 幽灵按钮（背景使用现有变量） -->
+        <section>
+            <h2>幽灵按钮</h2>
+            <div class="demo-box" style="background-color: var(--ffs-secondary-active-color); padding: 24px;">
+                <div class="demo-desc">幽灵按钮常用在有色背景上。</div>
+
+                <button class="ffs-button ffs-button-ghost">幽灵按钮</button>
+                <button class="ffs-button ffs-button-ghost" disabled>禁用幽灵按钮</button>
+
+                <div class="demo-code">
+                    <pre>&lt;button class="ffs-button ffs-button-ghost"&gt;幽灵按钮&lt;/button&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- 块级按钮 -->
+        <section>
+            <h2>块级按钮</h2>
+            <div class="demo-box">
+                <div class="demo-desc">块级按钮会占满父容器的宽度。</div>
+
+                <button class="ffs-button ffs-button-primary ffs-button-block">块级主按钮</button>
+                <div style="height: 16px;"></div>
+                <button class="ffs-button ffs-button-secondary ffs-button-block">块级次按钮</button>
+
+                <div class="demo-code">
+                    <pre>&lt;button class="ffs-button ffs-button-primary ffs-button-block"&gt;块级主按钮&lt;/button&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- 按钮组单选 -->
+        <section>
+            <h2>按钮组单选</h2>
+            <div class="demo-box">
+                <div class="demo-desc">按钮组可以实现单选效果（事件：<code>buttongroup:change</code>）。</div>
+
+                <div class="ffs-button-group ffs-button-group-radio" id="demoRadioGroup">
+                    <button class="ffs-button ffs-button-secondary" data-value="A">选项一</button>
+                    <button class="ffs-button ffs-button-secondary" data-value="B">选项二</button>
+                    <button class="ffs-button ffs-button-secondary" data-value="C">选项三</button>
+                </div>
+
+                <div class="demo-code">
+                    <pre>&lt;div class="ffs-button-group ffs-button-group-radio" id="demoRadioGroup"&gt;...&lt;/div&gt;
+$(&#39;#demoRadioGroup&#39;).on(&#39;buttongroup:change&#39;, (e, value, $btn) =&gt; console.log(value));</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- 交互示例 -->
+        <section>
+            <h2>按钮交互示例</h2>
+            <div class="demo-box">
+                <div class="demo-desc">点击按钮触发加载状态，3 秒后自动恢复。</div>
+
+                <button id="loadingBtn" class="ffs-button ffs-button-primary">点击显示加载</button>
+                <button id="resetBtn" class="ffs-button ffs-button-secondary">重置按钮</button>
+
+                <div class="demo-code">
+                    <pre>FFS.button.loading(&#39;#loadingBtn&#39;, &#39;处理中...&#39;);
+FFS.button.reset(&#39;#loadingBtn&#39;);</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- 异形按钮 -->
+        <section>
+            <h2>异形按钮</h2>
+            <div class="demo-box">
+                <div class="demo-desc">按钮可以有多种不同的形状，适用于不同的设计需求。</div>
+
+                <div style="margin-bottom: 20px;">
+                    <h3>基础形状</h3>
+                    <button class="ffs-button ffs-button-primary ffs-button-shape-circle" aria-label="新增">+</button>
+                    <button class="ffs-button ffs-button-primary ffs-button-shape-round">圆角按钮</button>
+                    <button class="ffs-button ffs-button-primary ffs-button-shape-octagon">八边形</button>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h3>特殊形状</h3>
+                    <button class="ffs-button ffs-button-primary ffs-button-shape-triangle" aria-label="播放">▶</button>
+                    <button class="ffs-button ffs-button-primary ffs-button-shape-trapezoid">梯形按钮</button>
+                    <button class="ffs-button ffs-button-primary ffs-button-shape-star" aria-label="收藏">★</button>
+                    <button class="ffs-button ffs-button-primary ffs-button-shape-heart" aria-label="喜欢">❤</button>
+                    <button class="ffs-button ffs-button-primary ffs-button-shape-diamond" aria-label="钻石">◆</button>
+                    <button class="ffs-button ffs-button-primary ffs-button-shape-hexagon">六边形</button>
+                    <button class="ffs-button ffs-button-primary ffs-button-shape-wave">波浪形</button>
+                </div>
+
+                <div class="demo-code">
+                    <pre>&lt;button class="ffs-button ffs-button-primary ffs-button-shape-triangle"&gt;▶&lt;/button&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <div class="demo-footer">
+            FFS UI 组件库 - 按钮组件示例
+        </div>
+    </div>
+
+    <!-- 主题切换（悬浮） -->
+    <div class="theme-toggle-fixed">
+        <button id="themeToggleBtn" class="ffs-button ffs-button-icon ffs-button-primary" aria-label="切换主题">☾</button>
+    </div>
+
+    <script>
+        $(function () {
+            // 主题切换按钮
+            $('#themeToggleBtn').on('click', function () {
+                try {
+                    if (FFS.isThemeReady && FFS.isThemeReady()) {
+                        const current = FFS.themes.getCurrentTheme();
+                        const next = current === 'dark' ? 'default' : 'dark';
+                        FFS.setTheme(next).then(updateThemeIcon);
+                    } else {
+                        document.addEventListener('ffs-theme-ready', function () {
+                            const current = FFS.themes.getCurrentTheme();
+                            const next = current === 'dark' ? 'default' : 'dark';
+                            FFS.setTheme(next).then(updateThemeIcon);
+                        }, {
+                            once: true
+                        });
+                    }
+                } catch (err) {
+                    console.error('主题切换失败:', err);
+                }
+            });
+
+            // 加载/重置示例
+            $('#loadingBtn').on('click', function () {
+                FFS.button && FFS.button.loading ?
+                    FFS.button.loading('#loadingBtn', '处理中...') :
+                    $('#loadingBtn').buttonLoading('处理中...');
+
+                setTimeout(function () {
+                    FFS.button && FFS.button.reset ?
+                        FFS.button.reset('#loadingBtn') :
+                        $('#loadingBtn').buttonReset();
+                }, 3000);
+            });
+
+            $('#resetBtn').on('click', function () {
+                FFS.button && FFS.button.reset ?
+                    FFS.button.reset('#loadingBtn') :
+                    $('#loadingBtn').buttonReset();
+            });
+
+            // 单选按钮组事件示例
+            $('#demoRadioGroup').on('buttongroup:change', function (e, value, $btn) {
+                console.log('[buttongroup:change]', value, $btn && $btn.text());
+            });
+
+            // FFS 初始化完成
+            $(document).on('FFS-UI-Ready', function () {
+                updateThemeIcon();
+            });
+        });
+
+        // 根据当前主题更新浮动按钮图标
+        function updateThemeIcon() {
+            try {
+                if (typeof FFS === 'undefined' || !FFS.isThemeReady || !FFS.isThemeReady()) return;
+                var current = FFS.themes.getCurrentTheme();
+                var $btn = $('#themeToggleBtn');
+                $btn.text(current === 'dark' ? '☀' : '☾');
+            } catch (err) {
+                console.error('更新主题图标出错:', err);
+            }
+        }
+    </script>
+</body>
+
+</html>

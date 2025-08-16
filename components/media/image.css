@@ -1,0 +1,289 @@
+/* 图片容器 */
+.ffs-image {
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+}
+
+/* 基础图片 */
+.ffs-image img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+/* 图片尺寸 */
+.ffs-image-sm img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.ffs-image-md img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.ffs-image-lg img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.ffs-image-xl img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* 图片形状 */
+.ffs-image-circle img {
+    border-radius: 50%;
+}
+
+.ffs-image-rounded img {
+    border-radius: 8px;
+}
+
+.ffs-image-square img {
+    border-radius: 0;
+}
+
+/* 图片加载状态 */
+.ffs-image-loading {
+    position: relative;
+}
+
+.ffs-image-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ffs-image-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    border: 3px solid var(--primary-color);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: ffs-image-spin 1s linear infinite;
+}
+
+/* 图片错误状态 */
+.ffs-image-error {
+    position: relative;
+}
+
+.ffs-image-error::before {
+    content: '\f071';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: var(--error-color);
+}
+
+/* 图片裁剪 */
+.ffs-image-crop {
+    position: relative;
+    overflow: hidden;
+}
+
+.ffs-image-crop img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+/* 图片压缩 */
+.ffs-image-compress {
+    position: relative;
+}
+
+.ffs-image-compress img {
+    transition: transform 0.3s ease;
+}
+
+.ffs-image-compress:hover img {
+    transform: scale(1.05);
+}
+
+/* 图片预览 */
+.ffs-image-preview {
+    cursor: pointer;
+}
+
+.ffs-image-preview-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    z-index: 1000;
+}
+
+.ffs-image-preview-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ffs-image-preview-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.ffs-image-preview-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.ffs-image-preview-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.ffs-image-preview-prev,
+.ffs-image-preview-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.ffs-image-preview-prev {
+    left: 20px;
+}
+
+.ffs-image-preview-next {
+    right: 20px;
+}
+
+/* 图片上传 */
+.ffs-image-upload {
+    position: relative;
+    display: inline-block;
+}
+
+.ffs-image-upload input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.ffs-image-upload-preview {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-color);
+    transition: all 0.3s ease;
+}
+
+.ffs-image-upload-preview:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-image-upload-preview i {
+    font-size: 24px;
+    color: var(--text-color-secondary);
+}
+
+.ffs-image-upload-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--border-color);
+    display: none;
+}
+
+.ffs-image-upload-progress-bar {
+    height: 100%;
+    background: var(--primary-color);
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+/* 图片组 */
+.ffs-image-group {
+    display: flex;
+    align-items: center;
+}
+
+.ffs-image-group .ffs-image {
+    margin-right: -10px;
+    border: 2px solid var(--background-color);
+    border-radius: 50%;
+}
+
+.ffs-image-group .ffs-image:last-child {
+    margin-right: 0;
+}
+
+/* 动画 */
+@keyframes ffs-image-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .ffs-image-md img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .ffs-image-lg img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .ffs-image-xl img {
+        width: 300px;
+        height: 300px;
+    }
+} 

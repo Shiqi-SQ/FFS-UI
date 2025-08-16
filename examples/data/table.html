@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 表格组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>表格组件</h1>
+
+        <!-- 基础表格 -->
+        <section>
+            <h2>基础表格</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <table class="ffs-table">
+                        <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>年龄</th>
+                                <th>性别</th>
+                                <th>职业</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>张三</td>
+                                <td>25</td>
+                                <td>男</td>
+                                <td>工程师</td>
+                            </tr>
+                            <tr>
+                                <td>李四</td>
+                                <td>30</td>
+                                <td>女</td>
+                                <td>设计师</td>
+                            </tr>
+                            <tr>
+                                <td>王五</td>
+                                <td>28</td>
+                                <td>男</td>
+                                <td>产品经理</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 可选择表格 -->
+        <section>
+            <h2>可选择表格</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <table class="ffs-table ffs-table-select">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="ffs-table-select-checkbox">
+                                        <input type="checkbox" class="ffs-checkbox-input">
+                                    </div>
+                                </th>
+                                <th>姓名</th>
+                                <th>年龄</th>
+                                <th>性别</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="ffs-table-select-checkbox">
+                                        <input type="checkbox" class="ffs-checkbox-input">
+                                    </div>
+                                </td>
+                                <td>张三</td>
+                                <td>25</td>
+                                <td>男</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="ffs-table-select-checkbox">
+                                        <input type="checkbox" class="ffs-checkbox-input">
+                                    </div>
+                                </td>
+                                <td>李四</td>
+                                <td>30</td>
+                                <td>女</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 可展开表格 -->
+        <section>
+            <h2>可展开表格</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <table class="ffs-table ffs-table-expand">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>姓名</th>
+                                <th>年龄</th>
+                                <th>性别</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="ffs-table-expand-icon">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </div>
+                                </td>
+                                <td>张三</td>
+                                <td>25</td>
+                                <td>男</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <div class="ffs-table-expand-content">
+                                        <p>这是展开的详细内容</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 可编辑表格 -->
+        <section>
+            <h2>可编辑表格</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <table class="ffs-table ffs-table-edit">
+                        <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>年龄</th>
+                                <th>性别</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td contenteditable="true">张三</td>
+                                <td contenteditable="true">25</td>
+                                <td contenteditable="true">男</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 树形表格 -->
+        <section>
+            <h2>树形表格</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <table class="ffs-table ffs-table-tree">
+                        <thead>
+                            <tr>
+                                <th>部门</th>
+                                <th>人数</th>
+                                <th>负责人</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="ffs-table-tree-icon">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                    <span>技术部</span>
+                                </td>
+                                <td>20</td>
+                                <td>张三</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="ffs-table-tree-level"></span>
+                                    <span class="ffs-table-tree-icon">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                    <span>前端组</span>
+                                </td>
+                                <td>10</td>
+                                <td>李四</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 固定表头 -->
+        <section>
+            <h2>固定表头</h2>
+            <div class="demo-box">
+                <div class="demo-item" style="height: 300px; overflow: auto;">
+                    <table class="ffs-table ffs-table-fixed-header">
+                        <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>年龄</th>
+                                <th>性别</th>
+                                <th>职业</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>张三</td>
+                                <td>25</td>
+                                <td>男</td>
+                                <td>工程师</td>
+                            </tr>
+                            <tr>
+                                <td>李四</td>
+                                <td>30</td>
+                                <td>女</td>
+                                <td>设计师</td>
+                            </tr>
+                            <tr>
+                                <td>王五</td>
+                                <td>28</td>
+                                <td>男</td>
+                                <td>产品经理</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 固定列 -->
+        <section>
+            <h2>固定列</h2>
+            <div class="demo-box">
+                <div class="demo-item" style="overflow-x: auto;">
+                    <table class="ffs-table ffs-table-fixed-column">
+                        <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>年龄</th>
+                                <th>性别</th>
+                                <th>职业</th>
+                                <th>部门</th>
+                                <th>职位</th>
+                                <th>入职时间</th>
+                                <th>状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>张三</td>
+                                <td>25</td>
+                                <td>男</td>
+                                <td>工程师</td>
+                                <td>技术部</td>
+                                <td>高级工程师</td>
+                                <td>2020-01-01</td>
+                                <td>在职</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 合并单元格 -->
+        <section>
+            <h2>合并单元格</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <table class="ffs-table ffs-table-merge">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">部门</th>
+                                <th colspan="2">人数</th>
+                                <th rowspan="2">负责人</th>
+                            </tr>
+                            <tr>
+                                <th>男</th>
+                                <th>女</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>技术部</td>
+                                <td>15</td>
+                                <td>5</td>
+                                <td>张三</td>
+                            </tr>
+                            <tr>
+                                <td>设计部</td>
+                                <td>3</td>
+                                <td>12</td>
+                                <td>李四</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 自定义筛选 -->
+        <section>
+            <h2>自定义筛选</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <table class="ffs-table ffs-table-filter">
+                        <thead>
+                            <tr>
+                                <th>
+                                    姓名
+                                    <span class="ffs-table-filter-icon">
+                                        <i class="fas fa-filter"></i>
+                                    </span>
+                                    <div class="ffs-table-filter-dropdown">
+                                        <div class="ffs-table-filter-search">
+                                            <input type="text" placeholder="搜索...">
+                                        </div>
+                                        <div class="ffs-table-filter-options">
+                                            <label class="ffs-table-filter-option">
+                                                <input type="checkbox" checked> 张三
+                                            </label>
+                                            <label class="ffs-table-filter-option">
+                                                <input type="checkbox"> 李四
+                                            </label>
+                                            <label class="ffs-table-filter-option">
+                                                <input type="checkbox"> 王五
+                                            </label>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th>年龄</th>
+                                <th>性别</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>张三</td>
+                                <td>25</td>
+                                <td>男</td>
+                            </tr>
+                            <tr>
+                                <td>李四</td>
+                                <td>30</td>
+                                <td>女</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 排序表格 -->
+        <section>
+            <h2>排序表格</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <table class="ffs-table ffs-table-sort">
+                        <thead>
+                            <tr>
+                                <th>
+                                    姓名
+                                    <span class="ffs-table-sort-icon"></span>
+                                </th>
+                                <th>
+                                    年龄
+                                    <span class="ffs-table-sort-icon asc"></span>
+                                </th>
+                                <th>
+                                    性别
+                                    <span class="ffs-table-sort-icon desc"></span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>张三</td>
+                                <td>25</td>
+                                <td>男</td>
+                            </tr>
+                            <tr>
+                                <td>李四</td>
+                                <td>30</td>
+                                <td>女</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分页表格 -->
+        <section>
+            <h2>分页表格</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <table class="ffs-table">
+                        <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>年龄</th>
+                                <th>性别</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>张三</td>
+                                <td>25</td>
+                                <td>男</td>
+                            </tr>
+                            <tr>
+                                <td>李四</td>
+                                <td>30</td>
+                                <td>女</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="ffs-table-pagination">
+                        <div class="ffs-table-pagination-info">
+                            共 100 条记录
+                        </div>
+                        <div class="ffs-table-pagination-options">
+                            <select class="ffs-table-pagination-select">
+                                <option value="10">10 条/页</option>
+                                <option value="20">20 条/页</option>
+                                <option value="50">50 条/页</option>
+                            </select>
+                            <div class="ffs-table-pagination-buttons">
+                                <button class="ffs-table-pagination-button disabled">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="ffs-table-pagination-button">1</button>
+                                <button class="ffs-table-pagination-button">2</button>
+                                <button class="ffs-table-pagination-button">3</button>
+                                <button class="ffs-table-pagination-button">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 虚拟滚动 -->
+        <section>
+            <h2>虚拟滚动</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-table-virtual">
+                        <div class="ffs-table-virtual-content">
+                            <table class="ffs-table ffs-table-virtual-scroll">
+                                <thead>
+                                    <tr>
+                                        <th>姓名</th>
+                                        <th>年龄</th>
+                                        <th>性别</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>张三</td>
+                                        <td>25</td>
+                                        <td>男</td>
+                                    </tr>
+                                    <tr>
+                                        <td>李四</td>
+                                        <td>30</td>
+                                        <td>女</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        .demo-item {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .demo-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 可选择表格交互
+        document.querySelectorAll('.ffs-table-select').forEach(table => {
+            const headerCheckbox = table.querySelector('thead input[type="checkbox"]');
+            const bodyCheckboxes = table.querySelectorAll('tbody input[type="checkbox"]');
+
+            headerCheckbox.addEventListener('change', () => {
+                bodyCheckboxes.forEach(checkbox => {
+                    checkbox.checked = headerCheckbox.checked;
+                });
+            });
+
+            bodyCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    const allChecked = Array.from(bodyCheckboxes).every(cb => cb.checked);
+                    headerCheckbox.checked = allChecked;
+                });
+            });
+        });
+
+        // 可展开表格交互
+        document.querySelectorAll('.ffs-table-expand-icon').forEach(icon => {
+            icon.addEventListener('click', () => {
+                const row = icon.closest('tr');
+                const content = row.nextElementSibling.querySelector('.ffs-table-expand-content');
+                icon.classList.toggle('expanded');
+                content.classList.toggle('show');
+            });
+        });
+
+        // 树形表格交互
+        document.querySelectorAll('.ffs-table-tree-icon').forEach(icon => {
+            icon.addEventListener('click', () => {
+                icon.classList.toggle('expanded');
+            });
+        });
+
+        // 自定义筛选交互
+        document.querySelectorAll('.ffs-table-filter-icon').forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const dropdown = icon.nextElementSibling;
+                dropdown.classList.toggle('show');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.ffs-table-filter-dropdown.show').forEach(dropdown => {
+                dropdown.classList.remove('show');
+            });
+        });
+
+        // 排序表格交互
+        document.querySelectorAll('.ffs-table-sort th').forEach(header => {
+            header.addEventListener('click', () => {
+                const icon = header.querySelector('.ffs-table-sort-icon');
+                icon.classList.remove('asc', 'desc');
+                if (!icon.classList.contains('asc')) {
+                    icon.classList.add('asc');
+                } else if (!icon.classList.contains('desc')) {
+                    icon.classList.add('desc');
+                } else {
+                    icon.classList.remove('asc', 'desc');
+                }
+            });
+        });
+
+        // 虚拟滚动交互
+        document.querySelectorAll('.ffs-table-virtual').forEach(table => {
+            const content = table.querySelector('.ffs-table-virtual-content');
+            const scroll = table.querySelector('.ffs-table-virtual-scroll');
+            let startIndex = 0;
+            const pageSize = 10;
+
+            function updateTable() {
+                const scrollTop = content.scrollTop;
+                startIndex = Math.floor(scrollTop / 40); // 假设每行高度为40px
+                const visibleData = generateData(startIndex, pageSize);
+                updateTableContent(visibleData);
+            }
+
+            function generateData(start, count) {
+                const data = [];
+                for (let i = 0; i < count; i++) {
+                    data.push({
+                        name: `用户${start + i}`,
+                        age: Math.floor(Math.random() * 50) + 20,
+                        gender: Math.random() > 0.5 ? '男' : '女'
+                    });
+                }
+                return data;
+            }
+
+            function updateTableContent(data) {
+                const tbody = scroll.querySelector('tbody');
+                tbody.innerHTML = data.map(item => `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>${item.age}</td>
+                        <td>${item.gender}</td>
+                    </tr>
+                `).join('');
+            }
+
+            content.addEventListener('scroll', updateTable);
+            updateTable();
+        });
+    </script>
+</body>
+</html> 

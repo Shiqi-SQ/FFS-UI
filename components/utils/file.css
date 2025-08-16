@@ -1,0 +1,244 @@
+/* 文件预览样式 */
+.ffs-file-preview {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ffs-file-preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: var(--background-color-light);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-file-preview-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.ffs-file-preview-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-file-preview-content {
+    padding: 16px;
+    height: calc(100% - 60px);
+    overflow: auto;
+}
+
+.ffs-file-preview-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.ffs-file-preview-pdf {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.ffs-file-preview-text {
+    font-family: monospace;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/* 文件下载样式 */
+.ffs-file-download {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-file-download:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.ffs-file-download-icon {
+    margin-right: 8px;
+    color: var(--text-color-secondary);
+}
+
+.ffs-file-download-progress {
+    position: relative;
+    width: 100%;
+    height: 4px;
+    background: var(--background-color-light);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.ffs-file-download-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.ffs-file-download-status {
+    font-size: 12px;
+    color: var(--text-color-secondary);
+    margin-top: 4px;
+}
+
+/* 文件转换样式 */
+.ffs-file-convert {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.ffs-file-convert-dropzone {
+    position: relative;
+    padding: 40px;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.ffs-file-convert-dropzone:hover,
+.ffs-file-convert-dropzone.dragover {
+    border-color: var(--primary-color);
+    background: var(--primary-color-light);
+}
+
+.ffs-file-convert-icon {
+    font-size: 48px;
+    color: var(--text-color-secondary);
+    margin-bottom: 16px;
+}
+
+.ffs-file-convert-text {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.ffs-file-convert-hint {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+.ffs-file-convert-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.ffs-file-convert-list {
+    margin-top: 16px;
+}
+
+.ffs-file-convert-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: var(--background-color-light);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.ffs-file-convert-item-icon {
+    margin-right: 12px;
+    color: var(--text-color-secondary);
+}
+
+.ffs-file-convert-item-info {
+    flex: 1;
+}
+
+.ffs-file-convert-item-name {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-bottom: 4px;
+}
+
+.ffs-file-convert-item-size {
+    font-size: 12px;
+    color: var(--text-color-secondary);
+}
+
+.ffs-file-convert-item-status {
+    font-size: 12px;
+    color: var(--success-color);
+}
+
+.ffs-file-convert-item-error {
+    color: var(--error-color);
+}
+
+.ffs-file-convert-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-file-convert-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    background: var(--primary-color);
+    color: var(--text-color-light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-file-convert-btn:hover {
+    background: var(--primary-color-dark);
+}
+
+.ffs-file-convert-btn:disabled {
+    background: var(--background-color-light);
+    color: var(--text-color-secondary);
+    cursor: not-allowed;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ffs-file-preview-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .ffs-file-convert-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .ffs-file-convert-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+} 

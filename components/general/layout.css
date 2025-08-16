@@ -1,0 +1,259 @@
+/* 基础布局 */
+.ffs-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--background-color);
+}
+
+/* 上中下布局 */
+.ffs-layout-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-layout-content {
+    flex: 1;
+    margin-top: 60px; /* 头部高度 */
+    margin-bottom: 60px; /* 底部高度 */
+    padding: 20px;
+}
+
+.ffs-layout-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--background-color);
+    border-top: 1px solid var(--border-color);
+}
+
+/* 顶部-侧边布局 */
+.ffs-layout-top-side {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.ffs-layout-top-side .ffs-layout-header {
+    position: relative;
+    height: 60px;
+}
+
+.ffs-layout-top-side .ffs-layout-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.ffs-layout-top-side .ffs-layout-sidebar {
+    width: 200px;
+    background: var(--background-color);
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+}
+
+.ffs-layout-top-side .ffs-layout-main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* 侧边布局 */
+.ffs-layout-side {
+    display: flex;
+    min-height: 100vh;
+}
+
+.ffs-layout-side .ffs-layout-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    background: var(--background-color);
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+    z-index: 90;
+}
+
+.ffs-layout-side .ffs-layout-main {
+    flex: 1;
+    margin-left: 200px;
+    padding: 20px;
+}
+
+/* 自适应布局 */
+.ffs-layout-adaptive {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.ffs-layout-adaptive-item {
+    flex: 1;
+    min-width: 300px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Flex布局 */
+.ffs-flex {
+    display: flex;
+}
+
+.ffs-flex-column {
+    flex-direction: column;
+}
+
+.ffs-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.ffs-flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.ffs-flex-start {
+    justify-content: flex-start;
+}
+
+.ffs-flex-center {
+    justify-content: center;
+}
+
+.ffs-flex-end {
+    justify-content: flex-end;
+}
+
+.ffs-flex-between {
+    justify-content: space-between;
+}
+
+.ffs-flex-around {
+    justify-content: space-around;
+}
+
+.ffs-flex-top {
+    align-items: flex-start;
+}
+
+.ffs-flex-middle {
+    align-items: center;
+}
+
+.ffs-flex-bottom {
+    align-items: flex-end;
+}
+
+.ffs-flex-stretch {
+    align-items: stretch;
+}
+
+.ffs-flex-baseline {
+    align-items: baseline;
+}
+
+/* Flex项目 */
+.ffs-flex-item {
+    flex: 1;
+}
+
+.ffs-flex-item-auto {
+    flex: 0 0 auto;
+}
+
+.ffs-flex-item-none {
+    flex: none;
+}
+
+.ffs-flex-item-grow {
+    flex-grow: 1;
+}
+
+.ffs-flex-item-shrink {
+    flex-shrink: 1;
+}
+
+/* 响应式布局 */
+.ffs-layout-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 响应式断点 */
+@media (max-width: 768px) {
+    .ffs-layout-top-side .ffs-layout-sidebar,
+    .ffs-layout-side .ffs-layout-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+    }
+
+    .ffs-layout-top-side .ffs-layout-sidebar.show,
+    .ffs-layout-side .ffs-layout-sidebar.show {
+        transform: translateX(0);
+    }
+
+    .ffs-layout-side .ffs-layout-main {
+        margin-left: 0;
+    }
+
+    .ffs-layout-adaptive-item {
+        min-width: 100%;
+    }
+}
+
+/* 布局间距 */
+.ffs-layout-gap-sm {
+    gap: 10px;
+}
+
+.ffs-layout-gap-md {
+    gap: 20px;
+}
+
+.ffs-layout-gap-lg {
+    gap: 30px;
+}
+
+/* 布局容器 */
+.ffs-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.ffs-container-sm {
+    max-width: 768px;
+}
+
+.ffs-container-lg {
+    max-width: 1440px;
+}
+
+/* 布局遮罩 */
+.ffs-layout-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 80;
+    display: none;
+}
+
+.ffs-layout-mask.show {
+    display: block;
+} 

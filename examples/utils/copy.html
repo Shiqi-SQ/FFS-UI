@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 复制组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>复制组件</h1>
+
+        <!-- 文本复制 -->
+        <section>
+            <h2>文本复制</h2>
+            <div class="demo-box">
+                <div class="ffs-copy-text" data-text="这是一段可以复制的文本">
+                    <i class="fas fa-copy ffs-copy-icon"></i>
+                    <span>点击复制文本</span>
+                    <div class="ffs-copy-tooltip">点击复制</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 富文本复制 -->
+        <section>
+            <h2>富文本复制</h2>
+            <div class="demo-box">
+                <div class="ffs-copy-richtext">
+                    <div class="ffs-copy-richtext-content">
+                        <h3>标题</h3>
+                        <p>这是一段<strong>富文本</strong>内容，包含<em>多种</em>格式。</p>
+                        <ul>
+                            <li>列表项 1</li>
+                            <li>列表项 2</li>
+                            <li>列表项 3</li>
+                        </ul>
+                    </div>
+                    <div class="ffs-copy-richtext-actions">
+                        <button class="ffs-copy-richtext-btn" data-copy-type="text">
+                            <i class="fas fa-copy ffs-copy-icon"></i>
+                            复制纯文本
+                        </button>
+                        <button class="ffs-copy-richtext-btn" data-copy-type="html">
+                            <i class="fas fa-code ffs-copy-icon"></i>
+                            复制HTML
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 剪贴板 -->
+        <section>
+            <h2>剪贴板</h2>
+            <div class="demo-box">
+                <div class="ffs-clipboard">
+                    <input type="text" class="ffs-clipboard-input" value="https://example.com" readonly>
+                    <button class="ffs-clipboard-btn">
+                        <i class="fas fa-link ffs-copy-icon"></i>
+                        复制链接
+                    </button>
+                    <div class="ffs-clipboard-success">复制成功！</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+    </style>
+
+    <script>
+        // 文本复制
+        document.querySelectorAll('.ffs-copy-text').forEach(element => {
+            element.addEventListener('click', async () => {
+                const text = element.dataset.text;
+                try {
+                    await navigator.clipboard.writeText(text);
+                    showSuccess(element);
+                } catch (err) {
+                    console.error('复制失败:', err);
+                }
+            });
+        });
+
+        // 富文本复制
+        document.querySelectorAll('.ffs-copy-richtext-btn').forEach(button => {
+            button.addEventListener('click', async () => {
+                const content = button.closest('.ffs-copy-richtext').querySelector('.ffs-copy-richtext-content');
+                const type = button.dataset.copyType;
+                
+                try {
+                    if (type === 'text') {
+                        await navigator.clipboard.writeText(content.innerText);
+                    } else {
+                        await navigator.clipboard.writeText(content.innerHTML);
+                    }
+                    showSuccess(button);
+                } catch (err) {
+                    console.error('复制失败:', err);
+                }
+            });
+        });
+
+        // 剪贴板
+        document.querySelectorAll('.ffs-clipboard-btn').forEach(button => {
+            button.addEventListener('click', async () => {
+                const input = button.closest('.ffs-clipboard').querySelector('.ffs-clipboard-input');
+                try {
+                    await navigator.clipboard.writeText(input.value);
+                    showSuccess(button);
+                } catch (err) {
+                    console.error('复制失败:', err);
+                }
+            });
+        });
+
+        // 显示成功提示
+        function showSuccess(element) {
+            const success = element.closest('.ffs-clipboard, .ffs-copy-richtext').querySelector('.ffs-clipboard-success');
+            if (success) {
+                success.classList.add('show');
+                setTimeout(() => {
+                    success.classList.remove('show');
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html> 

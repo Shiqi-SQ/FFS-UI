@@ -1,0 +1,40 @@
+{
+    "--ffs-primary-color": "#BDF801",
+    "--ffs-primary-color-light": "#F2FFCC",
+    "--ffs-primary-color-hover": "#D1FF33",
+    "--ffs-primary-color-active": "#A6D800",
+    "--ffs-primary-color-outline": "rgba(189, 248, 1, 0.2)",
+
+    "--ffs-success-color": "#52c41a",
+    "--ffs-success-color-light": "#f6ffed",
+    "--ffs-success-color-hover": "#73d13d",
+    "--ffs-success-color-active": "#389e0d",
+
+    "--ffs-warning-color": "#faad14",
+    "--ffs-warning-color-light": "#fffbe6",
+    "--ffs-warning-color-hover": "#ffc53d",
+    "--ffs-warning-color-active": "#d48806",
+
+    "--ffs-error-color": "#ff4d4f",
+    "--ffs-error-color-light": "#fff2f0",
+    "--ffs-error-color-hover": "#ff7875",
+    "--ffs-error-color-active": "#d9363e",
+
+    "--ffs-text-color": "rgba(0, 0, 0, 0.85)",
+    "--ffs-text-color-secondary": "rgba(0, 0, 0, 0.65)",
+    "--ffs-text-color-disabled": "rgba(0, 0, 0, 0.25)",
+
+    "--ffs-border-color": "#d9d9d9",
+    "--ffs-border-color-split": "#f0f0f0",
+
+    "--ffs-background-color": "#ffffff",
+    "--ffs-background-color-light": "#fafafa",
+    "--ffs-background-color-hover": "#f5f5f5",
+    "--ffs-background-color-active": "#e6e6e6",
+    "--ffs-background-color-disabled": "#f5f5f5",
+
+    "--ffs-box-shadow": "0 2px 8px rgba(0, 0, 0, 0.15)",
+    "--ffs-box-shadow-light": "0 2px 4px rgba(0, 0, 0, 0.1)",
+    "--ffs-box-shadow-dark": "0 4px 12px rgba(0, 0, 0, 0.2)",
+    "--ffs-shadow-color": "rgba(0, 0, 0, 0.15)"
+}

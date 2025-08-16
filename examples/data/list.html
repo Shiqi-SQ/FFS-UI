@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 列表组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>列表组件</h1>
+
+        <!-- 基础列表 -->
+        <section>
+            <h2>基础列表</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-list">
+                        <div class="ffs-list-item">
+                            <div class="ffs-list-item-content">
+                                <div class="ffs-list-item-title">列表标题</div>
+                                <div class="ffs-list-item-description">这是一段描述文字，可以包含多行内容。</div>
+                            </div>
+                            <div class="ffs-list-item-extra">额外信息</div>
+                        </div>
+                        <div class="ffs-list-item">
+                            <div class="ffs-list-item-content">
+                                <div class="ffs-list-item-title">列表标题</div>
+                                <div class="ffs-list-item-description">这是一段描述文字，可以包含多行内容。</div>
+                            </div>
+                            <div class="ffs-list-item-extra">额外信息</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 卡片列表 -->
+        <section>
+            <h2>卡片列表</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-list-card">
+                        <div class="ffs-list-card-item">
+                            <img src="https://via.placeholder.com/300x200" alt="封面" class="ffs-list-card-cover">
+                            <div class="ffs-list-card-content">
+                                <div class="ffs-list-card-title">卡片标题</div>
+                                <div class="ffs-list-card-description">这是一段描述文字，可以包含多行内容。</div>
+                                <div class="ffs-list-card-footer">
+                                    <span>作者</span>
+                                    <span>2024-01-01</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffs-list-card-item">
+                            <img src="https://via.placeholder.com/300x200" alt="封面" class="ffs-list-card-cover">
+                            <div class="ffs-list-card-content">
+                                <div class="ffs-list-card-title">卡片标题</div>
+                                <div class="ffs-list-card-description">这是一段描述文字，可以包含多行内容。</div>
+                                <div class="ffs-list-card-footer">
+                                    <span>作者</span>
+                                    <span>2024-01-01</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 竖排列表 -->
+        <section>
+            <h2>竖排列表</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-list-vertical">
+                        <div class="ffs-list-vertical-item">
+                            <div class="ffs-list-vertical-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="ffs-list-vertical-content">
+                                <div class="ffs-list-vertical-title">用户信息</div>
+                                <div class="ffs-list-vertical-description">这是一段描述文字，可以包含多行内容。</div>
+                            </div>
+                        </div>
+                        <div class="ffs-list-vertical-item">
+                            <div class="ffs-list-vertical-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="ffs-list-vertical-content">
+                                <div class="ffs-list-vertical-title">系统设置</div>
+                                <div class="ffs-list-vertical-description">这是一段描述文字，可以包含多行内容。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 格栅列表 -->
+        <section>
+            <h2>格栅列表</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-list-grid">
+                        <div class="ffs-list-grid-item">
+                            <div class="ffs-list-grid-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="ffs-list-grid-title">首页</div>
+                            <div class="ffs-list-grid-description">返回首页</div>
+                        </div>
+                        <div class="ffs-list-grid-item">
+                            <div class="ffs-list-grid-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="ffs-list-grid-title">用户</div>
+                            <div class="ffs-list-grid-description">用户中心</div>
+                        </div>
+                        <div class="ffs-list-grid-item">
+                            <div class="ffs-list-grid-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="ffs-list-grid-title">设置</div>
+                            <div class="ffs-list-grid-description">系统设置</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 无限滚动 -->
+        <section>
+            <h2>无限滚动</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-list-infinite">
+                        <div class="ffs-list">
+                            <div class="ffs-list-item">
+                                <div class="ffs-list-item-content">
+                                    <div class="ffs-list-item-title">列表项 1</div>
+                                    <div class="ffs-list-item-description">这是一段描述文字。</div>
+                                </div>
+                            </div>
+                            <div class="ffs-list-item">
+                                <div class="ffs-list-item-content">
+                                    <div class="ffs-list-item-title">列表项 2</div>
+                                    <div class="ffs-list-item-description">这是一段描述文字。</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffs-list-infinite-loading">加载中...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 虚拟列表 -->
+        <section>
+            <h2>虚拟列表</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-list-virtual">
+                        <div class="ffs-list-virtual-content">
+                            <div class="ffs-list-virtual-scroll">
+                                <div class="ffs-list-virtual-item" style="height: 50px; top: 0;">
+                                    <div class="ffs-list-item-content">
+                                        <div class="ffs-list-item-title">列表项 1</div>
+                                        <div class="ffs-list-item-description">这是一段描述文字。</div>
+                                    </div>
+                                </div>
+                                <div class="ffs-list-virtual-item" style="height: 50px; top: 50px;">
+                                    <div class="ffs-list-item-content">
+                                        <div class="ffs-list-item-title">列表项 2</div>
+                                        <div class="ffs-list-item-description">这是一段描述文字。</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        .demo-item {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .demo-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 无限滚动示例
+        const infiniteList = document.querySelector('.ffs-list-infinite');
+        let loading = false;
+        let page = 1;
+
+        function loadMore() {
+            if (loading) return;
+            loading = true;
+
+            // 模拟加载数据
+            setTimeout(() => {
+                const list = infiniteList.querySelector('.ffs-list');
+                for (let i = 0; i < 5; i++) {
+                    const item = document.createElement('div');
+                    item.className = 'ffs-list-item';
+                    item.innerHTML = `
+                        <div class="ffs-list-item-content">
+                            <div class="ffs-list-item-title">列表项 ${page * 5 + i + 1}</div>
+                            <div class="ffs-list-item-description">这是一段描述文字。</div>
+                        </div>
+                    `;
+                    list.appendChild(item);
+                }
+
+                page++;
+                loading = false;
+
+                // 模拟数据加载完成
+                if (page > 4) {
+                    const loadingEl = infiniteList.querySelector('.ffs-list-infinite-loading');
+                    loadingEl.style.display = 'none';
+                    const endEl = document.createElement('div');
+                    endEl.className = 'ffs-list-infinite-end';
+                    endEl.textContent = '没有更多数据了';
+                    infiniteList.appendChild(endEl);
+                }
+            }, 1000);
+        }
+
+        // 监听滚动事件
+        infiniteList.addEventListener('scroll', () => {
+            const scrollTop = infiniteList.scrollTop;
+            const scrollHeight = infiniteList.scrollHeight;
+            const clientHeight = infiniteList.clientHeight;
+
+            if (scrollHeight - scrollTop - clientHeight < 50) {
+                loadMore();
+            }
+        });
+
+        // 虚拟列表示例
+        const virtualList = document.querySelector('.ffs-list-virtual');
+        const virtualContent = virtualList.querySelector('.ffs-list-virtual-content');
+        const virtualScroll = virtualList.querySelector('.ffs-list-virtual-scroll');
+        let startIndex = 0;
+        const pageSize = 10;
+        const itemHeight = 50;
+
+        function updateVirtualList() {
+            const scrollTop = virtualContent.scrollTop;
+            startIndex = Math.floor(scrollTop / itemHeight);
+            const visibleData = generateData(startIndex, pageSize);
+            updateVirtualContent(visibleData);
+        }
+
+        function generateData(start, count) {
+            const data = [];
+            for (let i = 0; i < count; i++) {
+                data.push({
+                    title: `列表项 ${start + i + 1}`,
+                    description: '这是一段描述文字。'
+                });
+            }
+            return data;
+        }
+
+        function updateVirtualContent(data) {
+            virtualScroll.innerHTML = data.map((item, index) => `
+                <div class="ffs-list-virtual-item" style="height: ${itemHeight}px; top: ${(startIndex + index) * itemHeight}px;">
+                    <div class="ffs-list-item-content">
+                        <div class="ffs-list-item-title">${item.title}</div>
+                        <div class="ffs-list-item-description">${item.description}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        virtualContent.addEventListener('scroll', updateVirtualList);
+        updateVirtualList();
+    </script>
+</body>
+</html> 

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 高级表单组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>高级表单组件</h1>
+
+        <!-- 分步表单 -->
+        <section>
+            <h2>分步表单</h2>
+            <div class="demo-box">
+                <div class="ffs-pro-step-form">
+                    <div class="ffs-pro-step-form-header">
+                        <h3>创建项目</h3>
+                    </div>
+                    <div class="ffs-pro-step-form-steps">
+                        <div class="ffs-pro-step-form-step active">
+                            <div class="ffs-pro-step-form-step-icon">
+                                <i class="fas fa-info"></i>
+                            </div>
+                            <div class="ffs-pro-step-form-step-title">基本信息</div>
+                        </div>
+                        <div class="ffs-pro-step-form-step">
+                            <div class="ffs-pro-step-form-step-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="ffs-pro-step-form-step-title">项目配置</div>
+                        </div>
+                        <div class="ffs-pro-step-form-step">
+                            <div class="ffs-pro-step-form-step-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="ffs-pro-step-form-step-title">完成</div>
+                        </div>
+                    </div>
+                    <div class="ffs-pro-step-form-content">
+                        <div class="ffs-form-item">
+                            <label class="ffs-form-item-label">项目名称</label>
+                            <input type="text" class="ffs-input" placeholder="请输入项目名称">
+                        </div>
+                        <div class="ffs-form-item">
+                            <label class="ffs-form-item-label">项目描述</label>
+                            <textarea class="ffs-input" rows="4" placeholder="请输入项目描述"></textarea>
+                        </div>
+                    </div>
+                    <div class="ffs-pro-step-form-footer">
+                        <button class="ffs-button">上一步</button>
+                        <button class="ffs-button ffs-button-primary">下一步</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 高级搜索 -->
+        <section>
+            <h2>高级搜索</h2>
+            <div class="demo-box">
+                <div class="ffs-pro-search-form">
+                    <div class="ffs-pro-search-form-header">
+                        <h3 class="ffs-pro-search-form-title">高级搜索</h3>
+                        <div class="ffs-pro-search-form-collapse">
+                            <i class="fas fa-chevron-up"></i>
+                        </div>
+                    </div>
+                    <div class="ffs-pro-search-form-content">
+                        <div class="ffs-form-item">
+                            <label class="ffs-form-item-label">用户名</label>
+                            <input type="text" class="ffs-input" placeholder="请输入用户名">
+                        </div>
+                        <div class="ffs-form-item">
+                            <label class="ffs-form-item-label">状态</label>
+                            <select class="ffs-select">
+                                <option value="">全部</option>
+                                <option value="active">活跃</option>
+                                <option value="inactive">未活跃</option>
+                            </select>
+                        </div>
+                        <div class="ffs-form-item">
+                            <label class="ffs-form-item-label">创建时间</label>
+                            <input type="date" class="ffs-input">
+                        </div>
+                        <div class="ffs-form-item">
+                            <label class="ffs-form-item-label">邮箱</label>
+                            <input type="email" class="ffs-input" placeholder="请输入邮箱">
+                        </div>
+                    </div>
+                    <div class="ffs-pro-search-form-footer">
+                        <button class="ffs-button">重置</button>
+                        <button class="ffs-button ffs-button-primary">搜索</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 登录注册 -->
+        <section>
+            <h2>登录注册</h2>
+            <div class="demo-box">
+                <div class="ffs-pro-auth-form">
+                    <div class="ffs-pro-auth-form-header">
+                        <img src="https://via.placeholder.com/64" alt="Logo" class="ffs-pro-auth-form-logo">
+                        <h3 class="ffs-pro-auth-form-title">欢迎登录</h3>
+                        <p class="ffs-pro-auth-form-subtitle">请输入您的账号和密码</p>
+                    </div>
+                    <div class="ffs-pro-auth-form-content">
+                        <div class="ffs-form-item">
+                            <label class="ffs-form-item-label">用户名</label>
+                            <input type="text" class="ffs-input" placeholder="请输入用户名">
+                        </div>
+                        <div class="ffs-form-item">
+                            <label class="ffs-form-item-label">密码</label>
+                            <input type="password" class="ffs-input" placeholder="请输入密码">
+                        </div>
+                        <div class="ffs-form-item">
+                            <label class="ffs-checkbox">
+                                <input type="checkbox">
+                                <span>记住我</span>
+                            </label>
+                            <a href="#" class="ffs-pro-auth-form-link">忘记密码？</a>
+                        </div>
+                        <button class="ffs-button ffs-button-primary ffs-button-block">登录</button>
+                    </div>
+                    <div class="ffs-pro-auth-form-footer">
+                        <p>还没有账号？<a href="#" class="ffs-pro-auth-form-link">立即注册</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分组表单 -->
+        <section>
+            <h2>分组表单</h2>
+            <div class="demo-box">
+                <div class="ffs-pro-group-form">
+                    <div class="ffs-pro-group-form-group">
+                        <div class="ffs-pro-group-form-group-header">
+                            <h3 class="ffs-pro-group-form-group-title">基本信息</h3>
+                        </div>
+                        <div class="ffs-pro-group-form-group-content">
+                            <div class="ffs-form-item">
+                                <label class="ffs-form-item-label">姓名</label>
+                                <input type="text" class="ffs-input" placeholder="请输入姓名">
+                            </div>
+                            <div class="ffs-form-item">
+                                <label class="ffs-form-item-label">性别</label>
+                                <select class="ffs-select">
+                                    <option value="">请选择</option>
+                                    <option value="male">男</option>
+                                    <option value="female">女</option>
+                                </select>
+                            </div>
+                            <div class="ffs-form-item">
+                                <label class="ffs-form-item-label">年龄</label>
+                                <input type="number" class="ffs-input" placeholder="请输入年龄">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ffs-pro-group-form-group">
+                        <div class="ffs-pro-group-form-group-header">
+                            <h3 class="ffs-pro-group-form-group-title">联系方式</h3>
+                        </div>
+                        <div class="ffs-pro-group-form-group-content">
+                            <div class="ffs-form-item">
+                                <label class="ffs-form-item-label">手机号</label>
+                                <input type="tel" class="ffs-input" placeholder="请输入手机号">
+                            </div>
+                            <div class="ffs-form-item">
+                                <label class="ffs-form-item-label">邮箱</label>
+                                <input type="email" class="ffs-input" placeholder="请输入邮箱">
+                            </div>
+                            <div class="ffs-form-item">
+                                <label class="ffs-form-item-label">地址</label>
+                                <input type="text" class="ffs-input" placeholder="请输入地址">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ffs-pro-group-form-footer">
+                        <button class="ffs-button">取消</button>
+                        <button class="ffs-button ffs-button-primary">提交</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 动态表单 -->
+        <section>
+            <h2>动态表单</h2>
+            <div class="demo-box">
+                <div class="ffs-pro-dynamic-form">
+                    <div class="ffs-pro-dynamic-form-item">
+                        <div class="ffs-pro-dynamic-form-item-content">
+                            <div class="ffs-form-item">
+                                <label class="ffs-form-item-label">姓名</label>
+                                <input type="text" class="ffs-input" placeholder="请输入姓名">
+                            </div>
+                            <div class="ffs-form-item">
+                                <label class="ffs-form-item-label">年龄</label>
+                                <input type="number" class="ffs-input" placeholder="请输入年龄">
+                            </div>
+                            <div class="ffs-form-item">
+                                <label class="ffs-form-item-label">性别</label>
+                                <select class="ffs-select">
+                                    <option value="">请选择</option>
+                                    <option value="male">男</option>
+                                    <option value="female">女</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="ffs-pro-dynamic-form-item-actions">
+                            <button class="ffs-button ffs-button-text">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-pro-dynamic-form-add">
+                        <button class="ffs-button ffs-button-text">
+                            <i class="fas fa-plus"></i> 添加成员
+                        </button>
+                    </div>
+                    <div class="ffs-pro-dynamic-form-footer">
+                        <button class="ffs-button">取消</button>
+                        <button class="ffs-button ffs-button-primary">提交</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+    </style>
+
+    <script>
+        // 高级搜索折叠/展开
+        document.querySelectorAll('.ffs-pro-search-form-collapse').forEach(collapse => {
+            collapse.addEventListener('click', function() {
+                const content = this.closest('.ffs-pro-search-form').querySelector('.ffs-pro-search-form-content');
+                const icon = this.querySelector('i');
+                
+                if (content.style.display === 'none') {
+                    content.style.display = 'grid';
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    content.style.display = 'none';
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+
+        // 动态表单添加/删除
+        document.querySelectorAll('.ffs-pro-dynamic-form-add button').forEach(button => {
+            button.addEventListener('click', function() {
+                const form = this.closest('.ffs-pro-dynamic-form');
+                const item = form.querySelector('.ffs-pro-dynamic-form-item').cloneNode(true);
+                
+                // 清空输入值
+                item.querySelectorAll('input, select').forEach(input => {
+                    input.value = '';
+                });
+                
+                form.insertBefore(item, this.parentElement);
+            });
+        });
+
+        document.querySelectorAll('.ffs-pro-dynamic-form-item-actions button').forEach(button => {
+            button.addEventListener('click', function() {
+                const item = this.closest('.ffs-pro-dynamic-form-item');
+                item.remove();
+            });
+        });
+    </script>
+</body>
+</html> 

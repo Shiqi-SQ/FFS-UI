@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 图片组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>图片组件</h1>
+
+        <!-- 基础图片 -->
+        <section>
+            <h2>基础图片</h2>
+            <div class="demo-box">
+                <div class="ffs-image">
+                    <img src="https://picsum.photos/400/300" alt="基础图片">
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片尺寸 -->
+        <section>
+            <h2>图片尺寸</h2>
+            <div class="demo-box">
+                <div class="ffs-image ffs-image-sm">
+                    <img src="https://picsum.photos/100/100" alt="小尺寸">
+                </div>
+                <div class="ffs-image ffs-image-md">
+                    <img src="https://picsum.photos/200/200" alt="中等尺寸">
+                </div>
+                <div class="ffs-image ffs-image-lg">
+                    <img src="https://picsum.photos/300/300" alt="大尺寸">
+                </div>
+                <div class="ffs-image ffs-image-xl">
+                    <img src="https://picsum.photos/400/400" alt="特大尺寸">
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片形状 -->
+        <section>
+            <h2>图片形状</h2>
+            <div class="demo-box">
+                <div class="ffs-image ffs-image-circle">
+                    <img src="https://picsum.photos/200/200" alt="圆形">
+                </div>
+                <div class="ffs-image ffs-image-rounded">
+                    <img src="https://picsum.photos/200/200" alt="圆角">
+                </div>
+                <div class="ffs-image ffs-image-square">
+                    <img src="https://picsum.photos/200/200" alt="方形">
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片状态 -->
+        <section>
+            <h2>图片状态</h2>
+            <div class="demo-box">
+                <div class="ffs-image ffs-image-loading">
+                    <img src="https://picsum.photos/200/200" alt="加载中">
+                </div>
+                <div class="ffs-image ffs-image-error">
+                    <img src="invalid.jpg" alt="加载失败">
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片裁剪 -->
+        <section>
+            <h2>图片裁剪</h2>
+            <div class="demo-box">
+                <div class="ffs-image ffs-image-crop" style="width: 200px; height: 200px;">
+                    <img src="https://picsum.photos/400/300" alt="裁剪">
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片压缩 -->
+        <section>
+            <h2>图片压缩</h2>
+            <div class="demo-box">
+                <div class="ffs-image ffs-image-compress">
+                    <img src="https://picsum.photos/200/200" alt="压缩">
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片预览 -->
+        <section>
+            <h2>图片预览</h2>
+            <div class="demo-box">
+                <div class="ffs-image ffs-image-preview" onclick="previewImage(this)">
+                    <img src="https://picsum.photos/400/300" alt="预览">
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片上传 -->
+        <section>
+            <h2>图片上传</h2>
+            <div class="demo-box">
+                <div class="ffs-image-upload">
+                    <input type="file" accept="image/*" onchange="handleUpload(this)">
+                    <div class="ffs-image-upload-preview">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <div class="ffs-image-upload-progress">
+                        <div class="ffs-image-upload-progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片组 -->
+        <section>
+            <h2>图片组</h2>
+            <div class="demo-box">
+                <div class="ffs-image-group">
+                    <div class="ffs-image ffs-image-sm">
+                        <img src="https://picsum.photos/100/100" alt="用户1">
+                    </div>
+                    <div class="ffs-image ffs-image-sm">
+                        <img src="https://picsum.photos/100/100" alt="用户2">
+                    </div>
+                    <div class="ffs-image ffs-image-sm">
+                        <img src="https://picsum.photos/100/100" alt="用户3">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 图片预览模态框 -->
+    <div class="ffs-image-preview-modal" onclick="closePreview()">
+        <div class="ffs-image-preview-content">
+            <i class="fas fa-times ffs-image-preview-close"></i>
+            <img src="" alt="预览">
+            <i class="fas fa-chevron-left ffs-image-preview-prev"></i>
+            <i class="fas fa-chevron-right ffs-image-preview-next"></i>
+        </div>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .ffs-image {
+            margin: 10px;
+        }
+    </style>
+
+    <script>
+        // 图片预览
+        function previewImage(element) {
+            const modal = document.querySelector('.ffs-image-preview-modal');
+            const img = modal.querySelector('img');
+            img.src = element.querySelector('img').src;
+            modal.classList.add('active');
+        }
+
+        function closePreview() {
+            const modal = document.querySelector('.ffs-image-preview-modal');
+            modal.classList.remove('active');
+        }
+
+        // 图片上传
+        function handleUpload(input) {
+            const file = input.files[0];
+            if (file) {
+                const reader = new FileReader();
+                const preview = input.parentElement.querySelector('.ffs-image-upload-preview');
+                const progress = input.parentElement.querySelector('.ffs-image-upload-progress');
+                const progressBar = progress.querySelector('.ffs-image-upload-progress-bar');
+
+                reader.onload = function(e) {
+                    preview.innerHTML = `<img src="${e.target.result}" alt="预览">`;
+                    simulateUpload(progress, progressBar);
+                }
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function simulateUpload(progress, progressBar) {
+            progress.style.display = 'block';
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        progress.style.display = 'none';
+                    }, 500);
+                } else {
+                    width++;
+                }
+                progressBar.style.width = width + '%';
+            }, 20);
+        }
+    </script>
+</body>
+</html> 

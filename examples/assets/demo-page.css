@@ -1,0 +1,156 @@
+/* FFS UI 示例页面通用样式 */
+
+/* 页面容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: var(--ffs-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif);
+}
+
+/* 页面标题 */
+h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: var(--ffs-primary-color, var(--ffs-base-color-primary));
+    text-align: center;
+    position: relative;
+}
+
+/* 主题切换按钮 */
+.theme-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: var(--ffs-text-color, var(--ffs-base-color-text));
+    padding: 5px;
+    border-radius: var(--ffs-border-radius-circle, 50%);
+    transition: all 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: var(--ffs-background-color-hover, var(--ffs-base-color-background-light));
+}
+
+/* 示例分区 */
+section {
+    margin-bottom: 40px;
+}
+
+/* 分区标题 */
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: var(--ffs-text-color, var(--ffs-base-color-text));
+    border-left: 4px solid var(--ffs-primary-color, var(--ffs-base-color-primary));
+    padding-left: 10px;
+}
+
+/* 示例盒子 */
+.demo-box {
+    padding: 20px;
+    border: 1px solid var(--ffs-border-color, var(--ffs-base-color-border));
+    border-radius: var(--ffs-border-radius-lg, 8px);
+    background: var(--ffs-background-color, var(--ffs-base-color-background));
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* 示例说明 */
+.demo-desc {
+    margin-bottom: 15px;
+    color: var(--ffs-text-color-secondary, var(--ffs-base-color-text-secondary));
+    font-size: 0.9em;
+}
+
+/* 示例代码 */
+.demo-code {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: var(--ffs-background-color-light, var(--ffs-base-color-background-light));
+    border-radius: var(--ffs-border-radius-md, 4px);
+    font-family: monospace;
+    overflow-x: auto;
+}
+
+/* 示例操作区 */
+.demo-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+    }
+    
+    .demo-box {
+        padding: 15px;
+    }
+}
+
+/* 网格布局示例 */
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* 弹性布局示例 */
+.demo-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* 示例项 */
+.demo-item {
+    padding: 15px;
+    border: 1px solid var(--ffs-border-color, var(--ffs-base-color-border));
+    border-radius: var(--ffs-border-radius-md, 4px);
+    background-color: var(--ffs-background-color-light, var(--ffs-base-color-background-light));
+}
+
+/* 示例导航 */
+.demo-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--ffs-border-color, var(--ffs-base-color-border));
+}
+
+.demo-nav a {
+    color: var(--ffs-primary-color, var(--ffs-base-color-primary));
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: var(--ffs-border-radius-sm, 2px);
+}
+
+.demo-nav a:hover {
+    background-color: var(--ffs-primary-color-light, var(--ffs-base-color-primary-hover));
+}
+
+/* 示例页脚 */
+.demo-footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--ffs-border-color, var(--ffs-base-color-border));
+    text-align: center;
+    color: var(--ffs-text-color-secondary, var(--ffs-base-color-text-secondary));
+    font-size: 0.9em;
+}

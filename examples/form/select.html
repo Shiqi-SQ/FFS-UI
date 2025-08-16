@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 选择器组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>选择器组件</h1>
+
+        <!-- 基础单选 -->
+        <section>
+            <h2>基础单选</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-select">
+                        <div class="ffs-select-selector">
+                            <div class="ffs-select-selection">请选择</div>
+                            <i class="fas fa-chevron-down ffs-select-arrow"></i>
+                        </div>
+                        <div class="ffs-select-dropdown">
+                            <div class="ffs-select-options">
+                                <div class="ffs-select-option">选项一</div>
+                                <div class="ffs-select-option">选项二</div>
+                                <div class="ffs-select-option">选项三</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-item">
+                    <div class="ffs-select ffs-select-disabled">
+                        <div class="ffs-select-selector">
+                            <div class="ffs-select-selection">禁用状态</div>
+                            <i class="fas fa-chevron-down ffs-select-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 多选 -->
+        <section>
+            <h2>多选</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-select ffs-select-multiple">
+                        <div class="ffs-select-selector">
+                            <div class="ffs-select-selection">
+                                <span class="ffs-select-tag">
+                                    选项一
+                                    <i class="fas fa-times ffs-select-tag-remove"></i>
+                                </span>
+                                <span class="ffs-select-tag">
+                                    选项二
+                                    <i class="fas fa-times ffs-select-tag-remove"></i>
+                                </span>
+                            </div>
+                            <i class="fas fa-chevron-down ffs-select-arrow"></i>
+                        </div>
+                        <div class="ffs-select-dropdown">
+                            <div class="ffs-select-options">
+                                <div class="ffs-select-option ffs-select-option-selected">选项一</div>
+                                <div class="ffs-select-option ffs-select-option-selected">选项二</div>
+                                <div class="ffs-select-option">选项三</div>
+                                <div class="ffs-select-option">选项四</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分组选择 -->
+        <section>
+            <h2>分组选择</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-select">
+                        <div class="ffs-select-selector">
+                            <div class="ffs-select-selection">请选择</div>
+                            <i class="fas fa-chevron-down ffs-select-arrow"></i>
+                        </div>
+                        <div class="ffs-select-dropdown">
+                            <div class="ffs-select-options">
+                                <div class="ffs-select-group">
+                                    <div class="ffs-select-group-title">分组一</div>
+                                    <div class="ffs-select-option">选项一</div>
+                                    <div class="ffs-select-option">选项二</div>
+                                </div>
+                                <div class="ffs-select-group">
+                                    <div class="ffs-select-group-title">分组二</div>
+                                    <div class="ffs-select-option">选项三</div>
+                                    <div class="ffs-select-option">选项四</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联动选择 -->
+        <section>
+            <h2>联动选择</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-select-cascader">
+                        <div class="ffs-select">
+                            <div class="ffs-select-selector">
+                                <div class="ffs-select-selection">省份</div>
+                                <i class="fas fa-chevron-down ffs-select-arrow"></i>
+                            </div>
+                            <div class="ffs-select-dropdown">
+                                <div class="ffs-select-options">
+                                    <div class="ffs-select-option">浙江省</div>
+                                    <div class="ffs-select-option">江苏省</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffs-select">
+                            <div class="ffs-select-selector">
+                                <div class="ffs-select-selection">城市</div>
+                                <i class="fas fa-chevron-down ffs-select-arrow"></i>
+                            </div>
+                            <div class="ffs-select-dropdown">
+                                <div class="ffs-select-options">
+                                    <div class="ffs-select-option">杭州市</div>
+                                    <div class="ffs-select-option">宁波市</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 搜索选择 -->
+        <section>
+            <h2>搜索选择</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-select">
+                        <div class="ffs-select-selector">
+                            <div class="ffs-select-selection">请选择</div>
+                            <i class="fas fa-chevron-down ffs-select-arrow"></i>
+                        </div>
+                        <div class="ffs-select-dropdown">
+                            <div class="ffs-select-search">
+                                <input type="text" class="ffs-select-search-input" placeholder="搜索...">
+                            </div>
+                            <div class="ffs-select-options">
+                                <div class="ffs-select-option">选项一</div>
+                                <div class="ffs-select-option">选项二</div>
+                                <div class="ffs-select-option">选项三</div>
+                                <div class="ffs-select-option">选项四</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 远程搜索 -->
+        <section>
+            <h2>远程搜索</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-select ffs-select-remote">
+                        <div class="ffs-select-selector">
+                            <div class="ffs-select-selection">请输入搜索关键词</div>
+                            <i class="fas fa-chevron-down ffs-select-arrow"></i>
+                        </div>
+                        <div class="ffs-select-dropdown">
+                            <div class="ffs-select-search">
+                                <input type="text" class="ffs-select-search-input" placeholder="搜索...">
+                            </div>
+                            <div class="ffs-select-options">
+                                <div class="ffs-select-option-loading">
+                                    <i class="fas fa-spinner fa-spin"></i> 加载中...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 无边框选择 -->
+        <section>
+            <h2>无边框选择</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-select ffs-select-borderless">
+                        <div class="ffs-select-selector">
+                            <div class="ffs-select-selection">请选择</div>
+                            <i class="fas fa-chevron-down ffs-select-arrow"></i>
+                        </div>
+                        <div class="ffs-select-dropdown">
+                            <div class="ffs-select-options">
+                                <div class="ffs-select-option">选项一</div>
+                                <div class="ffs-select-option">选项二</div>
+                                <div class="ffs-select-option">选项三</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 尺寸变体 -->
+        <section>
+            <h2>尺寸变体</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-select ffs-select-sm">
+                        <div class="ffs-select-selector">
+                            <div class="ffs-select-selection">小尺寸</div>
+                            <i class="fas fa-chevron-down ffs-select-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-item">
+                    <div class="ffs-select">
+                        <div class="ffs-select-selector">
+                            <div class="ffs-select-selection">默认尺寸</div>
+                            <i class="fas fa-chevron-down ffs-select-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-item">
+                    <div class="ffs-select ffs-select-lg">
+                        <div class="ffs-select-selector">
+                            <div class="ffs-select-selection">大尺寸</div>
+                            <i class="fas fa-chevron-down ffs-select-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 状态样式 -->
+        <section>
+            <h2>状态样式</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-select ffs-select-success">
+                        <div class="ffs-select-selector">
+                            <div class="ffs-select-selection">成功状态</div>
+                            <i class="fas fa-chevron-down ffs-select-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-item">
+                    <div class="ffs-select ffs-select-warning">
+                        <div class="ffs-select-selector">
+                            <div class="ffs-select-selection">警告状态</div>
+                            <i class="fas fa-chevron-down ffs-select-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-item">
+                    <div class="ffs-select ffs-select-error">
+                        <div class="ffs-select-selector">
+                            <div class="ffs-select-selection">错误状态</div>
+                            <i class="fas fa-chevron-down ffs-select-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        .demo-item {
+            margin-bottom: 20px;
+            width: 300px;
+        }
+
+        .demo-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 选择器交互
+        document.querySelectorAll('.ffs-select').forEach(select => {
+            const selector = select.querySelector('.ffs-select-selector');
+            const dropdown = select.querySelector('.ffs-select-dropdown');
+            const options = select.querySelectorAll('.ffs-select-option');
+            const searchInput = select.querySelector('.ffs-select-search-input');
+            const selection = select.querySelector('.ffs-select-selection');
+
+            // 点击选择器显示/隐藏下拉框
+            selector.addEventListener('click', () => {
+                if (!select.classList.contains('ffs-select-disabled')) {
+                    select.classList.toggle('ffs-select-open');
+                }
+            });
+
+            // 点击选项
+            options.forEach(option => {
+                option.addEventListener('click', () => {
+                    if (!option.classList.contains('ffs-select-option-disabled')) {
+                        // 更新选中状态
+                        options.forEach(opt => opt.classList.remove('ffs-select-option-selected'));
+                        option.classList.add('ffs-select-option-selected');
+
+                        // 更新选择器显示
+                        if (select.classList.contains('ffs-select-multiple')) {
+                            // 多选模式
+                            const tag = document.createElement('span');
+                            tag.className = 'ffs-select-tag';
+                            tag.innerHTML = `
+                                ${option.textContent}
+                                <i class="fas fa-times ffs-select-tag-remove"></i>
+                            `;
+                            selection.appendChild(tag);
+
+                            // 添加删除标签事件
+                            tag.querySelector('.ffs-select-tag-remove').addEventListener('click', (e) => {
+                                e.stopPropagation();
+                                tag.remove();
+                                option.classList.remove('ffs-select-option-selected');
+                            });
+                        } else {
+                            // 单选模式
+                            selection.textContent = option.textContent;
+                        }
+
+                        // 关闭下拉框
+                        select.classList.remove('ffs-select-open');
+                    }
+                });
+            });
+
+            // 搜索功能
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const searchText = e.target.value.toLowerCase();
+                    options.forEach(option => {
+                        const text = option.textContent.toLowerCase();
+                        option.style.display = text.includes(searchText) ? '' : 'none';
+                    });
+                });
+            }
+        });
+
+        // 点击外部关闭下拉框
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.ffs-select')) {
+                document.querySelectorAll('.ffs-select-open').forEach(select => {
+                    select.classList.remove('ffs-select-open');
+                });
+            }
+        });
+
+        // 远程搜索模拟
+        const remoteSelect = document.querySelector('.ffs-select-remote');
+        if (remoteSelect) {
+            const searchInput = remoteSelect.querySelector('.ffs-select-search-input');
+            const options = remoteSelect.querySelector('.ffs-select-options');
+
+            searchInput.addEventListener('input', async (e) => {
+                const searchText = e.target.value;
+                if (searchText.length < 2) {
+                    options.innerHTML = '<div class="ffs-select-option">请输入至少2个字符</div>';
+                    return;
+                }
+
+                // 显示加载状态
+                options.innerHTML = '<div class="ffs-select-option-loading"><i class="fas fa-spinner fa-spin"></i> 加载中...</div>';
+
+                // 模拟API请求
+                setTimeout(() => {
+                    const results = [
+                        `搜索结果 1 - ${searchText}`,
+                        `搜索结果 2 - ${searchText}`,
+                        `搜索结果 3 - ${searchText}`
+                    ];
+
+                    options.innerHTML = results.map(result => 
+                        `<div class="ffs-select-option">${result}</div>`
+                    ).join('');
+                }, 1000);
+            });
+        }
+    </script>
+</body>
+</html> 

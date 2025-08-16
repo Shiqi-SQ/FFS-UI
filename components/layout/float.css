@@ -1,0 +1,135 @@
+/* 浮动容器 */
+.ffs-float {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 浮动元素 */
+.ffs-float-item {
+    float: left;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 浮动方向 */
+.ffs-float-left { float: left; }
+.ffs-float-right { float: right; }
+.ffs-float-none { float: none; }
+
+/* 浮动清除 */
+.ffs-clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.ffs-clear-left { clear: left; }
+.ffs-clear-right { clear: right; }
+.ffs-clear-both { clear: both; }
+
+/* 浮动宽度 */
+.ffs-float-width-sm { width: 200px; }
+.ffs-float-width-md { width: 300px; }
+.ffs-float-width-lg { width: 400px; }
+.ffs-float-width-xl { width: 500px; }
+
+/* 浮动高度 */
+.ffs-float-height-sm { height: 200px; }
+.ffs-float-height-md { height: 300px; }
+.ffs-float-height-lg { height: 400px; }
+.ffs-float-height-xl { height: 500px; }
+
+/* 浮动边距 */
+.ffs-float-margin-sm { margin: 10px; }
+.ffs-float-margin-md { margin: 20px; }
+.ffs-float-margin-lg { margin: 30px; }
+.ffs-float-margin-xl { margin: 40px; }
+
+/* 浮动内边距 */
+.ffs-float-padding-sm { padding: 10px; }
+.ffs-float-padding-md { padding: 20px; }
+.ffs-float-padding-lg { padding: 30px; }
+.ffs-float-padding-xl { padding: 40px; }
+
+/* 浮动层级 */
+.ffs-float-z-1 { z-index: 1; }
+.ffs-float-z-10 { z-index: 10; }
+.ffs-float-z-100 { z-index: 100; }
+.ffs-float-z-1000 { z-index: 1000; }
+
+/* 浮动显示 */
+.ffs-float-block { display: block; }
+.ffs-float-inline { display: inline; }
+.ffs-float-inline-block { display: inline-block; }
+
+/* 浮动可见性 */
+.ffs-float-visible { visibility: visible; }
+.ffs-float-hidden { visibility: hidden; }
+
+/* 浮动溢出 */
+.ffs-float-overflow-auto { overflow: auto; }
+.ffs-float-overflow-hidden { overflow: hidden; }
+.ffs-float-overflow-scroll { overflow: scroll; }
+.ffs-float-overflow-visible { overflow: visible; }
+
+/* 浮动定位 */
+.ffs-float-relative { position: relative; }
+.ffs-float-absolute { position: absolute; }
+.ffs-float-fixed { position: fixed; }
+.ffs-float-sticky { position: sticky; }
+
+/* 浮动对齐 */
+.ffs-float-align-left { text-align: left; }
+.ffs-float-align-center { text-align: center; }
+.ffs-float-align-right { text-align: right; }
+
+/* 浮动阴影 */
+.ffs-float-shadow-sm {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.ffs-float-shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ffs-float-shadow-lg {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ffs-float-shadow-xl {
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 响应式断点 */
+@media (max-width: 1200px) {
+    .ffs-float-width-xl {
+        width: 400px;
+    }
+}
+
+@media (max-width: 992px) {
+    .ffs-float-width-lg {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ffs-float-width-md {
+        width: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .ffs-float-width-sm {
+        width: 200px;
+    }
+} 

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 水印组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>水印组件</h1>
+
+        <!-- 文字水印 -->
+        <section>
+            <h2>文字水印</h2>
+            <div class="demo-box">
+                <div class="ffs-watermark-text">
+                    <div class="ffs-watermark-text-content">
+                        <h3>示例内容</h3>
+                        <p>这是一段带有文字水印的内容。水印会以半透明的方式显示在内容上方。</p>
+                    </div>
+                    <div class="ffs-watermark-text-layer"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片水印 -->
+        <section>
+            <h2>图片水印</h2>
+            <div class="demo-box">
+                <div class="ffs-watermark-image">
+                    <div class="ffs-watermark-image-content">
+                        <h3>示例内容</h3>
+                        <p>这是一段带有图片水印的内容。水印会以半透明的方式显示在内容上方。</p>
+                    </div>
+                    <div class="ffs-watermark-image-layer"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 全局水印 -->
+        <section>
+            <h2>全局水印</h2>
+            <div class="demo-box">
+                <p>全局水印会覆盖整个页面，包括滚动区域。</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 水印配置面板 -->
+    <div class="ffs-watermark-config">
+        <div class="ffs-watermark-config-title">水印配置</div>
+        <div class="ffs-watermark-config-item">
+            <label class="ffs-watermark-config-label">水印类型</label>
+            <select class="ffs-watermark-config-input" id="watermarkType">
+                <option value="text">文字水印</option>
+                <option value="image">图片水印</option>
+                <option value="global">全局水印</option>
+            </select>
+        </div>
+        <div class="ffs-watermark-config-item">
+            <label class="ffs-watermark-config-label">水印内容</label>
+            <input type="text" class="ffs-watermark-config-input" id="watermarkContent" placeholder="输入水印文字或图片URL">
+        </div>
+        <div class="ffs-watermark-config-item">
+            <label class="ffs-watermark-config-label">透明度</label>
+            <input type="range" class="ffs-watermark-config-input" id="watermarkOpacity" min="0" max="100" value="20">
+        </div>
+        <div class="ffs-watermark-config-item">
+            <label class="ffs-watermark-config-label">旋转角度</label>
+            <input type="range" class="ffs-watermark-config-input" id="watermarkRotation" min="-180" max="180" value="-30">
+        </div>
+        <button class="ffs-watermark-config-btn" id="applyWatermark">
+            <i class="fas fa-check"></i>
+            应用水印
+        </button>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+    </style>
+
+    <script>
+        class Watermark {
+            constructor(options = {}) {
+                this.options = {
+                    type: options.type || 'text',
+                    content: options.content || 'FFS UI',
+                    opacity: options.opacity || 0.2,
+                    rotation: options.rotation || -30,
+                    ...options
+                };
+            }
+
+            // 创建文字水印
+            createTextWatermark(container) {
+                const layer = container.querySelector('.ffs-watermark-text-layer');
+                layer.innerHTML = '';
+
+                const { content, opacity, rotation } = this.options;
+                const item = document.createElement('div');
+                item.className = 'ffs-watermark-text-item';
+                item.textContent = content;
+                item.style.opacity = opacity;
+                item.style.transform = `rotate(${rotation}deg)`;
+
+                // 计算水印位置
+                const rect = container.getBoundingClientRect();
+                const itemRect = item.getBoundingClientRect();
+                const cols = Math.ceil(rect.width / itemRect.width) + 1;
+                const rows = Math.ceil(rect.height / itemRect.height) + 1;
+
+                for (let i = 0; i < rows; i++) {
+                    for (let j = 0; j < cols; j++) {
+                        const clone = item.cloneNode(true);
+                        clone.style.left = `${j * itemRect.width}px`;
+                        clone.style.top = `${i * itemRect.height}px`;
+                        layer.appendChild(clone);
+                    }
+                }
+            }
+
+            // 创建图片水印
+            createImageWatermark(container) {
+                const layer = container.querySelector('.ffs-watermark-image-layer');
+                layer.innerHTML = '';
+
+                const { content, opacity, rotation } = this.options;
+                const item = document.createElement('img');
+                item.className = 'ffs-watermark-image-item';
+                item.src = content;
+                item.style.opacity = opacity;
+                item.style.transform = `rotate(${rotation}deg)`;
+
+                // 计算水印位置
+                const rect = container.getBoundingClientRect();
+                const cols = Math.ceil(rect.width / 100) + 1;
+                const rows = Math.ceil(rect.height / 100) + 1;
+
+                for (let i = 0; i < rows; i++) {
+                    for (let j = 0; j < cols; j++) {
+                        const clone = item.cloneNode(true);
+                        clone.style.left = `${j * 100}px`;
+                        clone.style.top = `${i * 100}px`;
+                        layer.appendChild(clone);
+                    }
+                }
+            }
+
+            // 创建全局水印
+            createGlobalWatermark() {
+                let container = document.querySelector('.ffs-watermark-global');
+                if (!container) {
+                    container = document.createElement('div');
+                    container.className = 'ffs-watermark-global';
+                    document.body.appendChild(container);
+                }
+
+                const layer = document.createElement('div');
+                layer.className = 'ffs-watermark-global-layer';
+                container.innerHTML = '';
+                container.appendChild(layer);
+
+                const { content, opacity, rotation } = this.options;
+                const item = document.createElement('div');
+                item.className = 'ffs-watermark-global-item';
+                item.textContent = content;
+                item.style.opacity = opacity;
+                item.style.transform = `rotate(${rotation}deg)`;
+
+                // 计算水印位置
+                const rect = document.documentElement.getBoundingClientRect();
+                const itemRect = item.getBoundingClientRect();
+                const cols = Math.ceil(rect.width / itemRect.width) + 1;
+                const rows = Math.ceil(rect.height / itemRect.height) + 1;
+
+                for (let i = 0; i < rows; i++) {
+                    for (let j = 0; j < cols; j++) {
+                        const clone = item.cloneNode(true);
+                        clone.style.left = `${j * itemRect.width}px`;
+                        clone.style.top = `${i * itemRect.height}px`;
+                        layer.appendChild(clone);
+                    }
+                }
+            }
+
+            // 应用水印
+            apply() {
+                const { type } = this.options;
+                switch (type) {
+                    case 'text':
+                        this.createTextWatermark(document.querySelector('.ffs-watermark-text'));
+                        break;
+                    case 'image':
+                        this.createImageWatermark(document.querySelector('.ffs-watermark-image'));
+                        break;
+                    case 'global':
+                        this.createGlobalWatermark();
+                        break;
+                }
+            }
+        }
+
+        // 初始化水印
+        const watermark = new Watermark();
+
+        // 监听配置变化
+        document.getElementById('applyWatermark').addEventListener('click', () => {
+            const type = document.getElementById('watermarkType').value;
+            const content = document.getElementById('watermarkContent').value;
+            const opacity = document.getElementById('watermarkOpacity').value / 100;
+            const rotation = document.getElementById('watermarkRotation').value;
+
+            watermark.options = {
+                type,
+                content,
+                opacity,
+                rotation: parseInt(rotation)
+            };
+
+            watermark.apply();
+        });
+
+        // 初始应用水印
+        watermark.apply();
+    </script>
+</body>
+</html> 

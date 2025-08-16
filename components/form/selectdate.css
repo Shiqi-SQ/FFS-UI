@@ -1,0 +1,1046 @@
+/* 日期选择器基础样式 */
+.ffs-selectdate {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-width: 200px;
+}
+
+/* 日期选择器 */
+.ffs-datepicker {
+    position: relative;
+}
+
+.ffs-datepicker-picker {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    padding: 4px 11px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-datepicker-picker:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-datepicker-picker:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+.ffs-datepicker-label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ffs-datepicker-arrow {
+    margin-left: 8px;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-datepicker-open .ffs-datepicker-arrow {
+    transform: rotate(180deg);
+}
+
+.ffs-datepicker-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    padding: 12px;
+}
+
+.ffs-datepicker-open .ffs-datepicker-dropdown {
+    display: block;
+}
+
+.ffs-datepicker-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.ffs-datepicker-title {
+    font-weight: 500;
+}
+
+.ffs-datepicker-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-datepicker-nav-btn {
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-datepicker-nav-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.ffs-datepicker-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.ffs-datepicker-weekday {
+    text-align: center;
+    padding: 4px;
+    color: var(--text-color-secondary);
+    font-size: 0.9em;
+}
+
+.ffs-datepicker-day {
+    text-align: center;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.ffs-datepicker-day:hover {
+    background-color: var(--hover-color);
+}
+
+.ffs-datepicker-day-selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.ffs-datepicker-day-disabled {
+    color: var(--disabled-color);
+    cursor: not-allowed;
+}
+
+.ffs-datepicker-day-today {
+    border: 1px solid var(--primary-color);
+}
+
+.ffs-datepicker-day-other-month {
+    color: var(--text-color-secondary);
+}
+
+/* 时间选择器 */
+.ffs-timepicker {
+    position: relative;
+}
+
+.ffs-timepicker-picker {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    padding: 4px 11px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-timepicker-picker:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-timepicker-picker:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+.ffs-timepicker-label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ffs-timepicker-arrow {
+    margin-left: 8px;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-timepicker-open .ffs-timepicker-arrow {
+    transform: rotate(180deg);
+}
+
+.ffs-timepicker-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    padding: 12px;
+}
+
+.ffs-timepicker-open .ffs-timepicker-dropdown {
+    display: block;
+}
+
+.ffs-timepicker-body {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-timepicker-column {
+    width: 60px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.ffs-timepicker-item {
+    padding: 4px 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-timepicker-item:hover {
+    background-color: var(--hover-color);
+}
+
+.ffs-timepicker-item-selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.ffs-timepicker-item-disabled {
+    color: var(--disabled-color);
+    cursor: not-allowed;
+}
+
+/* 日期时间选择器 */
+.ffs-datetimepicker {
+    position: relative;
+}
+
+.ffs-datetimepicker-picker {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    padding: 4px 11px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-datetimepicker-picker:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-datetimepicker-picker:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+.ffs-datetimepicker-label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ffs-datetimepicker-arrow {
+    margin-left: 8px;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-datetimepicker-open .ffs-datetimepicker-arrow {
+    transform: rotate(180deg);
+}
+
+.ffs-datetimepicker-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    padding: 12px;
+}
+
+.ffs-datetimepicker-open .ffs-datetimepicker-dropdown {
+    display: block;
+}
+
+.ffs-datetimepicker-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 8px;
+}
+
+.ffs-datetimepicker-tab {
+    flex: 1;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-datetimepicker-tab:hover {
+    color: var(--primary-color);
+}
+
+.ffs-datetimepicker-tab-active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.ffs-datetimepicker-content {
+    display: none;
+}
+
+.ffs-datetimepicker-content-active {
+    display: block;
+}
+
+/* 周选择器 */
+.ffs-weekpicker {
+    position: relative;
+}
+
+.ffs-weekpicker-picker {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    padding: 4px 11px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-weekpicker-picker:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-weekpicker-picker:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+.ffs-weekpicker-label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ffs-weekpicker-arrow {
+    margin-left: 8px;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-weekpicker-open .ffs-weekpicker-arrow {
+    transform: rotate(180deg);
+}
+
+.ffs-weekpicker-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    padding: 12px;
+}
+
+.ffs-weekpicker-open .ffs-weekpicker-dropdown {
+    display: block;
+}
+
+.ffs-weekpicker-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.ffs-weekpicker-title {
+    font-weight: 500;
+}
+
+.ffs-weekpicker-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-weekpicker-nav-btn {
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-weekpicker-nav-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.ffs-weekpicker-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.ffs-weekpicker-weekday {
+    text-align: center;
+    padding: 4px;
+    color: var(--text-color-secondary);
+    font-size: 0.9em;
+}
+
+.ffs-weekpicker-day {
+    text-align: center;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.ffs-weekpicker-day:hover {
+    background-color: var(--hover-color);
+}
+
+.ffs-weekpicker-day-selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.ffs-weekpicker-day-disabled {
+    color: var(--disabled-color);
+    cursor: not-allowed;
+}
+
+.ffs-weekpicker-day-today {
+    border: 1px solid var(--primary-color);
+}
+
+.ffs-weekpicker-day-other-month {
+    color: var(--text-color-secondary);
+}
+
+/* 月选择器 */
+.ffs-monthpicker {
+    position: relative;
+}
+
+.ffs-monthpicker-picker {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    padding: 4px 11px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-monthpicker-picker:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-monthpicker-picker:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+.ffs-monthpicker-label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ffs-monthpicker-arrow {
+    margin-left: 8px;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-monthpicker-open .ffs-monthpicker-arrow {
+    transform: rotate(180deg);
+}
+
+.ffs-monthpicker-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    padding: 12px;
+}
+
+.ffs-monthpicker-open .ffs-monthpicker-dropdown {
+    display: block;
+}
+
+.ffs-monthpicker-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.ffs-monthpicker-title {
+    font-weight: 500;
+}
+
+.ffs-monthpicker-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-monthpicker-nav-btn {
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-monthpicker-nav-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.ffs-monthpicker-body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.ffs-monthpicker-month {
+    text-align: center;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.ffs-monthpicker-month:hover {
+    background-color: var(--hover-color);
+}
+
+.ffs-monthpicker-month-selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.ffs-monthpicker-month-disabled {
+    color: var(--disabled-color);
+    cursor: not-allowed;
+}
+
+/* 季度选择器 */
+.ffs-quarterpicker {
+    position: relative;
+}
+
+.ffs-quarterpicker-picker {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    padding: 4px 11px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-quarterpicker-picker:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-quarterpicker-picker:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+.ffs-quarterpicker-label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ffs-quarterpicker-arrow {
+    margin-left: 8px;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-quarterpicker-open .ffs-quarterpicker-arrow {
+    transform: rotate(180deg);
+}
+
+.ffs-quarterpicker-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    padding: 12px;
+}
+
+.ffs-quarterpicker-open .ffs-quarterpicker-dropdown {
+    display: block;
+}
+
+.ffs-quarterpicker-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.ffs-quarterpicker-title {
+    font-weight: 500;
+}
+
+.ffs-quarterpicker-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-quarterpicker-nav-btn {
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-quarterpicker-nav-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.ffs-quarterpicker-body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.ffs-quarterpicker-quarter {
+    text-align: center;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.ffs-quarterpicker-quarter:hover {
+    background-color: var(--hover-color);
+}
+
+.ffs-quarterpicker-quarter-selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.ffs-quarterpicker-quarter-disabled {
+    color: var(--disabled-color);
+    cursor: not-allowed;
+}
+
+/* 年选择器 */
+.ffs-yearpicker {
+    position: relative;
+}
+
+.ffs-yearpicker-picker {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    padding: 4px 11px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-yearpicker-picker:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-yearpicker-picker:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+.ffs-yearpicker-label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ffs-yearpicker-arrow {
+    margin-left: 8px;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-yearpicker-open .ffs-yearpicker-arrow {
+    transform: rotate(180deg);
+}
+
+.ffs-yearpicker-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    padding: 12px;
+}
+
+.ffs-yearpicker-open .ffs-yearpicker-dropdown {
+    display: block;
+}
+
+.ffs-yearpicker-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.ffs-yearpicker-title {
+    font-weight: 500;
+}
+
+.ffs-yearpicker-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-yearpicker-nav-btn {
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-yearpicker-nav-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.ffs-yearpicker-body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.ffs-yearpicker-year {
+    text-align: center;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.ffs-yearpicker-year:hover {
+    background-color: var(--hover-color);
+}
+
+.ffs-yearpicker-year-selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.ffs-yearpicker-year-disabled {
+    color: var(--disabled-color);
+    cursor: not-allowed;
+}
+
+/* 日期范围选择器 */
+.ffs-daterangepicker {
+    position: relative;
+}
+
+.ffs-daterangepicker-picker {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    padding: 4px 11px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-daterangepicker-picker:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-daterangepicker-picker:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+.ffs-daterangepicker-label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ffs-daterangepicker-arrow {
+    margin-left: 8px;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-daterangepicker-open .ffs-daterangepicker-arrow {
+    transform: rotate(180deg);
+}
+
+.ffs-daterangepicker-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    padding: 12px;
+}
+
+.ffs-daterangepicker-open .ffs-daterangepicker-dropdown {
+    display: flex;
+    gap: 12px;
+}
+
+.ffs-daterangepicker-calendar {
+    width: 280px;
+}
+
+.ffs-daterangepicker-calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.ffs-daterangepicker-calendar-title {
+    font-weight: 500;
+}
+
+.ffs-daterangepicker-calendar-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-daterangepicker-calendar-nav-btn {
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-daterangepicker-calendar-nav-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.ffs-daterangepicker-calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.ffs-daterangepicker-calendar-weekday {
+    text-align: center;
+    padding: 4px;
+    color: var(--text-color-secondary);
+    font-size: 0.9em;
+}
+
+.ffs-daterangepicker-calendar-day {
+    text-align: center;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.ffs-daterangepicker-calendar-day:hover {
+    background-color: var(--hover-color);
+}
+
+.ffs-daterangepicker-calendar-day-selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.ffs-daterangepicker-calendar-day-disabled {
+    color: var(--disabled-color);
+    cursor: not-allowed;
+}
+
+.ffs-daterangepicker-calendar-day-today {
+    border: 1px solid var(--primary-color);
+}
+
+.ffs-daterangepicker-calendar-day-other-month {
+    color: var(--text-color-secondary);
+}
+
+.ffs-daterangepicker-calendar-day-in-range {
+    background-color: var(--primary-color-light);
+}
+
+.ffs-daterangepicker-calendar-day-range-start {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.ffs-daterangepicker-calendar-day-range-end {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.ffs-daterangepicker-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-color);
+}
+
+.ffs-daterangepicker-btn {
+    padding: 4px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-daterangepicker-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.ffs-daterangepicker-btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.ffs-daterangepicker-btn-primary:hover {
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+    color: white;
+}
+
+/* 自定义滚动条 */
+.ffs-selectdate .ffs-timepicker-column,
+.ffs-selectdate .ffs-monthpicker-body,
+.ffs-selectdate .ffs-quarterpicker-body,
+.ffs-selectdate .ffs-yearpicker-body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+.ffs-selectdate .ffs-timepicker-column::-webkit-scrollbar,
+.ffs-selectdate .ffs-monthpicker-body::-webkit-scrollbar,
+.ffs-selectdate .ffs-quarterpicker-body::-webkit-scrollbar,
+.ffs-selectdate .ffs-yearpicker-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.ffs-selectdate .ffs-timepicker-column::-webkit-scrollbar-thumb,
+.ffs-selectdate .ffs-monthpicker-body::-webkit-scrollbar-thumb,
+.ffs-selectdate .ffs-quarterpicker-body::-webkit-scrollbar-thumb,
+.ffs-selectdate .ffs-yearpicker-body::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 3px;
+}
+
+.ffs-selectdate .ffs-timepicker-column::-webkit-scrollbar-track,
+.ffs-selectdate .ffs-monthpicker-body::-webkit-scrollbar-track,
+.ffs-selectdate .ffs-quarterpicker-body::-webkit-scrollbar-track,
+.ffs-selectdate .ffs-yearpicker-body::-webkit-scrollbar-track {
+    background-color: transparent;
+} 

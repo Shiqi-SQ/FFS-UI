@@ -1,0 +1,178 @@
+/* 旋转加载 */
+.ffs-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--background-color-light);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: ffs-spin 1s linear infinite;
+}
+
+.ffs-spinner-sm {
+    width: 24px;
+    height: 24px;
+    border-width: 2px;
+}
+
+.ffs-spinner-lg {
+    width: 48px;
+    height: 48px;
+    border-width: 4px;
+}
+
+@keyframes ffs-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 进度加载 */
+.ffs-progress {
+    width: 100%;
+    height: 4px;
+    background: var(--background-color-light);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.ffs-progress-bar {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+}
+
+.ffs-progress-sm {
+    height: 2px;
+}
+
+.ffs-progress-lg {
+    height: 8px;
+}
+
+.ffs-progress-striped .ffs-progress-bar {
+    background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 1rem 1rem;
+    animation: ffs-progress-stripes 1s linear infinite;
+}
+
+@keyframes ffs-progress-stripes {
+    from {
+        background-position: 1rem 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+/* 骨架加载 */
+.ffs-skeleton {
+    background: var(--background-color-light);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.ffs-skeleton::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    animation: ffs-skeleton-shimmer 1.5s infinite;
+}
+
+@keyframes ffs-skeleton-shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* 加载容器 */
+.ffs-loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.ffs-loading-text {
+    color: var(--text-color-secondary);
+    font-size: 14px;
+}
+
+/* 加载状态 */
+.ffs-loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.ffs-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.ffs-loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--background-color-light);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: ffs-spin 1s linear infinite;
+    z-index: 2;
+}
+
+/* 加载按钮 */
+.ffs-loading-btn {
+    position: relative;
+    pointer-events: none;
+}
+
+.ffs-loading-btn .ffs-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+}
+
+.ffs-loading-btn span {
+    opacity: 0;
+} 

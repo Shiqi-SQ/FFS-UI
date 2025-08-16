@@ -1,0 +1,101 @@
+/* 结果页面基础样式 */
+.ffs-result-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    text-align: center;
+    background: var(--background-color);
+}
+
+.ffs-result-page-icon {
+    font-size: 72px;
+    margin-bottom: 24px;
+    color: var(--primary-color);
+}
+
+.ffs-result-page-icon.error {
+    color: var(--error-color);
+}
+
+.ffs-result-page-icon.warning {
+    color: var(--warning-color);
+}
+
+.ffs-result-page-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 16px;
+}
+
+.ffs-result-page-subtitle {
+    font-size: 16px;
+    color: var(--text-color-secondary);
+    margin-bottom: 32px;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.ffs-result-page-actions {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.ffs-result-page-image {
+    max-width: 400px;
+    margin-bottom: 32px;
+}
+
+/* 成功页面 */
+.ffs-result-page.success .ffs-result-page-icon {
+    color: var(--success-color);
+}
+
+/* 失败页面 */
+.ffs-result-page.error .ffs-result-page-icon {
+    color: var(--error-color);
+}
+
+/* 403页面 */
+.ffs-result-page.forbidden .ffs-result-page-icon {
+    color: var(--warning-color);
+}
+
+/* 404页面 */
+.ffs-result-page.not-found .ffs-result-page-icon {
+    color: var(--text-color-secondary);
+}
+
+/* 500页面 */
+.ffs-result-page.server-error .ffs-result-page-icon {
+    color: var(--error-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ffs-result-page-icon {
+        font-size: 48px;
+    }
+
+    .ffs-result-page-title {
+        font-size: 20px;
+    }
+
+    .ffs-result-page-subtitle {
+        font-size: 14px;
+    }
+
+    .ffs-result-page-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .ffs-result-page-image {
+        max-width: 300px;
+    }
+} 

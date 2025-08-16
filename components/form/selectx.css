@@ -1,0 +1,590 @@
+/* SelectX 组件基础样式 */
+.ffs-selectx {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-width: 200px;
+}
+
+/* 级联选择样式 */
+.ffs-cascader {
+    position: relative;
+}
+
+.ffs-cascader-picker {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    padding: 4px 11px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-cascader-picker:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-cascader-picker:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+.ffs-cascader-label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ffs-cascader-arrow {
+    margin-left: 8px;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-cascader-open .ffs-cascader-arrow {
+    transform: rotate(180deg);
+}
+
+.ffs-cascader-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+}
+
+.ffs-cascader-open .ffs-cascader-menu {
+    display: flex;
+}
+
+.ffs-cascader-menu-item {
+    min-width: 120px;
+    max-width: 200px;
+    border-right: 1px solid var(--border-color);
+}
+
+.ffs-cascader-menu-item:last-child {
+    border-right: none;
+}
+
+.ffs-cascader-menu-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 4px 0;
+}
+
+.ffs-cascader-menu-option {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ffs-cascader-menu-option:hover {
+    background-color: var(--hover-color);
+}
+
+.ffs-cascader-menu-option-selected {
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+}
+
+.ffs-cascader-menu-option-disabled {
+    color: var(--disabled-color);
+    cursor: not-allowed;
+}
+
+.ffs-cascader-menu-option-loading {
+    color: var(--text-color-secondary);
+    cursor: wait;
+}
+
+/* 树选择样式 */
+.ffs-treeselect {
+    position: relative;
+}
+
+.ffs-treeselect-picker {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    padding: 4px 11px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-treeselect-picker:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-treeselect-picker:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+.ffs-treeselect-label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ffs-treeselect-arrow {
+    margin-left: 8px;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-treeselect-open .ffs-treeselect-arrow {
+    transform: rotate(180deg);
+}
+
+.ffs-treeselect-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 4px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+}
+
+.ffs-treeselect-open .ffs-treeselect-dropdown {
+    display: block;
+}
+
+.ffs-treeselect-search {
+    padding: 8px;
+}
+
+.ffs-treeselect-search-input {
+    width: 100%;
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+}
+
+.ffs-treeselect-search-input:focus {
+    border-color: var(--primary-color);
+}
+
+.ffs-treeselect-tree {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 4px 0;
+}
+
+.ffs-treeselect-tree-node {
+    padding: 4px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ffs-treeselect-tree-node:hover {
+    background-color: var(--hover-color);
+}
+
+.ffs-treeselect-tree-node-selected {
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+}
+
+.ffs-treeselect-tree-node-disabled {
+    color: var(--disabled-color);
+    cursor: not-allowed;
+}
+
+.ffs-treeselect-tree-node-expanded {
+    background-color: var(--hover-color);
+}
+
+.ffs-treeselect-tree-node-children {
+    padding-left: 24px;
+    display: none;
+}
+
+.ffs-treeselect-tree-node-expanded > .ffs-treeselect-tree-node-children {
+    display: block;
+}
+
+/* 穿梭框样式 */
+.ffs-transfer {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    padding: 16px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.ffs-transfer-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.ffs-transfer-panel-header {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--background-color-secondary);
+}
+
+.ffs-transfer-panel-title {
+    font-weight: 500;
+}
+
+.ffs-transfer-panel-search {
+    padding: 8px;
+}
+
+.ffs-transfer-panel-search-input {
+    width: 100%;
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+}
+
+.ffs-transfer-panel-search-input:focus {
+    border-color: var(--primary-color);
+}
+
+.ffs-transfer-panel-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 4px 0;
+}
+
+.ffs-transfer-panel-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ffs-transfer-panel-item:hover {
+    background-color: var(--hover-color);
+}
+
+.ffs-transfer-panel-item-selected {
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+}
+
+.ffs-transfer-panel-item-disabled {
+    color: var(--disabled-color);
+    cursor: not-allowed;
+}
+
+.ffs-transfer-panel-footer {
+    padding: 8px 12px;
+    border-top: 1px solid var(--border-color);
+    text-align: right;
+}
+
+.ffs-transfer-operations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 8px;
+}
+
+.ffs-transfer-operation-btn {
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-transfer-operation-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.ffs-transfer-operation-btn-disabled {
+    color: var(--disabled-color);
+    border-color: var(--border-color);
+    background-color: var(--disabled-bg);
+    cursor: not-allowed;
+}
+
+/* 多语言选择样式 */
+.ffs-langselect {
+    position: relative;
+}
+
+.ffs-langselect-picker {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    padding: 4px 11px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-langselect-picker:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-langselect-picker:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+.ffs-langselect-label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ffs-langselect-flag {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.ffs-langselect-flag img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ffs-langselect-arrow {
+    margin-left: 8px;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-langselect-open .ffs-langselect-arrow {
+    transform: rotate(180deg);
+}
+
+.ffs-langselect-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 4px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+}
+
+.ffs-langselect-open .ffs-langselect-dropdown {
+    display: block;
+}
+
+.ffs-langselect-options {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 4px 0;
+}
+
+.ffs-langselect-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ffs-langselect-option:hover {
+    background-color: var(--hover-color);
+}
+
+.ffs-langselect-option-selected {
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+}
+
+/* 地址选择器样式 */
+.ffs-addressselect {
+    position: relative;
+}
+
+.ffs-addressselect-picker {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    padding: 4px 11px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-addressselect-picker:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-addressselect-picker:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+.ffs-addressselect-label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ffs-addressselect-arrow {
+    margin-left: 8px;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-addressselect-open .ffs-addressselect-arrow {
+    transform: rotate(180deg);
+}
+
+.ffs-addressselect-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 4px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+}
+
+.ffs-addressselect-open .ffs-addressselect-dropdown {
+    display: block;
+}
+
+.ffs-addressselect-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-addressselect-tab {
+    flex: 1;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-addressselect-tab:hover {
+    color: var(--primary-color);
+}
+
+.ffs-addressselect-tab-active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.ffs-addressselect-content {
+    padding: 8px;
+}
+
+.ffs-addressselect-search {
+    margin-bottom: 8px;
+}
+
+.ffs-addressselect-search-input {
+    width: 100%;
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+}
+
+.ffs-addressselect-search-input:focus {
+    border-color: var(--primary-color);
+}
+
+.ffs-addressselect-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.ffs-addressselect-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ffs-addressselect-item:hover {
+    background-color: var(--hover-color);
+}
+
+.ffs-addressselect-item-selected {
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+}
+
+/* 自定义滚动条 */
+.ffs-selectx .ffs-cascader-menu-list,
+.ffs-selectx .ffs-treeselect-tree,
+.ffs-selectx .ffs-transfer-panel-body,
+.ffs-selectx .ffs-langselect-options,
+.ffs-selectx .ffs-addressselect-list {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+.ffs-selectx .ffs-cascader-menu-list::-webkit-scrollbar,
+.ffs-selectx .ffs-treeselect-tree::-webkit-scrollbar,
+.ffs-selectx .ffs-transfer-panel-body::-webkit-scrollbar,
+.ffs-selectx .ffs-langselect-options::-webkit-scrollbar,
+.ffs-selectx .ffs-addressselect-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.ffs-selectx .ffs-cascader-menu-list::-webkit-scrollbar-thumb,
+.ffs-selectx .ffs-treeselect-tree::-webkit-scrollbar-thumb,
+.ffs-selectx .ffs-transfer-panel-body::-webkit-scrollbar-thumb,
+.ffs-selectx .ffs-langselect-options::-webkit-scrollbar-thumb,
+.ffs-selectx .ffs-addressselect-list::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 3px;
+}
+
+.ffs-selectx .ffs-cascader-menu-list::-webkit-scrollbar-track,
+.ffs-selectx .ffs-treeselect-tree::-webkit-scrollbar-track,
+.ffs-selectx .ffs-transfer-panel-body::-webkit-scrollbar-track,
+.ffs-selectx .ffs-langselect-options::-webkit-scrollbar-track,
+.ffs-selectx .ffs-addressselect-list::-webkit-scrollbar-track {
+    background-color: transparent;
+} 

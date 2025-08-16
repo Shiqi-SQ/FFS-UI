@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 导航菜单组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>导航菜单组件</h1>
+
+        <!-- 顶部导航 -->
+        <section>
+            <h2>顶部导航</h2>
+            <div class="demo-box">
+                <nav class="ffs-navbar">
+                    <a href="#" class="ffs-navbar-brand">FFS UI</a>
+                    <div class="ffs-navbar-menu">
+                        <a href="#" class="ffs-navbar-item active">首页</a>
+                        <a href="#" class="ffs-navbar-item">产品</a>
+                        <a href="#" class="ffs-navbar-item">服务</a>
+                        <a href="#" class="ffs-navbar-item">关于</a>
+                    </div>
+                    <div class="ffs-navbar-right">
+                        <a href="#" class="ffs-button">
+                            <i class="fas fa-user"></i> 登录
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+        <!-- 侧边导航 -->
+        <section>
+            <h2>侧边导航</h2>
+            <div class="demo-box">
+                <div class="ffs-sidebar">
+                    <div class="ffs-sidebar-header">
+                        <h3>菜单</h3>
+                    </div>
+                    <div class="ffs-sidebar-menu">
+                        <a href="#" class="ffs-sidebar-item active">
+                            <i class="fas fa-home ffs-sidebar-icon"></i>
+                            首页
+                        </a>
+                        <a href="#" class="ffs-sidebar-item">
+                            <i class="fas fa-chart-bar ffs-sidebar-icon"></i>
+                            数据统计
+                        </a>
+                        <a href="#" class="ffs-sidebar-item">
+                            <i class="fas fa-users ffs-sidebar-icon"></i>
+                            用户管理
+                        </a>
+                        <a href="#" class="ffs-sidebar-item">
+                            <i class="fas fa-cog ffs-sidebar-icon"></i>
+                            系统设置
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 下拉菜单 -->
+        <section>
+            <h2>下拉菜单</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-dropdown">
+                        <button class="ffs-button">下拉菜单</button>
+                        <div class="ffs-dropdown-menu">
+                            <a href="#" class="ffs-dropdown-item">
+                                <i class="fas fa-user"></i> 个人中心
+                            </a>
+                            <a href="#" class="ffs-dropdown-item">
+                                <i class="fas fa-cog"></i> 设置
+                            </a>
+                            <div class="ffs-dropdown-divider"></div>
+                            <a href="#" class="ffs-dropdown-item">
+                                <i class="fas fa-sign-out-alt"></i> 退出登录
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 折叠菜单 -->
+        <section>
+            <h2>折叠菜单</h2>
+            <div class="demo-box">
+                <div class="ffs-collapse">
+                    <div class="ffs-collapse-item">
+                        <div class="ffs-collapse-header" onclick="toggleCollapse(this)">
+                            <span>折叠面板 1</span>
+                            <i class="fas fa-chevron-down ffs-collapse-icon"></i>
+                        </div>
+                        <div class="ffs-collapse-content">
+                            这是第一个折叠面板的内容。
+                        </div>
+                    </div>
+                    <div class="ffs-collapse-item">
+                        <div class="ffs-collapse-header" onclick="toggleCollapse(this)">
+                            <span>折叠面板 2</span>
+                            <i class="fas fa-chevron-down ffs-collapse-icon"></i>
+                        </div>
+                        <div class="ffs-collapse-content">
+                            这是第二个折叠面板的内容。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 手风琴菜单 -->
+        <section>
+            <h2>手风琴菜单</h2>
+            <div class="demo-box">
+                <div class="ffs-accordion">
+                    <div class="ffs-accordion-item">
+                        <div class="ffs-accordion-header" onclick="toggleAccordion(this)">
+                            <span>手风琴面板 1</span>
+                            <i class="fas fa-chevron-down ffs-accordion-icon"></i>
+                        </div>
+                        <div class="ffs-accordion-content">
+                            这是第一个手风琴面板的内容。
+                        </div>
+                    </div>
+                    <div class="ffs-accordion-item">
+                        <div class="ffs-accordion-header" onclick="toggleAccordion(this)">
+                            <span>手风琴面板 2</span>
+                            <i class="fas fa-chevron-down ffs-accordion-icon"></i>
+                        </div>
+                        <div class="ffs-accordion-content">
+                            这是第二个手风琴面板的内容。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 图标菜单 -->
+        <section>
+            <h2>图标菜单</h2>
+            <div class="demo-box">
+                <div class="ffs-icon-menu">
+                    <a href="#" class="ffs-icon-menu-item">
+                        <i class="fas fa-home ffs-icon-menu-icon"></i>
+                        <span class="ffs-icon-menu-text">首页</span>
+                    </a>
+                    <a href="#" class="ffs-icon-menu-item">
+                        <i class="fas fa-chart-bar ffs-icon-menu-icon"></i>
+                        <span class="ffs-icon-menu-text">数据</span>
+                    </a>
+                    <a href="#" class="ffs-icon-menu-item">
+                        <i class="fas fa-users ffs-icon-menu-icon"></i>
+                        <span class="ffs-icon-menu-text">用户</span>
+                    </a>
+                    <a href="#" class="ffs-icon-menu-item">
+                        <i class="fas fa-cog ffs-icon-menu-icon"></i>
+                        <span class="ffs-icon-menu-text">设置</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        .demo-item {
+            margin-bottom: 20px;
+            width: 100%;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .demo-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 折叠菜单
+        function toggleCollapse(header) {
+            const item = header.parentElement;
+            const content = item.querySelector('.ffs-collapse-content');
+            
+            // 关闭其他面板
+            document.querySelectorAll('.ffs-collapse-item').forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // 切换当前面板
+            item.classList.toggle('active');
+        }
+
+        // 手风琴菜单
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const content = item.querySelector('.ffs-accordion-content');
+            
+            // 关闭其他面板
+            document.querySelectorAll('.ffs-accordion-item').forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // 切换当前面板
+            item.classList.toggle('active');
+        }
+    </script>
+</body>
+</html> 

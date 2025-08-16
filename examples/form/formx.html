@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 表单扩展组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>表单扩展组件</h1>
+
+        <!-- 单选框组 -->
+        <section>
+            <h2>单选框组</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-radio-group">
+                        <label class="ffs-radio">
+                            <input type="radio" name="radio" class="ffs-radio-input" checked>
+                            <span class="ffs-radio-checked"></span>
+                            <span class="ffs-radio-label">选项一</span>
+                        </label>
+                        <label class="ffs-radio">
+                            <input type="radio" name="radio" class="ffs-radio-input">
+                            <span class="ffs-radio-checked"></span>
+                            <span class="ffs-radio-label">选项二</span>
+                        </label>
+                        <label class="ffs-radio">
+                            <input type="radio" name="radio" class="ffs-radio-input">
+                            <span class="ffs-radio-checked"></span>
+                            <span class="ffs-radio-label">选项三</span>
+                        </label>
+                        <label class="ffs-radio ffs-radio-disabled">
+                            <input type="radio" name="radio" class="ffs-radio-input" disabled>
+                            <span class="ffs-radio-checked"></span>
+                            <span class="ffs-radio-label">禁用选项</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 复选框组 -->
+        <section>
+            <h2>复选框组</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-checkbox-group">
+                        <label class="ffs-checkbox">
+                            <input type="checkbox" class="ffs-checkbox-input" checked>
+                            <span class="ffs-checkbox-checked"></span>
+                            <span class="ffs-checkbox-label">选项一</span>
+                        </label>
+                        <label class="ffs-checkbox">
+                            <input type="checkbox" class="ffs-checkbox-input">
+                            <span class="ffs-checkbox-checked"></span>
+                            <span class="ffs-checkbox-label">选项二</span>
+                        </label>
+                        <label class="ffs-checkbox">
+                            <input type="checkbox" class="ffs-checkbox-input">
+                            <span class="ffs-checkbox-checked"></span>
+                            <span class="ffs-checkbox-label">选项三</span>
+                        </label>
+                        <label class="ffs-checkbox ffs-checkbox-disabled">
+                            <input type="checkbox" class="ffs-checkbox-input" disabled>
+                            <span class="ffs-checkbox-checked"></span>
+                            <span class="ffs-checkbox-label">禁用选项</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 开关 -->
+        <section>
+            <h2>开关</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <label class="ffs-switch">
+                        <input type="checkbox" class="ffs-switch-input" checked>
+                        <span class="ffs-switch-track">
+                            <span class="ffs-switch-handle"></span>
+                        </span>
+                    </label>
+                    <label class="ffs-switch">
+                        <input type="checkbox" class="ffs-switch-input">
+                        <span class="ffs-switch-track">
+                            <span class="ffs-switch-handle"></span>
+                        </span>
+                    </label>
+                    <label class="ffs-switch ffs-switch-disabled">
+                        <input type="checkbox" class="ffs-switch-input" disabled>
+                        <span class="ffs-switch-track">
+                            <span class="ffs-switch-handle"></span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- 滑动输入条 -->
+        <section>
+            <h2>滑动输入条</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-slider">
+                        <div class="ffs-slider-track">
+                            <div class="ffs-slider-progress" style="width: 60%"></div>
+                            <div class="ffs-slider-handle" style="left: 60%"></div>
+                            <div class="ffs-slider-mark" style="left: 0%">
+                                <span class="ffs-slider-mark-label">0</span>
+                            </div>
+                            <div class="ffs-slider-mark" style="left: 25%">
+                                <span class="ffs-slider-mark-label">25</span>
+                            </div>
+                            <div class="ffs-slider-mark" style="left: 50%">
+                                <span class="ffs-slider-mark-label">50</span>
+                            </div>
+                            <div class="ffs-slider-mark" style="left: 75%">
+                                <span class="ffs-slider-mark-label">75</span>
+                            </div>
+                            <div class="ffs-slider-mark" style="left: 100%">
+                                <span class="ffs-slider-mark-label">100</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ffs-slider ffs-slider-disabled">
+                        <div class="ffs-slider-track">
+                            <div class="ffs-slider-progress" style="width: 30%"></div>
+                            <div class="ffs-slider-handle" style="left: 30%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 评分 -->
+        <section>
+            <h2>评分</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-rate">
+                        <span class="ffs-rate-star active"></span>
+                        <span class="ffs-rate-star active"></span>
+                        <span class="ffs-rate-star active"></span>
+                        <span class="ffs-rate-star active"></span>
+                        <span class="ffs-rate-star"></span>
+                    </div>
+                    <div class="ffs-rate">
+                        <span class="ffs-rate-star active"></span>
+                        <span class="ffs-rate-star active"></span>
+                        <span class="ffs-rate-star active"></span>
+                        <span class="ffs-rate-star"></span>
+                        <span class="ffs-rate-star"></span>
+                    </div>
+                    <div class="ffs-rate ffs-rate-disabled">
+                        <span class="ffs-rate-star active"></span>
+                        <span class="ffs-rate-star active"></span>
+                        <span class="ffs-rate-star active"></span>
+                        <span class="ffs-rate-star active"></span>
+                        <span class="ffs-rate-star"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 颜色选择器 -->
+        <section>
+            <h2>颜色选择器</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-colorpicker">
+                        <div class="ffs-colorpicker-picker">
+                            <div class="ffs-colorpicker-color" style="background-color: #ff0000"></div>
+                            <div class="ffs-colorpicker-label">红色</div>
+                            <i class="fas fa-chevron-down ffs-colorpicker-arrow"></i>
+                        </div>
+                        <div class="ffs-colorpicker-dropdown">
+                            <div class="ffs-colorpicker-palette">
+                                <div class="ffs-colorpicker-color-item" style="background-color: #ff0000"></div>
+                                <div class="ffs-colorpicker-color-item" style="background-color: #ff8000"></div>
+                                <div class="ffs-colorpicker-color-item" style="background-color: #ffff00"></div>
+                                <div class="ffs-colorpicker-color-item" style="background-color: #00ff00"></div>
+                                <div class="ffs-colorpicker-color-item" style="background-color: #00ffff"></div>
+                                <div class="ffs-colorpicker-color-item" style="background-color: #0000ff"></div>
+                                <div class="ffs-colorpicker-color-item" style="background-color: #8000ff"></div>
+                                <div class="ffs-colorpicker-color-item" style="background-color: #ff00ff"></div>
+                                <div class="ffs-colorpicker-color-item" style="background-color: #000000"></div>
+                                <div class="ffs-colorpicker-color-item" style="background-color: #ffffff"></div>
+                            </div>
+                            <div class="ffs-colorpicker-input">
+                                <input type="text" value="#ff0000">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 动态表单 -->
+        <section>
+            <h2>动态表单</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-dynamic-form">
+                        <div class="ffs-dynamic-form-item">
+                            <div class="ffs-dynamic-form-item-handle">
+                                <i class="fas fa-grip-vertical"></i>
+                            </div>
+                            <div class="ffs-dynamic-form-item-content">
+                                <input type="text" placeholder="请输入内容">
+                            </div>
+                            <div class="ffs-dynamic-form-item-actions">
+                                <button class="ffs-dynamic-form-item-action">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                <button class="ffs-dynamic-form-item-action ffs-dynamic-form-item-action-danger">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="ffs-dynamic-form-add">
+                            <i class="fas fa-plus"></i>
+                            <span>添加表单项</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 表单验证 -->
+        <section>
+            <h2>表单验证</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-form-item">
+                        <label class="ffs-form-item-label ffs-form-item-label-required">用户名</label>
+                        <div class="ffs-form-item-control">
+                            <input type="text" class="ffs-input">
+                            <div class="ffs-form-item-error">请输入用户名</div>
+                        </div>
+                    </div>
+                    <div class="ffs-form-item">
+                        <label class="ffs-form-item-label">邮箱</label>
+                        <div class="ffs-form-item-control">
+                            <input type="email" class="ffs-input">
+                            <div class="ffs-form-item-success">邮箱格式正确</div>
+                        </div>
+                    </div>
+                    <div class="ffs-form-item">
+                        <label class="ffs-form-item-label">密码</label>
+                        <div class="ffs-form-item-control">
+                            <input type="password" class="ffs-input">
+                            <div class="ffs-form-item-warning">密码强度较弱</div>
+                        </div>
+                    </div>
+                    <div class="ffs-form-item">
+                        <label class="ffs-form-item-label">确认密码</label>
+                        <div class="ffs-form-item-control">
+                            <input type="password" class="ffs-input">
+                            <div class="ffs-form-item-help">请再次输入密码</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 自定义校验 -->
+        <section>
+            <h2>自定义校验</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-form-item">
+                        <label class="ffs-form-item-label">用户名</label>
+                        <div class="ffs-form-item-control">
+                            <div class="ffs-form-item-validate">
+                                <input type="text" class="ffs-input">
+                                <div class="ffs-form-item-validate-status ffs-form-item-validate-status-success ffs-form-item-validate-status-show">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="ffs-form-item-validate-tooltip ffs-form-item-validate-tooltip-success ffs-form-item-validate-tooltip-show">
+                                    用户名可用
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ffs-form-item">
+                        <label class="ffs-form-item-label">邮箱</label>
+                        <div class="ffs-form-item-control">
+                            <div class="ffs-form-item-validate">
+                                <input type="email" class="ffs-input">
+                                <div class="ffs-form-item-validate-status ffs-form-item-validate-status-error ffs-form-item-validate-status-show">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <div class="ffs-form-item-validate-tooltip ffs-form-item-validate-tooltip-error ffs-form-item-validate-tooltip-show">
+                                    邮箱格式不正确
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ffs-form-item">
+                        <label class="ffs-form-item-label">手机号</label>
+                        <div class="ffs-form-item-control">
+                            <div class="ffs-form-item-validate">
+                                <input type="tel" class="ffs-input">
+                                <div class="ffs-form-item-validate-status ffs-form-item-validate-status-warning ffs-form-item-validate-status-show">
+                                    <i class="fas fa-exclamation"></i>
+                                </div>
+                                <div class="ffs-form-item-validate-tooltip ffs-form-item-validate-tooltip-warning ffs-form-item-validate-tooltip-show">
+                                    手机号格式可能不正确
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ffs-form-item">
+                        <label class="ffs-form-item-label">验证码</label>
+                        <div class="ffs-form-item-control">
+                            <div class="ffs-form-item-validate">
+                                <input type="text" class="ffs-input">
+                                <div class="ffs-form-item-validate-status ffs-form-item-validate-status-loading ffs-form-item-validate-status-show">
+                                    <i class="fas fa-spinner"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        .demo-item {
+            margin-bottom: 20px;
+            width: 300px;
+        }
+
+        .demo-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 单选框组交互
+        document.querySelectorAll('.ffs-radio-input').forEach(radio => {
+            radio.addEventListener('change', () => {
+                document.querySelectorAll('.ffs-radio-input').forEach(r => {
+                    if (r !== radio) {
+                        r.checked = false;
+                    }
+                });
+            });
+        });
+
+        // 开关交互
+        document.querySelectorAll('.ffs-switch-input').forEach(switch_input => {
+            switch_input.addEventListener('change', () => {
+                const track = switch_input.nextElementSibling;
+                const handle = track.querySelector('.ffs-switch-handle');
+                if (switch_input.checked) {
+                    handle.style.transform = 'translateX(22px)';
+                    track.style.backgroundColor = 'var(--primary-color)';
+                } else {
+                    handle.style.transform = 'translateX(0)';
+                    track.style.backgroundColor = 'var(--border-color)';
+                }
+            });
+        });
+
+        // 评分交互
+        document.querySelectorAll('.ffs-rate').forEach(rate => {
+            const stars = rate.querySelectorAll('.ffs-rate-star');
+            stars.forEach((star, index) => {
+                star.addEventListener('mouseover', () => {
+                    stars.forEach((s, i) => {
+                        if (i <= index) {
+                            s.classList.add('active');
+                        } else {
+                            s.classList.remove('active');
+                        }
+                    });
+                });
+
+                star.addEventListener('mouseout', () => {
+                    stars.forEach(s => s.classList.remove('active'));
+                });
+
+                star.addEventListener('click', () => {
+                    stars.forEach((s, i) => {
+                        if (i <= index) {
+                            s.classList.add('active');
+                        } else {
+                            s.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+
+        // 颜色选择器交互
+        document.querySelectorAll('.ffs-colorpicker').forEach(colorpicker => {
+            const picker = colorpicker.querySelector('.ffs-colorpicker-picker');
+            const dropdown = colorpicker.querySelector('.ffs-colorpicker-dropdown');
+            const colorItems = colorpicker.querySelectorAll('.ffs-colorpicker-color-item');
+            const colorInput = colorpicker.querySelector('.ffs-colorpicker-input input');
+            const colorPreview = colorpicker.querySelector('.ffs-colorpicker-color');
+
+            picker.addEventListener('click', () => {
+                colorpicker.classList.toggle('ffs-colorpicker-open');
+            });
+
+            colorItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const color = item.style.backgroundColor;
+                    colorPreview.style.backgroundColor = color;
+                    colorInput.value = color;
+                    colorpicker.classList.remove('ffs-colorpicker-open');
+                });
+            });
+
+            colorInput.addEventListener('input', () => {
+                colorPreview.style.backgroundColor = colorInput.value;
+            });
+        });
+
+        // 动态表单交互
+        document.querySelectorAll('.ffs-dynamic-form').forEach(form => {
+            const addBtn = form.querySelector('.ffs-dynamic-form-add');
+            const items = form.querySelectorAll('.ffs-dynamic-form-item');
+
+            addBtn.addEventListener('click', () => {
+                const newItem = document.createElement('div');
+                newItem.className = 'ffs-dynamic-form-item';
+                newItem.innerHTML = `
+                    <div class="ffs-dynamic-form-item-handle">
+                        <i class="fas fa-grip-vertical"></i>
+                    </div>
+                    <div class="ffs-dynamic-form-item-content">
+                        <input type="text" placeholder="请输入内容">
+                    </div>
+                    <div class="ffs-dynamic-form-item-actions">
+                        <button class="ffs-dynamic-form-item-action">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button class="ffs-dynamic-form-item-action ffs-dynamic-form-item-action-danger">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+                form.insertBefore(newItem, addBtn);
+            });
+
+            form.addEventListener('click', (e) => {
+                if (e.target.closest('.ffs-dynamic-form-item-action-danger')) {
+                    e.target.closest('.ffs-dynamic-form-item').remove();
+                }
+            });
+        });
+
+        // 点击外部关闭下拉框
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.ffs-colorpicker')) {
+                document.querySelectorAll('.ffs-colorpicker-open').forEach(el => {
+                    el.classList.remove('ffs-colorpicker-open');
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

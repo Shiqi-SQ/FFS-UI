@@ -1,0 +1,287 @@
+/* 基础列表 */
+.ffs-list {
+    width: 100%;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.ffs-list-item {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.ffs-list-item:last-child {
+    border-bottom: none;
+}
+
+.ffs-list-item:hover {
+    background-color: var(--background-color-hover);
+}
+
+.ffs-list-item-content {
+    flex: 1;
+}
+
+.ffs-list-item-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 4px;
+}
+
+.ffs-list-item-description {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+.ffs-list-item-extra {
+    margin-left: 16px;
+    color: var(--text-color-secondary);
+}
+
+/* 卡片列表 */
+.ffs-list-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 16px;
+}
+
+.ffs-list-card-item {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.ffs-list-card-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.ffs-list-card-cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.ffs-list-card-content {
+    padding: 16px;
+}
+
+.ffs-list-card-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.ffs-list-card-description {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+    margin-bottom: 16px;
+}
+
+.ffs-list-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* 竖排列表 */
+.ffs-list-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ffs-list-vertical-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.ffs-list-vertical-item:hover {
+    background-color: var(--background-color-hover);
+}
+
+.ffs-list-vertical-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color-secondary);
+    border-radius: 8px;
+    color: var(--primary-color);
+}
+
+.ffs-list-vertical-content {
+    flex: 1;
+}
+
+.ffs-list-vertical-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 4px;
+}
+
+.ffs-list-vertical-description {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+/* 格栅列表 */
+.ffs-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 16px;
+}
+
+.ffs-list-grid-item {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.ffs-list-grid-item:hover {
+    background-color: var(--background-color-hover);
+}
+
+.ffs-list-grid-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color-secondary);
+    border-radius: 50%;
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+.ffs-list-grid-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 4px;
+}
+
+.ffs-list-grid-description {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+/* 响应式列表 */
+@media screen and (max-width: 768px) {
+    .ffs-list-card {
+        grid-template-columns: 1fr;
+    }
+
+    .ffs-list-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ffs-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ffs-list-item-extra {
+        margin-left: 0;
+        margin-top: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .ffs-list-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 无限滚动 */
+.ffs-list-infinite {
+    position: relative;
+    min-height: 200px;
+}
+
+.ffs-list-infinite-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    color: var(--text-color-secondary);
+}
+
+.ffs-list-infinite-loading::after {
+    content: '\f110';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 8px;
+    animation: spin 1s linear infinite;
+}
+
+.ffs-list-infinite-end {
+    text-align: center;
+    padding: 16px;
+    color: var(--text-color-secondary);
+}
+
+/* 虚拟列表 */
+.ffs-list-virtual {
+    position: relative;
+    height: 400px;
+    overflow: auto;
+}
+
+.ffs-list-virtual-content {
+    position: relative;
+    height: 100%;
+}
+
+.ffs-list-virtual-scroll {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.ffs-list-virtual-item {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+    transition: transform 0.3s;
+}
+
+.ffs-list-virtual-item:hover {
+    background-color: var(--background-color-hover);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} 

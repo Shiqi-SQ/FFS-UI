@@ -1,0 +1,307 @@
+/* 视频容器 */
+.ffs-video {
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+    background: #000;
+}
+
+/* 基础视频 */
+.ffs-video video {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* 视频尺寸 */
+.ffs-video-sm {
+    width: 320px;
+    height: 180px;
+}
+
+.ffs-video-md {
+    width: 640px;
+    height: 360px;
+}
+
+.ffs-video-lg {
+    width: 960px;
+    height: 540px;
+}
+
+.ffs-video-xl {
+    width: 1280px;
+    height: 720px;
+}
+
+/* 视频控制栏 */
+.ffs-video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ffs-video:hover .ffs-video-controls {
+    opacity: 1;
+}
+
+/* 播放/暂停按钮 */
+.ffs-video-play {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    transition: background 0.3s ease;
+}
+
+.ffs-video-play:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* 进度条 */
+.ffs-video-progress {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.ffs-video-progress-bar {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 2px;
+    width: 0;
+}
+
+/* 时间显示 */
+.ffs-video-time {
+    color: #fff;
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+/* 音量控制 */
+.ffs-video-volume {
+    width: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.ffs-video-volume-bar {
+    height: 100%;
+    background: #fff;
+    border-radius: 2px;
+    width: 100%;
+}
+
+/* 全屏按钮 */
+.ffs-video-fullscreen {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.ffs-video-fullscreen:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* 视频上传 */
+.ffs-video-upload {
+    position: relative;
+    display: inline-block;
+}
+
+.ffs-video-upload input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.ffs-video-upload-preview {
+    width: 320px;
+    height: 180px;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-color);
+    transition: all 0.3s ease;
+}
+
+.ffs-video-upload-preview:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-video-upload-preview i {
+    font-size: 24px;
+    color: var(--text-color-secondary);
+}
+
+.ffs-video-upload-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--border-color);
+    display: none;
+}
+
+.ffs-video-upload-progress-bar {
+    height: 100%;
+    background: var(--primary-color);
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+/* 视频预览 */
+.ffs-video-preview {
+    cursor: pointer;
+}
+
+.ffs-video-preview-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    z-index: 1000;
+}
+
+.ffs-video-preview-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ffs-video-preview-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.ffs-video-preview-content video {
+    max-width: 100%;
+    max-height: 90vh;
+}
+
+.ffs-video-preview-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 视频加载状态 */
+.ffs-video-loading {
+    position: relative;
+}
+
+.ffs-video-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ffs-video-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    border: 3px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: ffs-video-spin 1s linear infinite;
+}
+
+/* 视频错误状态 */
+.ffs-video-error {
+    position: relative;
+}
+
+.ffs-video-error::before {
+    content: '\f071';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: var(--error-color);
+}
+
+/* 动画 */
+@keyframes ffs-video-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 响应式 */
+@media (max-width: 1200px) {
+    .ffs-video-xl {
+        width: 960px;
+        height: 540px;
+    }
+}
+
+@media (max-width: 992px) {
+    .ffs-video-lg {
+        width: 640px;
+        height: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ffs-video-md {
+        width: 320px;
+        height: 180px;
+    }
+} 

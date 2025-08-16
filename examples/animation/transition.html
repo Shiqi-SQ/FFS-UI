@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 动画过渡</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>动画过渡</h1>
+
+        <!-- 淡入淡出 -->
+        <section>
+            <h2>淡入淡出</h2>
+            <div class="demo-box">
+                <div class="ffs-animation-container" style="height: 200px;">
+                    <div class="ffs-animation-element ffs-fade-enter">
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="ffs-animation-controls">
+                    <button class="ffs-animation-btn" onclick="toggleFade()">切换淡入淡出</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 滑动 -->
+        <section>
+            <h2>滑动</h2>
+            <div class="demo-box">
+                <div class="ffs-animation-container" style="height: 200px;">
+                    <div class="ffs-animation-element ffs-slide-up-enter">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <div class="ffs-animation-element ffs-slide-down-enter">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                    <div class="ffs-animation-element ffs-slide-left-enter">
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
+                    <div class="ffs-animation-element ffs-slide-right-enter">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="ffs-animation-controls">
+                    <button class="ffs-animation-btn" onclick="toggleSlide('up')">上滑</button>
+                    <button class="ffs-animation-btn" onclick="toggleSlide('down')">下滑</button>
+                    <button class="ffs-animation-btn" onclick="toggleSlide('left')">左滑</button>
+                    <button class="ffs-animation-btn" onclick="toggleSlide('right')">右滑</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 缩放 -->
+        <section>
+            <h2>缩放</h2>
+            <div class="demo-box">
+                <div class="ffs-animation-container" style="height: 200px;">
+                    <div class="ffs-animation-element ffs-zoom-enter">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="ffs-animation-controls">
+                    <button class="ffs-animation-btn" onclick="toggleZoom()">切换缩放</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 翻转 -->
+        <section>
+            <h2>翻转</h2>
+            <div class="demo-box">
+                <div class="ffs-animation-container" style="height: 200px;">
+                    <div class="ffs-animation-element ffs-flip-enter">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                </div>
+                <div class="ffs-animation-controls">
+                    <button class="ffs-animation-btn" onclick="toggleFlip()">切换翻转</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+    </style>
+
+    <script>
+        // 淡入淡出动画
+        function toggleFade() {
+            const element = document.querySelector('.ffs-fade-enter');
+            element.classList.toggle('ffs-fade-enter-active');
+            element.classList.toggle('ffs-fade-exit');
+            element.classList.toggle('ffs-fade-exit-active');
+        }
+
+        // 滑动动画
+        function toggleSlide(direction) {
+            const element = document.querySelector(`.ffs-slide-${direction}-enter`);
+            element.classList.toggle(`ffs-slide-${direction}-enter-active`);
+            element.classList.toggle(`ffs-slide-${direction}-exit`);
+            element.classList.toggle(`ffs-slide-${direction}-exit-active`);
+        }
+
+        // 缩放动画
+        function toggleZoom() {
+            const element = document.querySelector('.ffs-zoom-enter');
+            element.classList.toggle('ffs-zoom-enter-active');
+            element.classList.toggle('ffs-zoom-exit');
+            element.classList.toggle('ffs-zoom-exit-active');
+        }
+
+        // 翻转动画
+        function toggleFlip() {
+            const element = document.querySelector('.ffs-flip-enter');
+            element.classList.toggle('ffs-flip-enter-active');
+            element.classList.toggle('ffs-flip-exit');
+            element.classList.toggle('ffs-flip-exit-active');
+        }
+
+        // 初始化显示
+        document.querySelectorAll('.ffs-animation-element').forEach(element => {
+            element.style.display = 'none';
+        });
+        document.querySelector('.ffs-fade-enter').style.display = 'flex';
+    </script>
+</body>
+</html> 

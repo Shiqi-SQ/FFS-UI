@@ -1,0 +1,159 @@
+/* 定位容器 */
+.ffs-position {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* 定位元素 */
+.ffs-position-item {
+    position: absolute;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 定位类型 */
+.ffs-position-static { position: static; }
+.ffs-position-relative { position: relative; }
+.ffs-position-absolute { position: absolute; }
+.ffs-position-fixed { position: fixed; }
+.ffs-position-sticky { position: sticky; }
+
+/* 定位方向 */
+.ffs-position-top { top: 0; }
+.ffs-position-bottom { bottom: 0; }
+.ffs-position-left { left: 0; }
+.ffs-position-right { right: 0; }
+
+/* 定位偏移 */
+.ffs-position-top-sm { top: 10px; }
+.ffs-position-top-md { top: 20px; }
+.ffs-position-top-lg { top: 30px; }
+.ffs-position-top-xl { top: 40px; }
+
+.ffs-position-bottom-sm { bottom: 10px; }
+.ffs-position-bottom-md { bottom: 20px; }
+.ffs-position-bottom-lg { bottom: 30px; }
+.ffs-position-bottom-xl { bottom: 40px; }
+
+.ffs-position-left-sm { left: 10px; }
+.ffs-position-left-md { left: 20px; }
+.ffs-position-left-lg { left: 30px; }
+.ffs-position-left-xl { left: 40px; }
+
+.ffs-position-right-sm { right: 10px; }
+.ffs-position-right-md { right: 20px; }
+.ffs-position-right-lg { right: 30px; }
+.ffs-position-right-xl { right: 40px; }
+
+/* 定位尺寸 */
+.ffs-position-width-sm { width: 200px; }
+.ffs-position-width-md { width: 300px; }
+.ffs-position-width-lg { width: 400px; }
+.ffs-position-width-xl { width: 500px; }
+
+.ffs-position-height-sm { height: 200px; }
+.ffs-position-height-md { height: 300px; }
+.ffs-position-height-lg { height: 400px; }
+.ffs-position-height-xl { height: 500px; }
+
+/* 定位层级 */
+.ffs-position-z-1 { z-index: 1; }
+.ffs-position-z-10 { z-index: 10; }
+.ffs-position-z-100 { z-index: 100; }
+.ffs-position-z-1000 { z-index: 1000; }
+
+/* 定位显示 */
+.ffs-position-block { display: block; }
+.ffs-position-inline { display: inline; }
+.ffs-position-inline-block { display: inline-block; }
+
+/* 定位可见性 */
+.ffs-position-visible { visibility: visible; }
+.ffs-position-hidden { visibility: hidden; }
+
+/* 定位溢出 */
+.ffs-position-overflow-auto { overflow: auto; }
+.ffs-position-overflow-hidden { overflow: hidden; }
+.ffs-position-overflow-scroll { overflow: scroll; }
+.ffs-position-overflow-visible { overflow: visible; }
+
+/* 定位对齐 */
+.ffs-position-align-left { text-align: left; }
+.ffs-position-align-center { text-align: center; }
+.ffs-position-align-right { text-align: right; }
+
+/* 定位阴影 */
+.ffs-position-shadow-sm {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.ffs-position-shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ffs-position-shadow-lg {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ffs-position-shadow-xl {
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 定位动画 */
+.ffs-position-fade {
+    transition: opacity 0.3s ease;
+}
+
+.ffs-position-slide {
+    transition: transform 0.3s ease;
+}
+
+.ffs-position-slide-left {
+    transform: translateX(-100%);
+}
+
+.ffs-position-slide-right {
+    transform: translateX(100%);
+}
+
+.ffs-position-slide-up {
+    transform: translateY(-100%);
+}
+
+.ffs-position-slide-down {
+    transform: translateY(100%);
+}
+
+/* 响应式断点 */
+@media (max-width: 1200px) {
+    .ffs-position-width-xl {
+        width: 400px;
+    }
+}
+
+@media (max-width: 992px) {
+    .ffs-position-width-lg {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ffs-position-width-md {
+        width: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .ffs-position-width-sm {
+        width: 200px;
+    }
+} 

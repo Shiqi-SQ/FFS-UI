@@ -1,0 +1,379 @@
+/* 基础表格 */
+.ffs-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.ffs-table th,
+.ffs-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-table th {
+    background-color: var(--background-color-secondary);
+    font-weight: 500;
+    color: var(--text-color-secondary);
+}
+
+.ffs-table tr:hover {
+    background-color: var(--background-color-hover);
+}
+
+/* 可选择表格 */
+.ffs-table-select {
+    position: relative;
+}
+
+.ffs-table-select th:first-child,
+.ffs-table-select td:first-child {
+    width: 40px;
+    padding: 0;
+}
+
+.ffs-table-select-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+}
+
+.ffs-table-select-checkbox input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+
+/* 可展开表格 */
+.ffs-table-expand {
+    position: relative;
+}
+
+.ffs-table-expand th:first-child,
+.ffs-table-expand td:first-child {
+    width: 40px;
+    padding: 0;
+}
+
+.ffs-table-expand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-table-expand-icon.expanded {
+    transform: rotate(90deg);
+}
+
+.ffs-table-expand-content {
+    display: none;
+    padding: 16px;
+    background-color: var(--background-color-secondary);
+}
+
+.ffs-table-expand-content.show {
+    display: block;
+}
+
+/* 可编辑表格 */
+.ffs-table-edit td[contenteditable="true"] {
+    position: relative;
+    cursor: text;
+}
+
+.ffs-table-edit td[contenteditable="true"]:hover {
+    background-color: var(--background-color-hover);
+}
+
+.ffs-table-edit td[contenteditable="true"]:focus {
+    outline: none;
+    background-color: var(--background-color-hover);
+    box-shadow: inset 0 0 0 2px var(--primary-color);
+}
+
+/* 树形表格 */
+.ffs-table-tree {
+    position: relative;
+}
+
+.ffs-table-tree td:first-child {
+    padding-left: 24px;
+}
+
+.ffs-table-tree-level {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.ffs-table-tree-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    cursor: pointer;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-table-tree-icon.expanded {
+    transform: rotate(90deg);
+}
+
+/* 固定表头 */
+.ffs-table-fixed-header {
+    position: relative;
+}
+
+.ffs-table-fixed-header thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.ffs-table-fixed-header th {
+    background-color: var(--background-color-secondary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 固定列 */
+.ffs-table-fixed-column {
+    position: relative;
+}
+
+.ffs-table-fixed-column th:first-child,
+.ffs-table-fixed-column td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background-color: var(--background-color);
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 合并单元格 */
+.ffs-table-merge th[rowspan],
+.ffs-table-merge td[rowspan] {
+    background-color: var(--background-color-secondary);
+}
+
+/* 自定义筛选 */
+.ffs-table-filter {
+    position: relative;
+}
+
+.ffs-table-filter th {
+    position: relative;
+}
+
+.ffs-table-filter-icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-color-secondary);
+}
+
+.ffs-table-filter-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    padding: 12px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+}
+
+.ffs-table-filter-dropdown.show {
+    display: block;
+}
+
+.ffs-table-filter-search {
+    margin-bottom: 8px;
+}
+
+.ffs-table-filter-options {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.ffs-table-filter-option {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.ffs-table-filter-option:hover {
+    background-color: var(--background-color-hover);
+}
+
+.ffs-table-filter-option input {
+    margin-right: 8px;
+}
+
+/* 排序表格 */
+.ffs-table-sort th {
+    position: relative;
+    cursor: pointer;
+}
+
+.ffs-table-sort-icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-color-secondary);
+}
+
+.ffs-table-sort-icon.asc::after {
+    content: '\f0de';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.ffs-table-sort-icon.desc::after {
+    content: '\f0dd';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+/* 分页表格 */
+.ffs-table-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: var(--background-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.ffs-table-pagination-info {
+    color: var(--text-color-secondary);
+}
+
+.ffs-table-pagination-options {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ffs-table-pagination-select {
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+}
+
+.ffs-table-pagination-buttons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.ffs-table-pagination-button {
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-table-pagination-button:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.ffs-table-pagination-button.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* 虚拟滚动 */
+.ffs-table-virtual {
+    position: relative;
+    height: 400px;
+    overflow: auto;
+}
+
+.ffs-table-virtual-content {
+    position: relative;
+    height: 100%;
+}
+
+.ffs-table-virtual-scroll {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* 表格状态 */
+.ffs-table-loading {
+    position: relative;
+}
+
+.ffs-table-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.ffs-table-loading::before {
+    content: '\f110';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: var(--primary-color);
+    animation: spin 1s linear infinite;
+    z-index: 2;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* 响应式表格 */
+@media screen and (max-width: 768px) {
+    .ffs-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .ffs-table th,
+    .ffs-table td {
+        white-space: nowrap;
+    }
+} 

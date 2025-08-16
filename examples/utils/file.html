@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 文件组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>文件组件</h1>
+
+        <!-- 文件预览 -->
+        <section>
+            <h2>文件预览</h2>
+            <div class="demo-box">
+                <div class="ffs-file-preview">
+                    <div class="ffs-file-preview-header">
+                        <div class="ffs-file-preview-title">文件预览</div>
+                        <div class="ffs-file-preview-actions">
+                            <button class="ffs-btn ffs-btn-sm">
+                                <i class="fas fa-download"></i>
+                                下载
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ffs-file-preview-content">
+                        <!-- 图片预览 -->
+                        <img src="https://picsum.photos/800/600" alt="预览图片" class="ffs-file-preview-image">
+                        
+                        <!-- PDF预览 -->
+                        <iframe src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="ffs-file-preview-pdf"></iframe>
+                        
+                        <!-- 文本预览 -->
+                        <pre class="ffs-file-preview-text">这是一段示例文本内容。
+可以包含多行文本。
+支持换行和空格。</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文件下载 -->
+        <section>
+            <h2>文件下载</h2>
+            <div class="demo-box">
+                <div class="ffs-file-download">
+                    <i class="fas fa-download ffs-file-download-icon"></i>
+                    <span>下载文件</span>
+                    <div class="ffs-file-download-progress">
+                        <div class="ffs-file-download-progress-bar" style="width: 60%"></div>
+                    </div>
+                    <div class="ffs-file-download-status">已下载 60%</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文件转换 -->
+        <section>
+            <h2>文件转换</h2>
+            <div class="demo-box">
+                <div class="ffs-file-convert">
+                    <div class="ffs-file-convert-dropzone">
+                        <i class="fas fa-cloud-upload-alt ffs-file-convert-icon"></i>
+                        <div class="ffs-file-convert-text">拖拽文件到此处或点击上传</div>
+                        <div class="ffs-file-convert-hint">支持图片、PDF、Word等格式</div>
+                        <input type="file" class="ffs-file-convert-input" multiple>
+                    </div>
+                    <div class="ffs-file-convert-list">
+                        <div class="ffs-file-convert-item">
+                            <i class="fas fa-image ffs-file-convert-item-icon"></i>
+                            <div class="ffs-file-convert-item-info">
+                                <div class="ffs-file-convert-item-name">image.jpg</div>
+                                <div class="ffs-file-convert-item-size">2.5 MB</div>
+                            </div>
+                            <div class="ffs-file-convert-item-status">转换成功</div>
+                            <div class="ffs-file-convert-actions">
+                                <button class="ffs-file-convert-btn">
+                                    <i class="fas fa-download"></i>
+                                    下载
+                                </button>
+                            </div>
+                        </div>
+                        <div class="ffs-file-convert-item">
+                            <i class="fas fa-file-pdf ffs-file-convert-item-icon"></i>
+                            <div class="ffs-file-convert-item-info">
+                                <div class="ffs-file-convert-item-name">document.pdf</div>
+                                <div class="ffs-file-convert-item-size">1.8 MB</div>
+                            </div>
+                            <div class="ffs-file-convert-item-status">转换中...</div>
+                            <div class="ffs-file-convert-actions">
+                                <button class="ffs-file-convert-btn" disabled>
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                    等待中
+                                </button>
+                            </div>
+                        </div>
+                        <div class="ffs-file-convert-item">
+                            <i class="fas fa-file-word ffs-file-convert-item-icon"></i>
+                            <div class="ffs-file-convert-item-info">
+                                <div class="ffs-file-convert-item-name">document.docx</div>
+                                <div class="ffs-file-convert-item-size">3.2 MB</div>
+                            </div>
+                            <div class="ffs-file-convert-item-error">转换失败</div>
+                            <div class="ffs-file-convert-actions">
+                                <button class="ffs-file-convert-btn">
+                                    <i class="fas fa-redo"></i>
+                                    重试
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+    </style>
+
+    <script>
+        // 文件预览
+        document.querySelectorAll('.ffs-file-preview-content > *').forEach(element => {
+            element.style.display = 'none';
+        });
+        document.querySelector('.ffs-file-preview-image').style.display = 'block';
+
+        // 文件下载
+        const downloadBtn = document.querySelector('.ffs-file-download');
+        let progress = 0;
+        const progressBar = downloadBtn.querySelector('.ffs-file-download-progress-bar');
+        const status = downloadBtn.querySelector('.ffs-file-download-status');
+
+        downloadBtn.addEventListener('click', () => {
+            progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                progressBar.style.width = `${progress}%`;
+                status.textContent = `已下载 ${progress}%`;
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        progressBar.style.width = '0';
+                        status.textContent = '下载完成';
+                    }, 1000);
+                }
+            }, 500);
+        });
+
+        // 文件转换
+        const dropzone = document.querySelector('.ffs-file-convert-dropzone');
+        const fileInput = dropzone.querySelector('.ffs-file-convert-input');
+
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropzone.addEventListener(eventName, highlight, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, unhighlight, false);
+        });
+
+        function highlight(e) {
+            dropzone.classList.add('dragover');
+        }
+
+        function unhighlight(e) {
+            dropzone.classList.remove('dragover');
+        }
+
+        dropzone.addEventListener('drop', handleDrop, false);
+        fileInput.addEventListener('change', handleFiles, false);
+
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            handleFiles({ target: { files } });
+        }
+
+        function handleFiles(e) {
+            const files = e.target.files;
+            const list = document.querySelector('.ffs-file-convert-list');
+            
+            [...files].forEach(file => {
+                const item = document.createElement('div');
+                item.className = 'ffs-file-convert-item';
+                
+                const icon = document.createElement('i');
+                icon.className = getFileIcon(file.type) + ' ffs-file-convert-item-icon';
+                
+                const info = document.createElement('div');
+                info.className = 'ffs-file-convert-item-info';
+                
+                const name = document.createElement('div');
+                name.className = 'ffs-file-convert-item-name';
+                name.textContent = file.name;
+                
+                const size = document.createElement('div');
+                size.className = 'ffs-file-convert-item-size';
+                size.textContent = formatFileSize(file.size);
+                
+                info.appendChild(name);
+                info.appendChild(size);
+                
+                const status = document.createElement('div');
+                status.className = 'ffs-file-convert-item-status';
+                status.textContent = '转换中...';
+                
+                const actions = document.createElement('div');
+                actions.className = 'ffs-file-convert-actions';
+                const button = document.createElement('button');
+                button.className = 'ffs-file-convert-btn';
+                button.disabled = true;
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 等待中';
+                actions.appendChild(button);
+                
+                item.appendChild(icon);
+                item.appendChild(info);
+                item.appendChild(status);
+                item.appendChild(actions);
+                
+                list.appendChild(item);
+                
+                // 模拟转换过程
+                setTimeout(() => {
+                    status.textContent = '转换成功';
+                    status.className = 'ffs-file-convert-item-status';
+                    button.disabled = false;
+                    button.innerHTML = '<i class="fas fa-download"></i> 下载';
+                }, 2000);
+            });
+        }
+
+        function getFileIcon(type) {
+            if (type.startsWith('image/')) return 'fas fa-image';
+            if (type === 'application/pdf') return 'fas fa-file-pdf';
+            if (type.includes('word')) return 'fas fa-file-word';
+            if (type.includes('excel')) return 'fas fa-file-excel';
+            if (type.includes('powerpoint')) return 'fas fa-file-powerpoint';
+            return 'fas fa-file';
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+    </script>
+</body>
+</html> 

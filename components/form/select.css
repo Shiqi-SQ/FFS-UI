@@ -1,0 +1,246 @@
+/* Select 组件基础样式 */
+.ffs-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-width: 200px;
+}
+
+/* 选择框样式 */
+.ffs-select .ffs-select-selector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    padding: 4px 11px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-select .ffs-select-selector:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-select .ffs-select-selector:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+/* 选择框禁用状态 */
+.ffs-select-disabled .ffs-select-selector {
+    background-color: var(--disabled-bg);
+    border-color: var(--border-color);
+    color: var(--disabled-color);
+    cursor: not-allowed;
+}
+
+/* 选择框内容区域 */
+.ffs-select .ffs-select-selection {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 多选模式下的标签样式 */
+.ffs-select-multiple .ffs-select-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.ffs-select-multiple .ffs-select-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 8px;
+    background-color: var(--primary-color-light);
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    color: var(--primary-color);
+    font-size: 12px;
+}
+
+.ffs-select-multiple .ffs-select-tag-remove {
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+.ffs-select-multiple .ffs-select-tag-remove:hover {
+    color: var(--error-color);
+}
+
+/* 下拉箭头 */
+.ffs-select .ffs-select-arrow {
+    margin-left: 8px;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-select-open .ffs-select-arrow {
+    transform: rotate(180deg);
+}
+
+/* 下拉菜单 */
+.ffs-select-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 4px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+}
+
+.ffs-select-open .ffs-select-dropdown {
+    display: block;
+}
+
+/* 搜索框 */
+.ffs-select-search {
+    padding: 8px;
+}
+
+.ffs-select-search-input {
+    width: 100%;
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+}
+
+.ffs-select-search-input:focus {
+    border-color: var(--primary-color);
+}
+
+/* 选项列表 */
+.ffs-select-options {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 4px 0;
+}
+
+/* 选项样式 */
+.ffs-select-option {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ffs-select-option:hover {
+    background-color: var(--hover-color);
+}
+
+.ffs-select-option-selected {
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+}
+
+.ffs-select-option-disabled {
+    color: var(--disabled-color);
+    cursor: not-allowed;
+}
+
+/* 分组样式 */
+.ffs-select-group {
+    padding: 8px 0;
+}
+
+.ffs-select-group-title {
+    padding: 0 12px;
+    color: var(--text-color-secondary);
+    font-size: 12px;
+}
+
+/* 无边框样式 */
+.ffs-select-borderless .ffs-select-selector {
+    border: none;
+    background: transparent;
+}
+
+.ffs-select-borderless .ffs-select-selector:hover {
+    background-color: var(--hover-color);
+}
+
+/* 加载状态 */
+.ffs-select-loading .ffs-select-arrow {
+    animation: select-loading 1s infinite linear;
+}
+
+@keyframes select-loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 尺寸变体 */
+.ffs-select-sm .ffs-select-selector {
+    min-height: 24px;
+    padding: 2px 8px;
+}
+
+.ffs-select-lg .ffs-select-selector {
+    min-height: 40px;
+    padding: 6px 12px;
+}
+
+/* 状态样式 */
+.ffs-select-success .ffs-select-selector {
+    border-color: var(--success-color);
+}
+
+.ffs-select-warning .ffs-select-selector {
+    border-color: var(--warning-color);
+}
+
+.ffs-select-error .ffs-select-selector {
+    border-color: var(--error-color);
+}
+
+/* 联动选择样式 */
+.ffs-select-cascader {
+    display: flex;
+    gap: 8px;
+}
+
+.ffs-select-cascader .ffs-select {
+    flex: 1;
+}
+
+/* 远程搜索样式 */
+.ffs-select-remote .ffs-select-options {
+    padding: 0;
+}
+
+.ffs-select-remote .ffs-select-option {
+    padding: 8px 12px;
+}
+
+.ffs-select-remote .ffs-select-option-loading {
+    color: var(--text-color-secondary);
+    cursor: wait;
+}
+
+/* 自定义滚动条 */
+.ffs-select-options::-webkit-scrollbar {
+    width: 6px;
+}
+
+.ffs-select-options::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 3px;
+}
+
+.ffs-select-options::-webkit-scrollbar-track {
+    background-color: transparent;
+} 

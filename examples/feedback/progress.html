@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 进度组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>进度组件</h1>
+
+        <!-- 进度条 -->
+        <section>
+            <h2>进度条</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-progress">
+                        <div class="ffs-progress-bar" style="width: 30%"></div>
+                    </div>
+                    <div class="ffs-progress-text">30%</div>
+                </div>
+                <div class="demo-item">
+                    <div class="ffs-progress">
+                        <div class="ffs-progress-bar" style="width: 60%"></div>
+                    </div>
+                    <div class="ffs-progress-text">60%</div>
+                </div>
+                <div class="demo-item">
+                    <div class="ffs-progress">
+                        <div class="ffs-progress-bar" style="width: 100%"></div>
+                    </div>
+                    <div class="ffs-progress-text">100%</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 加载中 -->
+        <section>
+            <h2>加载中</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-loading"></div>
+                    <span class="ffs-loading-text">加载中...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 骨架屏 -->
+        <section>
+            <h2>骨架屏</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-skeleton ffs-skeleton-avatar"></div>
+                    <div style="margin-left: 16px; flex: 1;">
+                        <div class="ffs-skeleton ffs-skeleton-text" style="width: 60%; margin-bottom: 8px;"></div>
+                        <div class="ffs-skeleton ffs-skeleton-text" style="width: 40%;"></div>
+                    </div>
+                </div>
+                <div class="demo-item">
+                    <div class="ffs-skeleton ffs-skeleton-image"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 步骤进度 -->
+        <section>
+            <h2>步骤进度</h2>
+            <div class="demo-box">
+                <div class="ffs-steps">
+                    <div class="ffs-step completed">
+                        <div class="ffs-step-icon">1</div>
+                        <div class="ffs-step-title">第一步</div>
+                    </div>
+                    <div class="ffs-step active">
+                        <div class="ffs-step-icon">2</div>
+                        <div class="ffs-step-title">第二步</div>
+                    </div>
+                    <div class="ffs-step">
+                        <div class="ffs-step-icon">3</div>
+                        <div class="ffs-step-title">第三步</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 上传进度 -->
+        <section>
+            <h2>上传进度</h2>
+            <div class="demo-box">
+                <div class="ffs-upload">
+                    <div class="ffs-upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <div class="ffs-upload-text">点击或拖拽文件到此处上传</div>
+                    <div class="ffs-upload-progress">
+                        <div class="ffs-progress">
+                            <div class="ffs-progress-bar" style="width: 45%"></div>
+                        </div>
+                        <div class="ffs-progress-text">45%</div>
+                    </div>
+                    <div class="ffs-upload-list">
+                        <div class="ffs-upload-item">
+                            <div class="ffs-upload-item-name">document.pdf</div>
+                            <div class="ffs-upload-item-status ffs-upload-item-success">
+                                <i class="fas fa-check"></i> 上传成功
+                            </div>
+                        </div>
+                        <div class="ffs-upload-item">
+                            <div class="ffs-upload-item-name">image.jpg</div>
+                            <div class="ffs-upload-item-status">上传中...</div>
+                        </div>
+                        <div class="ffs-upload-item">
+                            <div class="ffs-upload-item-name">video.mp4</div>
+                            <div class="ffs-upload-item-status ffs-upload-item-error">
+                                <i class="fas fa-times"></i> 上传失败
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        .demo-item {
+            margin-bottom: 20px;
+            width: 100%;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .demo-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 模拟上传进度
+        function simulateUpload() {
+            let progress = 0;
+            const progressBar = document.querySelector('.ffs-upload-progress .ffs-progress-bar');
+            const progressText = document.querySelector('.ffs-upload-progress .ffs-progress-text');
+            
+            const interval = setInterval(() => {
+                progress += 5;
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `${progress}%`;
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        progressBar.style.width = '0%';
+                        progressText.textContent = '0%';
+                    }, 1000);
+                }
+            }, 200);
+        }
+
+        // 页面加载完成后开始模拟上传
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(simulateUpload, 1000);
+        });
+    </script>
+</body>
+</html> 

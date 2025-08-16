@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 视频组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>视频组件</h1>
+
+        <!-- 基础视频播放器 -->
+        <section>
+            <h2>基础视频播放器</h2>
+            <div class="demo-box">
+                <div class="ffs-video ffs-video-md">
+                    <video src="https://www.w3school.com.cn/i/movie.ogg" controls>
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- 自定义控制栏视频播放器 -->
+        <section>
+            <h2>自定义控制栏视频播放器</h2>
+            <div class="demo-box">
+                <div class="ffs-video ffs-video-md">
+                    <video src="https://www.w3school.com.cn/i/movie.ogg">
+                        您的浏览器不支持视频播放
+                    </video>
+                    <div class="ffs-video-controls">
+                        <button class="ffs-video-play" onclick="togglePlay(this)">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="ffs-video-progress" onclick="seekVideo(this)">
+                            <div class="ffs-video-progress-bar"></div>
+                        </div>
+                        <div class="ffs-video-time">00:00 / 00:00</div>
+                        <div class="ffs-video-volume" onclick="adjustVolume(this)">
+                            <div class="ffs-video-volume-bar"></div>
+                        </div>
+                        <button class="ffs-video-fullscreen" onclick="toggleFullscreen(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 视频尺寸 -->
+        <section>
+            <h2>视频尺寸</h2>
+            <div class="demo-box">
+                <div class="ffs-video ffs-video-sm">
+                    <video src="https://www.w3school.com.cn/i/movie.ogg" controls>
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+                <div class="ffs-video ffs-video-md">
+                    <video src="https://www.w3school.com.cn/i/movie.ogg" controls>
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+                <div class="ffs-video ffs-video-lg">
+                    <video src="https://www.w3school.com.cn/i/movie.ogg" controls>
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+                <div class="ffs-video ffs-video-xl">
+                    <video src="https://www.w3school.com.cn/i/movie.ogg" controls>
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- 视频状态 -->
+        <section>
+            <h2>视频状态</h2>
+            <div class="demo-box">
+                <div class="ffs-video ffs-video-md ffs-video-loading">
+                    <video src="https://www.w3school.com.cn/i/movie.ogg" controls>
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+                <div class="ffs-video ffs-video-md ffs-video-error">
+                    <video src="invalid.mp4" controls>
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- 视频上传 -->
+        <section>
+            <h2>视频上传</h2>
+            <div class="demo-box">
+                <div class="ffs-video-upload">
+                    <input type="file" accept="video/*" onchange="handleUpload(this)">
+                    <div class="ffs-video-upload-preview">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <div class="ffs-video-upload-progress">
+                        <div class="ffs-video-upload-progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 视频预览 -->
+        <section>
+            <h2>视频预览</h2>
+            <div class="demo-box">
+                <div class="ffs-video ffs-video-md ffs-video-preview" onclick="previewVideo(this)">
+                    <video src="https://www.w3school.com.cn/i/movie.ogg" controls>
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 视频预览模态框 -->
+    <div class="ffs-video-preview-modal" onclick="closePreview()">
+        <div class="ffs-video-preview-content">
+            <i class="fas fa-times ffs-video-preview-close"></i>
+            <video src="" controls>
+                您的浏览器不支持视频播放
+            </video>
+        </div>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .ffs-video {
+            margin: 10px;
+        }
+    </style>
+
+    <script>
+        // 播放/暂停
+        function togglePlay(button) {
+            const video = button.closest('.ffs-video').querySelector('video');
+            if (video.paused) {
+                video.play();
+                button.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                video.pause();
+                button.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        }
+
+        // 进度条控制
+        function seekVideo(progress) {
+            const video = progress.closest('.ffs-video').querySelector('video');
+            const rect = progress.getBoundingClientRect();
+            const pos = (event.clientX - rect.left) / progress.offsetWidth;
+            video.currentTime = pos * video.duration;
+        }
+
+        // 音量控制
+        function adjustVolume(volume) {
+            const video = volume.closest('.ffs-video').querySelector('video');
+            const rect = volume.getBoundingClientRect();
+            const pos = (event.clientX - rect.left) / volume.offsetWidth;
+            video.volume = pos;
+            volume.querySelector('.ffs-video-volume-bar').style.width = pos * 100 + '%';
+        }
+
+        // 全屏切换
+        function toggleFullscreen(button) {
+            const video = button.closest('.ffs-video').querySelector('video');
+            if (!document.fullscreenElement) {
+                video.requestFullscreen();
+                button.innerHTML = '<i class="fas fa-compress"></i>';
+            } else {
+                document.exitFullscreen();
+                button.innerHTML = '<i class="fas fa-expand"></i>';
+            }
+        }
+
+        // 视频预览
+        function previewVideo(element) {
+            const modal = document.querySelector('.ffs-video-preview-modal');
+            const video = modal.querySelector('video');
+            video.src = element.querySelector('video').src;
+            modal.classList.add('active');
+        }
+
+        function closePreview() {
+            const modal = document.querySelector('.ffs-video-preview-modal');
+            const video = modal.querySelector('video');
+            video.pause();
+            modal.classList.remove('active');
+        }
+
+        // 视频上传
+        function handleUpload(input) {
+            const file = input.files[0];
+            if (file) {
+                const preview = input.parentElement.querySelector('.ffs-video-upload-preview');
+                const progress = input.parentElement.querySelector('.ffs-video-upload-progress');
+                const progressBar = progress.querySelector('.ffs-video-upload-progress-bar');
+
+                preview.innerHTML = `<video src="${URL.createObjectURL(file)}" controls></video>`;
+                simulateUpload(progress, progressBar);
+            }
+        }
+
+        function simulateUpload(progress, progressBar) {
+            progress.style.display = 'block';
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        progress.style.display = 'none';
+                    }, 500);
+                } else {
+                    width++;
+                }
+                progressBar.style.width = width + '%';
+            }, 20);
+        }
+
+        // 更新进度条和时间显示
+        document.querySelectorAll('.ffs-video video').forEach(video => {
+            video.addEventListener('timeupdate', function() {
+                const controls = this.closest('.ffs-video').querySelector('.ffs-video-controls');
+                if (controls) {
+                    const progressBar = controls.querySelector('.ffs-video-progress-bar');
+                    const timeDisplay = controls.querySelector('.ffs-video-time');
+                    
+                    progressBar.style.width = (this.currentTime / this.duration) * 100 + '%';
+                    
+                    const currentTime = formatTime(this.currentTime);
+                    const duration = formatTime(this.duration);
+                    timeDisplay.textContent = `${currentTime} / ${duration}`;
+                }
+            });
+        });
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            seconds = Math.floor(seconds % 60);
+            return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+    </script>
+</body>
+</html> 

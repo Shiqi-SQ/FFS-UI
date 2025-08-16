@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 数据展示组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>数据展示组件</h1>
+
+        <!-- 统计数值 -->
+        <section>
+            <h2>统计数值</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-statistic">
+                        <div class="ffs-statistic-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="ffs-statistic-content">
+                            <div class="ffs-statistic-title">总用户数</div>
+                            <div class="ffs-statistic-value">1,234</div>
+                            <div class="ffs-statistic-footer">较上月增长 12%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-item">
+                    <div class="ffs-statistic">
+                        <div class="ffs-statistic-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="ffs-statistic-content">
+                            <div class="ffs-statistic-title">订单总数</div>
+                            <div class="ffs-statistic-value">3,456</div>
+                            <div class="ffs-statistic-footer">较上月增长 8%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 描述列表 -->
+        <section>
+            <h2>描述列表</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-descriptions">
+                        <div class="ffs-descriptions-item">
+                            <div class="ffs-descriptions-label">用户名</div>
+                            <div class="ffs-descriptions-content">admin</div>
+                        </div>
+                        <div class="ffs-descriptions-item">
+                            <div class="ffs-descriptions-label">邮箱</div>
+                            <div class="ffs-descriptions-content">admin@example.com</div>
+                        </div>
+                        <div class="ffs-descriptions-item">
+                            <div class="ffs-descriptions-label">手机号</div>
+                            <div class="ffs-descriptions-content">13800138000</div>
+                        </div>
+                        <div class="ffs-descriptions-item">
+                            <div class="ffs-descriptions-label">地址</div>
+                            <div class="ffs-descriptions-content">北京市朝阳区xxx街道xxx号</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 时间轴 -->
+        <section>
+            <h2>时间轴</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-timeline">
+                        <div class="ffs-timeline-item">
+                            <div class="ffs-timeline-dot"></div>
+                            <div class="ffs-timeline-content">
+                                <div class="ffs-timeline-time">2024-03-15 10:00</div>
+                                <div class="ffs-timeline-title">系统更新</div>
+                                <div class="ffs-timeline-text">系统进行了例行维护和更新，提升了整体性能和安全性。</div>
+                            </div>
+                        </div>
+                        <div class="ffs-timeline-item">
+                            <div class="ffs-timeline-dot"></div>
+                            <div class="ffs-timeline-content">
+                                <div class="ffs-timeline-time">2024-03-14 15:30</div>
+                                <div class="ffs-timeline-title">新功能发布</div>
+                                <div class="ffs-timeline-text">发布了新的用户管理功能，支持更细致的权限控制。</div>
+                            </div>
+                        </div>
+                        <div class="ffs-timeline-item">
+                            <div class="ffs-timeline-dot"></div>
+                            <div class="ffs-timeline-content">
+                                <div class="ffs-timeline-time">2024-03-13 09:15</div>
+                                <div class="ffs-timeline-title">问题修复</div>
+                                <div class="ffs-timeline-text">修复了用户反馈的几个界面显示问题。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 日历 -->
+        <section>
+            <h2>日历</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-calendar">
+                        <div class="ffs-calendar-header">
+                            <div class="ffs-calendar-title">2024年3月</div>
+                            <div class="ffs-calendar-nav">
+                                <div class="ffs-calendar-nav-btn">
+                                    <i class="fas fa-chevron-left"></i>
+                                </div>
+                                <div class="ffs-calendar-nav-btn">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffs-calendar-body">
+                            <div class="ffs-calendar-week">
+                                <div class="ffs-calendar-weekday">日</div>
+                                <div class="ffs-calendar-weekday">一</div>
+                                <div class="ffs-calendar-weekday">二</div>
+                                <div class="ffs-calendar-weekday">三</div>
+                                <div class="ffs-calendar-weekday">四</div>
+                                <div class="ffs-calendar-weekday">五</div>
+                                <div class="ffs-calendar-weekday">六</div>
+                            </div>
+                            <div class="ffs-calendar-days">
+                                <div class="ffs-calendar-day disabled">28</div>
+                                <div class="ffs-calendar-day disabled">29</div>
+                                <div class="ffs-calendar-day disabled">30</div>
+                                <div class="ffs-calendar-day disabled">31</div>
+                                <div class="ffs-calendar-day">1</div>
+                                <div class="ffs-calendar-day">2</div>
+                                <div class="ffs-calendar-day">3</div>
+                                <div class="ffs-calendar-day">4</div>
+                                <div class="ffs-calendar-day">5</div>
+                                <div class="ffs-calendar-day">6</div>
+                                <div class="ffs-calendar-day">7</div>
+                                <div class="ffs-calendar-day">8</div>
+                                <div class="ffs-calendar-day">9</div>
+                                <div class="ffs-calendar-day">10</div>
+                                <div class="ffs-calendar-day">11</div>
+                                <div class="ffs-calendar-day">12</div>
+                                <div class="ffs-calendar-day">13</div>
+                                <div class="ffs-calendar-day">14</div>
+                                <div class="ffs-calendar-day">15</div>
+                                <div class="ffs-calendar-day">16</div>
+                                <div class="ffs-calendar-day">17</div>
+                                <div class="ffs-calendar-day">18</div>
+                                <div class="ffs-calendar-day">19</div>
+                                <div class="ffs-calendar-day">20</div>
+                                <div class="ffs-calendar-day">21</div>
+                                <div class="ffs-calendar-day">22</div>
+                                <div class="ffs-calendar-day">23</div>
+                                <div class="ffs-calendar-day">24</div>
+                                <div class="ffs-calendar-day">25</div>
+                                <div class="ffs-calendar-day">26</div>
+                                <div class="ffs-calendar-day">27</div>
+                                <div class="ffs-calendar-day">28</div>
+                                <div class="ffs-calendar-day">29</div>
+                                <div class="ffs-calendar-day">30</div>
+                                <div class="ffs-calendar-day">31</div>
+                                <div class="ffs-calendar-day disabled">1</div>
+                                <div class="ffs-calendar-day disabled">2</div>
+                                <div class="ffs-calendar-day disabled">3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片预览 -->
+        <section>
+            <h2>图片预览</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-image-preview">
+                        <div class="ffs-image-preview-content">
+                            <img src="https://picsum.photos/800/600" alt="预览图片" class="ffs-image-preview-img">
+                            <div class="ffs-image-preview-close">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div class="ffs-image-preview-nav ffs-image-preview-prev">
+                                <i class="fas fa-chevron-left"></i>
+                            </div>
+                            <div class="ffs-image-preview-nav ffs-image-preview-next">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px; margin-top: 16px;">
+                        <img src="https://picsum.photos/200/150" alt="缩略图1" style="width: 200px; height: 150px; object-fit: cover; cursor: pointer;">
+                        <img src="https://picsum.photos/201/150" alt="缩略图2" style="width: 200px; height: 150px; object-fit: cover; cursor: pointer;">
+                        <img src="https://picsum.photos/202/150" alt="缩略图3" style="width: 200px; height: 150px; object-fit: cover; cursor: pointer;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片裁剪 -->
+        <section>
+            <h2>图片裁剪</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-image-crop">
+                        <div class="ffs-image-crop-container">
+                            <img src="https://picsum.photos/800/600" alt="裁剪图片" class="ffs-image-crop-image">
+                            <div class="ffs-image-crop-overlay"></div>
+                            <div class="ffs-image-crop-area">
+                                <div class="ffs-image-crop-handle nw"></div>
+                                <div class="ffs-image-crop-handle ne"></div>
+                                <div class="ffs-image-crop-handle sw"></div>
+                                <div class="ffs-image-crop-handle se"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px; margin-top: 16px;">
+                        <button class="ffs-button">裁剪</button>
+                        <button class="ffs-button">取消</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 视频播放器 -->
+        <section>
+            <h2>视频播放器</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-video-player">
+                        <div class="ffs-video-container">
+                            <video src="https://www.w3school.com.cn/i/movie.ogg" controls></video>
+                        </div>
+                        <div class="ffs-video-controls">
+                            <div class="ffs-video-buttons">
+                                <div class="ffs-video-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="ffs-video-button">
+                                    <i class="fas fa-volume-up"></i>
+                                </div>
+                            </div>
+                            <div class="ffs-video-progress">
+                                <div class="ffs-video-progress-bar" style="width: 30%"></div>
+                            </div>
+                            <div class="ffs-video-time">00:30 / 02:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 代码编辑器 -->
+        <section>
+            <h2>代码编辑器</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-code-editor">
+                        <div class="ffs-code-header">
+                            <div class="ffs-code-title">index.js</div>
+                            <div class="ffs-code-actions">
+                                <button class="ffs-code-button">复制</button>
+                                <button class="ffs-code-button">格式化</button>
+                            </div>
+                        </div>
+                        <div class="ffs-code-content">
+                            <div class="ffs-code-line-numbers">
+                                1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10
+                            </div>
+                            <textarea class="ffs-code-editor-textarea">function example() {
+    const greeting = "Hello, World!";
+    console.log(greeting);
+}
+
+// 调用函数
+example();
+
+// 添加注释
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled);</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        .demo-item {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .demo-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 日历导航
+        document.querySelectorAll('.ffs-calendar-nav-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const title = document.querySelector('.ffs-calendar-title');
+                const currentDate = new Date(title.textContent);
+                if (btn.querySelector('.fa-chevron-left')) {
+                    currentDate.setMonth(currentDate.getMonth() - 1);
+                } else {
+                    currentDate.setMonth(currentDate.getMonth() + 1);
+                }
+                title.textContent = `${currentDate.getFullYear()}年${currentDate.getMonth() + 1}月`;
+            });
+        });
+
+        // 日历日期选择
+        document.querySelectorAll('.ffs-calendar-day:not(.disabled)').forEach(day => {
+            day.addEventListener('click', () => {
+                document.querySelectorAll('.ffs-calendar-day').forEach(d => d.classList.remove('selected'));
+                day.classList.add('selected');
+            });
+        });
+
+        // 图片预览
+        const preview = document.querySelector('.ffs-image-preview');
+        const previewImg = preview.querySelector('.ffs-image-preview-img');
+        const previewClose = preview.querySelector('.ffs-image-preview-close');
+        const previewPrev = preview.querySelector('.ffs-image-preview-prev');
+        const previewNext = preview.querySelector('.ffs-image-preview-next');
+        const thumbnails = document.querySelectorAll('.demo-item img[alt^="缩略图"]');
+        let currentIndex = 0;
+
+        thumbnails.forEach((thumb, index) => {
+            thumb.addEventListener('click', () => {
+                currentIndex = index;
+                previewImg.src = thumb.src;
+                preview.classList.add('show');
+            });
+        });
+
+        previewClose.addEventListener('click', () => {
+            preview.classList.remove('show');
+        });
+
+        previewPrev.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+            previewImg.src = thumbnails[currentIndex].src;
+        });
+
+        previewNext.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % thumbnails.length;
+            previewImg.src = thumbnails[currentIndex].src;
+        });
+
+        // 图片裁剪
+        const cropArea = document.querySelector('.ffs-image-crop-area');
+        const cropImage = document.querySelector('.ffs-image-crop-image');
+        const cropOverlay = document.querySelector('.ffs-image-crop-overlay');
+        const handles = document.querySelectorAll('.ffs-image-crop-handle');
+        let isDragging = false;
+        let currentHandle = null;
+        let startX, startY, startWidth, startHeight;
+
+        cropArea.addEventListener('mousedown', (e) => {
+            if (e.target.classList.contains('ffs-image-crop-handle')) {
+                isDragging = true;
+                currentHandle = e.target;
+                startX = e.clientX;
+                startY = e.clientY;
+                startWidth = cropArea.offsetWidth;
+                startHeight = cropArea.offsetHeight;
+            }
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging && currentHandle) {
+                const deltaX = e.clientX - startX;
+                const deltaY = e.clientY - startY;
+
+                if (currentHandle.classList.contains('nw') || currentHandle.classList.contains('ne')) {
+                    cropArea.style.top = cropArea.offsetTop + deltaY + 'px';
+                    cropArea.style.height = startHeight - deltaY + 'px';
+                }
+                if (currentHandle.classList.contains('sw') || currentHandle.classList.contains('se')) {
+                    cropArea.style.height = startHeight + deltaY + 'px';
+                }
+                if (currentHandle.classList.contains('nw') || currentHandle.classList.contains('sw')) {
+                    cropArea.style.left = cropArea.offsetLeft + deltaX + 'px';
+                    cropArea.style.width = startWidth - deltaX + 'px';
+                }
+                if (currentHandle.classList.contains('ne') || currentHandle.classList.contains('se')) {
+                    cropArea.style.width = startWidth + deltaX + 'px';
+                }
+
+                startX = e.clientX;
+                startY = e.clientY;
+                startWidth = cropArea.offsetWidth;
+                startHeight = cropArea.offsetHeight;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            currentHandle = null;
+        });
+
+        // 视频播放器
+        const video = document.querySelector('.ffs-video-player video');
+        const playButton = document.querySelector('.ffs-video-button .fa-play');
+        const progressBar = document.querySelector('.ffs-video-progress-bar');
+        const timeDisplay = document.querySelector('.ffs-video-time');
+
+        if (video) {
+            playButton.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                    playButton.classList.remove('fa-play');
+                    playButton.classList.add('fa-pause');
+                } else {
+                    video.pause();
+                    playButton.classList.remove('fa-pause');
+                    playButton.classList.add('fa-play');
+                }
+            });
+
+            video.addEventListener('timeupdate', () => {
+                const progress = (video.currentTime / video.duration) * 100;
+                progressBar.style.width = `${progress}%`;
+                timeDisplay.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+            });
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            seconds = Math.floor(seconds % 60);
+            return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // 代码编辑器
+        const codeTextarea = document.querySelector('.ffs-code-editor-textarea');
+        const lineNumbers = document.querySelector('.ffs-code-line-numbers');
+
+        if (codeTextarea) {
+            codeTextarea.addEventListener('input', () => {
+                const lines = codeTextarea.value.split('\n').length;
+                lineNumbers.innerHTML = Array.from({ length: lines }, (_, i) => i + 1).join('<br>');
+            });
+
+            codeTextarea.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    e.preventDefault();
+                    const start = codeTextarea.selectionStart;
+                    const end = codeTextarea.selectionEnd;
+                    codeTextarea.value = codeTextarea.value.substring(0, start) + '    ' + codeTextarea.value.substring(end);
+                    codeTextarea.selectionStart = codeTextarea.selectionEnd = start + 4;
+                }
+            });
+        }
+    </script>
+</body>
+</html> 

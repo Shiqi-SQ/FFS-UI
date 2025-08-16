@@ -1,0 +1,204 @@
+/* 个人中心基础样式 */
+.ffs-person-page {
+    display: flex;
+    min-height: 100vh;
+    background: var(--background-color);
+}
+
+/* 侧边栏 */
+.ffs-person-sidebar {
+    width: 240px;
+    background: var(--background-color);
+    border-right: 1px solid var(--border-color);
+    padding: 24px 0;
+}
+
+.ffs-person-sidebar-header {
+    padding: 0 24px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ffs-person-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    border: 2px solid var(--primary-color);
+}
+
+.ffs-person-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.ffs-person-role {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+.ffs-person-menu {
+    padding: 16px 0;
+}
+
+.ffs-person-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-person-menu-item:hover {
+    background: var(--hover-color);
+}
+
+.ffs-person-menu-item.active {
+    color: var(--primary-color);
+    background: var(--hover-color);
+}
+
+.ffs-person-menu-item i {
+    margin-right: 12px;
+    font-size: 16px;
+}
+
+/* 主内容区 */
+.ffs-person-content {
+    flex: 1;
+    padding: 24px;
+}
+
+.ffs-person-content-header {
+    margin-bottom: 24px;
+}
+
+.ffs-person-content-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 16px;
+}
+
+.ffs-person-content-subtitle {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+/* 个人设置 */
+.ffs-person-settings {
+    max-width: 600px;
+}
+
+.ffs-person-settings-item {
+    margin-bottom: 24px;
+}
+
+.ffs-person-settings-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 16px;
+}
+
+.ffs-person-settings-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ffs-person-settings-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+}
+
+.ffs-person-settings-form {
+    display: grid;
+    gap: 16px;
+}
+
+.ffs-person-settings-form-item {
+    display: grid;
+    gap: 8px;
+}
+
+.ffs-person-settings-form-label {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+/* 安全设置 */
+.ffs-person-security {
+    max-width: 600px;
+}
+
+.ffs-person-security-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.ffs-person-security-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ffs-person-security-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ffs-person-security-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.ffs-person-security-desc {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ffs-person-page {
+        flex-direction: column;
+    }
+
+    .ffs-person-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .ffs-person-content {
+        padding: 16px;
+    }
+
+    .ffs-person-settings-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ffs-person-security-item {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+} 

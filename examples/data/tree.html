@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 树形组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>树形组件</h1>
+
+        <!-- 基础树形 -->
+        <section>
+            <h2>基础树形</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-tree">
+                        <div class="ffs-tree-node">
+                            <div class="ffs-tree-node-content">
+                                <div class="ffs-tree-node-icon">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                                <div class="ffs-tree-node-label">父节点</div>
+                            </div>
+                            <div class="ffs-tree-node-children">
+                                <div class="ffs-tree-node">
+                                    <div class="ffs-tree-node-content">
+                                        <div class="ffs-tree-node-icon">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                        <div class="ffs-tree-node-label">子节点 1</div>
+                                    </div>
+                                    <div class="ffs-tree-node-children">
+                                        <div class="ffs-tree-node">
+                                            <div class="ffs-tree-node-content">
+                                                <div class="ffs-tree-node-icon">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </div>
+                                                <div class="ffs-tree-node-label">子节点 1.1</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 可选择树形 -->
+        <section>
+            <h2>可选择树形</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-tree ffs-tree-select">
+                        <div class="ffs-tree-node">
+                            <div class="ffs-tree-node-content">
+                                <div class="ffs-tree-node-icon">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                                <div class="ffs-tree-select-checkbox"></div>
+                                <div class="ffs-tree-node-label">父节点</div>
+                            </div>
+                            <div class="ffs-tree-node-children">
+                                <div class="ffs-tree-node">
+                                    <div class="ffs-tree-node-content">
+                                        <div class="ffs-tree-node-icon">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                        <div class="ffs-tree-select-checkbox"></div>
+                                        <div class="ffs-tree-node-label">子节点 1</div>
+                                    </div>
+                                    <div class="ffs-tree-node-children">
+                                        <div class="ffs-tree-node">
+                                            <div class="ffs-tree-node-content">
+                                                <div class="ffs-tree-node-icon">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </div>
+                                                <div class="ffs-tree-select-checkbox"></div>
+                                                <div class="ffs-tree-node-label">子节点 1.1</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 可搜索树形 -->
+        <section>
+            <h2>可搜索树形</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-tree ffs-tree-search">
+                        <input type="text" class="ffs-tree-search-input" placeholder="搜索节点...">
+                        <div class="ffs-tree-node">
+                            <div class="ffs-tree-node-content">
+                                <div class="ffs-tree-node-icon">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                                <div class="ffs-tree-node-label">父节点</div>
+                            </div>
+                            <div class="ffs-tree-node-children">
+                                <div class="ffs-tree-node">
+                                    <div class="ffs-tree-node-content">
+                                        <div class="ffs-tree-node-icon">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                        <div class="ffs-tree-node-label">子节点 1</div>
+                                    </div>
+                                    <div class="ffs-tree-node-children">
+                                        <div class="ffs-tree-node">
+                                            <div class="ffs-tree-node-content">
+                                                <div class="ffs-tree-node-icon">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </div>
+                                                <div class="ffs-tree-node-label">子节点 1.1</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 可拖拽树形 -->
+        <section>
+            <h2>可拖拽树形</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-tree ffs-tree-drag">
+                        <div class="ffs-tree-node">
+                            <div class="ffs-tree-node-content" draggable="true">
+                                <div class="ffs-tree-node-icon">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                                <div class="ffs-tree-node-label">可拖拽节点</div>
+                            </div>
+                            <div class="ffs-tree-node-children">
+                                <div class="ffs-tree-node">
+                                    <div class="ffs-tree-node-content" draggable="true">
+                                        <div class="ffs-tree-node-icon">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                        <div class="ffs-tree-node-label">目标节点</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 虚拟滚动树形 -->
+        <section>
+            <h2>虚拟滚动树形</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-tree ffs-tree-virtual">
+                        <div class="ffs-tree-virtual-content">
+                            <div class="ffs-tree-virtual-scroll">
+                                <div class="ffs-tree-virtual-item" style="height: 40px; top: 0;">
+                                    <div class="ffs-tree-node-content">
+                                        <div class="ffs-tree-node-icon">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                        <div class="ffs-tree-node-label">节点 1</div>
+                                    </div>
+                                </div>
+                                <div class="ffs-tree-virtual-item" style="height: 40px; top: 40px;">
+                                    <div class="ffs-tree-node-content">
+                                        <div class="ffs-tree-node-icon">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                        <div class="ffs-tree-node-label">节点 2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 目录树 -->
+        <section>
+            <h2>目录树</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-tree ffs-tree-directory">
+                        <div class="ffs-tree-node">
+                            <div class="ffs-tree-node-content">
+                                <div class="ffs-tree-node-icon">
+                                    <i class="fas fa-folder"></i>
+                                </div>
+                                <div class="ffs-tree-node-label">根目录</div>
+                            </div>
+                            <div class="ffs-tree-node-children">
+                                <div class="ffs-tree-node">
+                                    <div class="ffs-tree-node-content">
+                                        <div class="ffs-tree-node-icon">
+                                            <i class="fas fa-folder"></i>
+                                        </div>
+                                        <div class="ffs-tree-node-label">文档</div>
+                                    </div>
+                                    <div class="ffs-tree-node-children">
+                                        <div class="ffs-tree-node">
+                                            <div class="ffs-tree-node-content">
+                                                <div class="ffs-tree-node-icon">
+                                                    <i class="fas fa-file"></i>
+                                                </div>
+                                                <div class="ffs-tree-node-label">文档1.txt</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 自定义图标 -->
+        <section>
+            <h2>自定义图标</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <div class="ffs-tree ffs-tree-custom-icon">
+                        <div class="ffs-tree-node">
+                            <div class="ffs-tree-node-content">
+                                <div class="ffs-tree-node-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="ffs-tree-node-label">用户管理</div>
+                            </div>
+                            <div class="ffs-tree-node-children">
+                                <div class="ffs-tree-node">
+                                    <div class="ffs-tree-node-content">
+                                        <div class="ffs-tree-node-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="ffs-tree-node-label">用户列表</div>
+                                    </div>
+                                    <div class="ffs-tree-node-children">
+                                        <div class="ffs-tree-node">
+                                            <div class="ffs-tree-node-content">
+                                                <div class="ffs-tree-node-icon">
+                                                    <i class="fas fa-user-plus"></i>
+                                                </div>
+                                                <div class="ffs-tree-node-label">添加用户</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        .demo-item {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .demo-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 基础树形交互
+        document.querySelectorAll('.ffs-tree-node-icon').forEach(icon => {
+            icon.addEventListener('click', () => {
+                const node = icon.closest('.ffs-tree-node');
+                const children = node.querySelector('.ffs-tree-node-children');
+                if (children) {
+                    icon.classList.toggle('expanded');
+                    children.classList.toggle('show');
+                }
+            });
+        });
+
+        // 可选择树形交互
+        document.querySelectorAll('.ffs-tree-select-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('click', (e) => {
+                e.stopPropagation();
+                checkbox.classList.toggle('checked');
+                checkbox.classList.remove('indeterminate');
+
+                const node = checkbox.closest('.ffs-tree-node');
+                const children = node.querySelector('.ffs-tree-node-children');
+                if (children) {
+                    const childCheckboxes = children.querySelectorAll('.ffs-tree-select-checkbox');
+                    childCheckboxes.forEach(child => {
+                        child.classList.toggle('checked', checkbox.classList.contains('checked'));
+                        child.classList.remove('indeterminate');
+                    });
+                }
+
+                updateParentCheckbox(node);
+            });
+        });
+
+        function updateParentCheckbox(node) {
+            const parent = node.parentElement.closest('.ffs-tree-node');
+            if (parent) {
+                const parentCheckbox = parent.querySelector('.ffs-tree-select-checkbox');
+                const siblings = parent.querySelectorAll('.ffs-tree-node-children .ffs-tree-select-checkbox');
+                const checkedCount = Array.from(siblings).filter(cb => cb.classList.contains('checked')).length;
+                
+                if (checkedCount === siblings.length) {
+                    parentCheckbox.classList.add('checked');
+                    parentCheckbox.classList.remove('indeterminate');
+                } else if (checkedCount > 0) {
+                    parentCheckbox.classList.remove('checked');
+                    parentCheckbox.classList.add('indeterminate');
+                } else {
+                    parentCheckbox.classList.remove('checked', 'indeterminate');
+                }
+            }
+        }
+
+        // 可搜索树形交互
+        const searchInput = document.querySelector('.ffs-tree-search-input');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const searchText = e.target.value.toLowerCase();
+                const nodes = document.querySelectorAll('.ffs-tree-search .ffs-tree-node-label');
+                
+                nodes.forEach(node => {
+                    const text = node.textContent.toLowerCase();
+                    const treeNode = node.closest('.ffs-tree-node');
+                    const content = treeNode.querySelector('.ffs-tree-node-content');
+                    
+                    if (text.includes(searchText)) {
+                        treeNode.style.display = '';
+                        content.classList.add('active');
+                        node.innerHTML = text.replace(searchText, `<span class="ffs-tree-search-highlight">${searchText}</span>`);
+                    } else {
+                        treeNode.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        // 可拖拽树形交互
+        document.querySelectorAll('.ffs-tree-drag .ffs-tree-node-content[draggable="true"]').forEach(node => {
+            node.addEventListener('dragstart', (e) => {
+                e.target.classList.add('dragging');
+            });
+
+            node.addEventListener('dragend', (e) => {
+                e.target.classList.remove('dragging');
+            });
+
+            node.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                e.target.classList.add('drag-over');
+            });
+
+            node.addEventListener('dragleave', (e) => {
+                e.target.classList.remove('drag-over');
+            });
+
+            node.addEventListener('drop', (e) => {
+                e.preventDefault();
+                e.target.classList.remove('drag-over');
+                const draggingNode = document.querySelector('.dragging');
+                if (draggingNode && draggingNode !== e.target) {
+                    const placeholder = document.createElement('div');
+                    placeholder.className = 'ffs-tree-drag-placeholder';
+                    e.target.parentNode.insertBefore(placeholder, e.target);
+                    e.target.parentNode.insertBefore(draggingNode, placeholder);
+                    placeholder.remove();
+                }
+            });
+        });
+
+        // 虚拟滚动树形交互
+        const virtualTree = document.querySelector('.ffs-tree-virtual');
+        if (virtualTree) {
+            const virtualContent = virtualTree.querySelector('.ffs-tree-virtual-content');
+            const virtualScroll = virtualTree.querySelector('.ffs-tree-virtual-scroll');
+            let startIndex = 0;
+            const pageSize = 10;
+            const itemHeight = 40;
+
+            function updateVirtualTree() {
+                const scrollTop = virtualContent.scrollTop;
+                startIndex = Math.floor(scrollTop / itemHeight);
+                const visibleData = generateData(startIndex, pageSize);
+                updateVirtualContent(visibleData);
+            }
+
+            function generateData(start, count) {
+                const data = [];
+                for (let i = 0; i < count; i++) {
+                    data.push({
+                        title: `节点 ${start + i + 1}`
+                    });
+                }
+                return data;
+            }
+
+            function updateVirtualContent(data) {
+                virtualScroll.innerHTML = data.map((item, index) => `
+                    <div class="ffs-tree-virtual-item" style="height: ${itemHeight}px; top: ${(startIndex + index) * itemHeight}px;">
+                        <div class="ffs-tree-node-content">
+                            <div class="ffs-tree-node-icon">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                            <div class="ffs-tree-node-label">${item.title}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            virtualContent.addEventListener('scroll', updateVirtualTree);
+            updateVirtualTree();
+        }
+    </script>
+</body>
+</html> 

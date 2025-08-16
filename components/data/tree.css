@@ -1,0 +1,248 @@
+/* 基础树形 */
+.ffs-tree {
+    width: 100%;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.ffs-tree-node {
+    position: relative;
+    padding: 4px 0;
+}
+
+.ffs-tree-node-content {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-tree-node-content:hover {
+    background-color: var(--background-color-hover);
+}
+
+.ffs-tree-node-content.active {
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+}
+
+.ffs-tree-node-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    color: var(--text-color-secondary);
+    transition: transform 0.3s;
+}
+
+.ffs-tree-node-icon.expanded {
+    transform: rotate(90deg);
+}
+
+.ffs-tree-node-label {
+    flex: 1;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.ffs-tree-node-children {
+    margin-left: 32px;
+    display: none;
+}
+
+.ffs-tree-node-children.show {
+    display: block;
+}
+
+/* 可选择树形 */
+.ffs-tree-select {
+    position: relative;
+}
+
+.ffs-tree-select-checkbox {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-tree-select-checkbox:hover {
+    border-color: var(--primary-color);
+}
+
+.ffs-tree-select-checkbox.checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.ffs-tree-select-checkbox.checked::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #fff;
+    font-size: 12px;
+}
+
+.ffs-tree-select-checkbox.indeterminate {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.ffs-tree-select-checkbox.indeterminate::after {
+    content: '';
+    width: 8px;
+    height: 2px;
+    background-color: #fff;
+}
+
+/* 可搜索树形 */
+.ffs-tree-search {
+    position: relative;
+}
+
+.ffs-tree-search-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.ffs-tree-search-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.ffs-tree-search-highlight {
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+/* 可拖拽树形 */
+.ffs-tree-drag {
+    position: relative;
+}
+
+.ffs-tree-node-content.dragging {
+    opacity: 0.5;
+    background-color: var(--background-color-hover);
+}
+
+.ffs-tree-node-content.drag-over {
+    border: 2px dashed var(--primary-color);
+}
+
+.ffs-tree-drag-placeholder {
+    height: 2px;
+    background-color: var(--primary-color);
+    margin: 4px 0;
+}
+
+/* 虚拟滚动树形 */
+.ffs-tree-virtual {
+    position: relative;
+    height: 400px;
+    overflow: auto;
+}
+
+.ffs-tree-virtual-content {
+    position: relative;
+    height: 100%;
+}
+
+.ffs-tree-virtual-scroll {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.ffs-tree-virtual-item {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    transition: transform 0.3s;
+}
+
+/* 目录树 */
+.ffs-tree-directory {
+    position: relative;
+}
+
+.ffs-tree-directory .ffs-tree-node-icon {
+    color: var(--primary-color);
+}
+
+.ffs-tree-directory .ffs-tree-node-content {
+    padding: 8px 12px;
+}
+
+.ffs-tree-directory .ffs-tree-node-content:hover {
+    background-color: var(--background-color-hover);
+}
+
+.ffs-tree-directory .ffs-tree-node-content.active {
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+}
+
+/* 自定义图标 */
+.ffs-tree-custom-icon {
+    position: relative;
+}
+
+.ffs-tree-custom-icon .ffs-tree-node-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: var(--background-color-secondary);
+    color: var(--primary-color);
+    font-size: 16px;
+}
+
+.ffs-tree-custom-icon .ffs-tree-node-content {
+    padding: 8px 12px;
+}
+
+.ffs-tree-custom-icon .ffs-tree-node-content:hover {
+    background-color: var(--background-color-hover);
+}
+
+.ffs-tree-custom-icon .ffs-tree-node-content.active {
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+}
+
+/* 动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ffs-tree-node-children.show {
+    animation: fadeIn 0.3s ease-out;
+}

@@ -1,0 +1,138 @@
+/* 基础分页 */
+.ffs-pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+}
+
+.ffs-pagination-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    color: var(--text-color);
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.ffs-pagination-item:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.ffs-pagination-item.active {
+    color: white;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.ffs-pagination-item.disabled {
+    color: var(--text-color-secondary);
+    background: var(--background-color-secondary);
+    border-color: var(--border-color);
+    cursor: not-allowed;
+}
+
+.ffs-pagination-item.disabled:hover {
+    color: var(--text-color-secondary);
+    border-color: var(--border-color);
+}
+
+/* 迷你分页 */
+.ffs-pagination-mini .ffs-pagination-item {
+    min-width: 24px;
+    height: 24px;
+    padding: 0 4px;
+    font-size: 12px;
+}
+
+/* 简单分页 */
+.ffs-pagination-simple {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ffs-pagination-simple .ffs-pagination-item {
+    min-width: auto;
+    padding: 0 12px;
+}
+
+.ffs-pagination-simple .ffs-pagination-item:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.ffs-pagination-simple .ffs-pagination-item:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* 跳转分页 */
+.ffs-pagination-jump {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ffs-pagination-jump-input {
+    width: 50px;
+    height: 32px;
+    padding: 0 8px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.ffs-pagination-jump-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.ffs-pagination-jump-text {
+    color: var(--text-color-secondary);
+}
+
+/* 自定义分页 */
+.ffs-pagination-custom {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ffs-pagination-custom .ffs-pagination-item {
+    min-width: auto;
+    padding: 0 12px;
+}
+
+.ffs-pagination-custom .ffs-pagination-item-icon {
+    margin: 0 4px;
+    font-size: 12px;
+}
+
+.ffs-pagination-custom .ffs-pagination-item-text {
+    margin: 0 4px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ffs-pagination {
+        flex-wrap: wrap;
+    }
+
+    .ffs-pagination-item {
+        min-width: 28px;
+        height: 28px;
+        padding: 0 6px;
+    }
+
+    .ffs-pagination-jump {
+        display: none;
+    }
+} 

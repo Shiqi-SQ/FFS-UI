@@ -1,0 +1,192 @@
+/* 地理地图样式 */
+.ffs-chart-geomap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.ffs-chart-geomap-content {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 48px);
+}
+
+.ffs-chart-geomap-tooltip {
+    position: absolute;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: var(--text-color);
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 热力地图样式 */
+.ffs-chart-heatmap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.ffs-chart-heatmap-content {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 48px);
+}
+
+.ffs-chart-heatmap-legend {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 8px;
+    z-index: 1000;
+}
+
+.ffs-chart-heatmap-legend-item {
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+}
+
+.ffs-chart-heatmap-legend-color {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+/* 点状地图样式 */
+.ffs-chart-pointmap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.ffs-chart-pointmap-content {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 48px);
+}
+
+.ffs-chart-pointmap-marker {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-chart-pointmap-marker:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 1;
+}
+
+.ffs-chart-pointmap-popup {
+    position: absolute;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 14px;
+    color: var(--text-color);
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 路线地图样式 */
+.ffs-chart-routemap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.ffs-chart-routemap-content {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 48px);
+}
+
+.ffs-chart-routemap-route {
+    position: absolute;
+    stroke: var(--primary-color);
+    stroke-width: 2;
+    fill: none;
+    pointer-events: none;
+}
+
+.ffs-chart-routemap-point {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ffs-chart-routemap-point:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 1;
+}
+
+.ffs-chart-routemap-point-start {
+    background: var(--success-color);
+}
+
+.ffs-chart-routemap-point-end {
+    background: var(--error-color);
+}
+
+.ffs-chart-routemap-point-mid {
+    background: var(--warning-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ffs-chart-geomap,
+    .ffs-chart-heatmap,
+    .ffs-chart-pointmap,
+    .ffs-chart-routemap {
+        min-height: 300px;
+    }
+
+    .ffs-chart-pointmap-marker {
+        width: 20px;
+        height: 20px;
+    }
+
+    .ffs-chart-routemap-point {
+        width: 10px;
+        height: 10px;
+    }
+} 

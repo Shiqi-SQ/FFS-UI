@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFS UI - 对话框组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../ffs-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>对话框组件</h1>
+
+        <!-- 基础对话框 -->
+        <section>
+            <h2>基础对话框</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <button class="ffs-button" onclick="showBasicModal()">打开基础对话框</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 信息提示 -->
+        <section>
+            <h2>信息提示</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <button class="ffs-button" onclick="showInfoModal('success')">成功提示</button>
+                    <button class="ffs-button" onclick="showInfoModal('warning')">警告提示</button>
+                    <button class="ffs-button" onclick="showInfoModal('error')">错误提示</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 确认对话框 -->
+        <section>
+            <h2>确认对话框</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <button class="ffs-button" onclick="showConfirmModal()">打开确认对话框</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 自定义位置 -->
+        <section>
+            <h2>自定义位置</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <button class="ffs-button" onclick="showTopModal()">顶部对话框</button>
+                    <button class="ffs-button" onclick="showBottomModal()">底部对话框</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 可拖拽 -->
+        <section>
+            <h2>可拖拽对话框</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <button class="ffs-button" onclick="showDraggableModal()">打开可拖拽对话框</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 全屏对话框 -->
+        <section>
+            <h2>全屏对话框</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <button class="ffs-button" onclick="showFullscreenModal()">打开全屏对话框</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 异步关闭 -->
+        <section>
+            <h2>异步关闭</h2>
+            <div class="demo-box">
+                <div class="demo-item">
+                    <button class="ffs-button" onclick="showAsyncModal()">打开异步关闭对话框</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 基础对话框 -->
+    <div class="ffs-modal" id="basicModal">
+        <div class="ffs-modal-content">
+            <div class="ffs-modal-header">
+                <div class="ffs-modal-title">基础对话框</div>
+                <div class="ffs-modal-close" onclick="closeModal('basicModal')">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="ffs-modal-body">
+                <p>这是一个基础对话框示例。您可以在这里添加任何内容。</p>
+                <p>对话框支持标题栏、内容区和底部按钮区。</p>
+            </div>
+            <div class="ffs-modal-footer">
+                <button class="ffs-button" onclick="closeModal('basicModal')">取消</button>
+                <button class="ffs-button ffs-button-primary" onclick="closeModal('basicModal')">确定</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 信息提示对话框 -->
+    <div class="ffs-modal" id="infoModal">
+        <div class="ffs-modal-content">
+            <div class="ffs-modal-body">
+                <div class="ffs-modal-info">
+                    <div class="ffs-modal-info-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="ffs-modal-info-message">操作成功</div>
+                    <div class="ffs-modal-info-description">您的操作已经成功完成。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 确认对话框 -->
+    <div class="ffs-modal" id="confirmModal">
+        <div class="ffs-modal-content">
+            <div class="ffs-modal-body">
+                <div class="ffs-modal-confirm">
+                    <div class="ffs-modal-confirm-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="ffs-modal-confirm-title">确认删除</div>
+                    <div class="ffs-modal-confirm-content">您确定要删除这条记录吗？此操作不可恢复。</div>
+                </div>
+            </div>
+            <div class="ffs-modal-footer">
+                <button class="ffs-button" onclick="closeModal('confirmModal')">取消</button>
+                <button class="ffs-button ffs-button-danger" onclick="closeModal('confirmModal')">删除</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 自定义位置对话框 -->
+    <div class="ffs-modal" id="topModal">
+        <div class="ffs-modal-content">
+            <div class="ffs-modal-header">
+                <div class="ffs-modal-title">顶部对话框</div>
+                <div class="ffs-modal-close" onclick="closeModal('topModal')">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="ffs-modal-body">
+                <p>这是一个显示在顶部的对话框。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ffs-modal" id="bottomModal">
+        <div class="ffs-modal-content">
+            <div class="ffs-modal-header">
+                <div class="ffs-modal-title">底部对话框</div>
+                <div class="ffs-modal-close" onclick="closeModal('bottomModal')">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="ffs-modal-body">
+                <p>这是一个显示在底部的对话框。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 可拖拽对话框 -->
+    <div class="ffs-modal" id="draggableModal">
+        <div class="ffs-modal-content">
+            <div class="ffs-modal-header">
+                <div class="ffs-modal-title">可拖拽对话框</div>
+                <div class="ffs-modal-close" onclick="closeModal('draggableModal')">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="ffs-modal-body">
+                <p>这是一个可以拖拽的对话框。请尝试拖动标题栏来移动对话框。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 全屏对话框 -->
+    <div class="ffs-modal" id="fullscreenModal">
+        <div class="ffs-modal-content">
+            <div class="ffs-modal-header">
+                <div class="ffs-modal-title">全屏对话框</div>
+                <div class="ffs-modal-close" onclick="closeModal('fullscreenModal')">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="ffs-modal-body">
+                <p>这是一个全屏对话框。适合展示大量内容或需要专注的场景。</p>
+                <div style="height: 1000px;">
+                    <p>滚动内容...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 异步关闭对话框 -->
+    <div class="ffs-modal" id="asyncModal">
+        <div class="ffs-modal-content">
+            <div class="ffs-modal-header">
+                <div class="ffs-modal-title">异步关闭</div>
+                <div class="ffs-modal-close" onclick="closeModal('asyncModal')">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="ffs-modal-body">
+                <p>这是一个异步关闭的对话框。点击确定按钮后会显示加载状态，然后自动关闭。</p>
+            </div>
+            <div class="ffs-modal-footer">
+                <button class="ffs-button" onclick="closeModal('asyncModal')">取消</button>
+                <button class="ffs-button ffs-button-primary" onclick="asyncCloseModal('asyncModal')">确定</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+        }
+
+        .demo-item {
+            margin-bottom: 20px;
+            width: 100%;
+            display: flex;
+            gap: 16px;
+        }
+
+        .demo-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 显示基础对话框
+        function showBasicModal() {
+            document.getElementById('basicModal').classList.add('show');
+        }
+
+        // 显示信息提示对话框
+        function showInfoModal(type) {
+            const modal = document.getElementById('infoModal');
+            const info = modal.querySelector('.ffs-modal-info');
+            const icon = info.querySelector('.ffs-modal-info-icon i');
+            
+            // 重置类名
+            info.className = 'ffs-modal-info';
+            info.classList.add(type);
+            
+            // 设置图标和文本
+            switch(type) {
+                case 'success':
+                    icon.className = 'fas fa-check';
+                    info.querySelector('.ffs-modal-info-message').textContent = '操作成功';
+                    info.querySelector('.ffs-modal-info-description').textContent = '您的操作已经成功完成。';
+                    break;
+                case 'warning':
+                    icon.className = 'fas fa-exclamation-triangle';
+                    info.querySelector('.ffs-modal-info-message').textContent = '警告提示';
+                    info.querySelector('.ffs-modal-info-description').textContent = '请注意，这是一个警告信息。';
+                    break;
+                case 'error':
+                    icon.className = 'fas fa-times-circle';
+                    info.querySelector('.ffs-modal-info-message').textContent = '操作失败';
+                    info.querySelector('.ffs-modal-info-description').textContent = '抱歉，操作未能完成。';
+                    break;
+            }
+            
+            modal.classList.add('show');
+            setTimeout(() => closeModal('infoModal'), 3000);
+        }
+
+        // 显示确认对话框
+        function showConfirmModal() {
+            document.getElementById('confirmModal').classList.add('show');
+        }
+
+        // 显示顶部对话框
+        function showTopModal() {
+            const modal = document.getElementById('topModal');
+            modal.classList.add('show', 'ffs-modal-top');
+        }
+
+        // 显示底部对话框
+        function showBottomModal() {
+            const modal = document.getElementById('bottomModal');
+            modal.classList.add('show', 'ffs-modal-bottom');
+        }
+
+        // 显示可拖拽对话框
+        function showDraggableModal() {
+            const modal = document.getElementById('draggableModal');
+            modal.classList.add('show', 'ffs-modal-draggable');
+            initDraggable(modal);
+        }
+
+        // 显示全屏对话框
+        function showFullscreenModal() {
+            const modal = document.getElementById('fullscreenModal');
+            modal.classList.add('show', 'ffs-modal-fullscreen');
+        }
+
+        // 显示异步关闭对话框
+        function showAsyncModal() {
+            document.getElementById('asyncModal').classList.add('show');
+        }
+
+        // 关闭对话框
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('show');
+            modal.classList.remove('ffs-modal-top', 'ffs-modal-bottom', 'ffs-modal-draggable', 'ffs-modal-fullscreen');
+        }
+
+        // 异步关闭对话框
+        function asyncCloseModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('ffs-modal-loading');
+            
+            setTimeout(() => {
+                modal.classList.remove('ffs-modal-loading');
+                closeModal(id);
+            }, 2000);
+        }
+
+        // 初始化拖拽功能
+        function initDraggable(modal) {
+            const header = modal.querySelector('.ffs-modal-header');
+            const content = modal.querySelector('.ffs-modal-content');
+            let isDragging = false;
+            let currentX;
+            let currentY;
+            let initialX;
+            let initialY;
+            let xOffset = 0;
+            let yOffset = 0;
+
+            header.addEventListener('mousedown', dragStart);
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', dragEnd);
+        }
+
+        function dragStart(e) {
+            const modal = e.target.closest('.ffs-modal');
+            if (!modal) return;
+
+            const content = modal.querySelector('.ffs-modal-content');
+            initialX = e.clientX - xOffset;
+            initialY = e.clientY - yOffset;
+
+            if (e.target === modal.querySelector('.ffs-modal-header') || 
+                e.target.closest('.ffs-modal-header')) {
+                isDragging = true;
+                modal.classList.add('ffs-modal-dragging');
+            }
+        }
+
+        function drag(e) {
+            if (isDragging) {
+                e.preventDefault();
+                const modal = document.querySelector('.ffs-modal-dragging');
+                if (!modal) return;
+
+                const content = modal.querySelector('.ffs-modal-content');
+                currentX = e.clientX - initialX;
+                currentY = e.clientY - initialY;
+
+                xOffset = currentX;
+                yOffset = currentY;
+
+                setTranslate(currentX, currentY, content);
+            }
+        }
+
+        function dragEnd() {
+            const modal = document.querySelector('.ffs-modal-dragging');
+            if (!modal) return;
+
+            initialX = currentX;
+            initialY = currentY;
+            isDragging = false;
+            modal.classList.remove('ffs-modal-dragging');
+        }
+
+        function setTranslate(xPos, yPos, el) {
+            el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+        }
+
+        // 点击遮罩层关闭对话框
+        document.querySelectorAll('.ffs-modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal(modal.id);
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,232 @@
+/* 文字提示 */
+.ffs-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.ffs-tooltip-content {
+    position: absolute;
+    padding: 8px 12px;
+    background: var(--background-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    color: var(--text-color);
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.ffs-tooltip:hover .ffs-tooltip-content {
+    opacity: 1;
+}
+
+/* 气泡确认框 */
+.ffs-popconfirm {
+    position: relative;
+    display: inline-block;
+}
+
+.ffs-popconfirm-content {
+    position: absolute;
+    width: 300px;
+    padding: 16px;
+    background: var(--background-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.ffs-popconfirm-content.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ffs-popconfirm-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.ffs-popconfirm-message {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+    margin-bottom: 16px;
+}
+
+.ffs-popconfirm-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+/* 操作反馈 */
+.ffs-feedback {
+    position: relative;
+    display: inline-block;
+}
+
+.ffs-feedback-content {
+    position: absolute;
+    padding: 8px 12px;
+    background: var(--background-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    color: var(--text-color);
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.ffs-feedback.show .ffs-feedback-content {
+    opacity: 1;
+}
+
+/* 上下文菜单 */
+.ffs-contextmenu {
+    position: fixed;
+    background: var(--background-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 4px 0;
+    z-index: 1000;
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.ffs-contextmenu.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ffs-contextmenu-item {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.ffs-contextmenu-item:hover {
+    background: var(--hover-color);
+}
+
+.ffs-contextmenu-item.disabled {
+    color: var(--text-color-disabled);
+    cursor: not-allowed;
+}
+
+.ffs-contextmenu-divider {
+    height: 1px;
+    background: var(--border-color);
+    margin: 4px 0;
+}
+
+/* 位置变体 */
+.ffs-tooltip-top .ffs-tooltip-content,
+.ffs-popconfirm-top .ffs-popconfirm-content,
+.ffs-feedback-top .ffs-feedback-content {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 8px;
+}
+
+.ffs-tooltip-bottom .ffs-tooltip-content,
+.ffs-popconfirm-bottom .ffs-popconfirm-content,
+.ffs-feedback-bottom .ffs-feedback-content {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 8px;
+}
+
+.ffs-tooltip-left .ffs-tooltip-content,
+.ffs-popconfirm-left .ffs-popconfirm-content,
+.ffs-feedback-left .ffs-feedback-content {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 8px;
+}
+
+.ffs-tooltip-right .ffs-tooltip-content,
+.ffs-popconfirm-right .ffs-popconfirm-content,
+.ffs-feedback-right .ffs-feedback-content {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px;
+}
+
+/* 箭头 */
+.ffs-tooltip-content::before,
+.ffs-popconfirm-content::before,
+.ffs-feedback-content::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--background-color);
+    transform: rotate(45deg);
+}
+
+.ffs-tooltip-top .ffs-tooltip-content::before,
+.ffs-popconfirm-top .ffs-popconfirm-content::before,
+.ffs-feedback-top .ffs-feedback-content::before {
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.ffs-tooltip-bottom .ffs-tooltip-content::before,
+.ffs-popconfirm-bottom .ffs-popconfirm-content::before,
+.ffs-feedback-bottom .ffs-feedback-content::before {
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.ffs-tooltip-left .ffs-tooltip-content::before,
+.ffs-popconfirm-left .ffs-popconfirm-content::before,
+.ffs-feedback-left .ffs-feedback-content::before {
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.ffs-tooltip-right .ffs-tooltip-content::before,
+.ffs-popconfirm-right .ffs-popconfirm-content::before,
+.ffs-feedback-right .ffs-feedback-content::before {
+    left: -4px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ffs-popconfirm-content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .ffs-popconfirm-content::before {
+        display: none;
+    }
+} 
