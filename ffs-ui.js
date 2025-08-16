@@ -99,7 +99,7 @@
                 'assets/font-awesome/6.5.1.pro.sharp-thin.min.css'
             ];
             try {
-                for (const file of files) await resourceLoader.loadCSS(file);
+                await Promise.all(files.map(f => resourceLoader.loadCSS(f)));
                 if (config.debug) console.log('Font Awesome 加载成功');
             } catch (e) {
                 console.error('加载 Font Awesome 失败:', e);
